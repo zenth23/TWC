@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.ConfigObjectViewModel>
+@{
+    ViewBag.Title = "Status Objects Config";
+}
+
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-12">
+        <h3 class="d-inline"><span class="fas fa-user-clock"></span> @ViewBag.Title</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-12">
+        @(Html.Kendo().Grid(Model)
+              .Name("gridStatusObjectsConfig")
+              .Columns(column =>
+              {
+                  column.Command(command =>
+                  {
+                      command.Edit().IconClass("fas fa-pen").Text(" ")
+                             .UpdateIconClass("fas fa-check").UpdateText(" ")
+                             .CancelIconClass("fas fa-ban").CancelText(" ");
+                  }).Width(105);
+                  column.Bound(col => col.Name).Width(320);
+                  column.Bound(col => col.Status).ClientTemplate("#=Value#")
+                                                 .Sortable(false);
+              })
+              .Editable(editable => editable.Mode(GridEditMode.InLine))
+              .Sortable()
+              .Resizable(r => r.Columns(true))
+              .Scrollable(s => s.Height(400))
+              .Pageable()
+              .DataSource(ds => ds
+                    .Ajax()
+                    .PageSize(10)
+                    .ServerOperation(false)
+                    .Events(e => e.Error("gridStatusObjectsConfigOnError").Sync("gridStatusObjectsConfigOnSync"))
+                    .Model(m =>
+                    {
+                        m.Id(i => i.Id);
+                        m.Field(i => i.Name).Editable(false);
+                    })
+                    .Read(r => r.Action("ReadStatusObjectsConfig", "systemconfig"))
+                    .Update(u => u.Action("UpdateStatusObjectsConfig", "systemconfig"))
+              )
+        )
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/application/system-config.js?v=" + DateTime.Now.Ticks)
+}

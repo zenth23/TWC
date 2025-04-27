@@ -1,0 +1,11 @@
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\bin\x64\Debug\TWC.IMS.Common.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\bin\x64\Debug\TWC.IMS.Common.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\bin\x64\Debug\EntityFramework.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\bin\x64\Debug\EntityFramework.SqlServer.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\bin\x64\Debug\EntityFramework.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\bin\x64\Debug\EntityFramework.SqlServer.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\obj\x64\Debug\TWC.IMS.Common.csprojResolveAssemblyReference.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\obj\x64\Debug\TWC.IMS.Common.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common\obj\x64\Debug\TWC.IMS.Common.pdb

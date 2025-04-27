@@ -1,0 +1,94 @@
+﻿
+<div class="col-3 pr-1">
+    @*
+        logged errors counter
+        card
+    *@
+    <div class="card" style="height:125px;">
+        <div class="row card-body">
+            <div class="col-8 pr-0">
+                <span class="card-title text-muted">Total Logs</span>
+                <div class="col pl-0">
+                    <span id="totalLoggedErrors" class="wrap-text" style="font-size:3rem;">0</span>
+                </div>
+            </div>
+            <div class="col-3 px-0">
+                <span class="fas fa-exclamation-triangle float-right text-muted" style="font-size:2rem;"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-3 px-1">
+    @*
+        logged users counter
+        card
+    *@
+    <div class="card" style="height:125px;">
+        <div class="row card-body">
+            <div class="col-8 pr-0">
+                <span class="card-title text-muted">Total Logged Users</span>
+                <div class="col pl-0">
+                    <span id="totalLoggedUsers" class="wrap-text" style="font-size:3rem;">0</span>
+                </div>
+            </div>
+            <div class="col-3 px-0">
+                <span class="fas fa-users float-right text-muted" style="font-size:2rem;"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-3 px-1">
+    @Html.Partial("_AdminDashboardWidgetCountersErrorTrendChart")
+</div>
+<div class="col-3 pl-1">
+    <div class="row row-cols-2">
+        <div class="col pr-1 mb-2">
+            <div class="card">
+                <div class="card-body p-2 row">
+                    <div class="col-6 pr-0">
+                        <span class="card-title text-muted" id="errorByMethod_name_1">-</span>
+                    </div>
+                    <div class="col-6 pl-0">
+                        <div class="col px-0 text-right"><span id="errorByMethod_count_1" class="wrap-text" style="font-size:1.7rem;">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col pl-1 mb-2">
+            <div class="card">
+                <div class="card-body p-2 row">
+                    <div class="col-6 pr-0">
+                        <span class="card-title text-muted" id="errorByMethod_name_2">-</span>
+                    </div>
+                    <div class="col-6 pl-0">
+                        <div class="col px-0 text-right"><span id="errorByMethod_count_2" class="wrap-text" style="font-size:1.7rem;">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col pr-1">
+            <div class="card">
+                <div class="card-body p-2 row">
+                    <div class="col-6 pr-0">
+                        <span class="card-title text-muted" id="errorByMethod_name_3">-</span>
+                    </div>
+                    <div class="col-6 pl-0">
+                        <div class="col px-0 text-right"><span id="errorByMethod_count_3" class="wrap-text" style="font-size:1.7rem;">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col pl-1">
+            <div class="card">
+                <div class="card-body p-2 row">
+                    <div class="col-6 pr-0">
+                        <span class="card-title text-muted" id="errorByMethod_name_4">-</span>
+                    </div>
+                    <div class="col-6 pl-0">
+                        <div class="col px-0 text-right"><span id="errorByMethod_count_4" class="wrap-text" style="font-size:1.7rem;">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

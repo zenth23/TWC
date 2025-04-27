@@ -1,0 +1,202 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.ProductsViewModel>
+
+@{
+    ViewBag.Title = "Product Master Editor";
+}
+
+<style>
+    .center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .image-holder {
+        height: 25px;
+        width: 500px
+    }
+
+    .product-img {
+        height: 100%; 
+        width: 100%; 
+        object-fit: contain;
+        border: 1px solid black 
+    }
+</style>
+@Html.AntiForgeryToken()
+
+<div class="row">
+    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <ul class="header-text-button-container">
+       
+            <li>
+                <h2 class="mt-1">@ViewBag.Title</h2>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-12">
+
+        @(Html.Kendo().Grid(Model)
+                    .Name("gridProductMaster")
+                    .Columns(columns =>
+                    {
+                        columns.Command(command =>
+                        {
+                            command.Edit().IconClass("fas fa-pen").Text(" ").HtmlAttributes(new { title = "Edit" });
+                            command.Custom("ViewImages").IconClass("fas fa-image").Text(" ").HtmlAttributes(new { title = "View Images" }).Click("productmaster.editor.events.onImageGalleryModalOpen");
+                            command.Custom("Delete").IconClass("fas fa-trash").Text(" ").HtmlAttributes(new { title = "Delete" }).Click("productmaster.editor.events.onGridDeleteClick");
+                        }).Width(145).HtmlAttributes(new { @data_id = "#=Id#" });
+                        columns.Bound(p => p.product_name).Width(150);
+                        columns.Bound(p => p.product_type).Width(150);
+                        columns.Bound(p => p.karat).Width(150);
+                        columns.Bound(p => p.weight).Width(150);
+                        columns.Bound(p => p.material).Width(150);
+                        columns.Bound(p => p.gemstones).Width(150);
+                        columns.Bound(p => p.retail_price).Width(150);
+                        columns.Bound(p => p.selling_price).Width(150);
+                        columns.Bound(p => p.Created).ClientTemplate("#= Created ? kendo.toString(kendo.parseDate(Created), 'dd-MMM-yyyy') : '' #").Width(150);
+                        columns.Bound(p => p.CreatedBy).Width(150);
+                        columns.Bound(p => p.Modified).ClientTemplate("#= Modified ? kendo.toString(kendo.parseDate(Modified), 'dd-MMM-yyyy') : '' #").Width(150);
+                        columns.Bound(p => p.ModifiedBy).Width(150);
+                    })
+                    .ToolBar(toolbar => toolbar.Create().IconClass("fas fa-plus").Text("New"))
+                    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                    .Pageable(p => p.Refresh(true))
+                    .Filterable()
+                    .Resizable(r => r.Columns(true))
+                    .Sortable()
+                    .Scrollable(s => s.Height(320))
+                    .Events(events =>
+                    {
+                        events.Edit("productmaster.common.onEdit");
+                    })
+                    .DataSource(dataSource => dataSource
+                        .Ajax()
+                        .PageSize(20)
+                        .Events(events =>
+                        {
+                            events.Error("productmaster.common.errorHandler").RequestEnd("productmaster.common.onRequestEnd");
+                        })
+                        .Model(model =>
+                        {
+                            model.Id(p => p.Id);
+                            model.Field(p => p.Created).Editable(false);
+                            model.Field(p => p.CreatedBy).Editable(false);
+                            model.Field(p => p.Modified).Editable(false);
+                            model.Field(p => p.ModifiedBy).Editable(false);
+                        })
+                        .Create(update => update.Action("SaveProduct", "products"))
+                        .Read(read => read.Action("GetProduct", "products"))
+                        .Update(update => update.Action("SaveProduct", "products"))
+                        .Destroy(update => update.Action("DeleteProduct", "products"))
+                    )
+        )
+    </div>
+    <input type="hidden" id="hiddenSelectedProduct" />
+    <div id="imageGalleryModal" class="modal fade center" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 80%;width:80%">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Images</h4>
+                </div>
+                <div class="modal-body" >
+                    <div class="row">
+                        <div class="col-sm-5">
+                            @(Html.Kendo().Upload()
+                                .Name("imageUpload")
+                                .Validation(v => v.AllowedExtensions(new string[] { ".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif" }))
+                                .Async(a => a
+                                    .Save("AddImage", "Products")
+                                    .Remove("RemoveImage", "Products")
+                                    .AutoUpload(true)
+                                )
+                                .Events(x => x.Upload("productmaster.common.uploadParam")
+                                              .Success("productmaster.editor.events.onUploadComplete"))
+                            )
+
+                            @(Html.Kendo()
+                             .Grid<TWC.IMS.Web.Models.ProductMasterImageViewModel>()
+                             .Name("gridProductMasterImages")
+                             .Columns(columns =>
+                             {
+                                 columns.Bound(p => p.Id).Hidden(true);
+                                 columns.Bound(p => p.FileName).Title("File Names").Width(200);
+                                 columns.Bound(c => c.IsMain)
+                                        .Title("Preview Image")
+                                        .Width(25)
+                                        .ClientTemplate("#= IsMain ? \"<i class='text-success fas fa-check'></i>\" : \"\" #");
+                             })
+                             .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
+                             .Events(ev => ev.Change("productmaster.editor.events.onImageSelected"))
+                             .DataSource(dataSource => dataSource
+                                .Ajax()
+                                .PageSize(20)
+                                .Events(events =>
+                                {
+                                    events.Error("productmaster.common.errorHandler");
+                                })
+                                .Model(model =>
+                                {
+                                    model.Id(p => p.Id);
+                                    model.Field(p => p.FileName).Editable(false);
+                                    model.Field(p => p.FilePath).Editable(false);
+                                })
+                                .Read(read => read.Action("GetProductImages", "products")
+                                                  .Data("productmaster.common.imageGalleryParam"))
+                            )
+                            )
+                        </div>
+                        <div class="col-sm-7">
+                            <div id="image-toolbar" style="display:none">
+                                <div class="row">
+                                    <div class="col-sm-6 text-left">
+                                        <button type="button" class="btn btn-success btn-sm" onclick="productmaster.editor.events.onSetImageAsPreview()">
+                                            <i class="fas fa-check"></i>
+                                            Set as Preview Image
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-6 text-right">
+                                        <button type="button" class="btn btn-warning btn-sm" onclick="productmaster.editor.events.onImageDelete()">
+                                            <i class="fas fa-trash"></i> 
+                                        Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="image-holder" >
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-sm" onclick="productmaster.editor.events.onImageGalleryModalClose()">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/application/common-helper.js")
+    @Scripts.Render("~/Scripts/application/productmaster.js")
+
+}
+
+<script>
+    $(function () {
+        productmaster.initialize()
+    })
+</script>

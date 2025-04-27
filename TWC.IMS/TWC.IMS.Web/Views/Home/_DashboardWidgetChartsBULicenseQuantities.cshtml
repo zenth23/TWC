@@ -1,0 +1,13 @@
+﻿
+@(Html.Kendo().TreeMap()
+      .Name("treeMapChart")
+      .DataSource(dataSource => dataSource
+          .Read(read => read.Action("GetCurrentMonthTop5LicenseQuantitiesPerBU", "demosources"))
+          .Model(m => m.Children("Items"))
+      )
+      .Events(e => e.DataBound("onDataBound"))
+      .ValueField("Value")
+      .TextField("Name")
+      .Deferred()
+)
+<div class="chart-overlay-no-data"><div>No data available</div></div>

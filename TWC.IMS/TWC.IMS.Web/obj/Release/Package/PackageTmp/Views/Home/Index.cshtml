@@ -1,0 +1,597 @@
+﻿@{
+    ViewData["Title"] = "Jewelry Inventory Dashboard";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/Content/kendo/kendo.bootstrap-v4.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/kendo/kendo.all.min.js"></script>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, saans-serif;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .low-stock {
+            color: #ff4b4b; /* Modern red color for better visibility */
+        }
+
+        .high-value {
+            color: #001bff; /* Gold color for high-value items */
+        }
+
+        .dashboard-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+            .dashboard-section > .col-md-6 {
+                flex: 1;
+                min-width: 300px;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+            table th, table td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            table th {
+                background-color: #eee08f;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+                <h1>Jewelry Inventory System Dashboard</h1>
+                <p id="current-time"></p>
+            </div>
+        </div>
+
+        <!-- Summary Metrics -->
+        <div class="row my-4">
+            <div class="col-md-6">
+                <div class="row d-flex gap-3 flex-wrap">
+                    <!-- Total Inventory Value -->
+                    <div class="col-md-6">
+                        <div class="card bg-light h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Total Inventory Value</h5>
+                                <p class="card-text mt-auto">
+                                    <a href="@Url.Action("Index", "Inventory_Entries")" class="text-decoration-none text-dark">
+                                        ₱<span id="total-inventory-value">0</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Sales -->
+                    <div class="col-md-6">
+                        <div class="card bg-light h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h5 class="card-title mb-0">Total Sales</h5>
+                                    <input id="sales-filter" style="width: 180px;" />
+                                </div>
+                                <div id="total-sales" class="mt-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title low-stock">Low Stock Alerts</h5>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="low-stock-alerts">
+                                        <!-- Dynamic rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title high-value">High Value Items</h5>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="high-value-items">
+                                        <!-- Dynamic rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Recent Transactions</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-hover w-100 mb-0">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Invoice Number</th>
+                                                <th>Product</th>
+                                                <th>Quantity</th>
+                                                <th>Cost</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="recent-transactions">
+                                            <!-- Dynamic rows -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Sales Overview</h5>
+                     
+                                <div id="sales-category-chart"></div>
+                                </br>
+                                <div id="sales-summary"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Summary Metrics - New Bar Chart for Sales Orders vs Inventory -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Inventory vs Sales Orders</h5>
+                                <div id="inventory-vs-sales-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Dashboard Scripts -->
+    <script>
+        $(document).ready(function () {
+            // Update current time
+            function updateTime() {
+                const now = new Date();
+                $('#current-time').text(now.toLocaleString());
+            }
+
+            // Initialize the Kendo Dropdown with filter options
+            $("#sales-filter").kendoDropDownList({
+                dataSource: [
+                    { text: "Today", value: "today" },
+                    { text: "This Week", value: "thisweek" },
+                    { text: "Last Week", value: "lastweek" },
+                    { text: "This Month", value: "thismonth" },
+                    { text: "Last Month", value: "lastmonth" },
+                    { text: "This Year", value: "thisyear" },
+                    { text: "Last Year", value: "lastyear" }
+                ],
+                dataTextField: "text",
+                dataValueField: "value",
+                index: 0, // Set default selection to "Today"
+                change: function () {
+                    // Fetch total sales when the filter is changed
+                    const selectedFilter = this.value();
+                    fetchTotalSales(selectedFilter);
+                    fetchSalesCount(selectedFilter);
+                }
+            });
+
+            // Fetch the sales data based on the default filter (today)
+            fetchTotalSales("today");
+
+
+
+            setInterval(updateTime, 1000);
+            updateTime();
+
+            // Fetch Total Inventory Data
+            function fetchTotalInventoryData() {
+                $.ajax({
+                    url: '@Url.Action("GetTotalInventoryData", "Home")',
+                    method: 'POST',
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        $('#total-inventory-value').text(response.totalValue.toLocaleString());
+                        $('#total-items').html(`<a href="@Url.Action("Index", "Products")">${response.totalItems}</a>`);
+
+                    } else {
+                        console.error("Failed to fetch total inventory data:", response.message);
+                    }
+                });
+            }
+
+            // Fetch Recent Transactions
+            function fetchRecentTransactions() {
+                $.ajax({
+                    url: '@Url.Action("GetRecentTransactions", "Home")',
+                    method: 'POST',
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        const table = $('#recent-transactions');
+                        table.empty();
+                        response.transactions.forEach(tx => {
+                            const formattedDate = tx.Date;
+                            const row = `
+                                <tr>
+                                    <td>${formattedDate}</td>
+                                    <td>${tx.InvoiceNumber}</td>
+                                    <td>${tx.ProductName}</td>
+                                    <td>${tx.Quantity}</td>
+                                    <td>₱${formatMoney(tx.Cost.toFixed(2))}</td>
+                                </tr>`;
+                            table.append(row);
+                        });
+                    } else {
+                        console.error("Failed to fetch recent transactions:", response.message);
+                    }
+                });
+            }
+
+            function fetchSalesCountByCategory(filterType) {
+                $.ajax({
+                    url: '@Url.Action("GetSalesCountByCategory", "Home")',
+                    method: 'POST',
+                    data: { filterType: filterType },
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        const categories = response.data.map(item => item.Category);
+                        const salesData = response.data.map(item => item.TotalSales);
+                        const countData = response.data.map(item => item.TotalCount);
+
+                        $("#sales-category-chart").kendoChart({
+                            title: { text: `Sales & Count by Category (${filterType})` },
+                            seriesDefaults: { type: "line" },
+                            series: [
+                                { name: "Total Sales", data: formatMoney(salesData), color: "#FFD700" },
+                                { name: "Total Count", data: countData, color: "#1E90FF" }
+                            ],
+                            categoryAxis: {
+                                categories: categories,
+                                title: { text: "Category" }
+                            },
+                            valueAxis: {
+                                title: { text: "Sales (₱) & Count" }
+                            },
+                            tooltip: {
+                                visible: true,
+                                format: "{0}"
+                            }
+                        });
+                    } else {
+                        console.error("Failed to fetch sales and count data:", response.message);
+                    }
+                });
+            }
+
+
+            // Fetch Low Stock Alerts
+            function fetchLowStockAlerts() {
+                $.ajax({
+                    url: '@Url.Action("GetLowStockAlerts", "Home")',
+                    method: 'POST',
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        const table = $('#low-stock-alerts');
+                        table.empty();
+                        response.lowStockItems.forEach(item => {
+                            const row = `
+                                <tr>
+                                    <td>${item.ProductName}</td>
+                                    <td>₱${item.Price.toLocaleString()}</td>
+                                    <td>${item.Quantity}</td>
+                                </tr>`;
+                            table.append(row);
+                        });
+                    } else {
+                        console.error("Failed to fetch low stock alerts:", response.message);
+                    }
+                });
+            }
+
+            // Fetch High Value Items
+            function fetchHighValueItems() {
+                $.ajax({
+                    url: '@Url.Action("GetHighValueItems", "Home")',
+                    method: 'POST',
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        const table = $('#high-value-items');
+                        table.empty();
+                        response.highValueItems.forEach(item => {
+                            const row = `
+                                <tr>
+                                    <td>${item.ProductName}</td>
+                                    <td>₱${item.Price.toLocaleString()}</td>
+                                    <td>${item.Quantity}</td>
+                                </tr>`;
+                            table.append(row);
+                        });
+                    } else {
+                        console.error("Failed to fetch high value items:", response.message);
+                    }
+                });
+            }
+
+            function fetchSalesCount(filterType) {
+                $.ajax({
+                    url: '@Url.Action("GetSalesCountByFilter", "Home")',
+                    method: 'POST',
+                    data: { filterType: filterType }, // Ensure this is the correct parameter
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        renderSalesChart(response.data, filterType);
+                    } else {
+                        console.error("Failed to fetch sales data:", response.message);
+                    }
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    console.error("Error in AJAX request:", textStatus, errorThrown);
+                });
+            }
+
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            function renderSalesChart(data, filterType) {
+                // Prepare the X-axis labels (days)
+                const labels = [];
+                const categories = {}; // Store categories as keys and their data as values
+                let totalAllSales = 0; // Variable to track the total sales across all categories
+                let monthYearLabel = ''; // Store the month-year label for the chart title and x-axis
+
+                // Process the data
+                data.forEach(item => {
+                    labels.push(item.Day); // Add day to labels
+                    item.Categories.forEach(categoryData => {
+                        if (!categories[categoryData.Category]) {
+                            categories[categoryData.Category] = {
+                                name: categoryData.Category,
+                                sales: [],
+                                count: [],
+                                totalSales: 0  // Track total sales per category
+                            };
+                        }
+                        categories[categoryData.Category].sales.push(categoryData.TotalSales);
+                        categories[categoryData.Category].count.push(categoryData.TotalCount);
+                        categories[categoryData.Category].totalSales += categoryData.TotalSales; // Sum up total sales for the category
+                        totalAllSales += categoryData.TotalSales; // Add to total sales across all categories
+                    });
+
+                    // Set the monthYearLabel dynamically based on the first entry's month and year
+                    if (!monthYearLabel) {
+                        const date = new Date(item.Day);
+                        monthYearLabel = date.toLocaleString('default', { month: 'long', year: 'numeric' });
+                    }
+                });
+
+                // Prepare series for chart
+                const salesSeries = [];
+
+                // Generate random color per category
+                Object.keys(categories).forEach(categoryKey => {
+                    const randomColor = getRandomColor(); // Generate random color
+                    salesSeries.push({
+                        name: `${categoryKey} Sales`,
+                        data: categories[categoryKey].sales,
+                        color: randomColor
+                    });
+                });
+
+                // Render the chart
+                $("#sales-category-chart").empty().kendoChart({
+                    title: { text: 'Sales per Category' },
+                    legend: { position: "bottom" },
+                    seriesDefaults: { type: "line" },
+                    series: [...salesSeries],
+                    categoryAxis: {
+                        categories: labels,
+                        title: { text: `${monthYearLabel}` } // Set X-axis title to current month and year
+                    },
+                    valueAxis: { title: { text: "Sales (₱)" } },
+                    tooltip: { visible: true, format: "{0}" }
+                });
+
+                // Display total sales per category and overall total sales
+                displayTotalSales(categories, totalAllSales, monthYearLabel);
+            }
+
+            function displayTotalSales(categories, totalAllSales, monthYearLabel) {
+                let summaryHtml = `<h3>Total Sales for ${monthYearLabel}: ₱${formatMoney(totalAllSales.toFixed(2))}</h3>`; // Display overall total sales for the current month
+                summaryHtml += '<h3>Total Sales per Category:</h3><ul>';
+
+                // Iterate through categories and display total sales
+                Object.keys(categories).forEach(categoryKey => {
+                    summaryHtml += `<li><strong>${categoryKey}:</strong> ₱${formatMoney(categories[categoryKey].totalSales.toFixed(2))}</li>`;
+                });
+
+                summaryHtml += '</ul>';
+
+                // Append the summary below the chart
+                $('#sales-summary').html(summaryHtml);
+            }
+
+
+            // Fetch Sales Order vs Inventory Data
+            function fetchSalesOrderVsInventoryData() {
+                $.ajax({
+                    url: '@Url.Action("GetSalesOrderVsInventoryData", "Home")',
+                    method: 'POST',
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        const chartData = [
+                            { category: "Sales Orders", value: response.data.SalesOrders },
+                            { category: "Inventory Entries", value: response.data.InventoryEntries }
+                        ];
+
+                        $("#inventory-vs-sales-chart").kendoChart({
+                            title: { text: "Inventory vs Sales Orders" },
+                            seriesDefaults: { type: "bar", width: 20 },
+                            series: [{
+                                data: chartData,
+                                color: function (dataItem) {
+                                    return dataItem.index === 0 ? "#FFD700" : "#FFFF00";
+                                }
+                            }],
+                            categoryAxis: { field: "category", title: { text: "Categories" } },
+                            valueAxis: { title: { text: "Count" } },
+                            tooltip: { visible: true, format: "{0}" },
+                            plotArea: {
+                                background: "rgba(255, 255, 255, 0.5)" // Semi-transparent white background
+                            },
+                            chartArea: {
+                                background: "rgba(255, 255, 255, 0)" // Fully transparent white background
+                            }
+
+                        });
+                    } else {
+                        console.error("Failed to fetch sales order vs inventory data:", response.message);
+                    }
+                });
+            }
+
+          
+
+            function fetchTotalSales(filterType) {
+                $.ajax({
+                    url: '@Url.Action("GetTotalSalesByFilter", "Home")',
+                    method: 'POST',
+                    data: { filterType: filterType },
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        // Display the total sales based on the filter
+                        renderTotalSales(response.totalSales, filterType);
+                    } else {
+                        console.error("Failed to fetch total sales data:", response.message);
+                    }
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    console.error("Error in AJAX request:", textStatus, errorThrown);
+                });
+            }
+
+         
+            function fetchTotalSales(filterType) {
+                $.ajax({
+                    url: '@Url.Action("GetTotalSalesByFilter", "Home")',
+                    method: 'POST',
+                    data: { filterType: filterType },
+                    dataType: 'JSON'
+                }).done(function (response) {
+                    if (response.success) {
+                        // Display the total sales based on the filter
+                        renderTotalSales(response.totalSales, filterType);
+                    } else {
+                        console.error("Failed to fetch total sales data:", response.message);
+                    }
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    console.error("Error in AJAX request:", textStatus, errorThrown);
+                });
+            }
+
+            function renderTotalSales(totalSales, filterType) {
+                // Display the total sales in the specified format
+                const totalSalesHtml = formatMoney(totalSales.toFixed(2));
+
+                // Append the total sales to a container, such as a div with id 'total-sales'
+                $('#total-sales').html(totalSalesHtml);
+            }
+
+            function formatMoney(value) {
+                return parseFloat(value).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            }
+
+
+            // Fetch all dashboard data
+            function fetchDashboardData() {
+                fetchTotalInventoryData();
+                fetchRecentTransactions();
+                fetchHighValueItems();
+                fetchLowStockAlerts();
+                fetchSalesOrderVsInventoryData();
+                fetchSalesCount("category");
+                fetchTotalSales('today');
+            }
+
+            fetchDashboardData();
+        });
+    </script>
+</body>

@@ -1,0 +1,18 @@
+﻿<div id="modalPrivacyStatement" class="modal " tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body" style="text-align: center;">
+                <h1>OUR PRIVACY STATEMENT</h1>
+                <hr/>
+                <p>
+                   ADD PRIVACY STATEMENT
+                </p>
+                <br/>
+                <p>
+                    @Html.Kendo().CheckBox().Name("chkAgreement") I accept the terms in the <a href="@Url.Action("privacystatement", "home")" target="_blank">PRIVACY STATEMENT</a>
+                </p>
+                <input type="button" class="btn btn-secondary" value="I ACCEPT" id="btnAccept" />
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

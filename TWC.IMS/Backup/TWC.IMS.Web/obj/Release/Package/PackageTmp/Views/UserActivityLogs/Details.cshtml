@@ -1,0 +1,125 @@
+﻿@model TWC.IMS.Web.Models.UserActivityLogsViewModel
+@{
+    ViewBag.Title = "User Activity Log";
+    bool isPartial = (bool)(ViewData["IS_PARTIAL"] ?? false);
+}
+<style>
+    input, select, textarea, span.form-control-readonly {
+        max-width: none !important;
+    }
+</style>
+
+@if (!isPartial)
+{
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <ul class="header-text-button-container">
+                <li>
+                </li>
+                <li>
+                    <h2><span class="fas fa-user-ninja"></span> @ViewBag.Title</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+}
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="form-horizontal">
+        <div class="form-group row">
+            @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.UserRole, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.UserRole, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.CreatedOn, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.DisplayFor(model => model.CreatedOn, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row">
+            @Html.LabelFor(model => model.SessionId, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.SessionId, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.SessionStart, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.SessionStart, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.SessionTimeout, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.SessionTimeout, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row">
+            @Html.LabelFor(model => model.AppVersion, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.AppVersion, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.AbsoluteUrl, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.AbsoluteUrl, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.Activity, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.Activity, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.ClientIPAddress, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.ClientIPAddress, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.IsMobileDeviceString, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.IsMobileDeviceString, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.MethodType, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.MethodType, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.UserAgent, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.UserAgent, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.FormData, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.TextAreaFor(model => model.FormData, 3, 20, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        @if (!isPartial)
+        {
+            <hr />
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <a href="@Url.Action("index", "useractivitylogs")" class="btn btn-outline-secondary">Back</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

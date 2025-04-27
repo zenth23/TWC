@@ -1,0 +1,37 @@
+﻿@model TWC.IMS.Web.Models.ManageLoginsViewModel
+
+<h3>Manage Logins</h3>
+@{
+    if (Model.CurrentLogins.Count > 0)
+    {
+        <h4>Registered Logins</h4>
+        <table class="table">
+            <tbody>
+                @foreach (var account in Model.CurrentLogins)
+                {
+                    <tr>
+                        <td>@account.LoginProvider</td>
+                        <td>
+                            @if (ViewBag.ShowRemoveButton)
+                    {
+                        using (Html.BeginForm("RemoveLogin", "Manage"))
+                        {
+                                    @Html.AntiForgeryToken()
+                                    <div>
+                                        @Html.Hidden("loginProvider", account.LoginProvider)
+                                        @Html.Hidden("providerKey", account.ProviderKey)
+                                        <input type="submit" class="btn btn-secondary" value="Remove" title="Remove this @account.LoginProvider login from your account" />
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                @: &nbsp;
+                                }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

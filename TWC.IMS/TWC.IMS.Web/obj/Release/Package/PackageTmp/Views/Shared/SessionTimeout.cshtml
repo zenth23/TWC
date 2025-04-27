@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Session Timeout";
+    Layout = null;
+}
+
+<link href="~/Content/error_page.css" rel="stylesheet" />
+@Html.Partial("_Head")
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <p style="font-size: 80px; text-align: center; margin-top:100px;">
+                <span class="far fa-hourglass text-primary"></span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+                <h1 style="text-align: center;">Session Expired</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <p class="mt-2" style="text-align: center;">
+                <span class="code-title">Your ProjectMold session has timed out.</span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <p class="mt-5" style="text-align: center;">
+                <a href="@Url.Action("login", "account", null)" class="btn btn-link">Go to Login page</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        // remove items when session expires
+        localStorage.removeItem("_projectmold_ksa_clientAlive");
+        localStorage.removeItem("_projectmold_ksa_renew");
+        localStorage.removeItem("_projectmold_ksa_hold");
+    });
+</script>

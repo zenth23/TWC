@@ -1,0 +1,10 @@
+D:\Projects\TWC.IMS\TWC.IMS.Common\bin\Release\TWC.IMS.Common.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common\bin\Release\TWC.IMS.Common.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Common\bin\Release\EntityFramework.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common\bin\Release\Newtonsoft.Json.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common\bin\Release\EntityFramework.xml
+D:\Projects\TWC.IMS\TWC.IMS.Common\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\TWC.IMS\TWC.IMS.Common\bin\Release\Newtonsoft.Json.xml
+D:\Projects\TWC.IMS\TWC.IMS.Common\obj\Release\TWC.IMS.Common.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common\obj\Release\TWC.IMS.Common.pdb

@@ -1,0 +1,31 @@
+﻿@{
+    var appInstance = Application.Instance;
+    var appVersion = $"v{appInstance.ApplicationVersion}";
+}
+@*
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!--<a class="navbar-brand" href="@Url.Action("index", "home")" style="width:50px;">
+            <img src="~/Content/Images/logo/app_logo_30x30.png" class="float-left" alt="JIS" />
+            <span class="badge badge-secondary app-version">@appVersion</span>
+        </a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+        @if (User.Identity.IsAuthenticated)
+        {
+
+            @Html.Partial("_Menu")
+        }
+        @Html.Partial("_LoginPartial")
+    </div>
+</nav>
+*@
+
+@if (User.Identity.IsAuthenticated)
+{
+
+    @Html.Partial("_Menu")
+}
+@*@Html.Partial("_LoginPartial")*@

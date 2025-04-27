@@ -1,0 +1,2841 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\rortegoiv\Desktop\Others\Release\20250313 Maintenance</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AntiXssLibrary.dll">
+      <publishTime>03/10/2025 16:25:42</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>03/10/2025 16:25:42</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>03/10/2025 16:25:42</publishTime>
+    </File>
+    <File Include="bin/Base32.dll">
+      <publishTime>03/10/2025 16:25:42</publishTime>
+    </File>
+    <File Include="bin/Content/Images/No-Image.png">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/10/2025 16:25:47</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/10/2025 16:25:47</publishTime>
+    </File>
+    <File Include="bin/EPPlus.dll">
+      <publishTime>03/10/2025 16:25:48</publishTime>
+    </File>
+    <File Include="bin/HtmlSanitizationLibrary.dll">
+      <publishTime>03/10/2025 16:25:42</publishTime>
+    </File>
+    <File Include="bin/Kendo.Mvc.dll">
+      <publishTime>03/10/2025 16:25:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>03/10/2025 16:25:57</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>03/10/2025 16:25:58</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>03/10/2025 16:25:58</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
+      <publishTime>03/10/2025 16:26:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.pdb">
+      <publishTime>03/10/2025 16:26:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.dll">
+      <publishTime>03/10/2025 16:26:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.pdb">
+      <publishTime>03/10/2025 16:26:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>03/10/2025 16:26:07</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>03/10/2025 16:26:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>03/10/2025 16:26:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>03/10/2025 16:26:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>03/10/2025 16:26:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>03/10/2025 16:26:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>03/10/2025 16:26:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>03/10/2025 16:26:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>03/10/2025 16:26:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>03/10/2025 16:26:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.Common.dll">
+      <publishTime>03/10/2025 16:26:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.DataVisualization.dll">
+      <publishTime>03/10/2025 16:26:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.ProcessingObjectModel.dll">
+      <publishTime>03/10/2025 16:26:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
+      <publishTime>03/10/2025 16:26:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/10/2025 16:26:11</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/10/2025 16:26:14</publishTime>
+    </File>
+    <File Include="bin/OtpSharp.dll">
+      <publishTime>03/10/2025 16:26:18</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>03/10/2025 16:26:18</publishTime>
+    </File>
+    <File Include="bin/Renci.SshNet.Async.dll">
+      <publishTime>03/10/2025 16:26:24</publishTime>
+    </File>
+    <File Include="bin/Renci.SshNet.dll">
+      <publishTime>03/10/2025 16:26:26</publishTime>
+    </File>
+    <File Include="bin/Reports/StandardReports/AccessControlListReport.rdlc">
+      <publishTime>03/10/2025 16:28:51</publishTime>
+    </File>
+    <File Include="bin/Reports/StandardReports/RoleMasterdataReport.rdlc">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="bin/Reports/StandardReports/SystemModulesMasterdataReport.rdlc">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="bin/Reports/StandardReports/UserAccessMatrixReport.rdlc">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="bin/Reports/StandardReports/UserMasterdataReport.rdlc">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>03/10/2025 16:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>03/10/2025 16:26:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>03/10/2025 16:25:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>03/10/2025 16:26:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>03/10/2025 16:25:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>03/10/2025 16:26:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>03/10/2025 16:26:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>03/10/2025 16:26:06</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.BL.dll">
+      <publishTime>03/13/2025 22:04:11</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.BL.pdb">
+      <publishTime>03/13/2025 22:04:11</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Common.dll">
+      <publishTime>03/13/2025 22:04:07</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Common.pdb">
+      <publishTime>03/13/2025 22:04:07</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Common.SftpHelper.dll">
+      <publishTime>03/13/2025 22:04:08</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Common.SftpHelper.pdb">
+      <publishTime>03/13/2025 22:04:08</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.DL.dll">
+      <publishTime>03/13/2025 22:04:10</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.DL.pdb">
+      <publishTime>03/13/2025 22:04:10</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Models.dll">
+      <publishTime>03/13/2025 22:04:09</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Models.dll.config">
+      <publishTime>03/10/2025 16:27:05</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Models.pdb">
+      <publishTime>03/13/2025 22:04:09</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Web.dll">
+      <publishTime>03/13/2025 22:04:19</publishTime>
+    </File>
+    <File Include="bin/TWC.IMS.Web.pdb">
+      <publishTime>03/13/2025 22:04:19</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>03/10/2025 16:26:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css.map">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css.map">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css.map">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css.map">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>03/10/2025 16:27:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.panel.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/cosmo_custom.sass">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/custom-sidenav-new.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/custom.sass">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/dynamicworkflow.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/error_page.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/fontawesome.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/fontawesome.min.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/Images/avatar-default.png">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/Images/login-image.jpg">
+      <publishTime>08/17/2024 11:22:40</publishTime>
+    </File>
+    <File Include="Content/Images/logo/JIS_Login.png">
+      <publishTime>08/17/2024 11:22:40</publishTime>
+    </File>
+    <File Include="Content/Images/logo/JIS_NAV.png">
+      <publishTime>08/17/2024 11:22:40</publishTime>
+    </File>
+    <File Include="Content/Images/logo/TWC-removebg-preview.png">
+      <publishTime>08/17/2024 11:22:40</publishTime>
+    </File>
+    <File Include="Content/Images/logo/TWC.png">
+      <publishTime>08/17/2024 11:22:40</publishTime>
+    </File>
+    <File Include="Content/Images/No-Image.png">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_1.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_10.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_11.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_12.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_13.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_14.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_15.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_16.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_17.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_18.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_19.jpg">
+      <publishTime>03/10/2025 16:27:35</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_2.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_20.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_3.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_4.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_5.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_6.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_7.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_8.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/Images/oops/oops-1024x683_9.jpg">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/editor.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/imagebrowser.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/indeterminate.gif">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/loading-image.gif">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/loading.gif">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/loading_2x.gif">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/markers.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/markers_2x.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/slider-h.gif">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/slider-v.gif">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/sprite.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/sprite_2x.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/sprite_kpi.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Bootstrap/sprite_kpi_2x.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/editor.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/imagebrowser.png">
+      <publishTime>03/10/2025 16:27:38</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/indeterminate.gif">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/loading-image.gif">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/loading.gif">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/loading_2x.gif">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/markers.png">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/markers_2x.png">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/slider-h.gif">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/slider-v.gif">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/sprite.png">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/sprite_2x.png">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/sprite_kpi.png">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/Default/sprite_kpi_2x.png">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSans-Bold.ttf">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSans-BoldOblique.ttf">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSans-ExtraLight.ttf">
+      <publishTime>03/10/2025 16:27:39</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSans-Oblique.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSans.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSansMono-Bold.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSansMono-BoldOblique.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSansMono-Oblique.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSansMono.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSerif-Bold.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSerif-BoldItalic.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSerif-Italic.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/DejaVuSerif.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/DejaVu/LICENSE.txt">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/glyphs/KendoUIGlyphs.eot">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/glyphs/KendoUIGlyphs.svg">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/glyphs/KendoUIGlyphs.ttf">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/glyphs/KendoUIGlyphs.woff">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/glyphs/WebComponentsIcons.eot">
+      <publishTime>03/10/2025 16:27:40</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/glyphs/WebComponentsIcons.svg">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/glyphs/WebComponentsIcons.ttf">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/fonts/glyphs/WebComponentsIcons.woff">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/images/back.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/images/kendoui.svg">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/images/kendoui.ttf">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/images/kendoui.woff">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/images/wp8_icons.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/images/wp8_inverseicons.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.bootstrap-v4.css">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.bootstrap-v4.min.css">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.bootstrap-v4.min.css.map">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.bootstrap.min.css">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.bootstrap.min.css.map">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.bootstrap.mobile.min.css">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.bootstrap.mobile.min.css.map">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.common-bootstrap.min.css">
+      <publishTime>03/10/2025 16:27:36</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.common-bootstrap.min.css.map">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.common.min.css">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.common.min.css.map">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.dataviz.bootstrap.min.css">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.dataviz.bootstrap.min.css.map">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.dataviz.min.css">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.dataviz.min.css.map">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.dataviz.mobile.min.css">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.dataviz.mobile.min.css.map">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.mobile.all.min.css">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.mobile.all.min.css.map">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.mobile.common.min.css">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.mobile.common.min.css.map">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.rtl.min.css">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/kendo.rtl.min.css.map">
+      <publishTime>03/10/2025 16:27:37</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/brushed-metal.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots1.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots10.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots11.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots12.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots13.png">
+      <publishTime>03/10/2025 16:27:41</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots2.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots3.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots4.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots5.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots6.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots7.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots8.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/dots9.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/glass-lighter.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/glass.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/highlight.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/hsv-gradient.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/hue.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/leather1.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/leather2.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/noise.png">
+      <publishTime>03/10/2025 16:27:42</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/stripe1.png">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/stripe2.png">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/stripe3.png">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/stripe4.png">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/stripe5.png">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/stripe6.png">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/transparency.png">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/kendo/textures/transtexture.png">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/login.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/pulsating-circle.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/smart-wizard/smart_wizard.min.css">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/smart-wizard/smart_wizard_theme_arrows.min.css">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/smart-wizard/smart_wizard_theme_circles.min.css">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/smart-wizard/smart_wizard_theme_dots.min.css">
+      <publishTime>03/10/2025 16:27:43</publishTime>
+    </File>
+    <File Include="Content/webkit-scrollbar.css">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="Content/_variables.scss">
+      <publishTime>03/10/2025 16:27:34</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>03/10/2025 16:27:24</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/10/2025 16:27:25</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/10/2025 16:27:25</publishTime>
+    </File>
+    <File Include="Reports/StandardReports/AccessControlListReport.rdlc">
+      <publishTime>03/10/2025 16:28:51</publishTime>
+    </File>
+    <File Include="Reports/StandardReports/RoleMasterdataReport.rdlc">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Reports/StandardReports/SystemModulesMasterdataReport.rdlc">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Reports/StandardReports/UserAccessMatrixReport.rdlc">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Reports/StandardReports/UserMasterdataReport.rdlc">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/application/accesses-details.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/accesses.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/admin-dashboard.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/application.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/audit-logs.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/common-helper.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/cookie.notice.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/database-archiving-logs.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/email-logs.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/error-logs.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/file-upload.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/form-change-listener.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/global-refs.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/application/inventoryentry.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/keep-session-alive.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/locations.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/login.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/main-dashboard.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/main.layout.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/privacy.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/productinventory-details.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/productinventory.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/productmaster-details.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/productmaster.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/producttype.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/profile.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/query-tool.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/required_marker_script.js">
+      <publishTime>03/10/2025 16:28:56</publishTime>
+    </File>
+    <File Include="Scripts/application/role.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/salesorders.js">
+      <publishTime>03/12/2025 09:14:19</publishTime>
+    </File>
+    <File Include="Scripts/application/salestypes.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/suppliers.js">
+      <publishTime>12/09/2024 02:48:58</publishTime>
+    </File>
+    <File Include="Scripts/application/system-config-details.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/system-config.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/system-notification.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/user-activity-logs.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/user-details.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/user-maintenance.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/workflow.adhoc.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/workflow.editor.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/workflow.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/yearly-sales-report-page-load.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/application/yearly-sales-report.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js.map">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js.map">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js.map">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js.map">
+      <publishTime>03/10/2025 16:28:52</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.js">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.js.map">
+      <publishTime>03/10/2025 16:28:57</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.min.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.min.js.map">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper.js.map">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper.min.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper.min.js.map">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/index.js.flow">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.5.1.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.5.1.min.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.5.1.min.map">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.5.1.slim.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.5.1.slim.min.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.5.1.slim.min.map">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-migrate-3.1.0.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-migrate-3.1.0.min.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.4.3.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.4.3.min.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>03/10/2025 16:28:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/jsplumb/jsplumb.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/jsplumb/jsplumb.min.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/kendo/angular.min.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/kendo/jquery.min.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/kendo/jquery.min.map">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/kendo/jszip.min.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.actionsheet.min.js">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.actionsheet.min.js.map">
+      <publishTime>03/10/2025 16:28:58</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.all.min.js">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.all.min.js.map">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.angular.min.js">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.angular.min.js.map">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.appbar.min.js">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.appbar.min.js.map">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.aspnetmvc.min.js">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.aspnetmvc.min.js.map">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.autocomplete.min.js">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.autocomplete.min.js.map">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.badge.min.js">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.badge.min.js.map">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.binder.min.js">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.binder.min.js.map">
+      <publishTime>03/10/2025 16:28:59</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.bottomnavigation.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.bottomnavigation.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.breadcrumb.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.breadcrumb.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.button.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.button.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.buttongroup.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.buttongroup.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.calendar.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.calendar.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.captcha.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.captcha.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.chat.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.chat.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.checkboxgroup.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.checkboxgroup.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.color.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.color.min.js.map">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.colorpicker.min.js">
+      <publishTime>03/10/2025 16:29:00</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.colorpicker.min.js.map">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.columnmenu.min.js">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.columnmenu.min.js.map">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.columnsorter.min.js">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.columnsorter.min.js.map">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.combobox.min.js">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.combobox.min.js.map">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.core.min.js">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.core.min.js.map">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.data.min.js">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.data.min.js.map">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.data.odata.min.js">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.data.odata.min.js.map">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.data.signalr.min.js">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.data.signalr.min.js.map">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.data.xml.min.js">
+      <publishTime>03/10/2025 16:29:01</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.data.xml.min.js.map">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.barcode.min.js">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.barcode.min.js.map">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.chart.min.js">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.chart.min.js.map">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.core.min.js">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.core.min.js.map">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.diagram.min.js">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.diagram.min.js.map">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.gauge.min.js">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.gauge.min.js.map">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.map.min.js">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.map.min.js.map">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.min.js">
+      <publishTime>03/10/2025 16:29:02</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.min.js.map">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.mobile.min.js">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.mobile.min.js.map">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.qrcode.min.js">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.qrcode.min.js.map">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.sparkline.min.js">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.sparkline.min.js.map">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.stock.min.js">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.stock.min.js.map">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.themes.min.js">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.themes.min.js.map">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.treemap.min.js">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dataviz.treemap.min.js.map">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dateinput.min.js">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dateinput.min.js.map">
+      <publishTime>03/10/2025 16:29:03</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.datepicker.min.js">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.datepicker.min.js.map">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.daterangepicker.min.js">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.daterangepicker.min.js.map">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.datetimepicker.min.js">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.datetimepicker.min.js.map">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dialog.min.js">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dialog.min.js.map">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dom.min.js">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dom.min.js.map">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.draganddrop.min.js">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.draganddrop.min.js.map">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.drawer.min.js">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.drawer.min.js.map">
+      <publishTime>03/10/2025 16:29:04</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.drawing.min.js">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.drawing.min.js.map">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dropdownlist.min.js">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dropdownlist.min.js.map">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dropdowntree.min.js">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.dropdowntree.min.js.map">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.editable.min.js">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.editable.min.js.map">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.editor.min.js">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.editor.min.js.map">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.excel.min.js">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.excel.min.js.map">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.expansionpanel.min.js">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.expansionpanel.min.js.map">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filebrowser.min.js">
+      <publishTime>03/10/2025 16:29:05</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filebrowser.min.js.map">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filemanager.min.js">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filemanager.min.js.map">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filter.min.js">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filter.min.js.map">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filtercell.min.js">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filtercell.min.js.map">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filtermenu.min.js">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.filtermenu.min.js.map">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.floatingactionbutton.min.js">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.floatingactionbutton.min.js.map">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.floatinglabel.min.js">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.floatinglabel.min.js.map">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.form.min.js">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.form.min.js.map">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.fx.min.js">
+      <publishTime>03/10/2025 16:29:06</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.fx.min.js.map">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.data.min.js">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.data.min.js.map">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.editors.min.js">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.editors.min.js.map">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.list.min.js">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.list.min.js.map">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.min.js">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.min.js.map">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.timeline.min.js">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.gantt.timeline.min.js.map">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.grid.min.js">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.grid.min.js.map">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.groupable.min.js">
+      <publishTime>03/10/2025 16:29:07</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.groupable.min.js.map">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.imagebrowser.min.js">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.imagebrowser.min.js.map">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.imageeditor.min.js">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.imageeditor.min.js.map">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.inputgroupbase.min.js">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.inputgroupbase.min.js.map">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.list.min.js">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.list.min.js.map">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.listbox.min.js">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.listbox.min.js.map">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.listview.min.js">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.listview.min.js.map">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.loader.min.js">
+      <publishTime>03/10/2025 16:29:08</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.loader.min.js.map">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.maskedtextbox.min.js">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.maskedtextbox.min.js.map">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mediaplayer.min.js">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mediaplayer.min.js.map">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.menu.min.js">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.menu.min.js.map">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.actionsheet.min.js">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.actionsheet.min.js.map">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.application.min.js">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.application.min.js.map">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.button.min.js">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.button.min.js.map">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.buttongroup.min.js">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.buttongroup.min.js.map">
+      <publishTime>03/10/2025 16:29:09</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.collapsible.min.js">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.collapsible.min.js.map">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.drawer.min.js">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.drawer.min.js.map">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.listview.min.js">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.listview.min.js.map">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.loader.min.js">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.loader.min.js.map">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.min.js">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.min.js.map">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.modalview.min.js">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.modalview.min.js.map">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.navbar.min.js">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.navbar.min.js.map">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.pane.min.js">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.pane.min.js.map">
+      <publishTime>03/10/2025 16:29:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.popover.min.js">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.popover.min.js.map">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.scroller.min.js">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.scroller.min.js.map">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.scrollview.min.js">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.scrollview.min.js.map">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.shim.min.js">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.shim.min.js.map">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.splitview.min.js">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.splitview.min.js.map">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.switch.min.js">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.switch.min.js.map">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.tabstrip.min.js">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.tabstrip.min.js.map">
+      <publishTime>03/10/2025 16:29:11</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.view.min.js">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.mobile.view.min.js.map">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.multicolumncombobox.min.js">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.multicolumncombobox.min.js.map">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.multiselect.min.js">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.multiselect.min.js.map">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.multiviewcalendar.min.js">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.multiviewcalendar.min.js.map">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.notification.min.js">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.notification.min.js.map">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.numerictextbox.min.js">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.numerictextbox.min.js.map">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.ooxml.min.js">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.ooxml.min.js.map">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.orgchart.min.js">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.orgchart.min.js.map">
+      <publishTime>03/10/2025 16:29:12</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pager.min.js">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pager.min.js.map">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pane.min.js">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pane.min.js.map">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.panelbar.min.js">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.panelbar.min.js.map">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pdf.min.js">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pdf.min.js.map">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pdfviewer.min.js">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pdfviewer.min.js.map">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pivot.configurator.min.js">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pivot.configurator.min.js.map">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pivot.fieldmenu.min.js">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pivot.fieldmenu.min.js.map">
+      <publishTime>03/10/2025 16:29:13</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pivotgrid.min.js">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.pivotgrid.min.js.map">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.popover.min.js">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.popover.min.js.map">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.popup.min.js">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.popup.min.js.map">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.progressbar.min.js">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.progressbar.min.js.map">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.radiogroup.min.js">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.radiogroup.min.js.map">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.rating.min.js">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.rating.min.js.map">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.reorderable.min.js">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.reorderable.min.js.map">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.resizable.min.js">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.resizable.min.js.map">
+      <publishTime>03/10/2025 16:29:14</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.responsivepanel.min.js">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.responsivepanel.min.js.map">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.ripple.min.js">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.ripple.min.js.map">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.router.min.js">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.router.min.js.map">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.agendaview.min.js">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.agendaview.min.js.map">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.dayview.min.js">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.dayview.min.js.map">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.min.js">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.min.js.map">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.monthview.min.js">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.monthview.min.js.map">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.recurrence.min.js">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.recurrence.min.js.map">
+      <publishTime>03/10/2025 16:29:15</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.timelineview.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.timelineview.min.js.map">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.view.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.view.min.js.map">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.yearview.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scheduler.yearview.min.js.map">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scrollview.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.scrollview.min.js.map">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.selectable.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.selectable.min.js.map">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.skeletoncontainer.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.skeletoncontainer.min.js.map">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.slider.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.slider.min.js.map">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.sortable.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.sortable.min.js.map">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.splitter.min.js">
+      <publishTime>03/10/2025 16:29:16</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.splitter.min.js.map">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.spreadsheet.min.js">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.spreadsheet.min.js.map">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.stepper.min.js">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.stepper.min.js.map">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.switch.min.js">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.switch.min.js.map">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.tabstrip.min.js">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.tabstrip.min.js.map">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.taskboard.min.js">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.taskboard.min.js.map">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.textarea.min.js">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.textarea.min.js.map">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.textbox.min.js">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.textbox.min.js.map">
+      <publishTime>03/10/2025 16:29:17</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.tilelayout.min.js">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.tilelayout.min.js.map">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.timeline.min.js">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.timeline.min.js.map">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.timepicker.min.js">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.timepicker.min.js.map">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.timezones.min.js">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.timezones.min.js.map">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.toolbar.min.js">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.toolbar.min.js.map">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.tooltip.min.js">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.tooltip.min.js.map">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.touch.min.js">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.touch.min.js.map">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.treelist.min.js">
+      <publishTime>03/10/2025 16:29:18</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.treelist.min.js.map">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.treeview.draganddrop.min.js">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.treeview.draganddrop.min.js.map">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.treeview.min.js">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.treeview.min.js.map">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.upload.min.js">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.upload.min.js.map">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.userevents.min.js">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.userevents.min.js.map">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.validator.min.js">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.validator.min.js.map">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.view.min.js">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.view.min.js.map">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.virtuallist.min.js">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.virtuallist.min.js.map">
+      <publishTime>03/10/2025 16:29:19</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.web.min.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.web.min.js.map">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.window.min.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.window.min.js.map">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.wizard.min.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.wizard.min.js.map">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/kendo/pako_deflate.min.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/popper-utils.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/popper-utils.js.map">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/popper-utils.min.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/popper-utils.min.js.map">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/popper.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/popper.js.map">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/popper.min.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/popper.min.js.map">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/qrcode.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/qrcode.min.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/README.md">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.js">
+      <publishTime>03/10/2025 16:28:54</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.min.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Scripts/smart-wizard/jquery.smartWizard.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/smart-wizard/jquery.smartWizard.min.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/index.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/methods/defaults.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/methods/destroy.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/methods/disableEventListeners.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/methods/enableEventListeners.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/methods/placements.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/methods/update.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/applyStyle.js">
+      <publishTime>03/10/2025 16:29:20</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/arrow.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/computeStyle.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/flip.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/hide.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/index.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/inner.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/keepTogether.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/offset.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/preventOverflow.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/modifiers/shift.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/clockwise.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/computeAutoPlacement.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/debounce.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/find.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/findCommonOffsetParent.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/findIndex.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getBordersSize.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getBoundaries.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getBoundingClientRect.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getClientRect.js">
+      <publishTime>03/10/2025 16:29:21</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getFixedPositionOffsetParent.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getOffsetParent.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getOffsetRect.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getOffsetRectRelativeToArbitraryNode.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getOppositePlacement.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getOppositeVariation.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getOuterSizes.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getParentNode.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getPopperOffsets.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getReferenceNode.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getReferenceOffsets.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getRoot.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getRoundedOffsets.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getScroll.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getScrollParent.js">
+      <publishTime>03/10/2025 16:29:22</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getStyleComputedProperty.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getSupportedPropertyName.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getViewportOffsetRectRelativeToArtbitraryNode.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getWindow.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/getWindowSizes.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/includeScroll.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/index.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/isBrowser.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/isFunction.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/isIE.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/isModifierEnabled.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/isModifierRequired.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/isOffsetContainer.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/removeEventListeners.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/runModifiers.js">
+      <publishTime>03/10/2025 16:29:23</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/setAttributes.js">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/transactions/requests-details.js">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper-utils.js">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper-utils.js.map">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper-utils.min.js">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper-utils.min.js.map">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.js">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.js.flow">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.js.map">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.min.js">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.min.js.map">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>03/10/2025 16:28:55</publishTime>
+    </File>
+    <File Include="Views/Accesses/Details.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Accesses/Index.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/AccessModules/Details.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/AccessModules/Index.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/ConfirmEmail.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginFailure.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPassword.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPasswordConfirmation.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/Logout.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPassword.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPasswordConfirmation.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/SendCode.cshtml">
+      <publishTime>03/10/2025 16:29:25</publishTime>
+    </File>
+    <File Include="Views/Account/VerifyCode.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/AuditLogs/Details.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/AuditLogs/Index.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/AuditLogs/_AuditLogs.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/Common/GetDisplayWorkflow.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/Common/TestApprovalWorkflow.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/DatabaseArchivingLogs/Index.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/EmailLogs/Details.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/EmailLogs/Index.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/EmailLogs/_EmailLogs.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/ErrorLogs/Details.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/ErrorLogs/Index.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/ErrorLogs/_ErrorLogs.cshtml">
+      <publishTime>03/10/2025 16:29:26</publishTime>
+    </File>
+    <File Include="Views/FileUpload/Index.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/CookiePolicy.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/PrivacyStatement.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/VersionHistory.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/_BillingRequestGrid.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/_BillingRequestGridDatePickerFilter.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/_Carousel.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/_Charts.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetChartsBillingProgress.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetChartsBillingProgressDetails.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetChartsBULicenseQuantities.cshtml">
+      <publishTime>03/10/2025 16:29:27</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetChartsBUSubscription.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetChartsMonthlySales.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetChartsSumOfQuantitiesPerMonth.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetCounterArpu.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetCountersApprovalStatus.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetCounterTotalSales.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_DashboardWidgetNotAvailable.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_LeftPanel.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_PrivacyStatementContents.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Home/_WelcomeMessage.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Inventories/Create.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Inventories/Delete.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Inventories/Details.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Inventories/Edit.cshtml">
+      <publishTime>03/10/2025 16:29:28</publishTime>
+    </File>
+    <File Include="Views/Inventories/Index.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Inventory_Entries/Index.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Locations/Index.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/AddPhoneNumber.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/ChangePassword.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/DisableGoogleAuthenticator.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/DisableMicrosoftAuthenticator.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/EnableGoogleAuthenticator.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/EnableMicrosoftAuthenticator.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/Index.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/ManageLogins.cshtml">
+      <publishTime>03/10/2025 16:29:29</publishTime>
+    </File>
+    <File Include="Views/Manage/Profile.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/SendCode.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/SetPassword.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/VerifyCode.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/VerifyEmailAddress.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/VerifyPhoneNumber.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/_Account.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/_Contact.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/_ManageLogins.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/_Personal.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Manage/_RecentActivities.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Products/Index.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/ProductType/Index.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Product_Inventory/Details.cshtml">
+      <publishTime>03/10/2025 16:29:30</publishTime>
+    </File>
+    <File Include="Views/Product_Inventory/Index.cshtml">
+      <publishTime>03/10/2025 16:29:31</publishTime>
+    </File>
+    <File Include="Views/ReportGenerator/Index.cshtml">
+      <publishTime>03/10/2025 16:29:31</publishTime>
+    </File>
+    <File Include="Views/ReportGenerator/StandardReports.cshtml">
+      <publishTime>03/10/2025 16:29:31</publishTime>
+    </File>
+    <File Include="Views/ReportGenerator/_ReportCards.cshtml">
+      <publishTime>03/10/2025 16:29:31</publishTime>
+    </File>
+    <File Include="Views/Reports/YearlySalesReport.cshtml">
+      <publishTime>03/10/2025 16:29:31</publishTime>
+    </File>
+    <File Include="Views/Requests/Details.cshtml">
+      <publishTime>03/10/2025 16:29:31</publishTime>
+    </File>
+    <File Include="Views/Requests/Index.cshtml">
+      <publishTime>03/10/2025 16:29:31</publishTime>
+    </File>
+    <File Include="Views/Sales/Index.cshtml">
+      <publishTime>03/10/2025 16:29:31</publishTime>
+    </File>
+    <File Include="Views/SalesOrders/Index - Copy.cshtml">
+      <publishTime>03/10/2025 20:03:31</publishTime>
+    </File>
+    <File Include="Views/SalesOrders/Index.cshtml">
+      <publishTime>03/12/2025 09:14:16</publishTime>
+    </File>
+    <File Include="Views/SalesTypes/Index.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CheckBoxIsGold.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/ComboBoxProducts.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DatePickerEntryDate.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DatePickerReceivedDate.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DropDownListCategories.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DropDownListLocations.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DropDownListProducts.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DropDownListProductType.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DropDownListSalesTypes.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DropDownListSuppliers.cshtml">
+      <publishTime>12/04/2024 18:56:57</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/NumericTextBoxCost.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/NumericTextBoxIEQuantity.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/NumericTextBoxKarat.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/NumericTextBoxLTH.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/NumericTextBoxQuantity.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/NumericTextBoxWeight.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/QueryTable.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/StatusList.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/StatusListMultiple.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/StatusListSingle.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TextAreaRemarks.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/_ApprovalWorkflowAdhoc.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/Lockout.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/SessionTimeout.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_AccessModuleGrid2.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_AccessModuleGridEdit2.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_AccessModuleGridEdit3.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_ApprovalLogs.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_ApprovalResponseModal.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_ApprovalWorkflowAdhoc.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_ApprovalWorkflows.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_CookieNotice.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_CustomSidenav.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_CustomSidenav_New.cshtml">
+      <publishTime>03/10/2025 16:29:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_Footer.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_Head.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_InventoryGridView.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_InventoryListView.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_Menu.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_Navigation.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_PrivacyStatement.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_ProgressBarAnimated.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_ScriptsSection.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_SessionExpiredWarningModal.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_Spinner.cshtml">
+      <publishTime>03/10/2025 16:29:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_SystemNotifications.cshtml">
+      <publishTime>09/09/2024 15:19:24</publishTime>
+    </File>
+    <File Include="Views/Shared/_ValidationSummary.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Shared/_YearlySalesReport.cshtml">
+      <publishTime>03/10/2025 16:29:34</publishTime>
+    </File>
+    <File Include="Views/Suppliers/Index.cshtml">
+      <publishTime>12/09/2024 03:00:27</publishTime>
+    </File>
+    <File Include="Views/Support/Maintenance.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Support/QueryTool.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/Support/_UsersList.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/Index.cshtml">
+      <publishTime>03/11/2025 14:17:23</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboard.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetAppVersionErrorDistributionChart.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetCounters.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetCountersErrorTrendChart.cshtml">
+      <publishTime>03/10/2025 16:29:35</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetErroFrequencyChart.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetErrorDistributionChart.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetErrorRateChart.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetErrorRateChartCvp.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetMethodHits.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetPageHits.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetRecipientHits.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetTableHits.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemAdministration/_AdminDashboardWidgetUserRelatedMetricsGrid.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemConfig/Details.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemConfig/Index.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemConfig/StatusObjectsConfig.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/SystemConfig/_CheckConfigs.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/UserActivityLogs/Details.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/UserActivityLogs/Index.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/UserActivityLogs/_RecentActivities.cshtml">
+      <publishTime>03/10/2025 16:29:36</publishTime>
+    </File>
+    <File Include="Views/UserActivityLogs/_UserActivityLogs.cshtml">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="Views/UserMaintenance/Index.cshtml">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="Views/UserMaintenance/Role.cshtml">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="Views/UserMaintenance/User.cshtml">
+      <publishTime>03/13/2025 20:59:48</publishTime>
+    </File>
+    <File Include="Views/UserMaintenance/_RolesList.cshtml">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="Views/UserMaintenance/_RoleUsers.cshtml">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="Views/UserMaintenance/_UsersList.cshtml">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>03/10/2025 22:21:11</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>03/10/2025 16:29:24</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/28/2025 16:28:42</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.eot">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.svg">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.ttf">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.woff">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.woff2">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-light-300.eot">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-light-300.svg">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-light-300.ttf">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-light-300.woff">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-light-300.woff2">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.eot">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.svg">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.ttf">
+      <publishTime>03/10/2025 16:29:37</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.woff">
+      <publishTime>03/10/2025 16:29:38</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.woff2">
+      <publishTime>03/10/2025 16:29:38</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.eot">
+      <publishTime>03/10/2025 16:29:38</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.svg">
+      <publishTime>03/10/2025 16:29:38</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.ttf">
+      <publishTime>03/10/2025 16:29:38</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.woff">
+      <publishTime>03/10/2025 16:29:38</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.woff2">
+      <publishTime>03/10/2025 16:29:38</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

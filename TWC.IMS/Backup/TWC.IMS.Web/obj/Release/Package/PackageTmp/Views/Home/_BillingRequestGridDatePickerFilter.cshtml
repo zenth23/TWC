@@ -1,0 +1,43 @@
+﻿<div class="row mb-2">
+    <div class="col-6">
+        <div class="form-inline">
+            <div class="form-group">
+                <label for="DurationFromDatePicker">From</label>
+                @(Html.Kendo().DatePicker()
+                             .Name("DurationFromDatePicker")
+                             .Depth(CalendarView.Year)
+                             .Start(CalendarView.Year)
+                             .Events(e =>
+                             {
+                                 e.Open("onOpenDurationFrom");
+                                 e.Change("onChangeDurationFrom");
+                             })
+                             .DateInput(true)
+                             .Format("MMMM yyyy")
+                             .Value(new DateTime(DateTime.Now.Year, 01, 01))
+                             .HtmlAttributes(new { @class="ml-2"})
+                )
+            </div>
+            <div class="form-group">
+                <label for="DurationToDatePicker" class="ml-3">To</label>
+                @(Html.Kendo().DatePicker()
+                          .Name("DurationToDatePicker")
+                          .Depth(CalendarView.Year)
+                          .Start(CalendarView.Year)
+                          .Events(e =>
+                          {
+                              e.Open("onOpenDurationTo");
+                              e.Change("onChangeDurationTo");
+                          })
+                          .DateInput(true)
+                          .Format("MMMM yyyy")
+                          .Value(new DateTime(DateTime.Now.Year, 12, 01))
+                             .HtmlAttributes(new { @class = "ml-2" })
+                )
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 d-lg-flex d-md-flex justify-content-lg-end mb-2 mt-auto" style="color:#858585;">
+            <span class="mr-1">Selected items: </span> <span class="" id="selectedCounter">0</span>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null; 
+}
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="panel panel-default">
+        @*<div class="panel-heading text-center">#:ProductName#</div>*@
+        <div class="panel-body"><img src="#:Url#" class="product-img" /></div>
+        <div class="panel-footer">
+          #:ProductName# 
+            <span style="float:right" class="badge badge-success">#:Inventory#</span>
+        </div>
+    </div>
+</script>
+
+
+@(Html.Kendo().ListView<TWC.IMS.Web.Models.ProductInventoryListViewModel>()
+    .Name("listView")
+    .TagName("div")
+    .ClientTemplateId("template")
+    .DataSource(dataSource => dataSource
+            .Read(read => read.Action("list", "product_inventory"))
+    )
+    .Pageable()
+)

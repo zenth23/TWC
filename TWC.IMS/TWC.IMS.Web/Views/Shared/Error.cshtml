@@ -1,0 +1,22 @@
+﻿@model TWC.IMS.Web.HelperClasses.HandleErrorInfoViewModel
+@{
+    ViewBag.Title = "Error Occurred";
+}
+
+<link href="~/Content/error_page.css" rel="stylesheet" />
+
+<span class="error-header">O<img src="~/Content/Images/oops/@Model.OopsErrorImage" />PS</span>
+<p class="code-container">
+    <span class="code-title">Error Description: </span>
+    @{
+        if (Model.Exception != null)
+        {
+            <code>@Model.Exception.Message</code>
+        }
+        else
+        {
+            <code>undefined</code>
+        }
+    }
+</p>
+<br />

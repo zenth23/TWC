@@ -1,0 +1,7 @@
+﻿@* being used by StatusObjectsConfig inline editor *@
+@model TWC.IMS.Web.Models.StatusViewModel
+@(Html.Kendo().DropDownListFor(m => m)
+      .DataTextField("Name")
+      .DataValueField("Id")
+      .BindTo((System.Collections.IEnumerable)ViewData["StatusList"])
+)

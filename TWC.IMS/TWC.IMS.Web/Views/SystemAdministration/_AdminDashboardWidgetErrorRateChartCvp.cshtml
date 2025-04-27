@@ -1,0 +1,41 @@
+﻿@*
+    error rate
+    error rate current selected month vs prev month (CVP)
+    line chart
+*@
+@(Html.Kendo().Chart<TWC.IMS.Models.ChartModels.ErrorRateCvpModel>()
+      .Name("errorRateChartCvp")
+      //.Title("Error Rate")
+      .Legend(legend => legend
+          .Visible(true)
+          .Position(ChartLegendPosition.Bottom)
+      )
+      .ChartArea(chartArea => chartArea
+          .Background("transparent")
+      )
+      .SeriesDefaults(seriesDefaults =>
+          seriesDefaults.Line().Style(ChartLineStyle.Normal)
+      )
+      .Series(series =>
+      {
+          series.Line(s => s.RateCurrent).Name("Current");
+          series.Line(s => s.RatePrevious).Name("Previous");
+      })
+      .CategoryAxis(axis => axis
+          .Categories(c => c.Day)
+          .MajorGridLines(lines => lines.Visible(false))
+      )
+      .ValueAxis(axis => axis
+          .Numeric().Labels(labels => labels.Format("{0:n0}"))
+          .Line(line => line.Visible(false))
+          .AxisCrossingValue(-10)
+      )
+      .Tooltip(tooltip => tooltip
+          .Visible(true)
+          .Format("{0:n0}")
+      )
+      .Theme("flat")
+      .DataSource(ds => ds.Read(read => read.Action("GetErrorRateChartDataCvp", "AdminDashboardCharts")
+                                            .Data("chartDateFilter")))
+      .Deferred()
+)

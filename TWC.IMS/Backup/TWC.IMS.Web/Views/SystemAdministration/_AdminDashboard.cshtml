@@ -1,0 +1,47 @@
+﻿
+<div class="row">
+    <div class="col-9">
+        <h3><span class="fas fa-chart-line mr-2"></span>Admin Dashboard</h3>
+    </div>
+    <div class="col-3">
+        @(Html.Kendo().DatePicker()
+              .Name("DateFilterCharts")
+              .Start(CalendarView.Year)
+              .Depth(CalendarView.Year)
+              .Format("MMMM yyyy")
+              .Events(e => e.Change("loadChartsData"))
+              .Value(DateTime.Now.Date)
+              .HtmlAttributes(new { @class = "float-right" }))
+    </div>
+</div>
+<hr />
+<div class="row" id="divCounters">
+    @Html.Partial("_AdminDashboardWidgetCounters")
+</div>
+<div class="row mt-2">
+    <div class="col-6 pr-1">
+        @Html.Partial("_AdminDashboardWidgetUserRelatedMetricsGrid")
+    </div>
+    <div class="col-3 px-1">
+        @Html.Partial("_AdminDashboardWidgetErrorDistributionChart")
+    </div>
+    <div class="col-3 pl-1">
+        @Html.Partial("_AdminDashboardWidgetAppVersionErrorDistributionChart")
+    </div>
+</div>
+<div class="row">
+    <div class="col-6 pr-1">
+        @Html.Partial("_AdminDashboardWidgetErroFrequencyChart")
+    </div>
+    <div class="col-6 pl-1">
+        @*@Html.Partial("_AdminDashboardWidgetErrorRateChart")*@
+        @Html.Partial("_AdminDashboardWidgetErrorRateChartCvp")
+
+        @*
+            TODO:
+            role-related metrics
+            role-specific errors, number of errors per role
+            pie/stacked bar chart
+        *@
+    </div>
+</div>

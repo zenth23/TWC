@@ -1,0 +1,150 @@
+﻿
+.square-div {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    margin-right: 5px;
+}
+
+.blank-div {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.circle-div {
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: black;
+    margin-right: 5px;
+}
+
+#parentApprovalDiv {
+    display: inline-flex;
+    display: -ms-inline-flexbox;
+    overflow: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.defaultApprovalDiv {
+    width: 80px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #aca6a6;
+    text-align: center;
+    font-weight: bold;
+    color: #989292;
+}
+
+.approvalCardDiv {
+    min-width: 200px;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+    .approvalCardDiv ul {
+        width: 100%;
+    }
+
+    .approvalCardDiv .card-title {
+        color: white;
+        padding: 3px;
+        font-weight: bold;
+    }
+
+.approval-container {
+    margin-left: 0;
+    border: 1px solid #e6e6e6;
+}
+
+.approval-legend {
+    border-right: 1px solid #e6e6e6;
+    padding: 5px;
+}
+
+    .approval-legend li {
+        display: flex;
+        padding: 3px;
+    }
+
+    .approval-legend > h4 {
+        font-weight: bold;
+        color: gray;
+    }
+
+.approval-button-container {
+    padding: 5px;
+    background-color: #efefef;
+    border: 1px solid #efefef;
+    text-align: right;
+}
+
+    .approval-button-container button {
+        min-width: 90px;
+        margin-left: 10px;
+    }
+
+.bg-action-APRV {
+    background-color: #3FB618 !important;
+    border-color: #3FB618 !important;
+}
+
+.bg-action-RJCT {
+    background-color: #FF0039 !important;
+    border-color: #FF0039 !important;
+}
+
+.bg-action-PNDG {
+    background-color: #989292 !important;
+    border-color: #989292 !important;
+}
+
+.bg-action-CRNT {
+    background-color: #2780E3 !important;
+    border-color: #2780E3 !important;
+}
+
+.color-div {
+    width: 20px;
+    height: 15px;
+    border: solid 1px;
+    margin-right: 5px;
+}
+
+h4.arc {
+    background-color: #2780E3;
+    display: inline-block;
+    width: auto;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 9px 9px 0 0;
+    font-weight: bold;
+    margin: 0;
+}
+.card-selectable {
+    cursor: pointer;
+}
+.card-selected{
+    box-shadow: 0px 0px 5px 1px yellow;
+}
+.bg-div-drag {
+    background-color: #dbdbdb;
+    border: 1px dashed gray;
+}
+.cardholder a {
+    text-decoration:underline;
+    width: 100%;
+    display: inline-flex;
+    cursor: pointer;
+}
+.cardholder button {
+    padding:0;
+    width: 100%;
+    display: inline-flex;
+}

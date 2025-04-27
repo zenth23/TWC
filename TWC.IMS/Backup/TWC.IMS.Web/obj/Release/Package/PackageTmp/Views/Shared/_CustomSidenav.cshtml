@@ -1,0 +1,222 @@
+﻿
+@{
+    ViewBag.Title = "_CustomSidenav";
+    var context = this.Context;
+
+    var appInstance = Application.Instance;
+    var appEnv = appInstance.Environment.ToUpper();
+    var mode = appInstance.DebugMode;
+}
+<script src="@Url.Content("~/Scripts/application/system-notification.js")"></script>
+<link href="~/Content/custom-sidenav.css" rel="stylesheet" />
+
+@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+{
+    <div class="sidebar-collapsed">
+        <div class="toggle_btn">
+            <img src="~/Content/Images/logo/smc_80x120.png" class="sidebar-logo">
+        </div>
+        <div class="sidebar-icons">
+            <ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link " href="#" id="navbardrop_notif" onclick="systemNotif.events.bellOnClick(this)" data-toggle="dropdown">
+                        <i class="fas fa-bell text-light notif-icon" id="notif-icon"> </i>
+                        <span class="badge badge-danger" id="notif-badge" style="display:none !important"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right " id="topNotif">
+                    </div>
+                </li>
+                <li>
+                    <a href="@Url.Action("index", "home")"><i class="fas fa-home"></i></a>
+                </li>
+
+                @if (context.HasPermission("SystemAdministration.CanView") || (context.HasPermission("Users.CanView") || context.HasPermission("Roles.CanView")))
+                {
+                    <li class="submenu-dropdown">
+                        <a href="#"><i class="fas fa-cog"></i></a>
+                    </li>
+                }
+
+                @if (context.HasPermission("MasterDataMaintenance.CanView"))
+                {
+                    <li>
+                        <a href="@Url.Action("index","masterdatamaintenance")"><i class="fas fa-folder-open"></i></a>
+                    </li>
+                }
+
+                @*<li class="outlet-submenu-dropdown">
+                    <a href="#"><i class="fas fa-store"></i></a>
+                </li>*@
+
+                <li class="outlet-submenu-dropdown">
+                    <a href="#"><i class="fas fa-wine-bottle"></i></a>
+                </li>
+
+                @if (context.HasPermission("Reports.CanView"))
+                {
+                    <li>
+                        <a href="@Url.Action("index", "reportgenerator")"><i class="fas fa-file-invoice"></i></a>
+                    </li>
+                }
+
+                
+                
+            </ul>
+        </div>
+
+        <div class="sidebar-profile-icons">
+            <ul>
+                <li>
+                    <a href="@Url.Action("Profile","Manage", null)"><i class="fas fa-user-alt"></i></a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-sign-out-alt"></i></a>
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="app-env">
+            @Html.AntiForgeryToken()
+            @if (string.Compare(appEnv, "prd", true) != 0)
+            {
+                <span class="badge badge-danger" title="@appEnv Environment">@appEnv</span>
+                <span class="badge badge-info ml-n1" title="@mode Mode">@mode</span>
+            }
+            else
+            {
+                if (string.Compare(mode, "debug", true) == 0)
+                {
+                    <span class="badge badge-info ml-n1" title="@mode">@mode</span>
+                }
+            }
+        </div>
+        <div class="sidebar-list">
+            <ul class="labels">
+                <li>
+                    <a href="@Url.Action("index", "home")"><span>&nbsp;Home</span></a>
+                </li>
+                @if (context.HasPermission("SystemAdministration.CanView") || (context.HasPermission("Users.CanView") || context.HasPermission("Roles.CanView")))
+                {
+                    <li class="submenu-dropdown">
+                        <a href="@Url.Action("#")"><span>&nbsp;Administration</span></a>
+                    </li>
+                }
+                @if (context.HasPermission("MasterDataMaintenance.CanView"))
+                {
+                    <li>
+                        <a href="@Url.Action("index", "masterdatamaintenance")"><span>Master Data Maintenance</span></a>
+                    </li>
+                }
+                
+                @*<li>
+                    <a href="@Url.Action("index", "outlet")"><span>&nbsp;Outlet Maintenance</span></a>
+                </li>*@
+
+                <li>
+                    <a href="@Url.Action("index", "materialmaster")"><span>&nbsp;Material Maintenance</span></a>
+                </li>
+
+                @if (context.HasPermission("Reports.CanView"))
+                {
+                    <li>
+                        <a href="@Url.Action("index", "reportgenerator")"><span>&nbsp;Reports</span></a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+
+        <div class="sidebar-profile-icons-list">
+            <ul class="labels">
+                <li>
+                    <a href="@Url.Action("Profile","Manage", null)"><span>&nbsp;@User.Identity.Name.Trim().ToLower()</span></a>
+                </li>
+                <li>
+                    <a href="javascript:document.getElementById('logoutForm').submit()"><span>&nbsp;Logout</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    if (context.HasPermission("SystemAdministration.CanView") || (context.HasPermission("Users.CanView") || context.HasPermission("Roles.CanView")))
+    {
+        <div class="submenu">
+            <ul>
+                @if ((context.HasPermission("Users.CanView") || context.HasPermission("Roles.CanView")))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("index", "usermaintenance")"><span>&nbsp;User Maintenance</span></a>
+                    </li>
+                }
+                @if (context.HasPermission("SystemAdministration.CanView"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("index", "systemadministration")"><span>&nbsp;System &nbsp;Administration</span></a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+    }
+    
+}
+
+<script>
+    var _ctr1 = false;
+    var _ctr2 = false;
+
+    $('.sidebar-collapsed').hover(function () {
+       _ctr1 = false;
+       $('.sidebar').toggleClass('show');
+    });
+
+    $('.sidebar-collapsed').mouseleave(function () {
+        if (!_ctr1 && !_ctr2) 
+            $('.sidebar').removeClass('show');
+    });
+
+    $('.sidebar').hover(function () {
+        _ctr1 = true;
+        $('.sidebar').toggleClass('show');
+    });
+
+    $('.submenu-dropdown').hover(function () {
+        _ctr2 = false;
+        $('.submenu').toggleClass("show");
+    });
+
+    $('.submenu-dropdown').mouseleave(function () {
+        if (!_ctr2) {
+            $('.submenu').removeClass("show");
+            _ctr2 = false;
+        }
+    });
+
+    $('.outlet-submenu-dropdown').hover(function () {
+        _ctr2 = false;
+        $('.outlet-submenu').toggleClass("show");
+    });
+
+    $('.outlet-submenu-dropdown').mouseleave(function () {
+        if (!_ctr2) {
+            $('.outlet-submenu').removeClass("show");
+            _ctr2 = false;
+        }
+    });
+
+    $('.submenu').hover(function () {
+        _ctr2 = true;
+        $('.sidebar').toggleClass('show');
+        $('.submenu').toggleClass("show");
+    });
+
+    $('.submenu').mouseleave(function () {
+        _ctr2 = false;
+    });
+</script>

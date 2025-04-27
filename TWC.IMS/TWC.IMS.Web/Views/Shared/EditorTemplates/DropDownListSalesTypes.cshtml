@@ -1,0 +1,18 @@
+﻿@(Html.Kendo().DropDownList()
+    .Name("SalesType_id")
+    .Filter(FilterType.Contains)
+    .OptionLabel("Select SalesType.")
+    .DataTextField("SalesType_name")
+    .DataValueField("Id")
+    .HtmlAttributes(new { required = "required", id= "SalesType_id", name= "SalesType_id" })
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("GetSalesTypesForDdl", "Common");
+        })
+        .ServerFiltering(false);
+    })
+    .Enable(true)
+    .AutoBind(true)
+)

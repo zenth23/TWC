@@ -1,0 +1,49 @@
+﻿@model System.Data.DataTable
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <table>
+            <colgroup>
+                <col/>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Module Name</th>
+                    <th>Icon Class Name</th>
+                    <th>Description</th>
+                    <th>Can View</th>
+                    <th>Can Add</th>
+                    <th>Can Edit</th>
+                    <th>Can Delete</th>
+                    <th>Can Export</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.IconClassName</td>
+                        <td>@item.Description</td>
+                        @foreach (var access in item.Accesses)
+                        {
+                            <td>
+                                <input type="checkbox" id="@(access.Name)_@(item.Id)" />
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

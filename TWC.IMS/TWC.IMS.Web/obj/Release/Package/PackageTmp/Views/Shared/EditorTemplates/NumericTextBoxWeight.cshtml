@@ -1,0 +1,8 @@
+﻿@(Html.Kendo().NumericTextBox()
+    .Name("Weight")
+    .Min(0) 
+    .Decimals(10)
+    .Round(false)
+    .Events(e => e.Change("salesOrders.editor.events.qtyCostOnChange"))
+    .Enable(true)
+)

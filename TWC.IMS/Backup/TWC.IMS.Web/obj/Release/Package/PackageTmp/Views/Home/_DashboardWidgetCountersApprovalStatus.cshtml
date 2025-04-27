@@ -1,0 +1,68 @@
+﻿<style>
+    .card-text {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    #cards div.card {
+        border-top: 1px solid rgba(0, 0, 0, 0.125) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+        border-right: 1px solid rgba(0, 0, 0, 0.125) !important;
+    }
+</style>
+
+<div class="row mb-2" id="cards">
+    <div class="col-lg-3 col-md-3 pr-1">
+        <div class="card bg-light border border-right-0 border-top-0 border-bottom-0 border-left border-success card-click" value="Approved">
+            <div class="card-body row">
+                <div class="col-8">
+                    <p class="card-text m-0 pb-1 text-success">Approved</p>
+                    <h4 class="card-title m-0" id="countApproved">0</h4>
+                </div>
+                <div class="col-4 text-right">
+                    <span class="k-icon k-i-check-circle k-icon-64" style="color:rgb(238,238,238)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 px-1">
+        <div class="card bg-light border border-right-0 border-top-0 border-bottom-0 border-left border-warning card-click" value="For Approval">
+            <div class="card-body row">
+                <div class="col-8">
+                    <p class="card-text m-0 pb-1 text-warning">For Approval</p>
+                    <h4 class="card-title m-0" id="countForApproval">0</h4>
+                </div>
+                <div class="col-4 text-right">
+                    <span class="k-icon k-i-clock k-icon-64" style="color:white; background-color:rgb(238,238,238); border-radius:100%"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 px-1">
+        <div class="card bg-light border border-right-0 border-top-0 border-bottom-0 border-left border-danger card-click" value="Rejected">
+            <div class="card-body row">
+                <div class="col-8">
+                    <p class="card-text m-0 pb-1 text-primary">Rejected</p>
+                    <h4 class="card-title m-0" id="countRejected">0</h4>
+                </div>
+                <div class="col-4 text-right">
+                    <span class="k-icon k-i-x-circle k-icon-64" style="color:rgb(238,238,238)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 pl-1">
+        <div class="card bg-light border border-right-0 border-top-0 border-bottom-0 border-left border-dark card-click" value="Voided">
+            <div class="card-body row">
+                <div class="col-8">
+                    <p class="card-text m-0 pb-1 text-dark">Voided</p>
+                    <h4 class="card-title m-0" id="countVoided">0</h4>
+                </div>
+                <div class="col-4 text-right">
+                    <span class="k-icon k-i-minus-circle k-icon-64" style="color:rgb(238,238,238)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

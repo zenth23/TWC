@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\zenth23\\source\\repos\\TWC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|c:\\users\\zenth23\\source\\repos\\twc\\twc.ims.web\\views\\shared\\_customsidenav_new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|solutionrelative:twc.ims.web\\views\\shared\\_customsidenav_new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|c:\\users\\zenth23\\source\\repos\\twc\\twc.ims.web\\controllers\\salesordersdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|solutionrelative:twc.ims.web\\controllers\\salesordersdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|c:\\users\\zenth23\\source\\repos\\twc\\twc.ims.web\\controllers\\salesorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|solutionrelative:twc.ims.web\\controllers\\salesorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|c:\\users\\zenth23\\source\\repos\\twc\\twc.ims.web\\views\\salesorders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|solutionrelative:twc.ims.web\\views\\salesorders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|c:\\users\\zenth23\\source\\repos\\twc\\twc.ims.web\\scripts\\application\\salesorders.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{870A65F4-6D0D-4D44-8169-2CC732549822}|TWC.IMS.Web\\TWC.IMS.Web.csproj|solutionrelative:twc.ims.web\\scripts\\application\\salesorders.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_CustomSidenav_New.cshtml",
+              "DocumentMoniker": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Views\\Shared\\_CustomSidenav_New.cshtml",
+              "RelativeDocumentMoniker": "TWC.IMS.Web\\Views\\Shared\\_CustomSidenav_New.cshtml",
+              "ToolTip": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Views\\Shared\\_CustomSidenav_New.cshtml",
+              "RelativeToolTip": "TWC.IMS.Web\\Views\\Shared\\_CustomSidenav_New.cshtml",
+              "ViewState": "AQIAANoAAAAAAAAAAAAkwOIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:24:13.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SalesOrdersDetailsController.cs",
+              "DocumentMoniker": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Controllers\\SalesOrdersDetailsController.cs",
+              "RelativeDocumentMoniker": "TWC.IMS.Web\\Controllers\\SalesOrdersDetailsController.cs",
+              "ToolTip": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Controllers\\SalesOrdersDetailsController.cs",
+              "RelativeToolTip": "TWC.IMS.Web\\Controllers\\SalesOrdersDetailsController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABsAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T16:19:55.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SalesOrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Controllers\\SalesOrdersController.cs",
+              "RelativeDocumentMoniker": "TWC.IMS.Web\\Controllers\\SalesOrdersController.cs",
+              "ToolTip": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Controllers\\SalesOrdersController.cs",
+              "RelativeToolTip": "TWC.IMS.Web\\Controllers\\SalesOrdersController.cs",
+              "ViewState": "AQIAAEEBAAAAAAAAAADgv3MBAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T16:06:25.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Views\\SalesOrders\\Index.cshtml",
+              "RelativeDocumentMoniker": "TWC.IMS.Web\\Views\\SalesOrders\\Index.cshtml",
+              "ToolTip": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Views\\SalesOrders\\Index.cshtml",
+              "RelativeToolTip": "TWC.IMS.Web\\Views\\SalesOrders\\Index.cshtml",
+              "ViewState": "AQIAALkAAAAAAAAAAAAhwMkAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:04:02.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "salesorders.js",
+              "DocumentMoniker": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Scripts\\application\\salesorders.js",
+              "RelativeDocumentMoniker": "TWC.IMS.Web\\Scripts\\application\\salesorders.js",
+              "ToolTip": "C:\\Users\\zenth23\\source\\repos\\TWC\\TWC.IMS.Web\\Scripts\\application\\salesorders.js",
+              "RelativeToolTip": "TWC.IMS.Web\\Scripts\\application\\salesorders.js",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAIwDUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-27T16:02:29.703Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

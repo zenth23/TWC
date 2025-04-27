@@ -1,0 +1,51 @@
+﻿@model TWC.IMS.Web.Models.VerifyCodeViewModel
+@{
+    ViewBag.Title = "Verify";
+}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2><span class="fas fa-user-shield"></span> Enter Verification Code</h2>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        @using (Html.BeginForm("VerifyCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Hidden("provider", @Model.Provider)
+            @Html.Hidden("rememberMe", @Model.RememberMe)
+            @Html.Partial("_ValidationSummary")
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Code, new { @class = "col-sm-2 col-md-2 col-lg-2 col-xl-2 control-label" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control", autocomplete = "off" })
+                </div>
+            </div>
+            @*<div class="form-group">
+                    <div class="offset-sm-2 offset-md-2 offset-lg-2 offset-xl-2 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberBrowser)
+                            @Html.LabelFor(m => m.RememberBrowser)
+                        </div>
+                    </div>
+                </div>*@
+            <div class="form-group">
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <input type="submit" class="btn btn-secondary" value="Submit" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <a href="@Url.Action("SendCode", "Account", new { rememberMe = false })">Try a different 2FA provider</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

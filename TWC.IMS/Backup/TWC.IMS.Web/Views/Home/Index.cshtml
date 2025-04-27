@@ -1,0 +1,300 @@
+﻿<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Inventory Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .low-stock {
+            color: red;
+        }
+
+        .high-value {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-12">
+                <h1 class="text-center">JIS Dashboard</h1>
+                <p class="text-center" id="current-time"></p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Summary Metrics -->
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Inventory Value</h5>
+                        <p class="card-text">₱<span id="total-inventory-value">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Items</h5>
+                        <p class="card-text"><span id="total-items">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title low-stock">Low Stock Alerts</h5>
+                        <p class="card-text"><span id="low-stock-alerts">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title high-value">High Value Items</h5>
+                        <p class="card-text"><span id="high-value-items">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stock Movement -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Transactions</h5>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-transactions">
+                                <!-- Dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Selling Items</h5>
+                        <ul class="list-group" id="top-selling-items">
+                            <!-- Dynamic list items -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stock Level Trends & Investment Overview -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Stock Level Trends</h5>
+                        <canvas id="stock-level-trends"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Investment Overview</h5>
+                        <canvas id="investment-overview"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Location Overview -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Store Location</h5>
+                        <ul class="list-group" id="store-location">
+                            <!-- Dynamic list items -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Warehouse Details</h5>
+                        <ul class="list-group" id="warehouse-details">
+                            <!-- Dynamic list items -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Alerts & Notifications -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Low Stock Alerts</h5>
+                        <ul class="list-group" id="low-stock-items">
+                            <!-- Dynamic list items -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Upcoming Deliveries</h5>
+                        <ul class="list-group" id="upcoming-deliveries">
+                            <!-- Dynamic list items -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current time
+            function updateTime() {
+                var now = new Date();
+                document.getElementById('current-time').textContent = now.toLocaleString();
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+
+            // Sample data for demonstration purposes
+            document.getElementById('total-inventory-value').textContent = '123,456';
+            document.getElementById('total-items').textContent = '789';
+            document.getElementById('low-stock-alerts').textContent = '12';
+            document.getElementById('high-value-items').textContent = '45';
+
+            // Sample recent transactions
+            var recentTransactions = [
+                {date: '2024-07-01', item: 'Gold Ring', quantity: 2},
+                {date: '2024-07-02', item: 'Diamond Necklace', quantity: 1},
+                {date: '2024-07-03', item: 'Silver Bracelet', quantity: 3}
+            ];
+            var recentTransactionsTable = document.getElementById('recent-transactions');
+            recentTransactions.forEach(function(transaction) {
+                var row = document.createElement('tr');
+                row.innerHTML = '<td>' + transaction.date + '</td><td>' + transaction.item + '</td><td>' + transaction.quantity + '</td>';
+                recentTransactionsTable.appendChild(row);
+            });
+
+            // Sample top selling items
+            var topSellingItems = ['Gold Ring', 'Diamond Necklace', 'Silver Bracelet'];
+            var topSellingItemsList = document.getElementById('top-selling-items');
+            topSellingItems.forEach(function(item) {
+                var listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.textContent = item;
+                topSellingItemsList.appendChild(listItem);
+            });
+
+            // Stock Level Trends Chart
+            var ctx1 = document.getElementById('stock-level-trends').getContext('2d');
+            var stockLevelTrendsChart = new Chart(ctx1, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Stock Level',
+                        data: [65, 59, 80, 81, 56, 55],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Month'
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Stock Level'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Investment Overview Chart
+            var ctx2 = document.getElementById('investment-overview').getContext('2d');
+            var investmentOverviewChart = new Chart(ctx2, {
+                type: 'pie',
+                data: {
+                    labels: ['Rings', 'Necklaces', 'Bracelets'],
+                    datasets: [{
+                        data: [300, 50, 100],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+
+            // Sample store locations
+            var storeLocations = ['Store 1', 'Store 2', 'Store 3'];
+            var storeLocationList = document.getElementById('store-location');
+            storeLocations.forEach(function(store) {
+                var listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.textContent = store;
+                storeLocationList.appendChild(listItem);
+            });
+
+            // Sample warehouse details
+            var warehouseDetails = ['Warehouse A', 'Warehouse B'];
+            var warehouseDetailsList = document.getElementById('warehouse-details');
+            warehouseDetails.forEach(function(warehouse) {
+                var listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.textContent = warehouse;
+                warehouseDetailsList.appendChild(listItem);
+            });
+
+            // Sample low stock items
+            var lowStockItems = ['Gold Ring', 'Silver Bracelet'];
+            var lowStockItemsList = document.getElementById('low-stock-items');
+            lowStockItems.forEach(function(item) {
+                var listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.textContent = item;
+                lowStockItemsList.appendChild(listItem);
+            });
+
+            // Sample upcoming deliveries
+            var upcomingDeliveries = ['Diamond Necklace', 'Gold Earrings'];
+            var upcomingDeliveriesList = document.getElementById('upcoming-deliveries');
+            upcomingDeliveries.forEach(function(item) {
+                var listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.textContent = item;
+                upcomingDeliveriesList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>

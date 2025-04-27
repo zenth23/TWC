@@ -1,0 +1,31 @@
+﻿@*
+    error severity distribution
+    distribution of errors based on severity levels
+    pie/stacked bar chart
+*@
+@(Html.Kendo().Chart<TWC.IMS.Models.ChartModels.ErrorSeverityModel>()
+      .Name("errorDistributionPieChart")
+      .Title(title => title
+          .Text("Error Severity Distribution")
+          .Position(ChartTitlePosition.Top))
+      .Legend(legend => legend
+          .Visible(true)
+          .Position(ChartLegendPosition.Bottom)
+      )
+      .ChartArea(chart => chart
+          .Background("transparent")
+       )
+      .Series(series =>
+      {
+          series.Pie("ErrorCount", "ImpactLevel")
+                .StartAngle(150);
+      })
+      .Tooltip(tooltip => tooltip
+          .Visible(true)
+          .Template("#=category#: #=kendo.format('{0:n0}',value)#")
+      )
+      .Theme("flat")
+      .DataSource(ds => ds.Read(read => read.Action("GetErrorSeverityChartData", "AdminDashboardCharts")
+                                            .Data("chartDateFilter")))
+      .Deferred()
+)

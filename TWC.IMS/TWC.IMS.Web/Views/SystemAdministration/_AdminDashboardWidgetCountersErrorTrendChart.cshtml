@@ -1,0 +1,17 @@
+﻿<div class="card" style="height:125px;">
+    <div class="card-body">
+        <span class="card-title text-muted">Day of Month Error Trend</span>
+        @(Html.Kendo().Sparkline<TWC.IMS.Models.ChartModels.ErrorTrendModel>()
+                  .Name("errorTrendChart")
+                  .Type(SparklineType.Area)
+                  .Series(series => series.Area("ErrorCount").CategoryField("Hour"))
+                  .HtmlAttributes(new { style = "height:60px;width:100%;" })
+                  .DataSource(ds => ds.Read(read => read.Action("GetErrorTrendChartData", "AdminDashboardCharts")
+                                                        .Data("chartDateFilter")))
+                  .Tooltip(t => t.Visible(true)
+                                 .Template("#: kendo.format('{0:00}H',category) #: #: kendo.format('{0:n0}',value) #")
+                                 .Shared(false))
+                  .Deferred()
+        )
+    </div>
+</div>

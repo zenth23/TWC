@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Logout";
+}
+
+<br/>
+<br/>
+<br />
+<h4>Please wait while the system logs you out...</h4>
+
+<script>
+    $(function () {
+        // reload page to trigger authorization
+        setTimeout(function () {
+            window.location = window.rootUrl + 'account/login';
+        }, 1300);
+    });
+</script>

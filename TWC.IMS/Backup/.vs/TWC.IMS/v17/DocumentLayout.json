@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\TWC.IMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{86627A4C-5F1E-431E-AAD1-F66F0FA6A8F4}|TWC.IMS.BL\\TWC.IMS.BL.csproj|d:\\projects\\twc.ims\\twc.ims.bl\\reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86627A4C-5F1E-431E-AAD1-F66F0FA6A8F4}|TWC.IMS.BL\\TWC.IMS.BL.csproj|solutionrelative:twc.ims.bl\\reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Reports.cs",
+              "DocumentMoniker": "D:\\Projects\\TWC.IMS\\TWC.IMS.BL\\Reports.cs",
+              "RelativeDocumentMoniker": "TWC.IMS.BL\\Reports.cs",
+              "ToolTip": "D:\\Projects\\TWC.IMS\\TWC.IMS.BL\\Reports.cs",
+              "RelativeToolTip": "TWC.IMS.BL\\Reports.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T07:24:26.812Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+﻿
+<div id="donutChart"></div>
+<div class="chart-overlay-no-data"><div>No data available</div></div>
+
+<script>
+    $(function () {
+        $('#donutChart').kendoChart({
+            title: { text: 'BU Subscriptions' },
+            dataSource: {
+                transport: {
+                    read: '@Url.Action("GetCurrentMonthTop5BUSubscriptions", "demosources")',
+                    dataType: 'json'
+                }
+            },
+            legend: {
+                visible: true,
+                position: 'bottom'
+            },
+            chartArea: {
+                background: "white",
+                //height: "300px"
+            },
+            series: [
+                {
+                    type: 'donut',
+                    field: 'Percentage',
+                    categoryField: 'Category'
+                }
+            ],
+            labels: {
+                visible: true
+            },
+            tooltip: {
+                visible: true,
+                template: '#= category #: #= kendo.toString(value, "n1") #%'
+            },
+            dataBound: onDataBound,
+            theme: "office365",
+            deferred: true
+        });
+    });
+</script>

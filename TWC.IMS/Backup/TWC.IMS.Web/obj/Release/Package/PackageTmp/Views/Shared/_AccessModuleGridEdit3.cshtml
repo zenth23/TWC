@@ -1,0 +1,55 @@
+﻿@model System.Data.DataTable
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        @(Html.Kendo().Grid<dynamic>()
+              .Name("gridModuleAccesses")
+              .Columns(column =>
+              {
+                  column.Command(c =>
+                  {
+                      c.Custom("Edit").Text("<span class='fas fa-pen'></span>").HtmlAttributes(new { title = "Edit", data_cname = "accessmodules", data_propname = "UniqueKey" }).Click("application.grid.editItem");
+                      c.Custom("Delete").Text("<span class='fas fa-trash'></span>").HtmlAttributes(new { title = "Delete", data_cname = "accessmodules", data_propname = "Name", data_propid = "UniqueKey" }).Click("application.grid.deleteItem");
+                  }).Width(90).HtmlAttributes(new { @class = "k-alt command" });
+
+                  foreach (System.Data.DataColumn col in Model.Columns)
+                  {
+                      if (col.DataType.FullName == "System.String")
+                      {
+                          if (col.ColumnName != "UniqueKey")
+                              column.Bound(col.ColumnName).Width(150);
+                      }
+                      else if (col.DataType.FullName == "System.Boolean")
+                      {
+                          string colName = col.ColumnName;
+                          if (!colName.EndsWith("_role"))
+                          {
+                              column.Bound(col.ColumnName).ClientTemplate("#if(" + col.ColumnName + ") {# <input type='checkbox' class='k-checkbox' disabled='disabled' id='" + colName + "_#=Id #' checked />" +
+                                                                          "<label class='k-checkbox-label' for='" + colName + "_#=Id #'></label> #} #")
+                                                          .HtmlAttributes(new { style = "text-align:center;" }).Width(90);
+                          }
+                      }
+                  }
+              })
+              .Selectable(s => s.Mode(GridSelectionMode.Single))
+              .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+              .Resizable(r => r.Columns(true))
+              .Scrollable(s => s.Height(350))
+              .Pageable(p => p.Refresh(true)
+                              .PageSizes(true)
+                              .PageSizes(new int[] { 15, 30, 50, 100 })
+                              .Input(true)
+                              .ButtonCount(5))
+              .DataSource(ds =>
+              {
+                  ds.Ajax()
+                  .PageSize(15)
+                  .Read(r => r.Action("ReadModuleAccesses", "AccessModules"))
+                  .Model(m =>
+                  {
+                      var id = Model.PrimaryKey[0].ColumnName;
+                      m.Id(id);
+                  });
+              }))
+    </div>
+</div>

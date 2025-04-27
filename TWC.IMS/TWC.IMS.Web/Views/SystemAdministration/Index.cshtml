@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "System Administration";
+    ViewData["ContainerClass"] = "container-fluid";
+}
+
+<style>
+    #tabsAdmin .nav-link {
+        color: inherit !important;
+    }
+
+        #tabsAdmin .nav-link.active {
+            background-color: #373a3c !important;
+            color: #fff !important;
+        }
+
+    .card-title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    #divReportCards .card-title {
+        font-weight: 400 !important;
+    }
+
+    #divCounters .card-title {
+        display: inherit;
+    }
+
+    #divReportCards .card-subtitle {
+        height: 2rem !important;
+    }
+
+    #divReportCards .card-text {
+        height: 4rem !important;
+    }
+
+    #tabsAdmin .fa-external-link-alt {
+        font-size: 0.5rem;
+    }
+
+    .user-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        /* background-size: 32px 35px; */
+        /* background-position: center center; */
+        vertical-align: middle;
+        line-height: 32px;
+        margin-right: 5px;
+        background-color: rgb(16, 196, 178);
+        color: #fff;
+        font-weight: 500;
+        text-align: center;
+        font-size: 1rem;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-2 pr-0" id="tabsAdmin">
+        <div class="nav flex-column nav-pills text-dark" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-dashboard-tab" data-toggle="pill" href="#v-pills-dashboard" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
+                <span class="fas fa-chart-line mr-2"></span>Dashboard
+            </a>
+            <a class="nav-link" id="v-pills-error-tab" data-toggle="pill" href="#v-pills-error" role="tab" aria-controls="v-pills-error" aria-selected="false" data-module="errorlog">
+                <span class="fas fa-exclamation-triangle mr-2"></span>Error Logs
+            </a>
+            <a class="nav-link" id="v-pills-activity-tab" data-toggle="pill" href="#v-pills-activity" role="tab" aria-controls="v-pills-activity" aria-selected="false" data-module="useractivitylog">
+                <span class="fas fa-user-ninja mr-2"></span>User Activity Logs
+            </a>
+            <a class="nav-link" id="v-pills-audit-tab" data-toggle="pill" href="#v-pills-audit" role="tab" aria-controls="v-pills-audit" aria-selected="false" data-module="auditlog">
+                <span class="fas fa-clipboard-check mr-2"></span>Audit Logs
+            </a>
+            <a class="nav-link" id="v-pills-email-tab" data-toggle="pill" href="#v-pills-email" role="tab" aria-controls="v-pills-email" aria-selected="false" data-module="emaillog">
+                <span class="fas fa-envelope mr-2"></span>Email Logs
+            </a>
+            <div class="dropdown-divider"></div>
+
+            <a class="nav-link" href="@Url.Action("index","systemconfig")" target="_blank" role="tab" aria-controls="v-pills-config" aria-selected="false">
+                <span class="fas fa-cog mr-2"></span>System Configs<span class="fas fa-external-link-alt ml-1"></span>
+            </a>
+            <a class="nav-link" href="@Url.Action("index","accessmodules")" target="_blank" role="tab" aria-controls="v-pills-access" aria-selected="false">
+                <span class="fas fa-tasks mr-2"></span>Access Modules<span class="fas fa-external-link-alt ml-1"></span>
+            </a>
+            <a class="nav-link" href="@Url.Action("querytool","support")" target="_blank" role="tab" aria-controls="v-pills-qeditor" aria-selected="false">
+                <span class="fas fa-layer-group mr-2"></span>Query Editor<span class="fas fa-external-link-alt ml-1"></span>
+            </a>
+            <a class="nav-link" href="@Url.Action("maintenance","support")" target="_blank" role="tab" aria-controls="v-pills-ueditor" aria-selected="false">
+                <span class="fas fa-layer-group mr-2"></span>Support Tool<span class="fas fa-external-link-alt ml-1"></span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="nav-link" id="v-pills-report-tab" data-toggle="pill" href="#v-pills-report" role="tab" aria-controls="v-pills-report" aria-selected="false">
+                <span class="fas fa-file-invoice mr-2"></span>Standard Reports
+            </a>
+        </div>
+    </div>
+    <div class="col-md-10 px-lg-5" style="background-color:#fff;">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+                @Html.Partial("_AdminDashboard")
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-error" role="tabpanel" aria-labelledby="v-pills-error-tab">
+                @Html.Partial("~/Views/ErrorLogs/_ErrorLogs.cshtml")
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-activity" role="tabpanel" aria-labelledby="v-pills-activity-tab">
+                @Html.Partial("~/Views/UserActivityLogs/_UserActivityLogs.cshtml")
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-audit" role="tabpanel" aria-labelledby="v-pills-audit-tab">
+                @Html.Partial("~/Views/AuditLogs/_AuditLogs.cshtml")
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-config" role="tabpanel" aria-labelledby="v-pills-config-tab">
+
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-weditor" role="tabpanel" aria-labelledby="v-pills-weditor-tab">
+
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-report" role="tabpanel" aria-labelledby="v-pills-report-tab">
+                @Html.Partial("~/Views/ReportGenerator/_ReportCards.cshtml")
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-email" role="tabpanel" aria-labelledby="v-pills-email-tab">
+                @Html.Partial("~/Views/EmailLogs/_EmailLogs.cshtml", "_")
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-access" role="tabpanel" aria-labelledby="v-pills-access-tab">
+
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-qeditor" role="tabpanel" aria-labelledby="v-pills-qeditor-tab">
+
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-ueditor" role="tabpanel" aria-labelledby="v-pills-ueditor-tab">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width:90vw;overflow-y:scroll;max-height:90vh;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsModalTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="detailsModalBody">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/application/admin-dashboard.js?v=" + DateTime.Now.Ticks)
+    @Scripts.Render("~/Scripts/application/error-logs.js?v=" + DateTime.Now.Ticks)
+    @Scripts.Render("~/Scripts/application/audit-logs.js?v=" + DateTime.Now.Ticks)
+    @Scripts.Render("~/Scripts/application/email-logs.js?v=" + DateTime.Now.Ticks)
+    @Scripts.Render("~/Scripts/application/user-activity-logs.js?v=" + DateTime.Now.Ticks)
+}

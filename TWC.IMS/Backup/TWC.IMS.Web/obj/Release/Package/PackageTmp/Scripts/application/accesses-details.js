@@ -1,0 +1,5 @@
+﻿
+$(function () {
+    application.UI.markRequiredFields();
+
+});

@@ -1,0 +1,207 @@
+﻿label {
+    text-align: left !important;
+}
+
+.col-md-9 {
+    padding-top: 7px;
+}
+#productsBasket > div.k-grid-content {
+    min-height: 310px;
+    max-height: 310px;
+}
+#emptiesBasket > div.k-grid-content {
+    min-height: 114px;
+    max-height: 114px;
+}
+
+
+.sw-btn-prev {
+    margin-right: 5px !important;
+}
+
+.konting-padding {
+    padding-bottom: 3px;
+}
+/* BOOTSTRAP OVERRIDE*/
+.form-group {
+    margin-bottom: 0px !important;
+}
+
+h1, h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.k-multiselect-wrap {
+    overflow: auto;
+    max-height: 74px;
+}
+
+/*#Empties ~ div.k-multiselect-wrap {
+    overflow: auto;
+    max-height: 222px;
+}*/
+#pageContent {
+    background-color: white;
+    /*border-radius: 5px 5px;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+    border: 2px solid red;
+    height: 80%;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.sw-btn-prev, .sw-btn-next {
+    font-size: 12px !important
+}
+
+.sw-btn-prev, 
+.sw-btn-next, 
+.sw-btn-prev:hover, 
+.sw-btn-next:hover,
+.sw-btn-prev:focus, 
+.sw-btn-next:focus {
+    background-color: #f00;
+    color: #fff;
+    border-color: #f00;
+}
+
+.sw-btn-prev:active, 
+.sw-btn-next:active
+{
+    background-color: white;
+    color: black;
+}
+.sw-theme-circles > ul.step-anchor {
+    position: relative;
+    background: #fff;
+    border: none;
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+/* SMART WIZARD OVERRIDE */
+.sw-theme-circles > ul.step-anchor > li > a {
+        border: 2px solid #f5f5f5;
+        background: #f5f5f5;
+        width: 55px;
+        height: 55px;
+        text-align: center;
+        padding: 20px 0;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 0 0 0 3px #fff !important;
+        box-shadow: inset 0 0 0 3px #fff !important;
+        text-decoration: none;
+        outline-style: none;
+        z-index: 99;
+        color: #bbb;
+        background: #f5f5f5;
+        line-height: 1;
+    }
+     .sw-theme-circles > ul.step-anchor > li {
+        border: none;
+        margin-left: 30px;
+        z-index: 98;
+    }
+     .sw-theme-circles > ul.step-anchor > li > a > small {
+    position: relative;
+    bottom: -25px;
+
+    
+}
+div#productsAndEmpties > div.row:first-child{
+    border-bottom:2px solid lightgray;
+}
+     
+
+/*@media (max-width: 768px) {
+  .sw-theme-circles > ul.step-anchor > li > a {
+        border: 2px solid #f5f5f5;
+        background: #f5f5f5;
+        width: 75px;
+        height: 75px;
+        text-align: center;
+        padding: 25px 0;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 0 0 0 3px #fff !important;
+        box-shadow: inset 0 0 0 3px #fff !important;
+        text-decoration: none;
+        outline-style: none;
+        z-index: 99;
+        color: #bbb;
+        background: #f5f5f5;
+        line-height: 1;
+    }
+     .sw-theme-circles > ul.step-anchor > li {
+        border: none;
+        margin-left: 40px;
+        z-index: 98;
+    }
+}*/
+
+@media (max-width: 375px) {
+    .sw-theme-circles > ul.step-anchor > li > a {
+        border: 2px solid #f5f5f5;
+        background: #f5f5f5;
+        width: 55px;
+        height: 55px;
+        text-align: center;
+        padding: 20px 0;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 0 0 0 3px #fff !important;
+        box-shadow: inset 0 0 0 3px #fff !important;
+        text-decoration: none;
+        outline-style: none;
+        z-index: 99;
+        color: #bbb;
+        background: #f5f5f5;
+        line-height: 1;
+    }
+     .sw-theme-circles > ul.step-anchor > li {
+        border: none;
+        margin-left: 30px;
+        z-index: 98;
+    }
+
+         
+     .k-grid-header {
+        padding-right: 0px !important;
+    }
+
+}
+
+@media (max-width: 414px) {
+    .sw-theme-circles > ul.step-anchor > li > a {
+        border: 2px solid #f5f5f5;
+        background: #f5f5f5;
+        width: 55px;
+        height: 55px;
+        text-align: center;
+        padding: 20px 0;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 0 0 0 3px #fff !important;
+        box-shadow: inset 0 0 0 3px #fff !important;
+        text-decoration: none;
+        outline-style: none;
+        z-index: 99;
+        color: #bbb;
+        background: #f5f5f5;
+        line-height: 1;
+    }
+    .sw-theme-circles > ul.step-anchor > li {
+        border: none;
+        margin-left: 20px;
+        z-index: 98;
+    }
+
+          
+     .k-grid-header {
+        padding-right: 0px !important;
+    }
+}
+
+k-multiselect-wrap {
+     border-radius: 0px !important; 
+}

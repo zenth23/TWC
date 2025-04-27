@@ -1,0 +1,10 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.ErrorLogsViewModel>
+@{
+    ViewBag.Title = "Error Logs";
+}
+
+@Html.Partial("_ErrorLogs")
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/application/error-logs.js?v=" + DateTime.Now.Ticks)
+}

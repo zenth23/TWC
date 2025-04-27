@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Reports</title>
+
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        #loadingMessage {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2><span class="fas fa-file-invoice"></span> Reports</h2>
+    <hr />
+
+    <div class="container">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-md-12 text-center">
+                <h3>Inventory Reports</h3>
+                <p>Select a report to download.</p>
+            </div>
+        </div>
+
+        <!-- Report Options -->
+        <div class="row">
+            <!-- Low Stock Report -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-exclamation-triangle text-danger"></i> Low Stock Report</h5>
+                        <p>Download a report of items that are low in stock.</p>
+                        <button class="btn btn-primary download-report"
+                                data-url="/ReportGenerator/DownloadLowStockReport"
+                                data-filename="LowStockReport.xlsx">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Order Report with Date Range -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-shopping-cart text-success"></i> Sales Order Report</h5>
+                        <p>Download a report of sales orders for a selected date range.</p>
+                        <button class="btn btn-primary" id="openSalesOrderModal">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- High Value Items Report -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-gem text-warning"></i> High Value Items</h5>
+                        <p>Download a report of high-value inventory items.</p>
+                        <button class="btn btn-primary download-report"
+                                data-url="/ReportGenerator/DownloadHighValueItemsReport"
+                                data-filename="HighValueItemsReport.xlsx">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Inventory Report -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-boxes text-primary"></i> Product Inventory Report</h5>
+                        <p>Download a report of all products in inventory.</p>
+                        <button class="btn btn-primary download-report"
+                                data-url="/ReportGenerator/DownloadProductInventoryReport"
+                                data-filename="ProductInventoryReport.xlsx">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingMessage">
+        <i class="fas fa-spinner fa-spin"></i> Please wait...
+    </div>
+
+    <!-- Sales Order Date Range Modal -->
+    <div class="modal fade" id="salesOrderModal" tabindex="-1" role="dialog" aria-labelledby="salesOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="salesOrderModalLabel">Select Date Range</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="startDate">From:</label>
+                    <input type="date" id="startDate" class="form-control mb-2" />
+
+                    <label for="endDate">To:</label>
+                    <input type="date" id="endDate" class="form-control mb-2" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="downloadSalesOrderReport">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.5.1.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        // Show modal on "Download" button click for Sales Order Report
+        $(document).on('click', '#openSalesOrderModal', function() {
+            $('#salesOrderModal').modal('show');
+        });
+
+        // Handle downloading of the Sales Order Report with selected date range
+        $(document).on('click', '#downloadSalesOrderReport', function() {
+            var startDate = $('#startDate').val();
+            var endDate = $('#endDate').val();
+
+            if (!startDate || !endDate) {
+                alert('Please select both start and end dates.');
+                return;
+            }
+
+            // Show the loading spinner
+            $('#loadingMessage').show();
+
+            $.ajax({
+                url: '/ReportGenerator/DownloadSalesOrderReport',
+                type: 'POST',
+                data: { startDate: startDate, endDate: endDate },
+                xhrFields: {
+                    responseType: 'blob'  // Expect a binary response (Blob)
+                },
+                success: function(response) {
+                    // Create a Blob from the response data
+                    var blob = response;
+
+                    // Create a temporary link to download the file
+                    var link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'SalesOrderReport.xlsx'; // Default filename for the report
+                    link.click();  // Trigger the download
+
+                    // Hide the loading spinner and close the modal
+                    $('#loadingMessage').hide();
+                    $('#salesOrderModal').modal('hide');
+                },
+                error: function() {
+                    $('#loadingMessage').hide();
+                    alert('An error occurred while generating the report.');
+                }
+            });
+        });
+
+        // General download report function for other reports like Low Stock, High Value Items, and Product Inventory
+        $(document).on('click', '.download-report', function() {
+            var url = $(this).data('url');
+            var fileName = $(this).data('filename');
+
+            // Show the loading spinner
+            $('#loadingMessage').show();
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                xhrFields: {
+                    responseType: 'blob'  // Expect a binary response (Blob)
+                },
+                success: function(response) {
+                    // Create a Blob from the response data
+                    var blob = response;
+
+                    // Create a temporary link to download the file
+                    var link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = fileName;
+                    link.click(); // Trigger the download
+
+                    // Hide the loading spinner
+                    $('#loadingMessage').hide();
+                },
+                error: function() {
+                    $('#loadingMessage').hide();
+                    alert('An error occurred while generating the report.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿@(Html.Kendo().DropDownList()
+    .Name("category_id")
+    .Filter(FilterType.Contains)
+    .OptionLabel("Select Category.")
+    .DataTextField("category_name")
+    .DataValueField("Id")
+    .HtmlAttributes(new { required = "required" })
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("GetCategoriesForDdl", "Common");
+        })
+        .ServerFiltering(false);
+    })
+    .Enable(true)
+    .AutoBind(true)
+)

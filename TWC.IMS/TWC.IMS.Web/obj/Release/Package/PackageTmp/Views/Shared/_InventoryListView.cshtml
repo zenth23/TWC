@@ -1,0 +1,45 @@
+﻿
+
+@{
+    Layout = null;
+}
+@(Html.Kendo().Grid<TWC.IMS.Web.Models.ProductInventoryListViewModel>()
+    .Name("gridProductInventories")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.LocationName) // Grouping by LocationName
+               .Title("Location")
+               .Width(150)
+               .Hidden(true); // Hides the LocationName column
+
+        // Combine ProductName, Image, and Inventory (Quantity) into a single column, align text to the right of the image
+        columns.Bound(p => p.ProductName)
+               .Title("Product")
+               .Width(350) // Adjust the width to accommodate the image and text
+               .ClientTemplate(
+                    "<div style='display: flex; align-items: center; justify-content: flex-start;'>" + // Flexbox to align content horizontally
+                    "<img src='#= Url #' class='product-img' style='width: 250px; height: 250px; margin-right: 20px;' />" + // Image on the left, with margin to the right
+                    "<div>" + // Text container
+                    "<div>#= ProductName #</div>" + // Product name next to the image
+                    "<div style='margin-top: 10px; font-weight: bold;'>#= Inventory #</div>" + // Quantity below product name
+                    "</div>" +
+                    "</div>"
+                );
+
+    })
+    .Pageable(p => p.Refresh(true))
+    .Filterable()
+    .Resizable(r => r.Columns(true))
+    .Sortable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Model(model =>
+        {
+            model.Id(p => p.Id); // Assume you have an 'Id' for each product
+        })
+        .Read(read => read.Action("List", "product_inventory"))
+        .Group(groups => groups.Add(p => p.LocationName)) // Group by LocationName
+    )
+    .Groupable(group => group.Enabled(true)) // Enable grouping
+)

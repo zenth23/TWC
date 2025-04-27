@@ -1,0 +1,82 @@
+﻿@model List<TWC.IMS.Web.Models.SystemNotificationViewModel>
+<style>
+    .notif-card {
+        border-top:0px !important;
+        border-left:0px !important;
+        border-right:0px !important;
+        cursor:pointer
+    }
+
+    .bg-white {
+       background-color: white !important
+    }
+
+    .notif-card:hover {
+        background-color: white !important
+    }
+
+    .notif-card-body {
+        padding-top: 0.5rem  !important;
+        padding-bottom: 0.5rem  !important;
+        padding-left: 1rem  !important;
+        padding-right :1rem  !important;
+    }
+
+    .text-gray {
+        color: gray
+    }
+
+    .bg-highlight {
+        background-color: lightgray
+    }
+    
+</style>
+<form>
+<input id="badge-count" type="hidden" value="@ViewBag.NotViewedCount" />
+@if (Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+        <div class="dropdown-item" 
+             style="padding: 0px"
+             notif-id="@item.Id" 
+             notif-title="@item.Title" 
+             notif-caption="@item.Caption"
+             notif-isviewed="@(@item.IsViewed ? "1" : "0")"
+             onclick="systemNotif.events.notificationOnClick(this)"
+             notif-url="@item.Url">
+            <div class="card notif-card @(@item.IsViewed ? "bg-white" : "bg-highlight")">
+                <div class="card-body notif-card-body">
+                    <h5 class="card-title @(@item.IsViewed ? "" : "text-primary")">@Html.Raw(item.Title)</h5>
+                    <p class="card-text"><span class="font-weight-bold" >@Html.Raw(item.Caption)</span> <br />@Html.Raw(item.Description)</p>
+                    <p class="card-text text-right text-gray">@item.StrCreatedOn</p>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="dropdown-item no-notif"
+         style="padding: 0px">
+        <div class="card notif-card">
+            <div class="card-body notif-card-body">
+                <p class="card-text text-gray">No notifications yet.</p>
+            </div>
+        </div>
+    </div>
+}
+</form>
+<script>
+    $(function() {
+
+        var badgeCount = $("#badge-count").val().trim();
+        if(badgeCount !== "0" && badgeCount !== "") {
+
+
+            $("#notif-badge").html(badgeCount);
+            $("#notif-badge").removeAttr("style")
+        }
+
+    })
+</script>

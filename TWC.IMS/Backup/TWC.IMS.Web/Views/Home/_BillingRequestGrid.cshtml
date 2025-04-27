@@ -1,0 +1,81 @@
+﻿@{
+    var context = this.Context;
+}
+
+@(Html.Kendo().Grid<TWC.IMS.Web.Models.DemoSourceViewModel>()
+        .Name("gridBillingRequests")
+        .Columns(column =>
+        {
+            column.Command(c =>
+            {
+                if (context.HasPermission("BillingRequests.CanView"))
+                {
+                    c.Custom("View").Text("<span class='fas fa-eye'></span>").HtmlAttributes(new { title = "View", data_cname = "billingrequests", data_propname = "UniqueKey" }).Click("onView");
+                }
+                if (context.HasPermission("BillingRequests.CanDownload"))
+                {
+                    c.Custom("Download").Text("<span class='fas fa-download'></span>").HtmlAttributes(new { title = "Download File", data_cname = "billingrequests", data_propname = "UniqueKey" }).Click("onDownload");
+                }
+            })
+            .Width(70)
+            .HtmlAttributes(new { @class = "k-alt command" });
+            if (context.HasPermission("BillingRequests.CanDownload"))
+            {
+                column.Select().Width(40);
+            }
+            column.Bound(c => c.BRReferenceNo).Width(120);
+            column.Bound(c => c.BusinessUnitCode).Width(140);
+            //column.Bound(c => c.BusinessUnitName).Width(250);
+            column.Bound(c => c.CurrentStatus).Width(130).ClientTemplate("<h5><span class='badge badge-pill font-weight-normal'>#= CurrentStatus # </span</h5>");
+            column.Bound(c => c.DurationFrom).Width(160).Format("{0:MMMM yyyy}");
+            column.Bound(c => c.DurationTo).Width(160).Format("{0:MMMM yyyy}");
+            //column.Bound(c => c.BillingAddressedTo).Width(200);
+            //column.Bound(c => c.Thru).Width(180);
+            column.Bound(c => c.Created).Width(150).Format("{0:dd-MMM-yyyy HH:mm}");
+            column.Bound(c => c.CreatedBy).Width(150);
+            column.Bound(c => c.Modified).Width(150).Format("{0:dd-MMM-yyyy HH:mm}");
+            column.Bound(c => c.ModifiedBy).Width(150);
+            column.Command(c =>
+            {
+                c.Custom("Notes").Text("<span class='fas fa-book'></span>").HtmlAttributes(new { title = "View Notes" }).Click("onViewNotes");
+            })
+            .Title("Notes")
+            .Width(50)
+            .HtmlAttributes(new { @class = "k-alt command" });
+            column.Command(c =>
+            {
+                c.Custom("Remarks").Text("<span class='fas fa-book'></span>").HtmlAttributes(new { title = "View Remarks" }).Click("onViewRemarks");
+            })
+            .Title("Remarks")
+            .Width(65)
+            .HtmlAttributes(new { @class = "k-alt command" });
+        })
+        .Filterable()
+        .Pageable(p => p.Refresh(true)
+                        .PageSizes(true)
+                        .PageSizes(new int[] { 15, 30, 50, 100 })
+                        .Input(true)
+                        .ButtonCount(5))
+        .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+        .Scrollable(s => s.Height(400))
+        .Resizable(r => r.Columns(true))
+        .PersistSelection(true)
+        .Events(e => e.DataBound("gridBillingRequestsOnDataBound").Change("gridBillingRequestsOnChange"))
+        .DataSource(ds =>
+        {
+            ds.Ajax()
+            .ServerOperation(false)
+            .PageSize(15)
+            .Events(e => e.Error("onErrorGridBillingRequests").Change("onChangeGridBillingRequests"))
+            .Read(r => r.Action("ReadDemoSourceData", "demosources").Data("gridBillingRequestsFilter"))
+            .Model(m => m.Id(c => c.Id));
+        })
+        .Deferred()
+)
+
+<div class="col-12 px-0 my-1 d-flex justify-content-end">
+    <button class="btn btn-outline-dark mx-2 k-hidden control-multiple" disabled title="Download multiple files" id="btnDownloadMultiple"><span class='fas fa-download'></span></button>
+    <button class="btn btn-dark float-lg-right float-md-right k-hidden control-multiple" disabled data-toggle="modal" data-target="#remarksModal" title="Void multiple files">Void</button>
+</div>
+
+@*@Html.Partial("_BillingRequestRemarksModal")*@

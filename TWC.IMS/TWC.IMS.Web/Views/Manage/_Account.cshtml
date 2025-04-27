@@ -1,0 +1,125 @@
+﻿@model TWC.IMS.Web.Models.AccountViewModel
+
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        @using (Html.BeginForm("profile", "manage", FormMethod.Post, new { id = "form_account" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.UserName)
+            @Html.HiddenFor(model => model.UserId)
+            @Html.HiddenFor(model => model.User_Role)
+            <div class="form-horizontal">
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-3" })
+                    <div class="col-9">
+                        <h5><span class="badge badge-warning font-weight-normal">@User.Identity.Name</span></h5>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-3" })
+                    <div class="col-9">
+                        <h5><span class="badge badge-warning font-weight-normal">@Html.DisplayFor(model => model.RoleName)</span></h5>
+                    </div>
+                </div>
+                <hr />
+                <h3>Change Password</h3>
+                <br />
+                <div class="row">
+                    <span class="alert alert-info" role="alert"><span class="fas fa-info info-alert"></span><i style="font-size: 90%;">   When you change your password, you will be logged out of the system automatically.</i></span>
+                </div>
+                <br />
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ChangePasswordModel.OldPassword, htmlAttributes: new { @class = "control-label col-3" })
+                    <div class="col-9">
+                        @Html.EditorFor(model => model.ChangePasswordModel.OldPassword, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.ChangePasswordModel.OldPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ChangePasswordModel.NewPassword, htmlAttributes: new { @class = "control-label col-3" })
+                    <div class="col-9">
+                        @Html.EditorFor(model => model.ChangePasswordModel.NewPassword, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.ChangePasswordModel.NewPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ChangePasswordModel.ConfirmPassword, htmlAttributes: new { @class = "control-label col-3" })
+                    <div class="col-9">
+                        @Html.EditorFor(model => model.ChangePasswordModel.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.ChangePasswordModel.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group row">
+                    <div class="offset-3 col-9">
+                        <input type="submit" value="Change Password" class="btn btn-secondary" name="ACTION:ACCOUNT" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <h3>Two-Factor Authentication</h3>
+        <div class="form-horizontal">
+            <div class="form-group row col-5">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="TwoFactorSwitch" @(Model.AccountSetting.TwoFactor ? "checked" : "")>
+                    <label class="custom-control-label" for="TwoFactorSwitch">2FA (Main)</label>
+                </div>
+            </div>
+            @if (Model.AccountSetting.TwoFactor)
+            {
+                <div class="form-group row col-5">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="GoogleAuthSwitch" @(Model.AccountSetting.IsGoogleAuthenticatorEnabled ? "checked" : "")>
+                        <label class="custom-control-label" for="GoogleAuthSwitch">Google Authenticator</label>
+                    </div>
+                </div>
+                <div class="form-group row col-5">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="MicrosoftAuthSwitch" @(Model.AccountSetting.IsMicrosoftAuthenticatorEnabled ? "checked" : "")>
+                        <label class="custom-control-label" for="MicrosoftAuthSwitch">Microsoft Authenticator</label>
+                    </div>
+                </div>
+                if (Model.AccountSetting.IsEmailVerified)
+                {
+                    <div class="form-group row col-5">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="EmailSwitch" checked disabled>
+                            <label class="custom-control-label" for="EmailSwitch" title="Once verified, this can't be undone since email address is required.">Email</label>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group row col-12">
+                        <span>To enable 2FA via e-mail, <a href="#" onclick="switchTab('contact')" >verify</a> your email address first.</span>
+                    </div>
+                }
+
+                if (Model.AccountSetting.IsPhoneVerified)
+                {
+                    <div class="form-group row col-5">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="SmsSwitch" checked disabled>
+                            <label class="custom-control-label" for="SmsSwitch" title="To disable SMS 2FA, you need to remove your Phone Number in the Contact Information tab.">SMS</label>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group row col-12">
+                        <span>To enable 2FA via SMS (MITTO), <a href="#" onclick="switchTab('contact')">verify</a> your phone number first.</span>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="form-group row col-12">
+                    <span>2FA (Main) must be enabled first to enable Google and/or Microsoft Authentication.</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>

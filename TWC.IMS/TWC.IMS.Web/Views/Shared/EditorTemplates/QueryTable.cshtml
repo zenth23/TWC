@@ -1,0 +1,101 @@
+﻿@model TWC.IMS.Web.Models.QueryToolViewModel
+
+<style>
+    span.k-pager-input > input.k-textbox {
+        width: 43.33px !important;
+    }
+
+    span.k-pager-sizes > span.k-dropdown {
+        width: 58.5px !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-9">
+        <h4>Results</h4>
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-outline-success float-right" title="Export data to Excel" id="btnExportToExcel"><span class="fas fa-file-excel"></span> Export</button>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-12">
+        @{
+            var html = new System.Text.StringBuilder();
+            html.Append("<table style='display:none' id='ttbbll'>");
+            //add colgroup row for column sizing to enable kendo grid's horizontal scrollbar
+            html.Append("<colgroup>");
+            for (int i = 0; i < Model.ResultTable.Columns.Count; i++)
+            {
+                html.Append("<col style=\"width:150px;\"/>");
+            }
+            html.Append("</colgroup>");
+            //add header row
+            html.Append("<thead><tr>");
+            for (int i = 0; i < Model.ResultTable.Columns.Count; i++)
+            {
+                html.Append("<th>" + Model.ResultTable.Columns[i].ColumnName + "</th>");
+            }
+            html.Append("</tr></thead>");
+            html.Append("<tbody>");
+            //add rows
+            for (int i = 0; i < Model.ResultTable.Rows.Count; i++)
+            {
+                html.Append("<tr>");
+                for (int j = 0; j < Model.ResultTable.Columns.Count; j++)
+                {
+                    html.Append("<td>" + Model.ResultTable.Rows[i][j].ToString() + "</td>");
+                }
+                html.Append("</tr>");
+            }
+            html.Append("</tbody>");
+            html.Append("</table>");
+        }
+        @Html.Raw(html.ToString())
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#ttbbll").kendoGrid({
+            sortable: true,
+            resizable: true,
+            columnMenu: true,
+            filterable: true,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                pageSizes: [15, 30, 50, 100],
+                input: true,
+                buttonCount: 5
+            },
+            dataSource: {
+                pageSize: 15
+            },
+            excel: {
+                fileName: 'query_results.xlsx',
+                allPages: true
+            },
+            dataBound: onDataBoundttbbll,
+        });
+
+        // EXPORT TO EXCEL
+        $('#btnExportToExcel').on('click', function (e) {
+            e.preventDefault();
+            try {
+                var grid = $('#ttbbll').data('kendoGrid');
+                grid.saveAsExcel();
+            } catch (e) {
+                console.log('Export to Excel Error:');
+                console.log(e);
+            }
+        });
+
+        // ON DATABOUND RESULT TABLE
+        function onDataBoundttbbll() {
+            $("#ttbbll").show();
+        }
+    })
+</script>

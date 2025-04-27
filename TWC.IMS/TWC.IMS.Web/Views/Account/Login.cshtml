@@ -1,0 +1,177 @@
+﻿@model TWC.IMS.Web.Models.LoginViewModel
+@{
+    ViewBag.Title = "System Login";
+}
+<link href="~/Content/login.css" rel="stylesheet" />
+<style>
+    .container {
+        display: flex;
+        height: 95.5vh;
+        background-color: #f2f0f1;
+        flex-direction: row; /* Default layout for larger screens */
+    }
+
+    .left-panel, .right-panel {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-panel {
+        background-color: #fff;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 2rem;
+    }
+
+    .right-panel {
+        background-image: url('@Url.Content("~/Content/Images/login-image.jpg")');
+        background-size: cover;
+        background-position: center;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        opacity: 0.5;
+    }
+
+    /* Form Container */
+    .form-container {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    /* Adjust logo styling */
+    .login-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .login-logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .login-logo label {
+        font-size: x-large;
+        font-weight: 500;
+        color: #0077b6;
+        margin-top: 1rem;
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .form-group i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+    }
+
+    .form-control {
+        padding-left: 2.5rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-statement {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Mobile Styling (adjustments for screens smaller than 768px) */
+    @@media screen and (max-width: 768px) {
+        .container {
+            flex-direction: column; /* Stack the panels vertically on mobile */
+        }
+
+        .left-panel {
+            border-radius: 20px 20px 0 0;
+            padding: 1rem;
+        }
+
+        .right-panel {
+            opacity: 1;
+            background-image: none; /* Remove background image on smaller screens */
+            margin-top: 1rem;
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Adjust form container width */
+        .form-container {
+            max-width: 100%;
+            padding: 1rem;
+        }
+
+        .login-logo {
+            margin-bottom: 1rem; /* Adjust the margin for better mobile alignment */
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="left-panel">
+        <div class="form-container">
+            <div class="login-logo">
+                <img src="~/Content/Images/logo/JIS_NAV.png" alt="Logo">
+            </div>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-signin">
+                    @Html.Partial("_ValidationSummary")
+                    @if (!string.IsNullOrWhiteSpace(TempData["SUCCESS_MESSAGE"] as string))
+                    {
+                        <div class="alert alert-success">
+                            <span>@TempData["SUCCESS_MESSAGE"]</span>
+                        </div>
+                    }
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Username", autocomplete = "off" })
+                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-key"></i>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", autocomplete = "off" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group form-check">
+                        @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label" })
+                    </div>
+                    <div class="form-group text-left">
+                        <input type="submit" value="Log in" class="btn btn-primary" />
+                        @Html.ActionLink("Forgot Password?", "ForgotPassword", "Account")
+                    </div>
+                </div>
+            }
+            <div class="privacy-statement">
+                <a href="@Url.Action("privacystatement", "home")">
+                    <span class="fas fa-user-shield"></span>
+                    <b>Privacy Statement</b>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="right-panel"></div>
+</div>
+
+@Html.Partial("_PrivacyStatement")
+@Html.Partial("_CookieNotice")
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/application/login.js")
+    @Scripts.Render("~/Scripts/application/privacy.js")
+    @Scripts.Render("~/Scripts/application/cookie.notice.js")
+    @Scripts.Render("~/bundles/jqueryval")
+}

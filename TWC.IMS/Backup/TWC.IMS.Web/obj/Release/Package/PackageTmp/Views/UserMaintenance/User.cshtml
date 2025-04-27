@@ -1,0 +1,194 @@
+﻿@model TWC.IMS.Web.Models.UserViewModel
+
+@{
+    ViewBag.Title = "User Maintenance";
+}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2><span class="fas fa-users-cog"></span> @ViewBag.Title</h2>
+    </div>
+</div>
+<hr />
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    @using (Html.BeginForm("detailsuser", "maintenance", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.Partial("_ValidationSummary")
+
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.AccountModel.UserId)
+            @Html.HiddenFor(model => model.PersonalModel.UserDetailRowVersion)
+            @Html.HiddenFor(model => model.AccountModel.IsAdmin)
+            @*@Html.HiddenFor(model => model.IsActive)*@
+            @Html.Hidden("OrigRoleId", Model.User_Role)
+
+            @if (ViewBag.Mode == "EDIT")
+            {
+                <h3>Account</h3>
+            }
+            else
+            {
+                <h3>New User Account</h3>
+            }
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.AccountModel.UserName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.AccountModel.UserName, new { htmlAttributes = new { @class = "form-control", @readonly="readonly", placeholder = "Automatically generated" } })
+                </div>
+            </div>
+
+            @*<div class="form-group row">
+                <label for="Username" class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2">Username</label>
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <span class="form-control" id="Username" style="width:280px;" disabled="disabled" readonly="readonly">Automatically generated</span>
+                </div>
+            </div>*@
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.User_Role, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @(Html.Kendo().ComboBox()
+                      .Name("User_Role")
+                      .AutoBind(true)
+                      .IgnoreCase(true)
+                      .Suggest(false)
+                      .Placeholder("Select Role")
+                      .DataTextField("Name")
+                      .DataValueField("Id")
+                      .Filter(FilterType.Contains)
+                      .Events(e =>
+                      {
+                          e.Select("userRoleOnSelect");
+                          e.DataBound("userRoleOnDataBound");
+                      })
+                      .DataSource(s =>
+                      {
+                          s.Read(r =>
+                          {
+                              r.Action("GetRolesList", "maintenance").Data("searchKeyRole").Type(HttpVerbs.Post);
+                          })
+                          .ServerFiltering(true);
+                      })
+                      .HtmlAttributes(new { style = "width: 280px;" }))
+
+                    @if (this.Context.HasPermission("Roles.CanAdd"))
+                    {
+                        <a class="btn btn-link" href="@Url.Action("details", "maintenance", new { type = "r" })" target="_blank" title="Add new role (opens in new tab)"><span class="fas fa-plus"></span> New Role    <span style="font-size: 8px;" class="fas fa-external-link-alt"></span></a>
+                    }
+                    <br />
+                    @Html.ValidationMessageFor(model => model.User_Role, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <div class="checkbox">
+                        @Html.Kendo().CheckBoxFor(model => model.IsActive).Label("")
+                    </div>
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <h3>Personal Information</h3>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.PersonalModel.EmployeeId, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.PersonalModel.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PersonalModel.EmployeeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.PersonalModel.FirstName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.PersonalModel.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PersonalModel.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.PersonalModel.MiddleName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.PersonalModel.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PersonalModel.MiddleName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.PersonalModel.LastName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.PersonalModel.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PersonalModel.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.PersonalModel.Suffix, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.PersonalModel.Suffix, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PersonalModel.Suffix, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.PersonalModel.Nickname, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.PersonalModel.Nickname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PersonalModel.Nickname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <h3>Contact Information</h3>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.ContactModel.Email, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.ContactModel.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ContactModel.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="form-group row">
+                @Html.LabelFor(model => model.ExpirationDate, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <div class="checkbox">
+                        @(Html.Kendo().DateTimePickerFor(m => m.ExpirationDate)
+                                  .Min(DateTime.Now.AddDays(-1))
+                                  .HtmlAttributes(new { style = "width: 280px;" })
+                        )
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ExpirationDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @if (ViewBag.Mode == "EDIT")
+            {
+                <hr />
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                        @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ModifiedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                        @Html.DisplayFor(model => model.ModifiedBy, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            }
+            <hr />
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-outline-secondary" })
+                    <input type="button" value="Clear" class="btn btn-outline-secondary" id="btnReset" />
+                    <input type="submit" value="Save" class="btn btn-secondary float-right" name="ACTION:@ViewBag.Mode" id="btnSave" />
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/application/user-details.js?v=" + DateTime.Now.Ticks)
+}

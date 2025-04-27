@@ -1,0 +1,34 @@
+﻿@*
+    application version distribution
+    distribution of errors across all versions
+    bar/donut chart
+*@
+@(Html.Kendo().Chart()
+      .Name("versionDistributionDonutChart")
+      .ChartArea(chartArea => chartArea
+          .Background("transparent"))
+      .Title(title => title
+          .Text("App Version Error Distribution")
+          .Position(ChartTitlePosition.Top)
+      )
+      .Legend(legend => legend
+          .Visible(true)
+          .Position(ChartLegendPosition.Bottom)
+      )
+      .SeriesDefaults(series =>
+          series.Donut().StartAngle(150)
+      )
+      .Series(series =>
+      {
+          series.Donut("ErrorCount", "AppVersion");
+      })
+      .Tooltip(tooltip => tooltip
+          .Visible(true)
+          .Template("#= category #: #= kendo.format('{0:n0}',value) #")
+      )
+      .Theme("flat")
+      .DataSource(ds => ds.Read(read => read.Action("GetApplicationVersionErrorDistributionChartData", "AdminDashboardCharts")
+                                            .Data("chartDateFilter"))
+                          .Group(group => group.Add<string>("AppVersion")))
+      .Deferred()
+)

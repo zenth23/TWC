@@ -1,0 +1,40 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+        @(Html.Kendo().Grid<TWC.IMS.Web.Models.ProductInventoryListViewModel>()
+    .Name("gridProductInventories")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.LocationName)
+               .Title("Location")
+               .Width(150);
+        columns.Bound(p => p.ProductName)
+               .Title("Product")
+               .Width(150);
+        columns.Bound(p => p.Inventory)
+               .Title("Inventory")
+               .HtmlAttributes(new { @class = "text-right" })
+               .Width(100);
+    })
+    .Pageable(p => p.Refresh(true))
+    .Filterable()
+    .Resizable(r => r.Columns(true))
+    .Sortable()
+    .Scrollable(s => s.Height(320))
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Model(model =>
+        {
+            model.Id(p => p.Id);
+        })
+        .Read(read => read.Action("List", "product_inventory"))
+        .Group(groups => groups.Add(p => p.LocationName)) // Default grouping by LocationName
+    )
+    .Groupable(group => group.Enabled(true)) // Enable grouping
+
+        )
+

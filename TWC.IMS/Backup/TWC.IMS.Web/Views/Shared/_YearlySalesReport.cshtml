@@ -1,0 +1,184 @@
+﻿@{
+    string expiration = Session["REPORT_EXPIRATION"]?.ToString();
+}
+<div class="form-group row">
+    <div class="col-6 mt-1">
+        <h3 id="ysr" class="mr-0" style="display: inline-block;">@DateTime.Now.Year Yearly Sales Report</h3>
+        <a href="@Url.Action("yearlysalesreport", "reportgenerator")" target="_blank" title="Open Report in New Window" style="display:inline;" id="reportLink"><span class="fas fa-external-link-alt"></span></a>
+    </div>
+    <div class="col-6 pl-2">
+        <div class="float-right">
+            @(Html.Kendo().DropDownList()
+                      .Name("LicenseSubscriptionTypeCode")
+                      .DataTextField("Code")
+                      .DataValueField("Id")
+                      .Events(e => e.Change("onDDLChange").DataBound("onDDLChange"))
+                      .DataSource(source =>
+                      {
+                          source.Read(read =>
+                          {
+                              read.Action("GetSubscriptionTypeList", "demosources");
+                          })
+                          .ServerFiltering(false);
+                      })
+                      .HtmlAttributes(new { style = "width: 11em;" })
+                      .Deferred())
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-success ml-1" title="Export data to Excel" id="btnExportToExcel"><span class="fas fa-file-excel"></span> Export</button>
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btnDropDown">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <span class="dropdown-item" id="ddl-container">No latest download</span>
+                </div>
+
+                <span class="text-black-50 fas fa-info-circle float-right ml-1 mt-2"
+                      title="Generated reports are valid for @expiration day(s). &#10You can generate the updated report when &#10the current generated report expires."
+                      style="font-size:18px; cursor:pointer">
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        @(Html.Kendo().Grid<TWC.IMS.Models.ChartModels.YearlySalesReportModel>()
+              .Name("gridYearlySalesReport")
+              .Columns(column =>
+              {
+                  column.Bound(c => c.BusinessUnitCode).Width(144).Sticky();
+                  column.Bound(c => c.LicenseSubscriptionTypeCode).Width(150)
+                                                                  .ClientTemplate("#=LicenseSubscriptionTypeCode != null ? LicenseSubscriptionTypeCode : '-' #");
+                  column.Bound(c => c.LicenseCurrencyCode).Hidden();
+                  column.Bound(c => c.January).Width(115)
+                                              .ClientTemplate("#=January > 0 ? kendo.format('{0:N2}', January) : '-'#")
+                                              .HtmlAttributes(new { style = "text-align: right" })
+                                              .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                              .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.February).Width(115)
+                                               .ClientTemplate("#=February > 0 ? kendo.format('{0:N2}', February) : '-'#")
+                                               .HtmlAttributes(new { style = "text-align: right" })
+                                               .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                               .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.March).Width(115)
+                                            .ClientTemplate("#=March > 0 ? kendo.format('{0:N2}', March) : '-'#")
+                                            .HtmlAttributes(new { style = "text-align: right" })
+                                            .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                            .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.April).Width(115)
+                                            .ClientTemplate("#=April > 0 ? kendo.format('{0:N2}', April) : '-'#")
+                                            .HtmlAttributes(new { style = "text-align: right" })
+                                            .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                            .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.May).Width(115)
+                                          .ClientTemplate("#=May > 0 ? kendo.format('{0:N2}', May) : '-'#")
+                                          .HtmlAttributes(new { style = "text-align: right" })
+                                          .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                          .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.June).Width(115)
+                                           .ClientTemplate("#=June > 0 ? kendo.format('{0:N2}', June) : '-'#")
+                                           .HtmlAttributes(new { style = "text-align: right" })
+                                           .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                           .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.July).Width(115)
+                                           .ClientTemplate("#=July > 0 ? kendo.format('{0:N2}', July) : '-'#")
+                                           .HtmlAttributes(new { style = "text-align: right" })
+                                           .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                           .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.August).Width(115)
+                                             .ClientTemplate("#=August > 0 ? kendo.format('{0:N2}', August) : '-'#")
+                                             .HtmlAttributes(new { style = "text-align: right" })
+                                             .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                             .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.September).Width(115)
+                                                .ClientTemplate("#=September > 0 ? kendo.format('{0:N2}', September) : '-'#")
+                                                .HtmlAttributes(new { style = "text-align: right" })
+                                                .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                                .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.October).Width(115)
+                                              .ClientTemplate("#=October > 0 ? kendo.format('{0:N2}', October) : '-'#")
+                                              .HtmlAttributes(new { style = "text-align: right" })
+                                              .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                              .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.November).Width(115)
+                                               .ClientTemplate("#=November > 0 ? kendo.format('{0:N2}', November) : '-'#")
+                                               .HtmlAttributes(new { style = "text-align: right" })
+                                               .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                               .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.December).Width(115)
+                                               .ClientTemplate("#=December > 0 ? kendo.format('{0:N2}', December) : '-'#")
+                                               .HtmlAttributes(new { style = "text-align: right" })
+                                               .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                               .FooterHtmlAttributes(new { style = "text-align: right" });
+
+                  column.Bound(c => c.GrandTotal).Width(150)
+                                                 .ClientTemplate("<div class='row'>" +
+                                                                    "<div class='col-sm-2 col-md-2 col-lg-2 col-xl-2'>" +
+                                                                            "#= LicenseCurrencyCode != null ? LicenseCurrencyCode : '-' #" +
+                                                                    "</div>" +
+                                                                    "<div div class='col-sm-9 col-md-9 col-lg-9 col-xl-9' style='text-align:right'>" +
+                                                                            "#= GrandTotal > 0 ? kendo.format('{0:N2}', GrandTotal) : '-'#" +
+                                                                    "</div>" +
+                                                                 "</div>")
+                                                 .HtmlAttributes(new { style = "text-align: right" })
+                                                 .ClientFooterTemplate("#= kendo.format('{0:N2}', sum)#")
+                                                 .FooterHtmlAttributes(new { style = "text-align: right" });
+              })
+              .Excel(e => e.FileName($"Yearly_Sales_Report_for_{DateTime.Now.Year}.xlsx")
+                           .AllPages(true)
+                           .ForceProxy(true)
+                           .ProxyURL(Url.Action("cachereport", "reportgenerator")))
+              .Filterable()
+              .Pageable(p => p.Refresh(true)
+                              .PageSizes(true)
+                              .PageSizes(new int[] { 15, 30, 50, 100 })
+                              .Input(true)
+                              .ButtonCount(5))
+              .Selectable(s => s.Mode(GridSelectionMode.Single))
+              .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+              .Scrollable(s => s.Height(630))
+              .Resizable(r => r.Columns(true))
+              .DataSource(ds =>
+              {
+                  ds.Ajax()
+                  .PageSize(30)
+                  .Aggregates(a =>
+                  {
+                      a.Add(x => x.January).Sum();
+                      a.Add(x => x.February).Sum();
+                      a.Add(x => x.March).Sum();
+                      a.Add(x => x.April).Sum();
+                      a.Add(x => x.May).Sum();
+                      a.Add(x => x.June).Sum();
+                      a.Add(x => x.July).Sum();
+                      a.Add(x => x.August).Sum();
+                      a.Add(x => x.September).Sum();
+                      a.Add(x => x.October).Sum();
+                      a.Add(x => x.November).Sum();
+                      a.Add(x => x.December).Sum();
+                      a.Add(x => x.GrandTotal).Sum();
+                  })
+                  .Read(r => r.Action("ReadDashboardYearlyReportsUnits", "reportgenerator").Data("filterGrid"))
+                  .Model(m =>
+                  {
+                      m.Id(c => c.BusinessUnitCode);
+                  });
+              })
+              .Events(e => e.ExcelExport("exportExcel"))
+              .Deferred())
+    </div>
+</div>

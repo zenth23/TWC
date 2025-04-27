@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Confirm Email";
+}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2><span class="fas fa-user-shield"></span> @ViewBag.Title</h2>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p>
+                Thank you for confirming your email. Click <a href="~/manage/profile#contact">here</a> to continue.
+            </p>
+        }
+        else
+        {
+            <p>
+                Thank you for confirming your email. Please @Html.ActionLink("click here to login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            </p>
+        }
+    </div>
+</div>

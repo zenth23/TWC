@@ -1,0 +1,40 @@
+﻿@*
+    error rate
+    error rate over time
+    line chart
+*@
+@(Html.Kendo().Chart<TWC.IMS.Models.ChartModels.ErrorRateModel>()
+      .Name("errorRateChart")
+      .Title("Error Rate")
+      .Legend(legend => legend
+          .Visible(false)
+          .Position(ChartLegendPosition.Bottom)
+      )
+      .ChartArea(chartArea => chartArea
+          .Background("transparent")
+      )
+      .SeriesDefaults(seriesDefaults =>
+          seriesDefaults.Line().Style(ChartLineStyle.Normal)
+      )
+      .Series(series =>
+      {
+          series.Line(s => s.Rate);
+      })
+      .CategoryAxis(axis => axis
+          .Categories(c => c.MonthString)
+          .MajorGridLines(lines => lines.Visible(false))
+      )
+      .ValueAxis(axis => axis
+          .Numeric().Labels(labels => labels.Format("{0:n1}%"))
+          .Line(line => line.Visible(false))
+          .AxisCrossingValue(-10)
+      )
+      .Tooltip(tooltip => tooltip
+          .Visible(true)
+          .Format("{0:n1}%")
+      )
+      .Theme("flat")
+      .DataSource(ds => ds.Read(read => read.Action("GetErrorRateChartData", "AdminDashboardCharts")
+                                            .Data("chartDateFilter")))
+      .Deferred()
+)

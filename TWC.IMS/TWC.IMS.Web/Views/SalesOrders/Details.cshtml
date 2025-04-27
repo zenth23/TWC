@@ -1,0 +1,313 @@
+﻿
+
+@{
+    ViewBag.Title = "Sales";
+}
+@model TWC.IMS.Web.Models.SalesOrderViewModel
+<style>
+    .k-numerictextbox, .k-textarea {
+        font-size: inherit !important;
+    }
+
+    .so-label {
+        font-size: 0.85rem !important;
+        padding-top: 2px;
+    }
+    .checkbox-lg {
+        transform: scale(1.5);
+        width: 20px;
+        height: 20px;
+    }
+
+    .isGold-checkbox {
+        transform: scale(1.5); 
+        width: 20px;
+        height: 20px;
+        margin: 5px; 
+    }
+    .dropdown-lg {
+        width: 100% !important;
+        height:100& !important;
+    }
+</style>
+
+
+@Html.AntiForgeryToken()
+
+<div class="row">
+    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <ul class="header-text-button-container">
+
+            <li>
+                <h2 class="mt-1">@ViewBag.Title</h2>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+
+
+@* Quats Start *@
+
+<div class="card p-3 mb-3">
+    <h5 class="card-title">Sales Order</h5>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group row">
+                @Html.Label("Location", htmlAttributes: new { @class = "col-sm-3 so-label" })
+                <div class="col-sm-6">
+                    @(Html.Kendo().DropDownList()
+                                              .Name("main_location_id")
+                                              .Filter(FilterType.Contains)
+                                              .OptionLabel("Select Location.")
+                                              .DataTextField("location_name")
+                                              .DataValueField("Id")
+                                              .HtmlAttributes(new { required = "required" })
+                                              .DataSource(source =>
+                                              {
+                                                  source.Read(read =>
+                                                  {
+                                                      read.Action("GetLocationsForDdl", "Common");
+                                                  })
+                                                  .ServerFiltering(false);
+                                              })
+                                              .Enable(true)
+                                              .AutoBind(true)
+                    )
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.Label("SalesType", htmlAttributes: new { @class = "col-sm-3 so-label" })
+                <div class="col-sm-6">
+                    @(Html.Kendo().DropDownList()
+                                              .Name("main_SalesType_id")
+                                              .Filter(FilterType.Contains)
+                                              .OptionLabel("Select SalesType.")
+                                              .DataTextField("SalesType_name")
+                                              .DataValueField("Id")
+                                              .HtmlAttributes(new { required = "required" })
+                                              .DataSource(source =>
+                                              {
+                                                  source.Read(read =>
+                                                  {
+                                                      read.Action("GetSalesTypesForDdl", "Common");
+                                                  })
+                                                  .ServerFiltering(false);
+                                              })
+                                              .Enable(true)
+                                              .AutoBind(true)
+                    )
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                @Html.Label("Invoice Number", htmlAttributes: new { @class = "col-sm-3 so-label" })
+                <div class="col-sm-6">
+                    @Html.TextBoxFor(model => model.InvoiceNumber, null, new { @class = "form-control" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="card p-3">
+    <h5 class="card-title">Sales Order Details</h5>
+    <table class="table table-bordered" id="salesOrderTable">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Weight</th>
+                <th>Cost</th>
+                <th>IsGold</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @(Html.Kendo().DropDownList()
+                .Name("ProductNumber_0") 
+                .Filter(FilterType.Contains)
+                .OptionLabel("Select Product.")
+                .DataTextField("product_name")
+                .DataValueField("Id")
+                .HtmlAttributes(new { required = "required", @class = "form-control product-dropdown dropdown-lg" })
+                .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("GetProductsForDdl", "Common");
+                    })
+                    .ServerFiltering(false);
+                })
+                .Enable(true)
+                .AutoBind(true)
+            )
+                </td>
+                <td><input type="text" class="form-control quantity-input" name="quantity[]" oninput="calculateAmount(this)"></td>
+                <td><input type="text" class="form-control weight-input" name="weight[]" disabled oninput="calculateAmount(this)"></td>
+                <td><input type="text" class="form-control cost-input" name="cost[]" oninput="calculateAmount(this)"></td>
+                <td><input type="checkbox" class="form-check-input isGold-checkbox" onchange="toggleFields(this)"></td>
+                <td><input type="text" class="form-control amount-input" name="amount[]" readonly></td>
+                <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <button type="button" class="btn btn-success" id="addRow">Add</button>
+
+    <div class="row mt-3">
+        <div class="col-sm-6">
+            <label><strong>Total Amount:</strong></label>
+            <input type="text" id="totalAmount" class="form-control" readonly>
+        </div>
+    </div>
+
+</div>
+<script>
+
+    function calculateAmount(input) {
+                let row = input.closest("tr");
+                let isGold = row.querySelector(".isGold-checkbox").checked;
+                let quantity = parseFloat(row.querySelector(".quantity-input").value) || 0;
+                let weight = parseFloat(row.querySelector(".weight-input").value) || 0;
+                let cost = parseFloat(row.querySelector(".cost-input").value) || 0;
+                let amountField = row.querySelector(".amount-input");
+
+                if (isGold) {
+                    amountField.value = (weight * cost).toFixed(2);
+                } else {
+                    amountField.value = (quantity * cost).toFixed(2);
+                }
+                updateTotalAmount();
+                }
+
+                function updateTotalAmount() {
+                    let total = 0;
+                    document.querySelectorAll(".amount-input").forEach(input => {
+                        total += parseFloat(input.value) || 0;
+                    });
+                    document.getElementById("totalAmount").value = total.toFixed(2);
+                }
+
+                function toggleFields(checkbox) {
+                    let row = checkbox.closest("tr");
+                    let quantityField = row.querySelector(".quantity-input");
+                    let weightField = row.querySelector(".weight-input");
+
+                    if (checkbox.checked) {
+                            quantityField.disabled = true;
+                            weightField.disabled = false;
+                        } else {
+                            quantityField.disabled = false;
+                            weightField.disabled = true;
+                        }
+    }
+    $(document).ready(function () {
+
+        $("#salesOrderTable .k-dropdown").css("width", "100%");
+    });
+
+    $(document).on("click", "#addRow", function () {
+        var table = $("#salesOrderTable tbody");
+        var rowCount = $("#salesOrderTable tbody tr").length; // Get row count for unique names
+
+        var newRow = $(`
+        <tr>
+            <td><input class="product-dropdown dropdown-lg" id="ProductNumber_${rowCount}" style="width: 100%;" /></td>
+            <td><input type="text" class="form-control quantity-input" name="quantity[]" oninput="calculateAmount(this)"></td>
+            <td><input type="text" class="form-control weight-input" name="weight[]" disabled oninput="calculateAmount(this)"></td>
+            <td><input type="text" class="form-control cost-input" name="cost[]" oninput="calculateAmount(this)"></td>
+            <td><input type="checkbox" class="form-check-input isGold-checkbox" onchange="toggleFields(this)"></td>
+            <td><input type="text" class="form-control amount-input" name="amount[]" readonly></td>
+            <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
+        </tr>
+    `);
+
+        table.append(newRow);
+
+        console.log("DEBUG: Row added. Checking for .product-dropdown...");
+        console.log("Row has .product-dropdown?", newRow.find(".product-dropdown").length > 0);
+
+        // ✅ Ensure Kendo DropDownList is initialized AFTER adding the row
+        newRow.find(".product-dropdown").kendoDropDownList({
+            optionLabel: "Select Product",
+            dataTextField: "ProductName", // Make sure this matches the JSON response
+            dataValueField: "Id",
+            filter: "contains",
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Common/GetProductsForDdl",
+                        dataType: "json"
+                    }
+                }
+            }
+        });
+
+        console.log("DEBUG: Kendo DropDownList initialized.");
+    });
+
+
+    function validateProductSelection(selectedDropdown) {
+        var selectedValue = selectedDropdown.val();
+        var duplicate = false;
+
+        $(".product-dropdown").each(function () {
+            if ($(this).val() === selectedValue && $(this)[0] !== selectedDropdown[0]) {
+                duplicate = true;
+                return false; 
+            }
+        });
+
+        if (duplicate) {
+            alert("This product has already been selected. Please choose a different product.");
+            selectedDropdown.data("kendoDropDownList").value("");
+        }
+    }
+
+
+    document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("remove-row")) {
+            event.target.closest("tr").remove();
+                updateTotalAmount();
+            }
+        });
+</script>
+
+<div class="row mt-3">
+    <div class="col-sm-6">
+        @(Html.Kendo().Button()
+    .Name("saveButton")
+    .Content("Save")
+    .HtmlAttributes(new { type = "button", @class = "btn btn-primary", onclick = "salesOrders.saveSalesOrder()" })
+)
+        @(Html.Kendo().Button().Name("cancelButton").Content("Cancel").HtmlAttributes(new { type = "button", @class = "btn btn-secondary" }))
+    </div>
+</div>
+
+
+
+@* Quats End *@
+
+
+
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/application/common-helper.js")
+    @Scripts.Render("~/Scripts/application/salesorders.js")
+
+}
+
+<script>
+    $(function () {
+        salesOrders.initialize()
+    })
+</script>

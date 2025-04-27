@@ -1,0 +1,120 @@
+﻿@model TWC.IMS.Web.Models.SystemConfigsViewModel
+
+@{
+    ViewBag.Title = "System Config";
+    bool isHtml = Convert.ToBoolean(ViewBag.IsValueHtml);
+}
+<style>
+    input, select, textarea, span.form-control-readonly {
+        max-width: unset !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <ul class="header-text-button-container">
+            <li>
+            </li>
+            <li>
+                @if (ViewBag.Mode == "EDIT")
+                {
+                    <h2><span class="fas fa-cog"></span> @ViewBag.Title</h2>
+                }
+                else
+                {
+                    <h2><span class="fas fa-cog"></span> New @ViewBag.Title</h2>
+                }
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("txtIsHtml", isHtml)
+
+        <div class="form-horizontal">
+            @Html.Partial("_ValidationSummary")
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.UniqueKey)
+            @Html.HiddenFor(model => model.ConfigRowVersion)
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Value, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="inputType" class="custom-control-input" id="radPlainText" value="false" />
+                        <label class="custom-control-label" for="radPlainText">Plain Text</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="inputType" class="custom-control-input" id="radHtml" value="true" />
+                        <label class="custom-control-label" for="radHtml">HTML</label>
+                    </div>
+                    <br /><br />
+                    <div id="divValueContainer">
+                        @Html.TextAreaFor(model => model.Value, 25, 20, new { @class = "form-control", style = "height:400px;" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Value, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="offset-2 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <div class="custom-control custom-checkbox">
+                        @Html.CheckBoxFor(model => model.EncryptValue, new { @class = "custom-control-input" })
+                        @Html.LabelFor(model => model.EncryptValue, htmlAttributes: new { @class = "custom-control-label" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.TextAreaFor(model => model.Description, 3, 20, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @if (ViewBag.Mode == "EDIT")
+                {
+                <hr />
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                        @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ModifiedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                        @Html.DisplayFor(model => model.ModifiedBy, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            }
+            <hr />
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <a href="@Url.Action("index", "systemconfig")" class="btn btn-outline-secondary">Cancel</a>
+                    <input type="button" value="Clear" class="btn btn-outline-secondary" id="btnReset" />
+                    <input type="submit" value="Save" class="btn btn-secondary float-right" name="ACTION:@ViewBag.Mode" />
+                </div>
+            </div>
+        </div>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/Scripts/application/system-config-details.js?v=" + DateTime.Now.Ticks)
+    }
+</div>

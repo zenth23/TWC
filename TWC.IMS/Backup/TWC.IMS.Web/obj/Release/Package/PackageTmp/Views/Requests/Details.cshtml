@@ -1,0 +1,202 @@
+﻿@model TWC.IMS.Web.Models.RequestViewModel
+
+@{
+    ViewBag.Title = "Request";
+}
+
+<style>
+    .card {
+        background-color: transparent !important
+    }
+
+    .wfstatus-APRV {
+        padding-left: 2px;
+        padding-right: 2px;
+        color: #fff;
+        background-color: #3FB618;
+    }
+
+    .wfstatus-RJCT {
+        padding-left: 2px;
+        padding-right: 2px;
+        color: #fff;
+        background-color: #FF0039;
+    }
+
+    .badge-Approved {
+        padding-left: 2px;
+        padding-right: 2px;
+        color: #fff;
+        background-color: #3FB618;
+    }
+
+    .badge-Rejected {
+        padding-left: 2px;
+        padding-right: 2px;
+        color: #fff;
+        background-color: #FF0039;
+    }
+
+    .badge-Submitted {
+        padding-left: 2px;
+        padding-right: 2px;
+        color: #fff;
+        background-color: #9954BB;
+    }
+
+     .wfstatus-NAN {
+        padding-left: 2px;
+        padding-right: 2px;
+        color: black;
+        background-color: lightgray;
+    }
+
+    .wfstatus-PDNG {
+        padding-left: 2px;
+        padding-right: 2px;
+        color: #fff;
+        background-color: #9954BB;
+    }
+
+    textarea {
+        max-width: 100% !important;
+    }
+</style>
+<div class="row">
+    <div class="col-sm-8">
+        <ul class="header-text-button-container">
+            <li>
+
+                <h2><span class="fas fa-file"></span> @ViewBag.Title</h2>
+                @if (!string.IsNullOrWhiteSpace((string)ViewBag.Mode))
+                {
+                    <h4><span class="badge badge-primary">@Model.StrStatus</span></h4>
+                }
+                else
+                {
+                    <h4><span class="badge badge-primary">New</span></h4>
+                }
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        @if(Model.UserHasPendingApproval)
+        {
+            @Html.HiddenFor(model => model.UserPendingApprovalId )
+
+            <div class="text-right" id="btnGroupApproval">
+                <!-- WILL BE ENABLED IN requests.initialize to ensure workflow was already loaded. -->
+                <input type="button" disabled value="Approve" onclick="requests.events.onOpenResponseModal(this,event,'.clsApprove')" class="btn btn-primary "/> 
+                <input type="button" disabled value="Reject" class="btn btn-danger " onclick="requests.events.onOpenResponseModal(this,event,'.clsReject')"/>
+            </div>
+        }
+    </div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id="requestForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.Partial("_ValidationSummary")
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.ConfigRowVersion)
+            @Html.HiddenFor(model => model.ApprovalEntityId )
+            
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">Details</h4>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                        <div class="col-sm-3">
+                            @if((string)ViewBag.Mode != "READ")
+                            {
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            }
+                            else 
+                            {
+                                <b>@Model.Name</b>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                        <div class="col-sm-3">
+                            @if((string)ViewBag.Mode != "READ")
+                            {
+                                @Html.TextAreaFor(model => model.Description, 3, 20, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                            }
+                            else 
+                            {
+                                <b>@Model.Description</b>
+                            }
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">Approval Workflow</h4>
+                    <div id="workflowBlockHolderParent">
+                        <div id="workflowBlockHolder">
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                        <input type="button" 
+                               value="Generate Workflows" 
+                               class="btn btn-outline-primary" 
+                               id="btnGenerateWf"
+                               onclick="requests.events.onGenerateWorkflow(this, event)" />
+                    </div>
+                </div>
+            </div>
+
+            @if (!string.IsNullOrWhiteSpace((string)ViewBag.Mode))
+            {
+                <br />
+                @Html.Partial("~/Views/Shared/_ApprovalLogs.cshtml", new TWC.IMS.Web.Models.ApprovalPartialParamViewModel { RequestId = @Model.Id, RequestName = @Model.RequestName })
+                @Html.Partial("~/Views/Shared/_ApprovalWorkflowAdhoc.cshtml");
+
+            }
+
+          
+            <br />
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <a href="@Url.Action("index", "requests")" class="btn btn-outline-primary">Cancel</a>
+                    @if((string)ViewBag.Mode != "READ")
+                    {
+                        <input type="button" value="Clear"  id="btnSubmit" class="btn btn-outline-primary" id="btnReset" />
+                        <input type="button" value="Submit" id="btnSubmit" class="btn btn-primary float-right" onclick="requests.events.onSubmit(this, event)" />
+                    }
+                </div>
+            </div>
+        </div>
+  
+        @Html.Partial("~/Views/Shared/_ApprovalResponseModal.cshtml", new TWC.IMS.Web.Models.ApprovalPartialParamViewModel { RequestId = Model.Id, RequestName = Model.RequestName, UserPendingApprovalId = Model.UserPendingApprovalId });
+    }
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/application/accesses-details.js?v=" + DateTime.Now.Ticks)
+    @Scripts.Render("~/Scripts/application/workflow.js")
+    @Scripts.Render("~/Scripts/application/workflow.adhoc.js")
+    @Scripts.Render("~/Scripts/transactions/requests-details.js")
+}
+
+
+
+

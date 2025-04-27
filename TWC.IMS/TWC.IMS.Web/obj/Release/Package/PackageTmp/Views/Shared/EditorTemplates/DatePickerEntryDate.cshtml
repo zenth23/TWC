@@ -1,0 +1,9 @@
+﻿@*<div class="entry-date-validator">
+   
+</div>*@
+
+@(Html.Kendo().DatePicker()
+    .Name("entry_date")
+    .HtmlAttributes(new { required = "required" })
+    .Enable(true)
+)

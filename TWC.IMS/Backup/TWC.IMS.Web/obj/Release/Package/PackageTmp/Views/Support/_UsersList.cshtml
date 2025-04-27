@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.UserViewModel>
+
+@(Html.Kendo().Grid(Model)
+              .Name("gridUsers")
+              .Columns(column =>
+              {
+                  column.Command(c =>
+                  {
+                      c.Custom("Reset").Text("<span class='fas fa-redo'></span>").HtmlAttributes(new { title = "Reset Password" }).Click("resetPassword");
+                      c.Custom("Lock").Text("<span class='fas fa-lock'></span>").HtmlAttributes(new { title = "Lock Account" }).Click("lock");
+                      c.Custom("Unlock").Text("<span class='fas fa-lock-open'></span>").HtmlAttributes(new { title = "Unlock Account" }).Click("unlock");
+                      c.Custom("Signout").Text("<span class='fas fa-sign-out-alt'></span>").HtmlAttributes(new { title = "Sign out User" }).Click("signoutUser");
+                  }).Width(165).HtmlAttributes(new { @class = "k-alt command" });
+                  column.Bound(c => c.AccountModel.UserName).Width(130);
+                  column.Bound(c => c.AccountModel.RoleName).Width(150).ClientTemplate("<h5><span class='badge badge-warning font-weight-normal'>#=AccountModel.RoleName#</span></h5>");
+                  column.Bound(c => c.AccountModel.Status).Width(90).ClientTemplate("<h5>#if (AccountModel.Status == 'Locked'){# <span class='badge badge-primary font-weight-normal'> #}else{# <span class='badge badge-success font-weight-normal'>#}# #=AccountModel.Status#</span></h5>");
+                  column.Bound(c => c.ContactModel.Email).Width(300).ClientTemplate("<a href='mailto:#= ContactModel.Email #' target='_blank'>#= ContactModel.Email #</a>");
+                  column.Bound(c => c.PersonalModel.FirstName).Width(150);
+                  column.Bound(c => c.PersonalModel.LastName).Width(150);
+                  column.Bound(c => c.Created).Width(150);
+                  column.Bound(c => c.CreatedBy).Width(150);
+                  column.Bound(c => c.Modified).Width(150);
+                  column.Bound(c => c.ModifiedBy).Width(150);
+              })
+              .Filterable()
+              .Pageable(p => p.Refresh(true)
+                              .PageSizes(true)
+                              .PageSizes(new int[] { 15, 30, 50, 100 })
+                              .Input(true)
+                              .ButtonCount(5))
+              .Selectable(s => s.Mode(GridSelectionMode.Single))
+              .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+              .Scrollable(s => s.Height(350))
+              .Resizable(r => r.Columns(true))
+              .DataSource(ds =>
+              {
+                  ds.Ajax()
+                  .PageSize(15)
+                  .Read(r => r.Action("ReadUsers", "UserMaintenance"))
+                  .Model(m => m.Id(c => c.Id));
+              })
+)

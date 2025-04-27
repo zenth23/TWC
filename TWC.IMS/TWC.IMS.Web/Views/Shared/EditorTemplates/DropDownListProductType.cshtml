@@ -1,0 +1,18 @@
+﻿@(Html.Kendo().DropDownList()
+    .Name("product_type")
+    .Filter(FilterType.Contains)
+    .OptionLabel("Select Product Type")
+    .DataTextField("Description")
+    .DataValueField("Id")
+    .HtmlAttributes(new { required = "required" })
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("GetProductTypesForDdl", "Common");
+        })
+        .ServerFiltering(false);
+    })
+    .Enable(true)
+    .AutoBind(true)
+)

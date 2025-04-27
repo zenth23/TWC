@@ -1,0 +1,88 @@
+﻿@model TWC.IMS.Web.Models.ApprovalPartialParamViewModel 
+@Html.Hidden("ReturnWorkflowApproval_RequestId", Model.RequestId)
+@Html.Hidden("ReturnWorkflowApproval_RequestName", Model.RequestName)
+@Html.Hidden("ReturnWorkflowApproval_UserPendingApprovalId", (Model.UserPendingApprovalId.HasValue ? Model.UserPendingApprovalId.Value.ToString(): ""))
+
+<div class="modal" id="responseModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="responseModalTitle" class="modal-title">Confirmation</h4>
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body"  id="responseModalValidator">
+                <div class="form-group row ">
+                    <div class="col-sm-12 clsReject"   style="display:none">
+                        @Html.Label("ReturnTo", "Return To", htmlAttributes: new { @class = "control-label" })
+                        <br />
+                        @(Html.Kendo().ComboBox()
+                                      .Name("ReturnTo")
+                                      .AutoBind(true)
+                                      .IgnoreCase(true)
+                                      .Suggest(false)
+                                      .Placeholder("Return to")
+                                      .DataTextField("Name")
+                                      .DataValueField("Id")
+                                      .Filter(FilterType.Contains)
+                                      .Events(ev => ev.Change("requests.events.returnToOnChange"))
+                                      .DataSource(s =>
+                                      {
+                                          s.Read(r =>
+                                          {
+                                              r.Action("GetReturnToAsync", "Common")
+                                               .Type(HttpVerbs.Post);
+                                          })
+                                          .ServerFiltering(true);
+                                      })
+                                       .HtmlAttributes(new { style = "width: 280px;" })) <br />
+                        @Html.ValidationMessage("ReturnTo", "", new { @class = "text-danger" })
+
+                            
+                        <div class="clsWfa" style="display:none">
+                            <br>
+                            @Html.Label("ReturnWorkflowApproval", "Workflow Approval", htmlAttributes: new { @class = "control-label" })
+                            <br />
+                            @(Html.Kendo().ComboBox()
+                                        .Name("ReturnWorkflowApproval")
+                                        .AutoBind(true)
+                                        .IgnoreCase(true)
+                                        .Suggest(false)
+                                        .Placeholder("Select Approval Workflow")
+                                        .DataTextField("Name")
+                                        .DataValueField("Id")
+                                        .Filter(FilterType.Contains)
+                                        .DataSource(s =>
+                                        {
+                                            s.Read(r =>
+                                            {
+                                                r.Action("GetReturnWorkflowApproval", "Common")
+                                                 .Data("requests.filters.returnWfa")
+                                                .Type(HttpVerbs.Post);
+                                            })
+                                            .ServerFiltering(true);
+                                        })
+                                        .HtmlAttributes(new { style = "width: 280px;" })) <br />
+                            @Html.ValidationMessage("ReturnWorkflowApproval", "", new { @class = "text-danger" })
+                        </div>
+                      
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        @Html.Label("ResponseRemarks", "Remarks", htmlAttributes: new { @class = "control-label" })
+                        @Html.TextArea("ResponseRemarks", new { @class = "form-control", style = "width: 280px;"  })
+                        @Html.ValidationMessage("ResponseRemarks", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary clsApprove" id="btnApprove" style="display:none" onclick="requests.events.onApprove(this, event, @(((int?)ViewBag.WFACTION_APPROVE) ?? 0))">Approve</button>
+                <button type="button" class="btn btn-danger clsReject" id="btnReject" style="display:none" onclick="requests.events.onReject(this, event, @(((int?)ViewBag.WFACTION_REJECT) ?? 0))">Reject</button>
+            </div>
+        </div>
+    </div>
+</div>

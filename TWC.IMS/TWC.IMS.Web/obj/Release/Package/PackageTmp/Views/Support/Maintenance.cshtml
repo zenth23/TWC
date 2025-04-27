@@ -1,0 +1,244 @@
+﻿
+@{
+    ViewBag.Title = "Support Tool - User Maintenance";
+}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row">
+            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                <h2><span class="fas fa-layer-group"></span> User Maintenance <span class="badge badge-secondary">Support Tool</span></h2>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <button type="button" class="btn btn-outline-secondary" id="btnSignOutAllUsers" title="Sign Out All Users">
+            <span class="fas fa-door-open"></span>
+        </button>
+        <br/>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        @Html.Partial("../Support/_UsersList")
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(function () {
+            // refresh grid on tab change
+            // to fix grid freeze pane distortion
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                var targetGrid = $(e.target).attr("data-grid") // activated tab
+                application.grid.refreshGrid($('#' + targetGrid));
+            });
+
+            $('#btnSignOutAllUsers').on('click', signoutAllUsers);
+        });
+
+        function resetPassword(e) {
+            e.preventDefault();
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            var name = dataItem.AccountModel.UserName;
+            var userId = dataItem.AccountModel.UserId;
+            var reqToken = $('input[name="__RequestVerificationToken"]').val();
+
+            window.confirm('Confirm', "Click OK to proceed with password reset for user '" + name + "'.")
+                  .then(function () {
+                      var url = window.rootUrl + 'account/forcepasswordreset';
+                      $.ajax({
+                          url: url,
+                          data: { userId: userId, __RequestVerificationToken: reqToken },
+                          type: 'POST',
+                          dataType: 'json',
+                          beforeSend: function () { },
+                          success: function (response) {
+                              application.grid.refreshGrid($('#gridUsers'));
+                              var r = response;
+                              window.alert(r.Message, r.Status);
+                          },
+                          error: function (x, t, e) {
+                              console.log('error');
+                              console.log(e);
+                              if (x.responseText.indexOf('<!') == 0) {
+                                  var newDoc = document.open("text/html", "replace");
+                                  newDoc.write(x.responseText);
+                                  newDoc.close();
+                              }
+                              else {
+                                  var msg = 'ERROR ' + e.number + ': ' + e.name + '. ' + e.message;
+                                  window.alert(msg, t);
+                              }
+                          }
+                      });
+                  }, function () {
+
+                  });
+        }
+
+        function lock(e) {
+            e.preventDefault();
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            var name = dataItem.AccountModel.UserName;
+            var userId = dataItem.AccountModel.UserId;
+            var reqToken = $('input[name="__RequestVerificationToken"]').val();
+
+            window.confirm('Confirm', "Click OK to lock user '" + name + "'.")
+                  .then(function () {
+                      var url = window.rootUrl + 'account/lockuser';
+                      $.ajax({
+                          url: url,
+                          data: { userId: userId, __RequestVerificationToken: reqToken },
+                          type: 'POST',
+                          dataType: 'json',
+                          beforeSend: function () { },
+                          success: function (response) {
+                              application.grid.refreshGrid($('#gridUsers'));
+                              var r = response;
+                              window.alert(r.Message, r.Status);
+                          },
+                          error: function (x, t, e) {
+                              console.log('error');
+                              console.log(e);
+                              if (x.responseText.indexOf('<!') == 0) {
+                                  var newDoc = document.open("text/html", "replace");
+                                  newDoc.write(x.responseText);
+                                  newDoc.close();
+                              }
+                              else {
+                                  var msg = 'ERROR ' + e.number + ': ' + e.name + '. ' + e.message;
+                                  window.alert(msg, t);
+                              }
+                          }
+                      });
+                  }, function () {
+
+                  });
+        }
+
+        function unlock(e) {
+            e.preventDefault();
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            var name = dataItem.AccountModel.UserName;
+            var userId = dataItem.AccountModel.UserId;
+            var reqToken = $('input[name="__RequestVerificationToken"]').val();
+
+            window.confirm('Confirm', "Click OK to unlock user '" + name + "'.")
+                  .then(function () {
+                      var url = window.rootUrl + 'account/unlockuser';
+                      $.ajax({
+                          url: url,
+                          data: { userId: userId, __RequestVerificationToken: reqToken },
+                          type: 'POST',
+                          dataType: 'json',
+                          beforeSend: function () { },
+                          success: function (response) {
+                              application.grid.refreshGrid($('#gridUsers'));
+                              var r = response;
+                              window.alert(r.Message, r.Status);
+                          },
+                          error: function (x, t, e) {
+                              console.log('error');
+                              console.log(e);
+                              if (x.responseText.indexOf('<!') == 0) {
+                                  var newDoc = document.open("text/html", "replace");
+                                  newDoc.write(x.responseText);
+                                  newDoc.close();
+                              }
+                              else {
+                                  var msg = 'ERROR ' + e.number + ': ' + e.name + '. ' + e.message;
+                                  window.alert(msg, t);
+                              }
+                          }
+                      });
+                  }, function () {
+
+                  });
+        }
+
+        function signoutUser(e) {
+            e.preventDefault();
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            var name = dataItem.AccountModel.UserName;
+            var userId = dataItem.AccountModel.UserId;
+            var reqToken = $('input[name="__RequestVerificationToken"]').val();
+
+            window.confirm('Confirm', "Click OK to sign out user '" + name + "'.")
+                  .then(function () {
+                      var url = window.rootUrl + 'account/signoutuser';
+                      $.ajax({
+                          url: url,
+                          data: { userId: userId, __RequestVerificationToken: reqToken },
+                          type: 'POST',
+                          dataType: 'json',
+                          beforeSend: function () { },
+                          success: function (response) {
+                              application.grid.refreshGrid($('#gridUsers'));
+                              var r = response;
+                              window.alert(r.Message, r.Status);
+                          },
+                          error: function (x, t, e) {
+                              console.log('error');
+                              console.log(e);
+                              if (x.responseText.indexOf('<!') == 0) {
+                                  var newDoc = document.open("text/html", "replace");
+                                  newDoc.write(x.responseText);
+                                  newDoc.close();
+                              }
+                              else {
+                                  var msg = 'ERROR ' + e.number + ': ' + e.name + '. ' + e.message;
+                                  window.alert(msg, t);
+                              }
+                          }
+                      });
+                  }, function () {
+
+                  });
+        }
+
+        function signoutAllUsers(e) {
+            var reqToken = $('input[name="__RequestVerificationToken"]').val();
+            window.confirm('Confirm', "Click OK to sign out all users.")
+                  .then(function () {
+                      var url = window.rootUrl + 'account/signoutallusers';
+                      $.ajax({
+                          url: url,
+                          data: { __RequestVerificationToken: reqToken },
+                          type: 'POST',
+                          dataType: 'json',
+                          beforeSend: function () { },
+                          success: function (response) {
+                              application.grid.refreshGrid($('#gridUsers'));
+                              var r = response;
+                              window.alert(r.Message, r.Status);
+                          },
+                          error: function (x, t, e) {
+                              console.log('error');
+                              console.log(e);
+                              if (x.responseText.indexOf('<!') == 0) {
+                                  var newDoc = document.open("text/html", "replace");
+                                  newDoc.write(x.responseText);
+                                  newDoc.close();
+                              }
+                              else {
+                                  var msg = 'ERROR ' + e.number + ': ' + e.name + '. ' + e.message;
+                                  window.alert(msg, t);
+                              }
+                          }
+                      });
+                  }, function () {
+
+                  });
+        }
+    </script>
+}

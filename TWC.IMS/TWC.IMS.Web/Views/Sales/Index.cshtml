@@ -1,0 +1,76 @@
+﻿@using SMB.ESERVE
+@{
+    SMB.ESERVE.BusinessLayer.SystemConfigs config = new SMB.ESERVE.BusinessLayer.SystemConfigs();
+    var gridCss = config.GetByName(ConfigInit.GridDesign.GRID_DESIGN_CSS.ToString()).Value;
+    var channelB2B = config.GetByName("CH_B2B_ID").Value;
+    ViewBag.Title = "| Order";
+}
+
+<style>
+    .k-grid {
+        font-size: 11px;
+    }
+    .k-primary{
+        background-color : red !important;
+        border-color:red !important;
+    }
+</style>
+<br /> <br />
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+}
+<div id="pageContent" style="display:none">
+    <div class="row" style="margin-bottom: 1%;">
+        <div class="col-lg-12">
+            @Html.Hidden("channelB2B", channelB2B)
+            <input type="checkbox" id="chkForBatchPosting" /> For Batch Posting
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            Date Type: <input id="dateType" />
+            <div id="dateRangeHolder" style="display:none">
+                From: <input id="fromDate" />
+                To: <input id="toDate" />
+            </div>
+        </div>
+        <div class="col-lg-2">
+            Status: <input id="status" />
+        </div>
+        <div class="col-lg-2">
+            Auto/Batch PO Status: <input id="postatus" />
+        </div>
+        <div class="col-lg-2">
+            Channel: <input id="channel" />
+        </div>
+        <div class="col-lg-2">
+            PO Type: <input id="poType" />
+        </div>
+        <div class="col-lg-2">
+            Customer: <input id="customer" />
+        </div>
+    </div>
+    <div class="row" style="margin-top: 0.5%">
+        <div class="col-lg-6">            
+            <button id="batchConfirmButton" style="display: none;" class="k-primary">Batch Confirm</button>
+        </div>
+        <div class="col-lg-6 text-right">
+            <button id="searchButton" class="k-primary">Search</button>
+            <button id="advanceSearch" class="btn btn-link">Advance Search</button>
+        </div>
+    </div>
+    <br />
+    <div id="advMessageDialog">
+        PO Number
+        <input id="advPoNumber" />
+        Customer Number
+        <input id="advCustName" />
+    </div>
+    <div id="orders" name="orders"></div>
+    <div id="confirmDialog"></div>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/Scripts/Order/Index")
+        @Styles.Render(@gridCss)
+    }

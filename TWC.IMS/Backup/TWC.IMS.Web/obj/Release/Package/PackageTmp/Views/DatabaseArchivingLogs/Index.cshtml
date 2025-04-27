@@ -1,0 +1,71 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.DatabaseArchivingLogsViewModel>
+@{
+    ViewBag.Title = "Database Archiving Logs";
+}
+
+<style>
+    .k-grid td {
+        white-space: nowrap !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <h2><span class="fas fa-database"></span> @ViewBag.Title</h2>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                @if (this.Context.HasPermission("DatabaseArchivingLogs.CanExport"))
+                {
+                    <button type="button" style="margin-left:10px;" class="btn btn-outline-success float-right" title="Export data to Excel" id="btnExportToExcel"><span class="fas fa-file-excel"></span> Export</button>
+                }
+                @(Html.Kendo().DatePicker()
+                      .Name("DateFilter")
+                      .Start(CalendarView.Year)
+                      .Depth(CalendarView.Year)
+                      .Format("MMMM yyyy")
+                      .Events(e => e.Change("loadGridData"))
+                      .Value(DateTime.Now.Date)
+                      .HtmlAttributes(new { @class="float-right" }))
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        @(Html.Kendo().Grid(Model)
+              .Name("gridDatabaseArchivingLogs")
+              .Columns(column =>
+              {
+                  column.Bound(c => c.CreatedOn).Width(150);
+                  column.Bound(c => c.CreatedBy).Width(150);
+                  column.Bound(c => c.Name);
+                  column.Bound(c => c.Description);
+              })
+              .Excel(e => e.FileName("databasearchivinglogs.xlsx").AllPages(true))
+              .Filterable()
+              .Pageable(p => p.Refresh(true)
+                              .PageSizes(true)
+                              .PageSizes(new int[] { 15, 30, 50, 100 })
+                              .Input(true)
+                              .ButtonCount(5))
+              .Selectable(s => s.Mode(GridSelectionMode.Multiple))
+              .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+              .Scrollable(s => s.Height(400))
+              .Resizable(r => r.Columns(true))
+              .Events(e => e.DataBound("logggg"))
+              .DataSource(ds =>
+              {
+                  ds.Ajax()
+                  .PageSize(15)
+                  .Read(r => r.Action("ReadLogs", "databaseArchivingLogs").Data("gridDateFilter"))
+                  .Model(m => m.Id(c => c.Id));
+              }))
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/application/database-archiving-logs.js?v=" + DateTime.Now.Ticks)
+}

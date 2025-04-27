@@ -1,0 +1,64 @@
+﻿@model TWC.IMS.Web.Models.TotpBasedAuthenticatorViewModel
+@{
+    ViewBag.Title = "Enable Google Authenticator";
+}
+
+<div class="row">
+    @if (!string.IsNullOrWhiteSpace(TempData["ERROR_MESSAGE"] as string))
+    {
+        <div class="alert alert-danger">
+            <span>@TempData["ERROR_MESSAGE"]</span>
+        </div>
+    }
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2><span class="fas fa-id-badge"></span> @ViewBag.Title</h2>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <h3>1. Add @Model.AppName to Google Authenticator</h3>
+        <p>Open Google Authenticator and add @Model.AppName by scanning the QR Code to the right.</p>
+        <h3>2. Enter the 6 digit code that Google Authenticator generates</h3>
+        <p>
+            Verify that @Model.AppName is added correctly in Google Authenticator by entering the 6 digit code which
+            Google Authenticator generates for @Model.AppName below, and then click Enable.
+        </p>
+        @using (Html.BeginForm("EnableGoogleAuthenticatorValidate", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Partial("_ValidationSummary")
+            @Html.HiddenFor(m => m.SecretKey)
+            @Html.HiddenFor(m => m.BarcodeUrl)
+            @Html.HiddenFor(m => m.AppName)
+            <div class="form-group">
+                @Html.LabelFor(m => m.Code, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control", autocomplete = "off" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-secondary" value="Enable" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <a href="~/manage/profile#account">Back</a>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-4">
+        <div id="qrcode"></div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/qrcode.min.js")
+    <script>
+        $(function () {
+            new QRCode(document.getElementById("qrcode"), "@(Model.BarcodeUrl)");
+        });
+    </script>
+}

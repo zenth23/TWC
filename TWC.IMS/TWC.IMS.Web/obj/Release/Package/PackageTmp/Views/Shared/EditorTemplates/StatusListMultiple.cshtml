@@ -1,0 +1,10 @@
+﻿@* being used by StatusObjectsConfig inline editor *@
+@model TWC.IMS.Web.Models.StatusViewModel
+@(Html.Kendo().MultiSelectFor(m => m)
+      .Name("Status")
+      .AutoBind(true)
+      .DataTextField("Name")
+      .DataValueField("Id")
+      .MaxSelectedItems(10)
+      .BindTo((System.Collections.IEnumerable)ViewData["StatusList"])
+)

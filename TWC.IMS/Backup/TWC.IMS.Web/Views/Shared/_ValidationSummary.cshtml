@@ -1,0 +1,5 @@
+﻿
+@if (this.ViewContext.ViewData.ModelState.Where(x => x.Key == "").Any())
+{
+    @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+}

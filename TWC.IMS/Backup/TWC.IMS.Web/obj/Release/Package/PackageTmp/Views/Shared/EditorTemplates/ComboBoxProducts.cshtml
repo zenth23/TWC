@@ -1,0 +1,19 @@
+﻿@(Html.Kendo().ComboBox()
+    .Name("product_id")
+    .Filter(FilterType.Contains)
+    .Placeholder("Select Product.")
+    .DataTextField("product_name")
+    .DataValueField("Id")
+    .HtmlAttributes(new { required = "required"})
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("GetProductsForDdl", "Common");
+        })
+        .ServerFiltering(false);
+    })
+    .Events(e => e.DataBound("salesOrders.editor.events.productsOnDataBound"))
+    .Enable(true)
+    .AutoBind(true)
+)

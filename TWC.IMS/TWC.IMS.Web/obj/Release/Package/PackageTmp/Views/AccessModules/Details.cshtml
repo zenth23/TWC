@@ -1,0 +1,106 @@
+﻿@model TWC.IMS.Web.Models.AccessModuleViewModel
+
+@{
+    ViewBag.Title = "Access Module";
+}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <ul class="header-text-button-container">
+            <li>
+            </li>
+            <li>
+                @if (ViewBag.Mode == "EDIT")
+                {
+                    <h2><span class="fas fa-tasks"></span> @ViewBag.Title</h2>
+                }
+                else
+                {
+                    <h2><span class="fas fa-tasks"></span> New @ViewBag.Title</h2>
+                }
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.Partial("_ValidationSummary")
+
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.AccessModuleRowVersion)
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.TextAreaFor(model => model.Description, 3, 20, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="form-group row">
+                @Html.Label("Accesses", new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @{
+                        int i = 0;
+                        foreach (var item in Model.Accesses)
+                        {
+                            <div class="checkbox mb-2">
+                                @Html.Kendo().CheckBox().Name("Accesses[" + i + "].IsChecked").Label(item.Name).Checked(item.IsChecked)
+                                @Html.Hidden("Accesses[" + i + "].Id", item.Id)
+                                @Html.Hidden("Accesses[" + i + "].Name", item.Name)
+                            </div>
+                            i++;
+                        }
+                    }
+                </div>
+            </div>
+            @if (ViewBag.Mode == "EDIT")
+            {
+                <hr />
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                        @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ModifiedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                        @Html.DisplayFor(model => model.ModifiedBy, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            }
+            <hr />
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <a href="@Url.Action("index", "accessmodules")" class="btn btn-outline-secondary">Cancel</a>
+                    <input type="button" value="Clear" class="btn btn-outline-secondary" id="btnReset" />
+                    <input type="submit" value="Save" class="btn btn-secondary float-right" name="ACTION:@ViewBag.Mode" />
+                </div>
+            </div>
+        </div>
+                        }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+
+        <script type="text/javascript">
+            $(function () {
+                application.UI.markRequiredFields();
+            });
+        </script>
+    }
+</div>

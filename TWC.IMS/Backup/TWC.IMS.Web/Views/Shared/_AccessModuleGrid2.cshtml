@@ -1,0 +1,44 @@
+﻿@model System.Data.DataTable
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        @(Html.Kendo().Grid<dynamic>()
+              .Name("gridModuleAccesses")
+              .Columns(column =>
+              {
+                  foreach (System.Data.DataColumn col in Model.Columns)
+                  {
+                      if (col.DataType.FullName == "System.String")
+                      {
+                          if (col.ColumnName != "UniqueKey")
+                              column.Bound(col.ColumnName).Width(150);
+                      }
+                      else if (col.DataType.FullName == "System.Boolean")
+                      {
+                          string colName = col.ColumnName;
+                          if (!colName.EndsWith("_role"))
+                          {
+                              column.Bound(col.ColumnName).ClientTemplate("#if(" + col.ColumnName + ") { var i = getIndex(); # <input type='checkbox' class='k-checkbox' name='Accesses[#= i #].IsChecked' id='Accesses_#= i #__IsChecked' value='true' data-rrr='#= " + colName + "_role #' #= " + colName + "_role===true ? checked='checked' : '' # />" +
+                                                                          "<label class='k-checkbox-label' for='Accesses_#= i #__IsChecked'></label>" +
+                                                                          "<input type='hidden' name='Accesses[#= i #].Name' value='" + colName + "' id='Accesses_#= i #__Name' />" +
+                                                                          "<input type='hidden' name='Accesses[#= i #].Id' value='#= Id #' id='Accesses_#= i #__Id' /> #} #")
+                                                          .HtmlAttributes(new { style = "text-align:center;" }).Width(150);
+                          }
+                      }
+                  }
+              })
+              .Selectable(s => s.Mode(GridSelectionMode.Single))
+              .Scrollable(s => s.Height(350))
+              .Resizable(r => r.Columns(true))
+              .DataSource(ds =>
+              {
+                  ds.Ajax()
+                  .Read(r => r.Action("ReadModuleAccesses", "AccessModules").Data("getRoleId"))
+                  .Model(m =>
+                  {
+                      var id = Model.PrimaryKey[0].ColumnName;
+                      m.Id(id);
+                  });
+              }))
+    </div>
+</div>

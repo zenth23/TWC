@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "_CustomSidenav";
+    var context = this.Context;
+
+    var appInstance = Application.Instance;
+    var appEnv = appInstance.Environment.ToUpper();
+    var mode = appInstance.DebugMode;
+}
+<link href="~/Content/custom-sidenav-new.css" rel="stylesheet" />
+
+<style>
+    .sidebar-header {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .env {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+<!-- Toggle Button for Sidebar -->
+<button class="toggle-sidebar" id="toggleSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="wrapper">
+    <nav id="sidebar">
+        @if (string.Compare(appEnv, "prd", true) != 0)
+        {
+        <div class="env float-right">
+            <span class="badge badge-danger" title="@appEnv Environment">@appEnv</span>
+            <span class="badge badge-info ml-n1" title="@mode Mode">@mode</span>
+        </div>
+        }
+        <br/>
+        <div class="sidebar-header">
+            <img src="~/Content/Images/logo/JIS_Login.png" class="sidebar-logo" alt="Logo">
+        </div>
+
+        <ul class="list-unstyled" id="myGroup">
+            <li>
+                <a href="@Url.Action("Index", "Home" )"><i class="fas fa-home"></i> <span>Home</span></a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Product_Inventory" )"><i class="fas fa-inventory"></i> <span>Inventory</span></a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Inventory_Entries" )"><i class="fas fa-inventory"></i> <span>Inventory Entry</span></a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Products" )"><i class="fas fa-product-hunt"></i> <span>Products</span></a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "SalesOrders" )"><i class="fas fa-product-hunt"></i> <span>Sales Orders</span></a>
+            </li>
+            @if (context.HasPermission("SystemAdministration.CanView") || context.HasPermission("Users.CanView") || context.HasPermission("Roles.CanView"))
+            {
+                <li>
+                    <a href="#administration-submenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-cog"></i> <span>Administration</span></a>
+                    <ul class="collapse list-unstyled" id="administration-submenu" data-parent="#myGroup">
+                        <li><a href="@Url.Action("Index", "UserMaintenance" )">User Maintenance</a></li>
+                        <li><a href="@Url.Action("Index", "SystemAdministration" )">System Administration</a></li>
+                        <li><a href="@Url.Action("Index", "ReportMaintenance" )">Report Maintenance</a></li>
+                    </ul>
+                </li>
+            }
+            @if (context.HasPermission("Reports.CanView"))
+            {
+                <li>
+                    <a href="@Url.Action("Index", "ReportGenerator" )"><i class="fas fa-file-invoice"></i> <span>Reports</span></a>
+                </li>
+            }
+        </ul>
+
+        <div class="footer">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="@Url.Action("Profile", "Manage" )"><i class="fas fa-user-alt"></i> <span>@User.Identity.Name.Trim().ToLower()</span></a>
+                </li>
+                <li>
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                    }
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<script>
+    $(function () {
+        $('#sidebar').mouseleave(function () {
+            $('ul.collapse').removeClass('show');
+        });
+
+        // Toggle sidebar visibility
+        $('#toggleSidebar').on('click', function () {
+            $('#sidebar').toggleClass('visible');
+        });
+    });
+</script>

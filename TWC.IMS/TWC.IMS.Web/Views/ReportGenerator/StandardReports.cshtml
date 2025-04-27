@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Standard Reports";
+}
+
+<h2><span class="fas fa-file-invoice"></span> @ViewBag.Title</h2>
+<hr />
+
+<div class="row mb-2">
+    <div class="col-sm-12 col-md-12 col-md-12 col-xl-12">
+        <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary">
+                <span class="fas fa-arrow-down"></span> Download User Access Matrix Report
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
+                <span class="sr-only">Toggle Dropright</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="@Url.Action("GenerateUserAccessMatrixReportExcel")" target="_blank"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="dropdown-item" href="@Url.Action("GenerateUserAccessMatrixReportPdf")" target="_blank"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-2">
+    <div class="col-sm-12 col-md-12 col-md-12 col-xl-12">
+        <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary">
+                <span class="fas fa-arrow-down"></span> Download Access Control List Report
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
+                <span class="sr-only">Toggle Dropright</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="@Url.Action("GenerateAccessControlListReportExcel")" target="_blank"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="dropdown-item" href="@Url.Action("GenerateAccessControlListReportPdf")" target="_blank"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-2">
+    <div class="col-sm-12 col-md-12 col-md-12 col-xl-12">
+        <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary">
+                <span class="fas fa-arrow-down"></span> Download System Modules Report
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
+                <span class="sr-only">Toggle Dropright</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="@Url.Action("GenerateSystemModulesMasterdataReportExcel")" target="_blank"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="dropdown-item" href="@Url.Action("GenerateSystemModulesMasterdataReportPdf")" target="_blank"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-2">
+    <div class="col-sm-12 col-md-12 col-md-12 col-xl-12">
+        <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary">
+                <span class="fas fa-arrow-down"></span> Download Role Masterdata Report
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
+                <span class="sr-only">Toggle Dropright</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="@Url.Action("GenerateRoleMasterdataReportExcel")" target="_blank"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="dropdown-item" href="@Url.Action("GenerateRoleMasterdataReportPdf")" target="_blank"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-2">
+    <div class="col-sm-12 col-md-12 col-md-12 col-xl-12">
+        <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary">
+                <span class="fas fa-arrow-down"></span> Download User Masterdata Report
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
+                <span class="sr-only">Toggle Dropright</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="@Url.Action("GenerateUserMasterdataReportExcel")" target="_blank"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="dropdown-item" href="@Url.Action("GenerateUserMasterdataReportPdf")" target="_blank"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+</div>

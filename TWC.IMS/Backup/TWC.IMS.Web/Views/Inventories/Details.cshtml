@@ -1,0 +1,179 @@
+﻿@model TWC.IMS.Models.Inventory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inventory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.category_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.supplier_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.supplier_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.created_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.material)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.material)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dimensions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dimensions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stock_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stock_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image_url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clarity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clarity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.style)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.style)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sku)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sku)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.barcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.barcode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.inventory_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

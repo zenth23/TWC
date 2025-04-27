@@ -1,0 +1,89 @@
+﻿
+
+@{
+                /**/
+
+                ViewBag.Title = "Product Inventories";
+}
+<link href="~/Content/bootstrap.panel.css" rel="stylesheet" type="text/css" />
+<style>
+    .product-img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .k-listview-content {
+        overflow: hidden;
+    }
+
+    .panel {
+        width: 250px;
+        height: 330px;
+        float: left;
+        position: relative;
+        margin: 5px
+    }
+
+    .panel-body {
+        padding: 0;
+        height: 283px
+    }
+
+    #listView {
+        padding: 10px
+    }
+</style>
+
+@Html.AntiForgeryToken()
+
+<div class="row">
+    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <ul class="header-text-button-container">
+
+            <li>
+                <h2 class="mt-1">@ViewBag.Title</h2>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+List View &nbsp;
+@(Html.Kendo().Switch()
+            .Name("viewSwitch")
+            .Messages(c => c.Checked("Yes").Unchecked("No"))
+            .Events(e => e.Change("viewSwitchOnChange"))
+)
+<br /><br />
+<div class="row">
+    <div class="col-lg-12" id="view-holder">
+
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/application/common-helper.js")
+}
+
+<script>
+    $(document).ready(function () {
+        var url = window.rootUrl + "product_inventory/inventorygridview"
+        $.get(url, function (response) {
+            $("#view-holder").html(response);
+        })
+    })
+
+    function viewSwitchOnChange(e) {
+        var listViewMode = e.sender.value();
+        var url = "";
+        if (listViewMode) 
+            url = window.rootUrl + "product_inventory/inventorylistview";
+        else 
+            url = window.rootUrl + "product_inventory/inventorygridview";
+
+        $.get(url).done(function(response) {
+            $("#view-holder").html(response);
+        })
+    }
+</script>

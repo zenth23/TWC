@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Upload File";
+}
+
+<h2>Upload File</h2>
+
+
+<div class="row">
+    <div class="col-md-12" style="display: table;">
+        <div id="dvDragFiles" style="height:300px;
+             background-color:#eee;
+             display:table-cell;
+             text-align:center;
+             padding:5px;
+             vertical-align:middle;
+             color:#bbb;">
+            <h2>DROP FILES HERE</h2>
+        </div>
+    </div>
+    <div class="col-md-12" id="progressbars-container">
+        <br />
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/Scripts/application/file-upload.js?v=" + DateTime.Now.Ticks)
+}

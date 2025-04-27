@@ -1,0 +1,143 @@
+﻿@model TWC.IMS.Web.Models.ErrorLogsViewModel
+@{
+    ViewBag.Title = "Error Log";
+    bool isPartial = (bool)(ViewData["IS_PARTIAL"] ?? false);
+}
+<style>
+    input, select, textarea, span.form-control-readonly {
+        max-width: none !important;
+    }
+</style>
+
+@if (!isPartial)
+{
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <ul class="header-text-button-container">
+                <li>
+                </li>
+                <li>
+                    <h2><span class="fas fa-exclamation-triangle"></span> @ViewBag.Title</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+}
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="form-horizontal">
+        <div class="form-group row">
+            @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.CreatedOn, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.DisplayFor(model => model.CreatedOn, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <hr />
+        @*<div class="form-group row">
+                @Html.LabelFor(model => model.UniqueKey, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    @Html.EditorFor(model => model.UniqueKey, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                </div>
+            </div>*@
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.ErrorNumber, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.ErrorNumber, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.MessageType, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.MessageType, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.MethodName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.MethodName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.FriendlyErrorMessage, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.TextAreaFor(model => model.FriendlyErrorMessage, 3, 20, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.ErrorMessage, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.TextAreaFor(model => model.ErrorMessage, 3, 20, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.Exception, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.TextAreaFor(model => model.Exception, 20, 20, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.AppVersion, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.AppVersion, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.IsMobileDeviceString, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.IsMobileDeviceString, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.Environment, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.Environment, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.ImpactLevel, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.ImpactLevel, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.ParamData, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.TextAreaFor(model => model.ParamData, 3, 20, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.UserRole, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.UserRole, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        @if (!isPartial)
+        {
+            <hr />
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <a href="@Url.Action("index", "errorlogs")" class="btn btn-outline-secondary">Back</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

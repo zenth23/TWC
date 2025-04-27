@@ -1,0 +1,57 @@
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.DL.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.DL.pdb
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\EntityFramework.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\Kendo.Mvc.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Common.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Models.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\Newtonsoft.Json.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.Mvc.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.Razor.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.Razor.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.Deployment.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Common.pdb
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Models.pdb
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\EntityFramework.xml
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\Newtonsoft.Json.xml
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.Mvc.xml
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.xml
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.Razor.xml
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.Razor.xml
+D:\Projects\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.Deployment.xml
+D:\Projects\TWC.IMS\TWC.IMS.DL\obj\Release\TWC.IMS.DL.csprojResolveAssemblyReference.cache
+D:\Projects\TWC.IMS\TWC.IMS.DL\obj\Release\TWC.IMS.DL.dll
+D:\Projects\TWC.IMS\TWC.IMS.DL\obj\Release\TWC.IMS.DL.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.DL.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.DL.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\EntityFramework.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\EntityFramework.SqlServer.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\Kendo.Mvc.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Common.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Models.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\Newtonsoft.Json.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.Mvc.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.Razor.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.Razor.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Common.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Models.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\TWC.IMS.Models.dll.config
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\EntityFramework.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\EntityFramework.SqlServer.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\Newtonsoft.Json.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.Mvc.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.Razor.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.Razor.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\obj\Release\TWC.IMS.DL.csproj.AssemblyReference.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\obj\Release\TWC.IMS.DL.csproj.CoreCompileInputs.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\obj\Release\TWC.IMS.DL.csproj.Up2Date
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\obj\Release\TWC.IMS.DL.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.DL\obj\Release\TWC.IMS.DL.pdb

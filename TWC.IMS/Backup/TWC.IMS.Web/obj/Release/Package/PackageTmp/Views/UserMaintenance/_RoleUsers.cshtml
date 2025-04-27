@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.RoleUserViewModel>
+
+<h3>Users Assigned to this Role</h3>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        @(Html.Kendo().Grid(Model)
+              .Name("gridRoleUser")
+              .Columns(column =>
+              {
+                  column.Command(c =>
+                  {
+                      if (this.Context.HasPermission("Roles.CanEdit"))
+                      {
+                          c.Custom("Delete").Text("<span class='fas fa-trash'></span>").HtmlAttributes(new { title = "Remove Assignment" }).Click("removeUserFromRole");
+                      }
+                  }).Width(50).HtmlAttributes(new { @class = "k-alt command" });
+                  column.Bound(c => c.UserName);
+                  column.Bound(c => c.FirstName);
+                  column.Bound(c => c.LastName);
+              })
+              .Filterable()
+              .Pageable(p => p.Refresh(true))
+              .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+              .Selectable(s => s.Mode(GridSelectionMode.Single))
+              .Resizable(r => r.Columns(true))
+              .DataSource(ds =>
+              {
+                  ds.Ajax()
+                  .Read(r => r.Action("ReadRoleUsers", "UserMaintenance").Data("getRoleId"))
+                  .Model(m => m.Id(c => c.RoleId));
+              }))
+    </div>
+</div>

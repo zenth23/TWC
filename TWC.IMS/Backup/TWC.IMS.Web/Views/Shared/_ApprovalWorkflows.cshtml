@@ -1,0 +1,116 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.WorkflowSetupViewModel>
+@if ((bool)(ViewBag.WorkflowFound ?? false))
+{
+<div class="col-12" id="parentApprovalDiv">
+    @Html.Hidden("ENABLE_ADHOC", ((bool?)ViewBag.ENABLE_ADHOC ?? false) ? "1" : "0")
+    @Html.Hidden("ApprovalWorkflow_ApprovalEntity", (Model.FirstOrDefault()?.EntityId ?? 0))
+    @{
+        var groupBySortIndex = Model.GroupBy(x => x.SortIndex).OrderBy(x => x.Key).ToList();
+        var enableAdhoc = ((bool?)ViewBag.ENABLE_ADHOC ?? false);
+    }
+    <div class="approvalCardDiv" style="min-width: 120px !important;">
+        <ul style="list-style-type:none;display:inline;">
+            <li style="height:20px"></li>
+            <li>
+                <div class="defaultApprovalDiv" id="approval_start">
+                    Start
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    @foreach (var group in groupBySortIndex)
+    {
+        <div class="approvalCardDiv cardholder" 
+             data-sortindex="@group.Key">
+            <ul style="list-style-type:none;display:inline;">
+                @if (group.Count() > 1)
+                {
+                    var parTypeName = group.FirstOrDefault()?.ParallelTypeStr;
+                    var parTypeId = group.FirstOrDefault()?.ParallelTypeId;
+                    var parTypeIdStr = parTypeId == null ? "" : parTypeId.Value.ToString();
+                    var sortIndex = group.FirstOrDefault().SortIndex;
+                    var entityId = group.FirstOrDefault().WorkflowSetup_WorkflowEntity;
+                    <li id="parallelTypeComboBoxHolder" @(!enableAdhoc ? " style=display:none" : "")>
+                        <div class="text-center parHolder">
+                            @(Html.Kendo().ComboBox()
+                              .Name($"ParallelTypeId_{sortIndex}")
+                              .AutoBind(true)
+                              .IgnoreCase(true)
+                              .Suggest(false)
+                              .Placeholder("Select Parallel Type")
+                              .DataTextField("Name")
+                              .DataValueField("Id")
+                              .Filter(FilterType.Contains)
+                              .Value(parTypeIdStr)
+                              .Events(ev => ev.Change("workflow.adhoc.events.onChangeParallelType"))
+                              .DataSource(s =>
+                              {
+                                  s.Read(r =>
+                                  {
+                                      r.Action("GetParallelTypesAsync", "Common")
+                                       .Type(HttpVerbs.Post);
+                                  })
+                                  .ServerFiltering(true);
+                              })
+                              .HtmlAttributes(new { @sortIndex = sortIndex, @entityId = entityId, @origValue = parTypeIdStr }))
+                        </div>
+                    </li>
+
+                    <li class="text-center" 
+                        id="parallelTypeLabelHolder"
+                        @(enableAdhoc ? " style=display:none" : "")> 
+                        <h4>@parTypeName</h4>
+                    </li>
+
+                }
+                @for (int i = 0; i < group.Count(); i++)
+                {
+                    var current = group.ElementAt(i);
+                    <li>
+                        <div class="card card-selectable"
+                             onclick="workflow.adhoc.events.approvalBoxOnSelect(event)" 
+                             approvalType="@current.ApprovalTypeName.ToLower()" 
+                             data-workflowid="@current.Id" id="approver_@(group.Key)_@i" 
+                             style="@(i > 0 ? "margin-top: 20px;" : "")">
+                            <div class="card-title bg-action-PNDG">
+                                @current.Label
+                            </div>
+                            <div class="card-body">
+                                <ul style="list-style-type:none;padding:0">
+                                    <li><b>Type:</b> @current.ApprovalTypeName</li>
+                                    <li><b>Role:</b> @current.RoleName</li>
+                                    <li><b>Approver:</b> @current.ApproverName</li>
+                                    @if (!string.IsNullOrWhiteSpace(current.ActionName))
+                                    {
+                                        <li><b>Status:</b> <span class="wfstatus-@current.ActionCode"> @current.ActionName </span></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    <div class="approvalCardDiv" style="min-width: 120px !important;">
+        <ul style="list-style-type:none;display:inline;">
+            <li style="height:20px"></li>
+            <li>
+                <div class="defaultApprovalDiv" id="approval_end">
+                    End
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="col-12 approval-button-container adhoc-buttons" @(!enableAdhoc ? " style=display:none" : "")> 
+    <button type="button" id="btnAdd" class="btn btn-primary" onclick="workflow.adhoc.events.onAddWfBox(event)"><span class="fas fa-user-plus"></span> Add</button>
+    <button type="button" id="btnEdit" class="btn btn-primary" onclick="workflow.adhoc.events.onEditWfBox(event)" disabled><span class="fas fa-user-edit"></span> Edit</button>
+    <button type="button" id="btnDelete" class="btn btn-warning" onclick="workflow.adhoc.events.onDeleteWfBox(event)" disabled><span class="fas fa-trash"></span> Delete</button>
+</div>
+} 
+else 
+{
+    <h5 class="text-warning">No workflows found.</h5>
+}

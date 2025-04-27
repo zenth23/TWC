@@ -1,0 +1,200 @@
+﻿@model List<TWC.IMS.Web.Models.ApprovalWorkflowViewModel>
+
+<div class="col-12" style="margin-top: 20px;">
+    <h4 class="arc">Approval Workflow</h4>
+    <div class="row approval-container">
+        <div class="col-2 approval-legend">
+            <h4>Legend</h4>
+            <ul style="list-style-type:none;">
+                <li><b>Header Color</b></li>
+                <li><div class="color-div bg-action-CRNT"></div> Active</li>
+                <li><div class="color-div bg-action-APRV"></div> Approved</li>
+                <li><div class="color-div bg-action-RJCT"></div> Rejected</li>
+                <li><div class="color-div bg-action-PNDG"></div> Pending</li>
+                <li></li>
+                <li><b>End Points</b></li>
+                <li><div class="blank-div"></div> Single</li>
+                <li><div class="circle-div"></div> All</li>
+                <li><div class="square-div"></div> Any</li>
+            </ul>
+        </div>
+        <div class="col-10" id="parentApprovalDiv">
+            @{
+                var count = 0;
+                var groupBySortIndex = Model.GroupBy(x => x.SortIndex).OrderBy(x => x.Key).ToList();
+            }
+            <div class="approvalCardDiv" style="min-width: 100px !important;">
+                <ul style="list-style-type:none;display:inline;">
+                    <li>
+                        <div class="defaultApprovalDiv" id="approval_start">
+                            Start
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            @foreach (var group in groupBySortIndex)
+            {
+                <div class="approvalCardDiv">
+                    <ul style="list-style-type:none;display:inline;">
+                        @for (int i = 0; i < group.Count(); i++)
+                        {
+                            var currentItem = group.ElementAt(i);
+                            <li>
+                            <div class="card" approvalType="@currentItem.ApprovalTypeName.ToLower()" id="approver_@(group.Key)_@i" style="@(i > 0 ? "margin-top: 20px;" : "")">
+                                <div class="card-title bg-action-@currentItem.ActionCode">
+                                    @currentItem.Label
+                                </div>
+
+                                <div class="card-body">
+                                    <ul style="list-style-type: none;">
+                                        <li>
+                                            @if (currentItem.ApprovalTypeName.ToLower() == "single")
+                                            {
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].Id", currentItem.Id)
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].ApprovalWorkflow_ApprovalType", currentItem.ApprovalWorkflow_ApprovalType)
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].ApprovalWorkflow_RoleDetail", currentItem.ApprovalWorkflow_RoleDetail)
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].ApprovalWorkflow_WorkflowAction", currentItem.ApprovalWorkflow_WorkflowAction)
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].ApprovalWorkflow_WorkflowEntity", currentItem.ApprovalWorkflow_WorkflowEntity)
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].Label", currentItem.Label)
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].RejectionRemarks", currentItem.RejectionRemarks)
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].ActionCode", currentItem.ActionCode)
+                                                @Html.Hidden("ApprovalWorkflow[" + count + "].ApprovalTypeName", currentItem.ApprovalTypeName)
+                                                if (string.IsNullOrWhiteSpace(currentItem.UserName))
+                                                {
+                                                    @(Html.Kendo().ComboBox().Name("ApprovalWorkflow[" + count + "].ApprovalWorkflow_UserDetail")
+                                                  .AutoBind(true)
+                                                  .IgnoreCase(true)
+                                                  .Suggest(false)
+                                                  .Placeholder("Select Approver")
+                                                  .DataTextField("Name")
+                                                  .DataValueField("Id")
+                                                  .Filter(FilterType.Contains)
+                                                  .Value(currentItem.ApprovalWorkflow_UserDetail == 0 ? "" : currentItem.ApprovalWorkflow_UserDetail.ToString())
+                                                  .DataSource(s =>
+                                                  {
+                                                  s.Read(r =>
+                                                  {
+                                                  r.Action("GetWorkflowUsersAsync", "Common")
+                                                            .Data(@<text>
+                                                        function () {
+                                                        var combobox = $('#@Html.Id("ApprovalWorkflow[" + count + "].ApprovalWorkflow_UserDetail")').data("kendoComboBox");
+                                                        return {
+                                                        searchKey: combobox.text(),
+                                                        roleId: '@currentItem.ApprovalWorkflow_RoleDetail'
+                                                        }
+                                                        }
+                                                            </text>).Type(HttpVerbs.Post);
+                                                  })
+                                                                    .ServerFiltering(true);
+                                                  }).HtmlAttributes(new { style = "width: 200px;", @data_val_required = "Approver is required." }))
+
+                                                }
+                                                else
+                                                {
+                                                    <text><b>@currentItem.UserName</b></text>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <text><b>@currentItem.ApprovalTypeName</b></text>
+                                            }
+                                        </li>
+                                        <li>
+                                            <b>@currentItem.RoleName</b>
+                                        </li>
+                                    </ul>
+
+                            </div>
+                        </div>
+                        </li>
+                            count = count + 1;
+                        }
+                    </ul>
+                </div>
+            }
+            <div class="approvalCardDiv" style="min-width: 100px !important;">
+                <ul style="list-style-type:none;display:inline;">
+                    <li>
+                        <div class="defaultApprovalDiv" id="approval_end">
+                            End
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 0">
+        <div class="col-12 approval-button-container">
+            <button class="btn btn-success text-white"><span class="fas fa-check-square"></span> Approve</button>
+            <button type="button" class="btn btn-danger text-white"><span class="fas fa-ban"></span> Reject</button>
+            <button type="button" class="btn btn-primary text-white"><span class="fas fa-user-edit"></span> Delegate</button>
+            <button type="button" class="btn btn-outline-success bg-white text-success"><span class="fas fa-user-plus"></span> Add</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+    })
+    jsPlumb.importDefaults({
+        ConnectionsDetachable: false,
+
+    });
+    jsPlumb.ready(function () {
+        var strDivIds = "approval_start";
+        var prevDivIds = "";
+        var mainDivs = $('#parentApprovalDiv > .approvalCardDiv');
+        var mainDivLength = mainDivs.length;
+
+        $.each(mainDivs, function (index, value) {
+            var cards = $(value).find('.card');
+            if (cards.length > 0) {
+                $.each(cards, function (cardIndex, cardValue) {
+                    var cardId = $(cardValue).attr("id");
+                    var cardapprovalType = $(cardValue).attr("approvalType");
+                    if (prevDivIds != "") {
+                        var res = prevDivIds.split(",");
+                        $.each(res, function (prevIndex, prevValue) {
+                            targetEndpoint = "Blank";
+                            if (cardapprovalType == "any") {
+                                targetEndpoint = "Rectangle";
+                            }
+                            else if (cardapprovalType == "all") {
+                                targetEndpoint = "Dot";
+                            }
+                            jsPlumb.connect({
+                                source: prevValue,
+                                target: cardId,
+                                anchors: ["RightMiddle", "LeftMiddle"],
+                                connector: ["Flowchart"],
+                                endpoints: ["Blank", [targetEndpoint, { radius: 4, width: 8, height: 8 }]]
+                            });
+                        })
+                    }
+                    if (strDivIds != "") {
+                        strDivIds = strDivIds + ",";
+                    }
+                    strDivIds = strDivIds + cardId;
+                })
+            }
+            else {
+                if (prevDivIds != "" && (mainDivLength - 1) == index) {
+                    var res = prevDivIds.split(",");
+                    $.each(res, function (prevIndex, prevValue) {
+                        jsPlumb.connect({
+                            source: prevValue,
+                            target: "approval_end",
+                            anchors: ["RightMiddle", "LeftMiddle"],
+                            connector: ["Flowchart"],
+                            endpoint: "Blank"
+                        });
+                    })
+                }
+            }
+            prevDivIds = strDivIds;
+            strDivIds = "";
+        });
+
+    });
+</script>

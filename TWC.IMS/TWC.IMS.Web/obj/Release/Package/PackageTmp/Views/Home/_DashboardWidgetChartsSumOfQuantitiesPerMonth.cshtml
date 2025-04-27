@@ -1,0 +1,59 @@
+﻿
+<div id="lineChart"></div>
+
+<script>
+    function createChart(){
+        $("#lineChart").kendoChart({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: '@Url.Action("GetTopNSumofLicensesQuantities", "demosources")',
+                        dataType : "json"
+                    }
+                },
+                group: {
+                    field: "Category"
+                },
+                sort: {
+                    field: "Duration",
+                    dir : "asc"
+                }
+            },
+            title: "@DateTime.Now.Year Sales Trend",
+            //chartArea: {
+            //    //width: 750,
+            //    //height: 400
+            //},
+            legend: {
+                position : "bottom"
+            },
+            seriesDefaults: {
+                type: "line"
+            },
+            series: [{
+                field: "Value",
+                categoryField: "Duration",
+                autoFit: true,
+                missingValues: "zero"
+            }],
+            categoryAxis: {
+                type: "date",
+                labels: {
+                    template : "#: kendo.toString(value, 'MMM') #"
+                }
+            },
+            valueAxis: {
+                labels: {
+                    format: "{0:N0}"
+                }
+            },
+            tooltip: {
+                visible: true,
+                template: "#=kendo.toString(category, 'MMMM') # - #= series.name #: #= value #"
+            },
+            theme: "flat",
+            deferred: true
+        });
+    };
+    $(document).ready(createChart);
+</script>

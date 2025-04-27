@@ -1,0 +1,20 @@
+﻿
+
+@(Html.Kendo().DropDownList()
+    .Name("supplier_id")
+    .Filter(FilterType.Contains)
+    .OptionLabel("Select Supplier.")
+    .DataTextField("supplier_name")
+    .DataValueField("Id")
+    .HtmlAttributes(new { required = "required", id= "supplier_id", name= "supplier_id" })
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("GetSuppliersForDdl", "Common");
+        })
+        .ServerFiltering(false);
+    })
+    .Enable(true)
+    .AutoBind(true)
+)

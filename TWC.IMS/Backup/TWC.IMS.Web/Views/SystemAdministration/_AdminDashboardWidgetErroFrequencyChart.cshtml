@@ -1,0 +1,41 @@
+﻿@*
+    error frequency
+    most frequent errors + counts
+    bar chart
+*@
+@(Html.Kendo().Chart<TWC.IMS.Models.ChartModels.ErrorFrequencyModel>()
+      .Name("errorFrequencyChart")
+      .Title("Error Frequency")
+      .Legend(legend => legend
+          .Visible(true)
+          .Position(ChartLegendPosition.Bottom)
+      )
+      .ChartArea(chartArea => chartArea
+          .Background("transparent")
+      )
+      .Series(series =>
+      {
+          series.Column(a => a.InformationCount);
+          series.Column(a => a.ErrorCount);
+          series.Column(a => a.WarningCount);
+      })
+      .CategoryAxis(axis => axis
+          .Categories(c => c.Timestamp)
+          .Labels(l => l.Rotation("-90").Format("{0:MMM d}"))
+          .MajorGridLines(lines => lines.Visible(false))
+      )
+      .ValueAxis(axis => axis
+          .Numeric()
+          .Line(line => line.Visible(false))
+          .MajorGridLines(lines => lines.Visible(true))
+      )
+      .Tooltip(tooltip => tooltip
+          .Visible(true)
+          .Template("#= series.name #: #= value #")
+      )
+      .Theme("flat")
+      .DataSource(ds => ds.Read(read => read.Action("GetErrorFrequencyChartData", "AdminDashboardCharts")
+                                            .Data("chartDateFilter"))
+                          .Sort(s => s.Add(a => a.Timestamp)))
+      .Deferred()
+)

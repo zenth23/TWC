@@ -1,0 +1,18 @@
+﻿@model IEnumerable<TWC.IMS.Models.ChartModels.YearlySalesReportModel>
+@{ 
+    ViewBag.Title = $"{DateTime.Now.Year} Yearly Sales Report";
+    ViewData["ContainerClass"] = "container-fluid";
+}
+
+<style>
+    .k-grid td {
+        white-space: nowrap !important;
+    }
+</style>
+
+@Html.Partial("_YearlySalesReport")
+
+@section Scripts {
+    @Scripts.Render("~/scripts/application/yearly-sales-report.js?v=" + DateTime.Now.Ticks)
+    @Scripts.Render("~/scripts/application/yearly-sales-report-page-load.js?v=" + DateTime.Now.Ticks)
+}

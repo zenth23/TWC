@@ -1,0 +1,392 @@
+﻿@{
+    ViewBag.Title = "Home";
+    var appVersion = $"v{typeof(MvcApplication).Assembly.GetName().Version}";
+}
+<style>
+    .fw-400 {
+        font-weight: 400;
+    }
+</style>
+
+<div class="jumbotron">
+    <h1>Welcome to <span class="badge badge-primary">JIS</span><span class="badge badge-light">@appVersion</span></h1>
+    <p class="lead">This project was initiated to provide the development team a SMITS-ETG-standard ASP.NET MVC template framework as the starting point in creating web-based projects.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2 class="fw-400">Features</h2>
+        <ul style="list-style: disc;">
+            <li>Standard forms to perform CRUD operations</li>
+            <li>Approval Workflow</li>
+            <li>InfoSec-compliant data security settings</li>
+            <li>Standard User Interface</li>
+            <li>Common application features (mailer, logger, error handler)</li>
+            <li>SFTP integration</li>
+            <li>Standard system administration module</li>
+            <li>SMITS Support Team administration module</li>
+            <li>Application support module</li>
+            <li>Cryptography using GnuPG</li>
+            <li>Real-time Notifications</li>
+            <li>Ad-Hoc Reports</li>
+            <li>Approval Workflow</li>
+            <li>OWASP Top 10 for .NET Compliant</li>
+            <li>Admin Dashboard</li>
+            <li>User Dashboard</li>
+            <li>Two-Factor Authentication (E-mail, SMS, TOTP)</li>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h2 class="fw-400">Technologies and Components</h2>
+        <ul style="list-style: disc;">
+            <li>ASP.NET MVC 5.2.7</li>
+            <li>ASP.NET Razor 3.2.9</li>
+            <li>Entity Framework 6.1.3</li>
+            <li>Bootstrap 4.5</li>
+            <li>Popper 1.16.0</li>
+            <li>jQuery 3.5.1</li>
+            <li>jQuery Validation 1.19.1</li>
+            <li>jQuery Unobtrusive Validation 3.2.3</li>
+            <li>Microsoft Owin 3.0.1</li>
+            <li>Kendo.MVC 2021.3.1207.545</li>
+            <li>NewtonSoft.Json 12.0.0.0</li>
+            <li>ReportViewer WebForms 12.0.0</li>
+            <li>Renci.SshNet 2016.1.0</li>
+            <li>Renci.SshNet.Async 1.4.0</li>
+            <li>GPG 2.2.7</li>
+            <li>OTP Sharp 1.3.0.4</li>
+            <li>SignalR 2.4.3</li>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h2 class="fw-400">Things to do after downloading this framework</h2>
+        <ol>
+            <li>Rename all the projects that correspond to the project to be developed</li>
+            <li>Rename the namespaces except the <code>TWC.IMS.Common*</code>, <code>ReportBuilder</code> projects</li>
+            <li>Rename also the project folders and the solution file</li>
+            <li>Change the project port number in the Project's Properties</li>
+            <li>Reset to <code>1.0.0.0</code> the Assembly and File versions of the *.Web project, but not the version numbers of other projects</li>
+            <li>Resolve the missing nuget packages, if any</li>
+            <li>Upgrade the target .NET framework, if needed</li>
+            <a data-toggle="collapse" href="#col3More" id="more3">More</a>
+            <div class="collapse" id="col3More">
+                <li>
+                    Change the Bootstrap theme that complies with the agreed color scheme by the BU
+                    <ol>
+                        <li>Go to <a href="https://bootstrap.build/app/4.5" target="_blank">https://bootstrap.build/app/</a></li>
+                        <li>Import the <code>_variable.scss</code> file</li>
+                        <li>Adjust the color values, font sizes, as needed</li>
+                        <li>Export the updated <code>_variable.scss</code>, <code>bootstrap.css</code>, and the <code>boostrap.min.css</code> file</li>
+                        <li>Replace these files in your project</li>
+                        <li>or, you can download a new and fresh theme from <a href="https://bootswatch.com/" target="_blank">https://bootswatch.com/</a></li>
+                        <li>or, you create your custom css file to overwrite Bootstrap's default values</li>
+                        <li>For the kendo theme, you need to replace the color codes manually using the hex values from the exported bootstrap styles.</li>
+                    </ol>
+                </li>
+                <li>
+                    Change the app brand logos as well
+                    <ol>
+                        <li>Generate the logo images by following the image dimensions in <code>content/images/logo</code>.</li>
+                        <li>Replace the image files.</li>
+                    </ol>
+                </li>
+                <li>You may opt to change the <code>Oops</code> images as well located in <code>content/images/oops</code>.</li>
+                <li>Update the keep session alive localStorage values in the scripts/application/keep-session-alive.js (lns 21-23)</li>
+                <li>Project database can be found in ETGDEVQA SQL server (Catalog Name: BPS.Qas)</li>
+                <li>Standard Reports datasource files under <code>*.Web\Properties\DataSources</code> folder must also be renamed, and the <code>TypeInfo</code> element inside the file must also be updated.</li>
+                <li>
+                    <code>web.config</code> file changes
+                    <ol>
+                        <li>Change the default <code>SMITS_ADMIN_USERNAME</code> session value in the <code>web.config</code> file (ln21), comma-delimited</li>
+                        <li>Update the connection string in the <code>web.config</code> file (ln13)</li>
+                        <li>Keep the <code>BPS_VERSION_USED</code> value in the <code>web.config</code> file (ln20) to @appVersion</li>
+                        <li>Change the <code>APP_NAME</code> value in the <code>web.config</code> file (ln23)</li>
+                        <li>Change the machine <code>validationkey</code> in the <code>web.config</code> file (ln51), if needed</li>
+                        <li>Keep other <code>appSettings</code> values as-is unless otherwise necessary.</li>
+                    </ol>
+                </li>
+            </div>
+            <a data-toggle="collapse" href="#col3More" id="less3" style="display:none;">Less</a>
+        </ol>
+        <div class="alert alert-warning">Should get the latest version from the <strong>QAS branch</strong>.</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2 class="fw-400">Ready to deploy?</h2>
+        <ol>
+            <li>Change the ENVIRONMENT value in the web.config file (ln24) to QAS or PRD. Default is DEV.</li>
+            <li>The project should be published in <strong>Release</strong> mode.</li>
+            <li>
+                For Non-SSL/TLS Setup
+                <ol>
+                    <li>Before publish, code block from ln39-48 must be commented.</li>
+                    <li>After publish, forms/requireSSL value must be set to <strong>false</strong></li>
+                    <li>After publish, httpCookies/requireSSL values must be set to <strong>false</strong></li>
+                    <li>After publish, &lt;rewrite&gt; element and its subs must be removed.</li>
+                    <li>After publish, httpProtocol/customHeaders/Strict-Transport-Security must be removed.</li>
+                </ol>
+            </li>
+            <li>
+                For SSL/TLS Setup
+                <ol>
+                    <li>No other configuration changes should be made.</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+
+    <div class="col-md-4" style="background-color:rgba(241,241,241,0.44);"></div>
+
+    <div class="col-md-4" style="background-color:rgba(241,241,241,0.44);"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mt-5">
+        <h2 class="fw-400">Release Notes</h2>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <h2>BPS @appVersion <span class="badge badge-primary">current</span></h2>
+                <ul>
+                    <li>Added User Dashboard (lists, charts and counters)</li>
+                    <li>Added Admin Dashboard (lists, charts and counters)</li>
+                    <li>Added email logs viewing</li>
+                    <li>Added user activities history (under Profile)</li>
+                    <li>Added steps on disabling 2FA for security purposes</li>
+                    <li>Added the environment and debug mode indicators on the navbar</li>
+                    <li>Moved Version History from Home page to its own page</li>
+                    <li>Enhanced error logging</li>
+                    <li>Enhanced user activity logging</li>
+                    <li>Enhanced audit logs details viewing</li>
+                    <li>Changed Standard Reports page layout</li>
+                    <li>Updated Oops images</li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h2>TWC.IMS.Common v1.6.0 <span class="badge badge-primary">current</span></h2>
+                <ul>
+                    <li>Organized and grouped existing methods</li>
+                    <li>Added version comparer method (<code>CompareVersions()</code>)</li>
+                    <li>Added <code>RetryAsync()</code> method which executes the given method to a given number of tries</li>
+                    <li>Added <code>NONADMIN_ROLE</code> string constant in <code>Messages</code></li>
+                    <li>Added new extension methods such as <code>Singularize()</code>, <code>Pluralize()</code></li>
+                    <li>Moded <code>DataTableToList()</code> method to <code>Extensions</code></li>
+                    <li>Implemented singleton pattern for <code>SmsService</code>, for optimization purposes</li>
+                    <li>Implemented singleton pattern for <code>Mailer</code>, for optimization purposes</li>
+                    <li>Enhanced <code>Logger</code>. Add <code>Warning</code> logger, removed <code>Information</code> logger</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h2>BPS v2.2.0</h2>
+                <ul>
+                    <li>UrlRewrite for HTTPS</li>
+                    <li>BaseController for common functions</li>
+                </ul>
+
+                <h2>BPS v2.1.2</h2>
+                <ul>
+                    <li>Workflow Editor - Criteria conditions added.</li>
+                </ul>
+
+                <h2>BPS v2.1.1</h2>
+                <ul>
+                    <li>IdentityConfig - moved the ApplicationUserManager config values to AppSettings</li>
+                    <li>Set cookie timeout to Session Timeout + 2mins</li>
+                    <li>Startup.Auth - moved the cookie config values to AppSettings</li>
+                    <li>Refactored AuthorizedModulesAsync code block to minimize database roundtrips</li>
+                </ul>
+                <ul>
+                    <li>
+                        <strong>OWASP TOP 10 Security:</strong>
+                        <ul>
+                            <li>A5 Broken Access Control - blocking of post request throttling for Login, and Password Reset</li>
+                            <li>A6 Security Misconfiguration - all requests must be directed returned over SSL/TLS in prod; disabled trace in prod</li>
+                            <li>A7 Cross-Site Scripting (XSS) - used AntiXss Library</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a data-toggle="collapse" href="#col5More" id="more5">More</a>
+                <div class="collapse" id="col5More">
+                    <h2>BPS v2.1.0</h2>
+                    <ul>
+                        <li>Added Identity 2.0's RoleManager service class instead of directly using the ApplicationDbContext to comply with the Dev't. Standards.</li>
+                        <li>Common template for Validation Summary (_ValidationSummary.cshtml)</li>
+                        <li>Invalidates user login attempts when no role is assigned</li>
+                        <li>Added Status Objects editor in System Configs module for JSON-based configuration value</li>
+                        <li>Added CommonControllerMethods class for Identity-related operations</li>
+                        <li>Some code cleanup</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>CITM-Related Changes:</strong>
+                            <ul>
+                                <li>2FA via MITTO SMS API</li>
+                                <li>Added EmployeeId field in the UserDetails table as a required field.</li>
+                                <li>Added EmployeeId field into the Standard Reports such as ACL and Users Masterdata Reports.</li>
+                                <li>Send an SMS when a user-triggered password reset/forgot password activity is complete</li>
+                                <li>Phone Number must be provided and confirmed before SMS is sent.</li>
+                                <li>Last log-on successful and failed attempts displayed in notifications.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h2>BPS v2.0.0</h2>
+                    <ul>
+                        <li>Adhoc Functionality for Workflow Approvals added.</li>
+                    </ul>
+
+                    <h2>BPS v1.9.0</h2>
+                    <ul>
+                        <li>System Notifications using SignalR added.</li>
+                    </ul>
+
+                    <h2>BPS v1.8.1</h2>
+                    <ul>
+                        <li>Parallel workflows functionality added.</li>
+                    </ul>
+
+                    <h2>BPS v1.8.0</h2>
+                    <ul>
+                        <li><code>HelperClasses/WorkEngine.cs</code> added for reusable workflow actions.</li>
+                        <li>Sample <a href="@Url.Action("index", "requests")">Transaction Request</a> with workflow actions added.</li>
+                    </ul>
+
+                    <h2>BPS v1.7.2</h2>
+                    <ul>
+                        <li>Workflow Editor under System Administration improved.</li>
+                    </ul>
+
+                    <h2>BPS v1.7.1</h2>
+                    <ul>
+                        <li>Random image for the generic error handler page (OOPS)</li>
+                        <li>Improved session timeout handling</li>
+                        <li>Added an option to try a different 2FA provider for expired 2FA codes</li>
+                    </ul>
+
+                    <h2>BPS v1.7.0</h2>
+                    <ul>
+                        <li>Added 2FA via Email, Google Authenticator, and Microsoft Authenticator apps</li>
+                        <li>Disabled sending of the X-AspNetMvc-Version header</li>
+                        <li>Added APP_NAME config in the web.config file for universal use</li>
+                        <li>Removed sorting and filtering in Access Module grid</li>
+                        <li>BL: Refactored async methods which serve as Pass-thru methods to return System.Threading.Task instead of the actual value, for best programming practices</li>
+                        <li>Added CITM-Standard Username generator method</li>
+                    </ul>
+
+                    <h2>BPS v1.6.1.1</h2>
+                    <ul>
+                        <li>Displayed Expiration Date column in the User Masterdata Report</li>
+                    </ul>
+
+                    <h2>BPS v1.6.1.0</h2>
+                    <ul>
+                        <li>Added user login validation in compliance with CITM policies</li>
+                        <li>Grouped Standard Reports into one folder</li>
+                        <li>Added a system-wide spinner when the form was submitted</li>
+                        <li>Addess standard messages</li>
+                        <li>Some minor fixes and UI changes</li>
+                    </ul>
+
+                    <h2>BPS v1.6.0.2</h2>
+                    <ul>
+                        <li>Session expires error on login fix</li>
+                        <li>Moved standard reports to System Administration module</li>
+                    </ul>
+
+                    <h2>BPS v1.6.0.1</h2>
+                    <ul>
+                        <li>Renamed some variable to easily replace at once when deriving from this project</li>
+                        <li>Reduced font size of Kendo Calendar (.k-calendar) component from 1rem to 0.75rem (BPS standard font rize)</li>
+                    </ul>
+
+                    <h2>BPS v1.6.0</h2>
+                    <ul>
+                        <li>Kendo MVC 2021.3.1207.545</li>
+                        <li>Session management (keep alive)</li>
+                        <li>System Configs checker</li>
+                        <li>Remove error handler in the business layer. Let the common error handler in the web prject handle the messages</li>
+                        <li>Common audit reports (ACL, UAM, Users, Roles, System Modules)</li>
+                        <li>Slick custom scroll bars</li>
+                        <li>Added icons per module (index, details)</li>
+                        <li>Added auto-clear cache in manual javascript referencing and in the bundle config</li>
+                        <li>Forms change listener</li>
+                        <li>Some code cleanup</li>
+                    </ul>
+                </div>
+                <a data-toggle="collapse" href="#col5More" id="less5" style="display:none;">Less</a>
+            </div>
+
+            <div class="col-3">
+                <div class="row">
+                    <h2>TWC.IMS.Common v1.5.0</h2>
+                    <ul>
+                        <li>Introducing the Cryptography class which contains encryption-, decryption-, hashing-related tasks. Moved from the Tools class.</li>
+                        <li>Introducing the Mailer class which contains the email sending method. Moved from the Tools class.</li>
+                        <li>Introducing the SmsService class. Handles text messaging API via MITTO Service.</li>
+                        <li>Renamed DL classes to comply with the Dev't. Standards.</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <h2>TWC.IMS.Common v1.4.1</h2>
+                    <ul>
+                        <li>Added <code>GetSha256CheckSum</code> method for file checksum</li>
+                        <li><code>WriteLogFileAsync</code>: Allowed sharing of the log file for concurrent read/write access</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <h2>TWC.IMS.Common v1.4.0</h2>
+                    <ul>
+                        <li>Common info and error messages</li>
+                        <li>GPG encryption,decryption</li>
+                        <li>Standard string formats</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <h2>TWC.IMS.Common.SftpHelper v1.1.0</h2>
+                <ul>
+                    <li>Added file download function</li>
+                </ul>
+            </div>
+
+            <div class="col-3">
+                <h2>ReportBuilder v1.0.0</h2>
+                <p>For reports deigning purposes only since ASP.NET MVC doesn't support .NET objects as report source</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#more3').on('click', (e) => {
+            e.preventDefault();
+            $('#more3').hide();
+            $('#less3').show();
+        });
+        $('#less3').on('click', (e) => {
+            e.preventDefault();
+            $('#less3').hide();
+            $('#more3').show();
+        });
+        $('#more5').on('click', (e) => {
+            e.preventDefault();
+            $('#more5').hide();
+            $('#less5').show();
+        });
+        $('#less5').on('click', (e) => {
+            e.preventDefault();
+            $('#less5').hide();
+            $('#more5').show();
+        });
+    });
+</script>

@@ -1,0 +1,174 @@
+﻿<div class="modal fade" id="modalWorkflow" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalWorkflowTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                    <div class="form-horizontal" >
+                        @Html.Hidden("ApprovalWorkflow_Base64RowVersion")
+                        @Html.Hidden("ApprovalWorkflow_Id")
+                        @Html.Hidden("ApprovalWorkflow_ApprovalEntity")
+
+                        <div class="form-group row" id="positionDiv">
+                            @Html.Label("Position", htmlAttributes: new { @class = "control-label col-sm-3 col-md-3 col-lg-3 col-xl-3" })
+                            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 280px">
+                                    <label class="btn btn-outline-primary btn-toggle">
+                                        <input type="radio" name="rbtnPosition" id="rbtnAfter" autocomplete="off" value="after" checked> After
+                                    </label>
+                                    <label class="btn btn-outline-primary btn-toggle">
+                                        <input type="radio" name="rbtnPosition" id="rbtnBefore" autocomplete="off" value="before"> Before
+                                    </label>
+                                    <label class="btn btn-outline-primary btn-toggle">
+                                        <input type="radio" name="rbtnPosition" id="rbtnParallel" autocomplete="off" value="parallel"> Parallel
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.Label("Label", htmlAttributes: new { @class = "required control-label col-sm-3 col-md-3 col-lg-3 col-xl-3" })
+                            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                @Html.Editor("Label", new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessage("Label", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.Label("ApprovalWorkflow_ApprovalType", "Approval Type", htmlAttributes: new { @class = "required control-label col-sm-3 col-md-3 col-lg-3 col-xl-3" })
+                            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                @(Html.Kendo().ComboBox().Name("ApprovalWorkflow_ApprovalType")
+                                    .AutoBind(true)
+                                    .IgnoreCase(true)
+                                    .Suggest(false)
+                                    .Placeholder("Select Approval Type")
+                                    .DataTextField("Name")
+                                    .DataValueField("Id")
+                                    .Filter(FilterType.Contains)
+                                    .Events(ev => ev.Change("workflow.adhoc.events.approvalTypeOnChange"))
+                                    .DataSource(s =>
+                                    {
+                                        s.Read(r =>
+                                        {
+                                            r.Action("GetApprovalTypeComboBoxListAsync", "Common").Data("workflow.adhoc.filters.searchKeyApprovalType").Type(HttpVerbs.Post);
+                                        })
+                                        .ServerFiltering(true);
+                                    })
+                                    .HtmlAttributes(new { style = "width: 280px;" })) <br />
+                                @Html.ValidationMessage("ApprovalWorkflow_ApprovalType", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.Label("ApprovalWorkflow_RoleDetail", "Role", htmlAttributes: new { @class = "required control-label col-sm-3 col-md-3 col-lg-3 col-xl-3" })
+                            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                @(Html.Kendo().ComboBox().Name("ApprovalWorkflow_RoleDetail")
+                                    .AutoBind(true)
+                                    .IgnoreCase(true)
+                                    .Suggest(false)
+                                    .Placeholder("Select Role")
+                                    .DataTextField("Name")
+                                    .DataValueField("Id")
+                                    .Filter(FilterType.Contains)
+                                    .Events(ev => ev.Change("workflow.adhoc.events.roleOnChange"))
+                                    .DataSource(s =>
+                                    {
+                                        s.Read(r =>
+                                        {
+                                            r.Action("GetRoleComboBoxListAsync", "Common").Data("workflow.adhoc.filters.searchKeyRole").Type(HttpVerbs.Post);
+                                        })
+                                        .ServerFiltering(true);
+                                    })
+                                    .HtmlAttributes(new { style = "width: 280px;" })) <br />
+                                @Html.ValidationMessage("ApprovalWorkflow_RoleDetail", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row userdiv" style="display:none">
+                            @Html.Label("ApprovalWorkflow_UserDetail", "Approver", htmlAttributes: new { @class = "required control-label col-sm-3 col-md-3 col-lg-3 col-xl-3" })
+                            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                @(Html.Kendo().ComboBox().Name("ApprovalWorkflow_UserDetail")
+                                    .AutoBind(true)
+                                    .IgnoreCase(true)
+                                    .Suggest(false)
+                                    .Placeholder("Select User")
+                                    .DataTextField("Name")
+                                    .DataValueField("Id")
+                                    .Filter(FilterType.Contains)
+                                    .Value("")
+                                    .DataSource(s =>
+                                    {
+                                        s.Read(r =>
+                                        {
+                                            r.Action("GetWorkflowUsersAsync", "Common").Data("workflow.adhoc.filters.searchKeyUser").Type(HttpVerbs.Post);
+                                        })
+                                        .ServerFiltering(true);
+                                    })
+                                    .HtmlAttributes(new { style = "width: 280px;" })) <br />
+                                @Html.ValidationMessage("ApprovalWorkflow_UserDetail", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <br />
+                        <h5>Status</h5> <hr />
+                        <div class="form-group row">
+                            @Html.Label("ApprovalWorkflow_StatusAfterApproved", "After Approved", htmlAttributes: new { @class = "required control-label col-sm-3 col-md-3 col-lg-3 col-xl-3" })
+                            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                @(Html.Kendo().ComboBox().Name("ApprovalWorkflow_StatusAfterApproved")
+                                    .AutoBind(true)
+                                    .IgnoreCase(true)
+                                    .Suggest(false)
+                                    .Placeholder("Select Status")
+                                    .DataTextField("Name")
+                                    .DataValueField("Id")
+                                    .Filter(FilterType.Contains)
+                                    .DataSource(s =>
+                                    {
+                                        s.Read(r =>
+                                        {
+                                            r.Action("GetStatusSets", "Common")
+                                            .Data("workflow.adhoc.filters.searchKeyAfterApproved")
+                                            .Type(HttpVerbs.Post);
+                                        })
+                                        .ServerFiltering(true);
+                                    })
+                                    .HtmlAttributes(new { style = "width: 280px;" })) <br>
+                                @Html.ValidationMessage("ApprovalWorkflow_StatusAfterApproved", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.Label("ApprovalWorkflow_StatusAfterRejected", "After Rejected", htmlAttributes: new { @class = "required control-label col-sm-3 col-md-3 col-lg-3 col-xl-3" })
+                            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                @(Html.Kendo().ComboBox().Name("ApprovalWorkflow_StatusAfterRejected")
+                                    .AutoBind(true)
+                                    .IgnoreCase(true)
+                                    .Suggest(false)
+                                    .Placeholder("Select Status")
+                                    .DataTextField("Name")
+                                    .DataValueField("Id")
+                                    .Filter(FilterType.Contains)
+                                    .DataSource(s =>
+                                    {
+                                        s.Read(r =>
+                                        {
+                                            r.Action("GetStatusSets", "Common")
+                                            .Data("workflow.adhoc.filters.searchKeyAfterRejected")
+                                            .Type(HttpVerbs.Post);
+                                        })
+                                        .ServerFiltering(true);
+                                    })
+                                    .HtmlAttributes(new { style = "width: 280px;" })) <br>
+                                @Html.ValidationMessage("ApprovalWorkflow_StatusAfterRejected", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                  <input type="button" value="Save" onclick="workflow.adhoc.events.onSaveWfBox(this)" id="btnSave" class="btn btn-secondary float-right" />
+            </div>
+        </div>
+    </div>
+</div>

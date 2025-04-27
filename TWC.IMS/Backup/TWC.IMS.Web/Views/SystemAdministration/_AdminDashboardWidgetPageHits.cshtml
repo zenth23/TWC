@@ -1,0 +1,34 @@
+﻿
+@(Html.Kendo().Chart<TWC.IMS.Models.ChartModels.PageHitsModel>()
+        .Name("pageHitsChart")
+        .Title("Page Hits")
+        .Legend(legend => legend
+            .Visible(false)
+        )
+        .ChartArea(chartArea => chartArea
+            .Background("transparent")
+        )
+        .Series(series =>
+        {
+            series.Bar(a => a.HitCount);
+        })
+        .CategoryAxis(axis => axis
+            .Categories(c => c.Activity).Visible(false)
+            .MajorGridLines(lines => lines.Visible(false))
+        )
+        .ValueAxis(axis => axis
+            .Numeric()
+            //.Max(140000)
+            .Line(line => line.Visible(false))
+            .MajorGridLines(lines => lines.Visible(true))
+        )
+        .Tooltip(tooltip => tooltip
+            .Visible(true)
+            .Template("#= category #: #= kendo.format('{0:n0}',value) #")
+        )
+        .DataSource(ds => ds.Read(read => read.Action("GetPageHitsCounters", "AdminDashboardCharts")
+                                            .Data("chartDateFilterUserActivityLogs"))
+                            .Sort(s => s.Add<int>("HitCount").Descending()))
+        .HtmlAttributes(new { style = "width:100%;" })
+        .Theme("flat")
+) 

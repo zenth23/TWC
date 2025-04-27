@@ -1,0 +1,10 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.AuditLogsViewModel>
+@{
+    ViewBag.Title = "Audit Logs";
+}
+
+@Html.Partial("_AuditLogs")
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/application/audit-logs.js?v=" + DateTime.Now.Ticks)
+}

@@ -1,0 +1,18 @@
+﻿@(Html.Kendo().DropDownList()
+    .Name("location_id")
+    .Filter(FilterType.Contains)
+    .OptionLabel("Select Location.")
+    .DataTextField("location_name")
+    .DataValueField("Id")
+    .HtmlAttributes(new { required = "required" })
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("GetLocationsForDdl", "Common");
+        })
+        .ServerFiltering(false);
+    })
+    .Enable(true)
+    .AutoBind(true)
+)

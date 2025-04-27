@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Profile";
+}
+
+<h2><span class="fas fa-user-alt"></span> @ViewBag.Title</h2>
+
+@Html.Partial("_ValidationSummary")
+
+@if (!string.IsNullOrWhiteSpace(TempData["SUCCESS_MESSAGE"] as string))
+{
+    <div class="alert alert-success">
+        <span>@TempData["SUCCESS_MESSAGE"]</span>
+    </div>
+}
+
+@if (!string.IsNullOrWhiteSpace(TempData["ERROR_MESSAGE"] as string))
+{
+    <div class="alert alert-danger">
+        <span>@TempData["ERROR_MESSAGE"]</span>
+    </div>
+}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <ul class="nav nav-tabs" id="profileTabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#personal">Personal Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#contact">Contact Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#account">Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#activityhistory">My Activity History</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="personal">
+                @{Html.RenderAction("GetPersonalPartialView"); }
+            </div>
+            <div class="tab-pane fade" id="contact">
+                @{Html.RenderAction("GetContactPartialView"); }
+            </div>
+            <div class="tab-pane fade" id="account">
+                @{Html.RenderAction("GetAccountPartialView"); }
+            </div>
+            <div class="tab-pane fade" id="activityhistory">
+                @{Html.RenderAction("GetRecentActivities", "UserActivityLogs");}
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/application/profile.js?v=" + DateTime.Now.Ticks)
+}

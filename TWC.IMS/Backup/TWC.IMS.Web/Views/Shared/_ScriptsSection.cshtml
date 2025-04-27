@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+    window.rootUrl = '@Url.Content("~/")';
+    var _sessionTimeout = @Session.Timeout;
+</script>
+
+@Scripts.Render("~/Scripts/application/main.layout.js?v=" + DateTime.Now.Ticks)
+@Scripts.Render("~/bundles/jsplumb")
+@Scripts.RenderFormat("<script type='text/javascript' src='{0}' nocache='" + DateTime.Now.Ticks + "'></script>", "~/bundles/application")
+@Html.Kendo().DeferredScripts()

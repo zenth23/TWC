@@ -1,0 +1,299 @@
+﻿
+
+@{
+    ViewBag.Title = "Inventory Entry";
+}
+<style>
+    .k-numerictextbox, .k-textarea {
+        font-size: inherit !important
+    }
+    .so-label {
+        font-size: 0.85rem !important;
+        padding-top: 2px;
+    }
+</style>
+
+@Html.AntiForgeryToken()
+
+<div class="row">
+    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <ul class="header-text-button-container">
+       
+            <li>
+                <h2 class="mt-1">@ViewBag.Title</h2>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-12">
+
+        @(Html.Kendo().Grid<TWC.IMS.Web.Models.InventoryEntryViewModel>()
+                            .Name("gridInventoryEntries")
+                            .Columns(columns =>
+                            {
+                                columns.Command(command =>
+                                {
+                                    command.Edit()
+                                           .IconClass("fas fa-pen")
+                                           .Text(" ")
+                                           .HtmlAttributes(new { title = "Edit" });
+                                    command.Custom("Delete")
+                                           .IconClass("fas fa-trash")
+                                           .Text(" ")
+                                           .HtmlAttributes(new { title = "Delete" })
+                                           .Click("inventoryEntry.editor.events.onGridDeleteClick");
+                                }).Width(120).HtmlAttributes(new { @data_id = "#=Id#" }).Locked(true);
+                                columns.Bound(p => p.SupplierName)
+                                       .EditorTemplateName("DropDownListSuppliers")
+                                       .Title("Supplier")
+                                       .Width(200);
+                                columns.Bound(p => p.LocationName)
+                                       .EditorTemplateName("DropDownListLocations")
+                                       .Title("Location")
+                                       .Width(200);
+                                columns.Bound(p => p.ProductName)
+                                       .EditorTemplateName("DropDownListProducts")
+                                       .Title("Product")
+                                       .Width(200);
+                                columns.Bound(p => p.CategoryName)
+                                       .EditorTemplateName("DropDownListCategories")
+                                       .Title("Category")
+                                       .Width(150);
+                                columns.Bound(p => p.quantity)
+                                       .EditorTemplateName("NumericTextBoxQuantity")
+                                       .Title("Quantity")
+                                       .HtmlAttributes(new { @class="text-right" })
+                                       .Width(100);
+                                columns.Bound(p => p.entry_date)
+                                       .EditorTemplateName("DatePickerEntryDate")
+                                       .Format("{0:dd-MMM-yyyy}")
+                                       .Title("Entry Date")
+                                       .Width(160);
+                                columns.Bound(p => p.received_date)
+                                       .EditorTemplateName("DatePickerReceivedDate")
+                                       .Format("{0:dd-MMM-yyyy}")
+                                       .Title("Received Date")
+                                       .Width(160);
+                                columns.Bound(p => p.remarks)
+                                       .EditorTemplateName("TextAreaRemarks")
+                                       .Title("Remarks")
+                                       .Format("{0:dd-MMM-yyyy}")
+                                       .Width(250);
+                                columns.Bound(p => p.Created)
+                                       .ClientTemplate("#= Created ? kendo.toString(kendo.parseDate(Created), 'dd-MMM-yyyy') : '' #")
+                                       .Width(150);
+                                columns.Bound(p => p.CreatedBy).Width(150);
+                                columns.Bound(p => p.Modified)
+                                       .ClientTemplate("#= Modified ? kendo.toString(kendo.parseDate(Modified), 'dd-MMM-yyyy') : '' #")
+                                       .Width(150);
+                                columns.Bound(p => p.ModifiedBy)
+                                        .Width(150);
+                            })
+                            .ToolBar(toolbar =>
+                            {
+                                toolbar.Create().IconClass("fas fa-plus").Text("New");
+                                toolbar.Custom()
+                                       .IconClass("fas fa-file-excel")
+                                       .Text("Download Template")
+                                       .HtmlAttributes(new { @id = "downloadTemplateButton", href = "#" });
+                                toolbar.Custom()
+                                        .IconClass("fas fa-upload")
+                                        .Text("Upload")
+                                        .HtmlAttributes(new { @id = "openUploadModalButton", href = "#" });
+                            })
+                            .Editable(editable => editable.Mode(GridEditMode.InLine))
+                            .Pageable(p => p.Refresh(true))
+                            .Filterable()
+                            .Resizable(r => r.Columns(true))
+                            .Sortable()
+                            .Scrollable(s => s.Height(320))
+                            .Events(events =>
+                            {
+                                events.Edit("inventoryEntry.editor.events.onEdit");
+                            })
+                            .DataSource(dataSource => dataSource
+                                .Ajax()
+                                .PageSize(20)
+                                .Events(events =>
+                                {
+                                    events.Error("inventoryEntry.common.errorHandler")
+                                          .RequestEnd("inventoryEntry.common.onRequestEnd");
+                                })
+                                .Model(model =>
+                                {
+                                    model.Id(p => p.Id);
+                                    model.Field(p => p.Id).Editable(false);
+                                    model.Field(p => p.supplier_id).Editable(true);
+                                    model.Field(p => p.location_id).Editable(true);
+                                    model.Field(p => p.product_id).Editable(true);
+                                    model.Field(p => p.quantity).Editable(true);
+                                    model.Field(p => p.entry_date).Editable(true);
+                                    model.Field(p => p.received_date).Editable(true);
+                                    model.Field(p => p.remarks).Editable(true);
+                                    model.Field(p => p.Created).Editable(false);
+                                    model.Field(p => p.CreatedBy).Editable(false);
+                                    model.Field(p => p.Modified).Editable(false);
+                                    model.Field(p => p.ModifiedBy).Editable(false);
+                                })
+                                .Create(update => update.Action("save", "inventory_entries"))
+                                .Read(read => read.Action("getlist", "inventory_entries"))
+                                .Update(update => update.Action("save", "inventory_entries"))
+                                .Destroy(update => update.Action("delete", "inventory_entries"))
+                            )
+        )
+    </div>
+
+
+
+    <div id="uploadExcelModal" class="modal fade center" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Upload Excel File</h4>
+                </div>
+                <div class="modal-body modal-validator">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group row">
+                                @Html.Label("Location", htmlAttributes: new { @class = "col-sm-3 so-label" })
+                                <div class="col-sm-6">
+                                    @(Html.Kendo().DropDownList()
+                                                  .Name("excel_location_id")
+                                                  .Filter(FilterType.Contains)
+                                                  .OptionLabel("Select Location.")
+                                                  .DataTextField("location_name")
+                                                  .DataValueField("Id")
+                                                  .HtmlAttributes(new { required = "required" })
+                                                  .DataSource(source =>
+                                                  {
+                                                      source.Read(read =>
+                                                      {
+                                                          read.Action("GetLocationsForDdl", "Common");
+                                                      })
+                                                      .ServerFiltering(false);
+                                                  })
+                                                  .Enable(true)
+                                                  .AutoBind(true)
+                                    )
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.Label("Supplier", htmlAttributes: new { @class = "col-sm-3 so-label" })
+                                <div class="col-sm-6">
+                                    @(Html.Kendo().DropDownList()
+                                                  .Name("excel_supplier_id")
+                                                  .Filter(FilterType.Contains)
+                                                  .OptionLabel("Select Supplier.")
+                                                  .DataTextField("supplier_name")
+                                                  .DataValueField("Id")
+                                                  .HtmlAttributes(new { required = "required" })
+                                                  .DataSource(source =>
+                                                  {
+                                                      source.Read(read =>
+                                                      {
+                                                          read.Action("GetSuppliersForDdl", "Common");
+                                                      })
+                                                      .ServerFiltering(false);
+                                                  })
+                                                  .Enable(true)
+                                                  .AutoBind(true)
+                                    )
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="col-sm-6">
+                            @(Html.Kendo().Upload()
+                                          .Name("excelUpload")
+                                          .Validation(v => v.AllowedExtensions(new string[] { ".xlsx" }))
+                                          .Multiple(false)
+                                          .Async(a => a
+                                              .Save("loadexcelfile", "inventory_entries")
+                                              .AutoUpload(true)
+                                          )
+                                          .Events(x => x.Success("inventoryEntry.editor.events.onUploadComplete")
+                                                        .Select("inventoryEntry.editor.events.onUploadSelected"))
+                            )
+
+                        </div>
+
+                    </div>
+                    <br />
+                    @(Html.Kendo()
+                                   .Grid<TWC.IMS.Web.Models.InventoryEntryViewModel>()
+                                   .Name("gridExcelUpload")
+                                   .Columns(columns =>
+                                   {
+                                       columns.Bound(p => p.ValidationMessage)
+                                              .Title("Validation Message")
+                                              .HtmlAttributes(new { @class = "text-danger" })
+                                              .Width(150);
+                                       columns.Bound(p => p.ProductName)
+                                               .Title("Product")
+                                               .Width(200);
+                                       columns.Bound(p => p.CategoryName)
+                                              .Title("Category")
+                                              .Width(150);
+                                       columns.Bound(p => p.quantity)
+                                              .Title("Quantity")
+                                              .HtmlAttributes(new { @class = "text-right" })
+                                              .Width(100);
+                                       columns.Bound(p => p.entry_date)
+                                              .Format("{0:dd-MMM-yyyy}")
+                                              .Title("Entry Date")
+                                              .Width(160);
+                                       columns.Bound(p => p.received_date)
+                                              .Format("{0:dd-MMM-yyyy}")
+                                              .Title("Received Date")
+                                              .Width(160);
+                                       columns.Bound(p => p.remarks)
+                                              .EditorTemplateName("TextAreaRemarks")
+                                              .Title("Remarks")
+                                              .Format("{0:dd-MMM-yyyy}")
+                                              .Width(250);
+
+                                   })
+                                    .Filterable()
+                                    .Resizable(r => r.Columns(true))
+                                    .Sortable()
+                                    .Scrollable(s => s.Height(280))
+                                    .DataSource(dataSource => dataSource.Ajax().ServerOperation(false))
+                    )
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width:100%">
+                        <div class="col-sm-6 text-left">
+                            <button type="button" class="btn btn-primary btn-sm" onclick="inventoryEntry.editor.events.onSaveExcelContent()">Save</button>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <button type="button" class="btn btn-default btn-sm" onclick="inventoryEntry.editor.events.onUploadModalClose()">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/application/common-helper.js")
+    @Scripts.Render("~/Scripts/application/inventoryentry.js")
+
+}
+
+<script>
+    $(function () {
+        inventoryEntry.initialize()
+    })
+</script>

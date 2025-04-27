@@ -1,0 +1,237 @@
+﻿
+@{
+
+    ViewBag.Title = "Support Query Tool";
+}
+<style>
+    .k-autocomplete, .k-colorpicker, .k-combobox, .k-datepicker, .k-datetimepicker, .k-dropdown, .k-numerictextbox, .k-selectbox, .k-textbox, .k-timepicker, .k-toolbar .k-split-button {
+
+        width: 100% !important;
+    }
+</style>
+<link href="~/Content/plugins/select2/css/select2.min.css" rel="stylesheet" />
+<link href="~/Content/plugins/select2/theme/select2-bootstrap4.min.css" rel="stylesheet" />
+<script src="~/Content/plugins/select2/js/select2.min.js"></script>
+<div class="row">
+    <div class="col-md-12">
+        <h2><span class="fas fa-layer-group"></span> Query <span class="badge badge-secondary">Support Tool</span></h2>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group row">
+            <div class="col-sm-3 col-md-3 col-lg-4 col-xl-3">
+                @Html.Label("Select Table", htmlAttributes: new { @class = "control-label" })
+                <br />
+                <input id="TableId" name="TableId" />
+            </div>
+            <div class="col-sm-7 col-md-7 col-lg-7 col-xl-7">
+                <button type="button" disabled class="btn btn-outline-secondary btn-sm" title="Add filter" id="addFilter">
+                    <span class="fas fa-plus"></span> Add Filter
+                </button>
+                <table id="queryFilters" width="100%">
+                    <tbody id="queryFiltersBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-4 col-xl-3">
+                
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <button type="button" class="btn btn-secondary" title="Filter" id="filter">Filter</button>
+            </div>
+        </div>
+        <hr />
+        <div id="gridHolder"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+
+            // VARIABLES
+            var inputTableId = $("#TableId");
+            var _tableColumns = [];
+            var lineItemCounter = 0;
+            var logicalOperators = ["AND", "OR"]
+            var conditions = [
+                { dataType: "int", conditions: [">", ">=", "=", "<", "<=", "IS NULL", "IS NOT NULL"] },
+                { dataType: "datetime", conditions: [">", ">=", "=", "<", "<=", "IS NULL", "IS NOT NULL"] },
+                { dataType: "datetimeoffset", conditions: [">", ">=", "=", "<", "<=", "IS NULL", "IS NOT NULL"] },
+                { dataType: "float", conditions: [">", ">=", "=", "<", "<=", "IS NULL", "IS NOT NULL"] },
+                { dataType: "bit", conditions: ["=", "IS NULL", "IS NOT NULL"] },
+                { dataType: "decimal", conditions: [">", ">=", "=", "<", "<=", "IS NULL", "IS NOT NULL"] },
+                { dataType: "varchar", conditions: ["=", "contains", "IS NULL", "IS NOT NULL"] },
+                { dataType: "char", conditions: ["="] },
+                { dataType: "timestamp", conditions: [">", ">=", "=", "<", "<=", "IS NULL", "IS NOT NULL"] },
+                { dataType: "nvarchar", conditions: ["=", "contains", "IS NULL", "IS NOT NULL"] },
+                { dataType: "nchar", conditions: ["=", "IS NULL", "IS NOT NULL"] },
+            ]
+
+
+            //////////////////////////////
+            // CONTROLS INITIALIZATION //
+            //////////////////////////////
+
+            // TABLE COMBO BOX
+            inputTableId.kendoComboBox({
+                dataTextField: "TableName",
+                dataValueField: "TableId",
+                optionLabel: 'Select Table',
+                select: onSelectTableId,
+                index: -1,
+                //dataBound: onDataBoundTableId,
+                dataSource: {
+                    transport: {
+                        read: {
+                            dataType: "json",
+                            url: '@Url.Action("GetTableName", "Support", new { id=-1 })',
+                        }
+                    }
+                }
+            });
+            inputTableId.data("kendoComboBox")
+            inputTableId.bind("select", onSelectTableId);
+
+            ////////////////////////////
+            ////////// EVENTS //////////
+            ////////////////////////////
+
+            // ON SELECT TABLE
+            function onSelectTableId(e) {
+                if (e != undefined) {
+
+                    $("#queryFiltersBody").html("")
+                    $.getJSON(window.rootUrl + 'Support/Columns?id=' + e.dataItem.TableId)
+                        .done(function (response) {
+                            $("#addFilter").attr("disabled", false);
+                            _tableColumns = response;
+                        });
+                }
+            }
+
+            // ADD FILTER ON CLICK
+            $("body").on("click", "#addFilter", function (e) {
+                lineItemCounter++;
+
+                var filterLine = "";
+                filterLine += ("<tr name='filterLine' id='filterLine_" + lineItemCounter + "'>")
+                filterLine += ("<td width='5%'><button type='button' onclick='removeFilterOnClick(" + lineItemCounter + ")' class='btn btn-outline-danger btn-sm' title='Remove filter' id='removeFilter'><span class='fas fa-minus'></span></button></td>")
+                filterLine += ("<td width='10%'><input style='' name='QueryFilter_LogicalOperator' id='QueryFilter_LogicalOperator_" + lineItemCounter + "' /></td>")
+                filterLine += ("<td width='25%'><input name='QueryFilter_Field' id='QueryFilter_Field_" + lineItemCounter + "' /></td>")
+                filterLine += ("<td width='25%'><input name='QueryFilter_Condition' id='QueryFilter_Condition_" + lineItemCounter + "' /></td>")
+                filterLine += ("<td width='35%'><input name='QueryFilter_Value' id='QueryFilter_Value_" + lineItemCounter + "' /></td>")
+                filterLine += ("</tr>")
+                $("#queryFiltersBody").append(filterLine);
+
+                $("#QueryFilter_LogicalOperator_" + lineItemCounter).kendoDropDownList({
+                    dataSource: logicalOperators,
+                    width: 50
+                });
+                $("#QueryFilter_Value_" + lineItemCounter).kendoMaskedTextBox();
+                $("#QueryFilter_Field_" + lineItemCounter).kendoDropDownList({
+                    dataValueField: "ColumnName",
+                    dataTextField: "ColumnName",
+                    dataSource: {
+                        data: _tableColumns
+                    },
+                    change: function (e) {
+                        var control = e.sender;
+                        var dataItem = control.dataItem();
+
+                        var condition = conditions.filter(function (data) {
+                            return data.dataType === dataItem.DataType;
+                        });
+
+                        condition = condition.length > 0 ? condition[0] : null;
+                        if (condition !== null) {
+                            var condCtrl = $("#QueryFilter_Condition_" + control.element[0].id.split("_")[2]).data("kendoDropDownList");
+                            condCtrl.setDataSource(condition.conditions)
+                            condCtrl.select(0);
+                        }
+                    }
+                });
+                $("#QueryFilter_Condition_" + lineItemCounter).kendoDropDownList({
+                    change: function (e) {
+                        var control = e.sender;
+                        var valCtrl = $("#QueryFilter_Value_" + lineItemCounter);//.data("kendoDropDownList");
+
+                        if (control.value() === "IS NULL" || control.value() === "IS NOT NULL") {
+                            valCtrl.hide();
+                        } else {
+                            valCtrl.show();
+                        }
+                    }
+                });
+                
+                $("#QueryFilter_Field_" + lineItemCounter).data("kendoDropDownList").trigger("change");
+
+                removeLogicalOperator(0);
+            })
+        });
+
+        function removeFilterOnClick(trId) {
+            $("#filterLine_" + trId).remove()
+            removeLogicalOperator(0);
+        }
+
+        function removeLogicalOperator(index) {
+            var logOperator = $("input[name='QueryFilter_LogicalOperator']")[index];
+            if (logOperator !== null && logOperator !== undefined) {
+                var dp = $("#" + logOperator.id).data("kendoDropDownList")
+                dp.select(-1);
+                dp.wrapper.hide();
+            }
+        }
+
+        // FILTER BUTTON
+        $("#filter").click(function (e) {
+            $("#gridHolder").html("");
+            $("#gridHolder").html("Loading...");
+
+            var filters = []
+            $("tr[name=filterLine]").each(function () {
+                var logicalOperatorCtrl = $(this).find("input[name='QueryFilter_LogicalOperator']").data("kendoDropDownList");
+                var fieldCtrl = $(this).find("input[name='QueryFilter_Field']").data("kendoDropDownList");
+                var conditionCtrl = $(this).find("input[name='QueryFilter_Condition']").data("kendoDropDownList");
+                var valueCtrl = $(this).find("input[name='QueryFilter_Value']").data("kendoMaskedTextBox");
+
+                filters.push({
+                    LogicalOperator: logicalOperatorCtrl.value(),
+                    Field: fieldCtrl.value(),
+                    Condition: conditionCtrl.value(),
+                    Value: valueCtrl.value()
+                })
+            })
+
+            var condition = {
+                TableName: $("#TableId").data("kendoComboBox").text(),
+                Filters: filters,
+                __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+            }
+
+            $.post(window.rootUrl + "Support/QueryTable", condition)
+            .done(function (response, t, e) {
+
+                //console.log({ response, t, e })
+                //console.log('error');
+                //console.log(e);
+                if (response.indexOf('<!') == 0) {
+                    var newDoc = document.open("text/html", "replace");
+                    newDoc.write(response);
+                    newDoc.close();
+                }
+                else {
+                    $("#gridHolder").html(response);
+                }
+            })
+        })
+
+        
+
+
+    </script>
+}

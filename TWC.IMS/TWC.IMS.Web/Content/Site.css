@@ -1,0 +1,299 @@
+﻿
+body {
+    padding-bottom: 20px;
+    /* Bootstrap 4 default font size is 1rem or 16px, line height 1.5. Overwrite it here */
+    /*font-size: 14px;*/
+    background: rgb(244,244,244);
+    background: linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(248,248,248,1) 25%, rgba(255,255,255,1) 100%) no-repeat;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea,
+span.form-control-readonly {
+    max-width: 280px;
+}
+
+span.form-control-readonly {
+    background-color: rgba(247, 247, 247, 1);
+}
+/*.user-profile-thumbnail {
+    padding: 5px 8px;
+    border-radius: 100%;
+    border: 1px solid rgb(238, 238, 238);
+    border-image: none;
+}*/
+
+.user-profile-thumbnail {
+    padding: 5px;
+    border-radius: 100%;
+    border: 1px solid rgb(204, 204, 204);
+    border-image: none;
+    margin-right: 5px;
+}
+/* used by markAsRequired() js method */
+label.required:after {
+    content: " *";
+    color: #f00;
+}
+
+.validation-summary-errors ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.header-text-button-container {
+    padding: 0px;
+    list-style: none;
+}
+
+    ul.header-text-button-container li {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+        ul.header-text-button-container li:first-child {
+            margin-right: 10px;
+            padding-top: 7px;
+        }
+
+    ul.header-text-button-container h3 {
+        margin-top: 7px;
+    }
+
+.avatar {
+    border-radius: 100%;
+    max-height: 125px;
+    max-width: 125px;
+    min-height: 125px;
+    min-width: 125px;
+    height: auto;
+    width: auto;
+    /*margin-bottom: 10px;*/
+    margin: 0 auto;
+    display: block;
+    border: solid 10px #eee;
+}
+
+ul.social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.social li {
+        display: inline-block;
+        padding-right: 30px;
+        padding-left: 15px;
+    }
+
+        ul.social li a {
+            font-size: 30px;
+            display: block;
+        }
+
+.info-alert {
+    padding: 5px 10px;
+    border-radius: 100%;
+    border: 1px solid currentColor;
+    border-image: none;
+}
+
+/*.border-primary {
+    border: solid 1px #D9230F !important;
+}
+
+.border-secondary {
+    border: solid 1px #bbb !important;
+}
+
+.border-success {
+    border: solid 1px #469408 !important;
+}
+
+.border-info {
+    border: solid 1px #029ACF !important;
+}
+
+.border-warning {
+    border: solid 1px #9B479F !important;
+}
+
+.border-danger {
+    border: solid 1px #D9831F !important;
+}*/
+
+.app-version {
+    color: #ccc;
+    font-size: 0.5em;
+    float: left;
+    margin-top: 3px;
+}
+
+/* START OF BOOTSTRAP STYLING OVERRIDES */
+/* add padding */
+.tab-content {
+    padding: 15px;
+}
+
+td[role="gridcell"].command {
+    text-align: center !important;
+}
+
+    /* reduce padding, remove border-radius for buttons children of gridcell (table) */
+    td[role="gridcell"].command > .k-button {
+        padding: 2px;
+        border-radius: 0;
+        min-width: 30px;
+    }
+
+.form-control {
+    /*font-size: 14px;*/
+}
+
+.carousel-inner {
+    max-height: 300px;
+}
+
+/* menu icons set color */
+.nav-item span.fas {
+    color: #fff;
+}
+
+.navbar {
+    border-bottom: solid 3px #fff;
+}
+
+.report-filter .form-group {
+    margin-bottom: 0.5rem;
+}
+
+/* remove kendo grids inner borders but retain the outside border */
+/*.k-grid * {
+    border: 0 !important;
+}*/
+
+.k-grid,
+.k-datepicker,
+.k-timepicker,
+.k-combobox,
+.k-dropdown,
+.k-select,
+.k-button,
+.k-window,
+.k-upload,
+.k-textbox,
+.k-label,
+.k-treeview,
+.k-multiselect,
+.k-item,
+.k-calendar,
+.k-chart,
+.k-popup,
+.k-datetimepicker {
+    font-size: 0.75rem !important;
+}
+
+    .k-autocomplete .k-input,
+    .k-combobox .k-state-default .k-input,
+    .k-picker-wrap.k-state-default .k-input,
+    .k-numeric-wrap.k-state-default .k-input,
+    .k-multiselect-wrap,
+    .k-slider-track,
+    .k-slider-selection,
+    .k-progress-status-wrap {
+        box-shadow: none !important;
+    }
+
+    .k-block,
+    .k-textbox,
+    .k-drag-clue,
+    .k-touch-scrollbar,
+    .k-window,
+    .k-window-titleless .k-window-content,
+    .k-inline-block,
+    .k-grid,
+    .k-grid .k-filter-options,
+    .k-grouping-header .k-group-indicator,
+    .k-autocomplete,
+    .k-multiselect,
+    .k-combobox,
+    .k-dropdown,
+    .k-dropdown-wrap,
+    .k-datepicker,
+    .k-timepicker,
+    .k-colorpicker,
+    .k-datetimepicker,
+    .k-numerictextbox,
+    .k-picker-wrap,
+    .k-numeric-wrap,
+    .k-list-container,
+    .k-calendar-container,
+    .k-treeview .k-in,
+    .k-editor-inline,
+    .k-tooltip,
+    .k-tile,
+    .k-slider-track,
+    .k-slider-selection,
+    .k-upload,
+    .k-split-button {
+        border-radius: 0px !important;
+    }
+
+        .k-gantt-toolbar .k-state-default,
+        .k-grid .k-grouping-header,
+        .k-grid-header,
+        .k-grid-header-wrap,
+        .k-grouping-header .k-group-indicator,
+        .k-header,
+        .k-pager-wrap,
+        .k-pager-wrap .k-link,
+        .k-pager-wrap .k-textbox,
+        .k-autocomplete .k-input,
+        .k-autocomplete.k-state-focused .k-input,
+        .k-dropdown-wrap .k-input,
+        .k-dropdown-wrap.k-state-focused .k-input,
+        .k-numeric-wrap.k-state-focused .k-input,
+        .k-picker-wrap.k-state-focused .k-input,
+        .k-textbox > input {
+            border-color: #ced4da !important;
+        }
+
+        /* change anchor text color to white when kendo grid row is selected */
+        .k-grid div.k-grid-content table.k-selectable > tbody > tr.k-state-selected > td:not(.k-alt) > a {
+            color: #fff !important;
+        }
+
+.k-clear-value {
+    height: unset !important;
+}
+
+.k-grid td {
+    white-space: nowrap !important;
+}
+
+.wrap-text {
+    white-space: nowrap;
+}
+
+.wrap-text-ellipsis {
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+}

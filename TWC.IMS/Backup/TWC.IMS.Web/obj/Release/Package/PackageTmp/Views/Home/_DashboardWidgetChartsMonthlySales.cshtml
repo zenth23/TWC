@@ -1,0 +1,54 @@
+﻿
+<div id="barChart"></div>
+<div class="chart-overlay-no-data"><div>No data available</div></div>
+
+<script>
+    $(function () {
+        $('#barChart').kendoChart({
+            title: { text: 'Top 5 Licenses' },
+            dataSource: {
+                transport: {
+                    read: '@Url.Action("GetCurrentMonthTop5LicenseSubscriptions", "demosources")',
+                    dataType: 'json'
+                }
+            },
+            legend: {
+                visible: false,
+                position: 'bottom'
+            },
+            chartArea: {
+                background: "white",
+                //height: "200px"
+            },
+            series: [
+                {
+                    type: 'column',
+                    field: 'Value',
+                    categoryField: 'Category'
+                }
+            ],
+            tooltip: {
+                visible: true,
+                format: '{0:n2}',
+                template: '#= category #: #= kendo.toString(value, "n2") #'
+            },
+            valueAxis: {
+                labels: {
+                    format: '{0:n2}'
+                },
+                line: {
+                    visible: false
+                },
+                axisCrossingValue: 0
+            },
+            categories: {
+                line: {
+                    visible: false
+                }
+            },
+            dataBound: onDataBound,
+            theme: "fiori",
+            deferred: true
+        });
+    });
+</script>

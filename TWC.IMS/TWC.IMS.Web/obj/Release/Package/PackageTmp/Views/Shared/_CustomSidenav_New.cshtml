@@ -1,0 +1,239 @@
+﻿@{
+    ViewBag.Title = "_CustomSidenav";
+    var context = this.Context;
+
+    var appInstance = Application.Instance;
+    var appEnv = appInstance.Environment.ToUpper();
+    var mode = appInstance.DebugMode;
+}
+<link href="~/Content/custom-sidenav-new.css" rel="stylesheet" />
+
+<style>
+    .sidebar-header {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .submenu {
+        max-height: 200px; /* Adjust height as needed */
+        overflow-y: auto;
+        position: absolute;
+        left: 100%; /* Position submenu to the right of the parent menu */
+        top: 0; /* Align the top of the submenu with the top of the parent menu item */
+        display: none; /* Hide submenu by default */
+        background-color: #dfb435; /* Match the sidebar background color */
+        z-index: 1000; /* Ensure submenu is on top */
+        /*padding-left: 10px;*/ /* Add some padding to the left */
+        margin-left: 107px; /* Add margin to move submenu to the end of the parent menu item */
+    }
+
+        .submenu a {
+            padding: 5px 10px; /* Decrease padding for submenu items */
+            margin: 0; /* Remove margin for submenu items */
+            white-space: nowrap; /* Ensure text does not wrap to the next line */
+        }
+
+    .env {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #sidebar {
+        background-color: #dfb434; /* Rustic gold background color for sidebar */
+        transition: margin 0.3s ease;
+        color: white; /* Set the font color to white */
+        margin-left: -250px; /* Hide sidebar by default */
+    }
+
+        #sidebar.visible {
+            margin-left: 0; /* Show sidebar when visible class is added */
+        }
+
+        #sidebar a {
+            color: white; /* Set the link color to white */
+        }
+
+            #sidebar a:hover {
+                color: #f0ec0e; /* Optional: Set a different color on hover */
+            }
+
+    .toggle-sidebar {
+        position: fixed;
+        top: 5px;
+        left: 10px;
+        z-index: 10000;
+        cursor: pointer;
+        background: transparent; /* Rustic gold background color for toggle button */
+        border: none; /* Remove border */
+        outline: none; /* Remove outline */
+        color: black; /* White color for the icon */
+        font-size: 1rem; /* Adjust size as needed */
+    }
+
+    .wrapper {
+        display: none;
+        align-items: stretch;
+        position: fixed;
+        display: flex;
+        height: 100vh;
+        width: 50px;
+        z-index: 9999;
+        top: 0px;
+        transition: all 0.8s ease;
+        border-style: none;
+    }
+
+    .sidebar-logo {
+        height: 80px;
+        width: 110px;
+    }
+
+    #sidebar ul li a {
+        padding: 10px;
+        padding-bottom: 15px;
+        font-size: 0.9em;
+        display: flex;
+        text-decoration: none;
+    }
+
+    #sidebar ul p {
+        color: #fff;
+        padding: 5px;
+    }
+
+    #sidebar ul li a i, .footer ul li a i {
+        margin-left: 0.8rem;
+        margin-top: 3px;
+    }
+
+    #sidebar ul li a span {
+        white-space: nowrap;
+        margin-left: 0.8rem;
+    }
+
+    ul ul a {
+        padding-left: 10px !important;
+        background: #dfb434;
+    }
+
+    .footer hr {
+        border: 0;
+        border-top: 1px solid #eee;
+    }
+
+    /* Show submenu on hover */
+    #sidebar ul li:hover > .submenu {
+        display: block;
+    }
+</style>
+
+<!-- Toggle Button for Sidebar -->
+<button class="toggle-sidebar" id="toggleSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="wrapper">
+    <nav id="sidebar">
+        @if (string.Compare(appEnv, "prd", true) != 0)
+        {
+            <div class="env float-right">
+                <span class="badge badge-danger" title="@appEnv Environment">@appEnv</span>
+                <span class="badge badge-info ml-n1" title="@mode Mode">@mode</span>
+            </div>
+        }
+        <br />
+        <div class="sidebar-header">
+            <img src="~/Content/Images/logo/JIS_Login.png" class="sidebar-logo" alt="Logo">
+        </div>
+        <div>
+            <ul class="list-unstyled" id="myGroup">
+                <li>
+                    <a href="@Url.Action("Index", "Home" )"><i class="fas fa-home"></i> <span>Home</span></a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Product_Inventory" )"><i class="fas fa-warehouse"></i> <span>Inventory</span></a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Inventory_Entries" )"><i class="fas fa-list"></i> <span>Inventory Entry</span></a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Products" )"><i class="fas fa-gem"></i> <span>Products</span></a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "SalesOrders" )"><i class="fas fa-cash-register"></i> <span>Sales Orders</span></a>
+                </li>
+
+                <li>
+                    <a href="#masterData-submenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-cog"></i> <span>Master Data</span></a>
+                    <ul class="collapse list-unstyled submenu" id="masterData-submenu" data-parent="#myGroup">
+                        <li><a href="@Url.Action("Index", "SalesTypes" )">Sales Types</a></li>
+                        <li><a href="@Url.Action("Index", "Locations" )">Locations</a></li>
+                        <li><a href="@Url.Action("Index", "ProductType" )">Product Types</a></li>
+                    </ul>
+                </li>
+
+                @if (context.HasPermission("SystemAdministration.CanView") || context.HasPermission("Users.CanView") || context.HasPermission("Roles.CanView"))
+                {
+                    <li>
+                        <a href="#administration-submenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-cogs"></i> <span>Administration</span></a>
+                        <ul class="collapse list-unstyled submenu" id="administration-submenu" data-parent="#myGroup">
+                            <li><a href="@Url.Action("Index", "UserMaintenance" )">User Maintenance</a></li>
+                            <li><a href="@Url.Action("Index", "SystemAdministration" )">System Administration</a></li>
+                            <li><a href="@Url.Action("Index", "ReportMaintenance" )">Report Maintenance</a></li>
+                        </ul>
+                    </li>
+                }
+                @if (context.HasPermission("Reports.CanView"))
+                {
+                    <li>
+                        <a href="@Url.Action("Index", "ReportGenerator" )"><i class="fas fa-file-invoice"></i> <span>Reports</span></a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="@Url.Action("Profile", "Manage" )"><i class="fas fa-user-alt"></i> <span>@User.Identity.Name.Trim().ToLower()</span></a>
+                </li>
+                <li>
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                    }
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<script>
+    $(function () {
+        $('#sidebar').mouseleave(function () {
+            $('ul.collapse').removeClass('show');
+        });
+
+        // Toggle sidebar visibility
+        $('#toggleSidebar').on('click', function () {
+            $('#sidebar').toggleClass('visible');
+        });
+
+        // Align submenu with parent menu item
+        $('#sidebar ul li').hover(function () {
+            var submenu = $(this).find('.submenu');
+            if (submenu.length) {
+                var parentOffset = $(this).offset();
+                submenu.css({
+                    top: parentOffset.top - $('#sidebar').offset().top
+                });
+            }
+        });
+    });
+</script>

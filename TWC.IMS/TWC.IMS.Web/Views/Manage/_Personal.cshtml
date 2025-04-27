@@ -1,0 +1,115 @@
+﻿@model TWC.IMS.Web.Models.PersonalViewModel
+
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    @using (Html.BeginForm("profile", "manage", FormMethod.Post, new { id = "form_personal" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.UserDetail_AspNetUser)
+        @Html.HiddenFor(model => model.UserDetailRowVersion)
+
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="form-group row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div id="avatar-holder" style="display: flex; align-items: center;"></div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <button id="btnAvatarUpload" style="width: 60px; margin: 0 auto;" class="btn btn-outline-secondary" title="Set Avatar"><span class="fas fa-camera"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                <div class="form-horizontal">
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                            @Html.EditorFor(model => model.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                            @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.Suffix, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                            @Html.EditorFor(model => model.Suffix, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suffix, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.Nickname, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+                        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                            @Html.EditorFor(model => model.Nickname, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nickname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <input type="submit" value="Save" class="btn btn-secondary float-right" name="ACTION:PERSONAL" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="avatarUploadModal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Upload Avatar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @(Html.Kendo().Upload()
+                              .Name("files")
+                              .Messages(m => m.Select("Select file..."))
+                              .Multiple(false)
+                              .Async(a => a.Save("AvatarUpload_Save", "manage")
+                                           .Remove("AvatarUpload_Remove", "manage")
+                                           .AutoUpload(true))
+                              .Validation(v => v.AllowedExtensions(new string[] { ".jpg", ".jpeg", ".png" })
+                                                .MaxFileSize(5242880))
+                              .Events(e => e.Success("updateAvatarDisplayImage")
+                                            .Error("onAvatarUploadError")))
+                        <p>
+                            <div class="alert alert-info">
+                                <span class="fas fa-info info-alert"></span>
+                                <small><em>For best results, use an image at least 125px by 125px in either .jpg or .png format. Maximum file size is 500KB.</em></small>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

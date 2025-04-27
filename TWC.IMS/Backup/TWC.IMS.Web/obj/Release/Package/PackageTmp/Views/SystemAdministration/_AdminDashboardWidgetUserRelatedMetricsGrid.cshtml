@@ -1,0 +1,39 @@
+﻿@*
+    user-related metrics
+    user-specific errors, number of errors per user
+    list
+*@
+@(Html.Kendo().Grid<TWC.IMS.Models.ChartModels.UserRelatedMetricsModel>()
+      .Name("gridUserRelatedMetrics")
+      .Columns(c =>
+      {
+          //c.Bound(b => b.Username).Width(300).ClientTemplate("<div class='user-photo' style='background-image:url(\"data:#=ContentType#;base64,#=ProfileThumbnail#\")'></div><span>#=Username#</span>");
+          c.Bound(b => b.Username).Width(200).ClientTemplate("<span class='user-photo'>#=ProfileThumbnail#</span><span>#=Username#</span>");
+          c.Bound(b => b.AppVersion).Width(120);
+          c.Bound(b => b.ErrorCount).Width(150).ClientTemplate("<span class='badge badge-warning float-right' style='font-size:1rem;'>#= kendo.format('{0:n0}',ErrorCount)#</span>");
+          c.Bound(b => b.Role).Width(200);
+          c.Bound(b => b.IPAddress).Width(200);
+      })
+      .Filterable()
+      .Pageable(p => p.Refresh(true)
+                      .PageSizes(true)
+                      .PageSizes(new int[] { 15, 30, 50, 100 })
+                      .Input(true)
+                      .ButtonCount(5))
+      .Selectable(s => s.Mode(GridSelectionMode.Single))
+      .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+      .Scrollable(s => s.Height(314))
+      .Resizable(r => r.Columns(true))
+      .Groupable()
+      .DataSource(ds => ds.Ajax()
+                          .PageSize(15)
+                          .Read(read => read.Action("GetUserRelatedMetricsChartData", "AdminDashboardCharts")
+                                                   .Data("chartDateFilter"))
+                          .Group(group =>
+                          {
+                              group.AddDescending(a => a.AppVersion);
+                              //group.Add(a => a.Username);
+                          }))
+      .NoRecords()
+      .Deferred()
+)

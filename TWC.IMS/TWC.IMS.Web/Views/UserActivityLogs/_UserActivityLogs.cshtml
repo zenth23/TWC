@@ -1,0 +1,104 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.UserActivityLogsViewModel>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <h3><span class="fas fa-user-ninja mr-2"></span>User Activity Logs</h3>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                @if (this.Context.HasPermission("UserActivityLogs.CanExport"))
+                {
+                    <button type="button" style="margin-left:10px;" class="btn btn-outline-success float-right" title="Export data to Excel" id="btnExportToExcel"><span class="fas fa-file-excel"></span> Export</button>
+                }
+                @(Html.Kendo().DatePicker()
+                      .Name("DateFilterUserActivityLogs")
+                      .Start(CalendarView.Year)
+                      .Depth(CalendarView.Year)
+                      .Format("MMMM yyyy")
+                      .Events(e => e.Change("loadGridDataUserActivityLogs"))
+                      .Value(DateTime.Now.Date)
+                      .HtmlAttributes(new { @class = "float-right" }))
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-8">
+        @(Html.Kendo().Grid(Model)
+              .Name("gridUserActivityLogs")
+              .Columns(column =>
+              {
+                  column.Command(c =>
+                  {
+                      c.Custom("View")
+                       .Text("<span class='fas fa-eye'></span>")
+                       .HtmlAttributes(new { title = "User Activity Log Details", data_cname = "useractivitylogs", data_propname = "UniqueKey" })
+                       .Click("viewDetails");
+                  }).Width(50).HtmlAttributes(new { @class = "k-alt command" });
+                  column.Bound(c => c.CreatedOn).Width(150);
+                  column.Bound(c => c.CreatedBy).Width(150);
+                  column.Bound(c => c.Activity).Width(350);
+                  column.Bound(c => c.MethodType).Width(120);
+                  column.Bound(c => c.AbsoluteUrl).Width(350);
+                  column.Bound(c => c.ClientIPAddress).Width(150);
+                  column.Bound(c => c.AppVersion).Width(120);
+              })
+              .AutoBind(false)
+              .Excel(e => e.FileName("useractivitylogs.xlsx").AllPages(true))
+              .Filterable()
+              .Pageable(p => p.Refresh(true)
+                              .PageSizes(true)
+                              .PageSizes(new int[] { 15, 30, 50, 100 })
+                              .Input(true)
+                              .ButtonCount(5))
+              .Selectable(s => s.Mode(GridSelectionMode.Multiple))
+              .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+              .Scrollable(s => s.Height(445))
+              .Resizable(r => r.Columns(true))
+              .DataSource(ds =>
+              {
+                  ds.Ajax()
+                  .PageSize(15)
+                  .Read(r => r.Action("ReadUserActivityLogs", "useractivitylogs").Data("gridDateFilterUserActivityLogs"))
+                  .ServerOperation(true)
+                  .Model(m => m.Id(c => c.Id));
+              })
+              .HtmlAttributes(new { style = "height:100%;" })
+        )
+    </div>
+    <div class="col-4">
+        <div class="row d-flex">
+            <div class="card flex-fill mr-1">
+                <div class="row card-body">
+                    <div class="col-8 pr-0">
+                        <span class="card-title text-muted">Total Logs</span>
+                        <div class="col pl-0">
+                            <span id="totalLoggedUals" class="wrap-text" style="font-size:3rem;">0</span>
+                        </div>
+                    </div>
+                    <div class="col-3 px-0">
+                        <span class="fas fa-list float-right text-muted" style="font-size:2rem;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card flex-fill ml-1">
+                <div class="row card-body">
+                    <div class="col-8 pr-0">
+                        <span class="card-title text-muted">Total Logged Users</span>
+                        <div class="col pl-0">
+                            <span id="totalLoggedUsersUal" class="wrap-text" style="font-size:3rem;">0</span>
+                        </div>
+                    </div>
+                    <div class="col-3 px-0">
+                        <span class="fas fa-users float-right text-muted" style="font-size:2rem;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @Html.Partial("_AdminDashboardWidgetPageHits")
+        </div>
+    </div>
+</div>

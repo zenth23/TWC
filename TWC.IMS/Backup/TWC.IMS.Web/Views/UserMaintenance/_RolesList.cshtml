@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TWC.IMS.Web.Models.RoleViewModel>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <ul class="header-text-button-container">
+            <li>
+                @if (this.Context.HasPermission("Roles.CanAdd"))
+                {
+                    <a href="~/maintenance/details/r" class="btn btn-secondary" id="btnCreateNew" title="Create New"><span class="fas fa-plus"></span> New</a>
+                }
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="grid-container">
+        @(Html.Kendo().Grid(Model)
+              .Name("gridRoles")
+              .Columns(column =>
+              {
+                  column.Command(c =>
+                  {
+                      if (this.Context.HasPermission("Roles.CanEdit"))
+                      {
+                          c.Custom("Edit").Text("<span class='fas fa-pen'></span>").HtmlAttributes(new { title = "Edit", data_cname = "maintenance", data_route = "r", data_propname = "Id" }).Click("application.grid.editItem");
+                      }
+                      if (this.Context.HasPermission("Roles.CanDelete"))
+                      {
+                          c.Custom("Delete").Text("<span class='fas fa-trash'></span>").HtmlAttributes(new { title = "Delete" }).Click("deleteItemRole");
+                      }
+                  }).Width(90).HtmlAttributes(new { @class = "k-alt command" });
+                  column.Bound(c => c.Name).Width(220);
+                  column.Bound(c => c.Description).Width(250);
+                  column.Bound(c => c.IsAdmin).Width(130).ClientTemplate("<input type='checkbox' class='k-checkbox k-state-disabled' name='#=Id#_IsAdmin' value='true' #= IsAdmin ? checked='checked' : '' # />" +
+                                                                         "<label class='k-checkbox-label' for='#=Id#_IsAdmin' style='cursor:default;'></label>");
+                  column.Bound(c => c.IsActive).Width(130).ClientTemplate("<input type='checkbox' class='k-checkbox k-state-disabled' name='#=Id#_IsActive' value='true' #= IsActive ? checked='checked' : '' # />" +
+                                                                          "<label class='k-checkbox-label' for='#=Id#_IsActive' style='cursor:default;'></label>");
+                  column.Bound(c => c.Created).Width(150);
+                  column.Bound(c => c.CreatedBy).Width(150);
+                  column.Bound(c => c.Modified).Width(150);
+                  column.Bound(c => c.ModifiedBy).Width(150);
+              })
+              .Filterable()
+              .Pageable(p => p.Refresh(true))
+              .Selectable(s => s.Mode(GridSelectionMode.Single))
+              .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+              .Scrollable(s => s.Height(300))
+              .Resizable(r => r.Columns(true))
+              .DataSource(ds =>
+              {
+                  ds.Ajax()
+                  .PageSize(15)
+                  .Read(r => r.Action("ReadRoles", "UserMaintenance"))
+                  .Model(m => m.Id(c => c.Id));
+              })
+        )
+    </div>
+</div>

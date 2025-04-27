@@ -1,0 +1,67 @@
+﻿<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <h3><span class="fas fa-file-invoice mr-2"></span>Standard Reports</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row row-cols-5" id="divReportCards">
+    <div class="col d-flex align-content-stretch">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">User Access Matrix Report</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Analyzing User Permissions and Privileges</h6>
+                <p class="card-text">Provides analysis of user permissions and privileges within the system.</p>
+                <a class="card-link" href="@Url.Action("GenerateUserAccessMatrixReportExcel", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="card-link" href="@Url.Action("GenerateUserAccessMatrixReportPdf", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+    <div class="col d-flex align-content-stretch">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Access Control List Report</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Analyzing ACLs and Module Permissions</h6>
+                <p class="card-text">Exploring role accesses and module permissions.</p>
+                <a class="card-link" href="@Url.Action("GenerateAccessControlListReportExcel", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="card-link" href="@Url.Action("GenerateAccessControlListReportPdf", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+    <div class="col d-flex align-content-stretch">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">System Modules Report</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Listing system modules</h6>
+                <p class="card-text">Comprehensive report showcasing system modules for efficient tracking and management.</p>
+                <a class="card-link" href="@Url.Action("GenerateSystemModulesMasterdataReportExcel", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="card-link" href="@Url.Action("GenerateSystemModulesMasterdataReportPdf", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+    <div class="col d-flex align-content-stretch">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Role Masterdata Report</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Mapping Organizational Responsibilities</h6>
+                <p class="card-text">Comprehensive list and overview os organization roles for streamlined operations.</p>
+                <a class="card-link" href="@Url.Action("GenerateRoleMasterdataReportExcel", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="card-link" href="@Url.Action("GenerateRoleMasterdataReportPdf", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+    <div class="col d-flex align-content-stretch">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">User Masterdata Report</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Capturing User Information</h6>
+                <p class="card-text">In-depth listing and details of user profiles for effective management.</p>
+                <a class="card-link" href="@Url.Action("GenerateUserMasterdataReportExcel", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-excel text-success"></span> XLSX</a>
+                <a class="card-link" href="@Url.Action("GenerateUserMasterdataReportPdf", "reportgenerator")" target="_blank" title="Download"><span class="fas fa-file-pdf text-danger"></span> PDF</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model TWC.IMS.Web.Models.ApprovalPartialParamViewModel 
+
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title text-primary">Approval Logs</h4>
+        @(Html.Kendo().Grid<TWC.IMS.Models.ApprovalLog>()
+                            .Name("gridApprovalLogs")
+                            .Columns(column =>
+                            {
+                                column.Bound(c => c.WorkflowLabel).Width(150);
+                                column.Bound(c => c.Response).Width(150)
+                                    .ClientTemplate("<h3 class='badge badge-#= Response #'>#= Response #</h3>"); ;
+                                column.Bound(c => c.ApproverName).Width(150);
+                                column.Bound(c => c.Remarks).Width(150);
+                                column.Bound(c => c.DateTimeStarted).Width(150);
+                                column.Bound(c => c.DateTimeEnded).Width(150);
+                            })
+                            .Filterable()
+                            .Pageable(p => p.Refresh(true)
+                                            .PageSizes(true)
+                                            .PageSizes(new int[] { 15, 30, 50, 100 })
+                                            .Input(true)
+                                            .ButtonCount(5))
+                            .Selectable(s => s.Mode(GridSelectionMode.Single))
+                            .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+                            .Scrollable(s => s.Height(400))
+                            .Resizable(r => r.Columns(true))
+                            .DataSource(ds =>
+                            {
+                                ds.Ajax()
+                                .PageSize(15)
+                                .Read(r => r.Action("ReadApprovalLogs", "Common", new { requestId = @Model.RequestId, requestName = @Model.RequestName }))
+                                .Model(m => m.Id(c => c.Id));
+                            }))
+    </div>
+</div>

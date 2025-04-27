@@ -1,0 +1,90 @@
+﻿@model TWC.IMS.Web.Models.AuditLogsViewModel
+@{
+    ViewBag.Title = "Audit Log";
+    bool isPartial = (bool)(ViewData["IS_PARTIAL"] ?? false);
+}
+<style>
+    input, select, textarea, span.form-control-readonly {
+        max-width: none !important;
+    }
+</style>
+
+@if (!isPartial)
+{
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <ul class="header-text-button-container">
+                <li>
+                </li>
+                <li>
+                    <h2><span class="fas fa-clipboard-check "></span> @ViewBag.Title</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+}
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="form-horizontal">
+        <div class="form-group row">
+            @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.CreatedOn, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.DisplayFor(model => model.CreatedOn, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row">
+            @Html.LabelFor(model => model.EventType, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.EventType, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.TableName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.TableName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.ColumnName, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.ColumnName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.RowID, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.EditorFor(model => model.RowID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.OldValue, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.TextAreaFor(model => model.OldValue, 3, 20, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.NewValue, htmlAttributes: new { @class = "control-label col-sm-2 col-md-2 col-lg-2 col-xl-2" })
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                @Html.TextAreaFor(model => model.NewValue, 3, 20, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <hr />
+        @if (!isPartial)
+        {
+            <hr />
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <a href="@Url.Action("index", "useractivitylogs")" class="btn btn-outline-secondary">Back</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
