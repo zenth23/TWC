@@ -89,20 +89,22 @@
                                 {
                                     if (this.Context.HasPermission("SalesOrders.CanEdit"))
                                     {
-                                        command.Edit()
-                                               .IconClass("fas fa-pen")
-                                               .Text(" ")
-                                               .HtmlAttributes(new { title = "Edit" });
+                                        // Edit Button: Use custom onClick handler for redirection
+                                        command.Custom("Edit")
+                                            .IconClass("fas fa-pen")
+                                            .Text(" ")
+                                            .HtmlAttributes(new { title = "Edit", onclick = "onEditClick(event);" });
                                     }
                                     if (this.Context.HasPermission("SalesOrders.CanDelete"))
                                     {
+                                        // Delete Button
                                         command.Custom("Delete")
-                                               .IconClass("fas fa-trash")
-                                               .Text(" ")
-                                               .HtmlAttributes(new { title = "Delete" })
-                                               .Click("salesOrders.editor.events.onGridDeleteClick");
+                                            .IconClass("fas fa-trash")
+                                            .Text(" ")
+                                            .HtmlAttributes(new { title = "Delete", onclick = "salesOrders.editor.events.onGridDeleteClick(event);" });
                                     }
                                 }).Width(120).HtmlAttributes(new { @data_id = "#=Id#" }).Locked(true);
+
                                 columns.Bound(p => p.SalesTypeName)
                                        .EditorTemplateName("DropDownListSalesTypes")
                                        .Title("Entry Type")
@@ -111,36 +113,9 @@
                                        .EditorTemplateName("DropDownListLocations")
                                        .Title("Location")
                                        .Width(200);
-                                columns.Bound(p => p.ProductName)
-                                       .EditorTemplateName("ComboBoxProducts")
-                                       .Title("Product")
-                                       .Width(200);
                                 columns.Bound(p => p.InvoiceNumber)
                                        .Title("Invoice Number")
                                        .Width(200);
-                                columns.Bound(p => p.IsGold)
-                                       .EditorTemplateName("CheckBoxIsGold")
-                                       .Title("Gold")
-                                       .ClientTemplate("#= Weight === null ? '' : '<i class=\"fas fa-check text-success\"></i>' #")
-                                       .HtmlAttributes(new { @style = "text-align:center" })
-                                       .Width(100);
-                                columns.Bound(p => p.Weight)
-                                       .EditorTemplateName("NumericTextBoxWeight")
-                                       .Title("Weight (in grams)")
-                                       .Format("{0:N2}")
-                                       .HtmlAttributes(new { @class = "text-right" })
-                                       .Width(150);
-                                columns.Bound(p => p.quantity)
-                                       .EditorTemplateName("NumericTextBoxQuantity")
-                                       .Title("Quantity")
-                                       .HtmlAttributes(new { @class = "text-right" })
-                                       .Width(100);
-                                columns.Bound(p => p.Cost)
-                                       .EditorTemplateName("NumericTextBoxCost")
-                                       .Title("Cost per Gram")
-                                       .Format("{0:N2}")
-                                       .HtmlAttributes(new { @class = "text-right" })
-                                       .Width(150);
                                 columns.Bound(p => p.Amount)
                                        .Title("Amount")
                                        .Format("{0:N2}")
@@ -160,7 +135,6 @@
                             {
                                 if (this.Context.HasPermission("SalesOrders.CanAdd"))
                                 {
-                                    toolbar.Create().IconClass("fas fa-plus").Text("New");
                                     toolbar.Custom()
                                             .IconClass("fas fa-file-excel")
                                             .Text("Download Template")
@@ -169,6 +143,11 @@
                                             .IconClass("fas fa-upload")
                                             .Text("Upload")
                                             .HtmlAttributes(new { @id = "openUploadModalButton", href = "#" });
+                                    toolbar.Custom()
+                                            .IconClass("fas fa-plus")
+                                            .Text("Add New")
+                                            .HtmlAttributes(new { @id = "viewDetailsButton", href = "#", style = "cursor:pointer" });
+                                          
                                 }
                             })
                             .Editable(editable => editable.Mode(GridEditMode.InLine))
@@ -361,7 +340,7 @@
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/Scripts/application/common-helper.js")
-    @Scripts.Render("~/Scripts/application/salesorders.js")
+    @Scripts.Render("~/Scripts/application/salesordersdetails.js")
 
 }
 
@@ -369,4 +348,60 @@
     $(function () {
         salesOrders.initialize()
     })
+
+    function onEditClick(e) {
+        e.preventDefault();
+        var grid = $("#gridSalesOrders").data("kendoGrid");
+        var selectedRow = grid.select();
+        var dataItem = grid.dataItem(selectedRow);
+
+        
+        window.location.href = '/SalesOrdersDetails/Details?id=' + dataItem.Id;
+    }
+
+    $(document).ready(function () {
+        $("#viewDetailsButton").on("click", function (e) {
+            e.preventDefault();
+            window.location.href = "/SalesOrdersDetails/NewDetails";
+        });
+    });
+
+    $(document).ready(function () {
+        // Attach change event to both dropdowns
+        $("#main_location_id, #main_SalesType_id").on("change", function () {
+            applyGridFilters();
+        });
+
+        function applyGridFilters() {
+            var selectedLocationId = $("#main_location_id").val(); 
+            var selectedSalesTypeId = $("#main_SalesType_id").val(); 
+            var grid = $("#gridSalesOrders").data("kendoGrid");
+
+            if (grid) {
+                var filters = [];
+
+                
+                if (selectedLocationId) {
+                    filters.push({
+                        field: "location_id", 
+                        operator: "eq",
+                        value: parseInt(selectedLocationId) 
+                    });
+                }
+
+                
+                if (selectedSalesTypeId) {
+                    filters.push({
+                        field: "SalesType_id", 
+                        operator: "eq",
+                        value: parseInt(selectedSalesTypeId) 
+                    });
+                }
+
+                
+                grid.dataSource.filter(filters.length > 0 ? { logic: "and", filters: filters } : {});
+            }
+        }
+    });
+
 </script>

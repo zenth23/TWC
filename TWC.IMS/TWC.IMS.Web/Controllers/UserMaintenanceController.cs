@@ -226,7 +226,9 @@ namespace TWC.IMS.Web.Controllers
                                     MiddleName = ud.MiddleName,
                                     Suffix = ud.Suffix,
                                     Nickname = ud.Nickname,
-                                    Email = u.Email
+                                    Email = u.Email,
+                                    ExpirationDatetime = ud.ExpirationDatetime
+
                                 });
                             }
                         }
@@ -1032,6 +1034,124 @@ namespace TWC.IMS.Web.Controllers
                     }
                     return Json(new { Status = "ERROR", Message = msg });
                 }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Status = "ERROR", Message = ex.Message });
+            }
+        }
+
+        public async Task<ActionResult> LockUser(string userId)
+        {
+            try
+            {
+                // check if the account is already locked
+                var isLocked = await UserManager.IsLockedOutAsync(userId).ConfigureAwait(false);
+                if (isLocked)
+                    return Json(new { Status = "ERROR", Message = "Account is already locked out." });
+
+                string oldValue = null;
+                var user = await UserManager.FindByIdAsync(userId).ConfigureAwait(false);
+                if (user != null)
+                    oldValue = user.LockoutEndDateUtc == null ? null : user.LockoutEndDateUtc.Value.ToString();
+
+                var result = await UserManager.SetLockoutEnabledAsync(userId, true).ConfigureAwait(false);
+                if (result.Succeeded)
+                {
+                    result = await UserManager.SetLockoutEndDateAsync(userId, DateTime.Now.AddDays(365)).ConfigureAwait(false);
+                    if (result.Succeeded)
+                    {
+                        // update status
+                        using (_userDetailsBL = new UserDetails(User.Identity.Name))
+                        {
+                            await _userDetailsBL.UpdateStatusLockUserAsync(userId).ConfigureAwait(false);
+                        }
+
+                        // tell identity to force logout this user
+                        await UserManager.UpdateSecurityStampAsync(userId).ConfigureAwait(false);
+
+                        // record change activity
+                        user = await UserManager.FindByIdAsync(userId).ConfigureAwait(false);
+                        if (user != null)
+                        {
+                            using (_auditLogsBL = new AuditLogs(User.Identity.Name))
+                            {
+                                string newValue = user.LockoutEndDateUtc == null ? null : user.LockoutEndDateUtc.Value.ToString();
+                                var _ = _auditLogsBL.CreateAspNetUsersLockoutEndDateUtcModifiedEventAsync(oldValue, newValue, userId);
+                            }
+                        }
+
+                        return Json(new { Status = "SUCCESS", Message = $"Account has been locked out successfully." });
+                    }
+                }
+
+                string msg = "";
+                foreach (var err in result.Errors)
+                {
+                    msg += err + "\n";
+                }
+                return Json(new { Status = "ERROR", Message = msg });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Status = "ERROR", Message = ex.Message });
+            }
+        }
+
+
+
+        public async Task<ActionResult> UnlockUser(string userId)
+        {
+            try
+            {
+                // check if the account is already locked
+                var isLocked = await UserManager.IsLockedOutAsync(userId).ConfigureAwait(false);
+                if (!isLocked)
+                    return Json(new { Status = "ERROR", Message = "Account is already unlocked." });
+
+                string oldValue = null;
+                var user = await UserManager.FindByIdAsync(userId).ConfigureAwait(false);
+                if (user != null)
+                    oldValue = user.LockoutEndDateUtc == null ? null : user.LockoutEndDateUtc.Value.ToString();
+
+                // make sure LockoutEnabled is set to true
+                await UserManager.SetLockoutEnabledAsync(userId, true).ConfigureAwait(false);
+                // then change LockoutEndDate to an earlier date than today
+                var result = await UserManager.SetLockoutEndDateAsync(userId, DateTime.Now.AddDays(-365)).ConfigureAwait(false);
+                if (result.Succeeded)
+                {
+                    // update status to 'Active'
+                    using (_userDetailsBL = new UserDetails(User.Identity.Name))
+                    {
+                        await _userDetailsBL.UpdateStatusUnlockUserAsync(userId, false, false, true).ConfigureAwait(false);
+                    }
+
+                    var r = await UserManager.ResetAccessFailedCountAsync(userId).ConfigureAwait(false);
+                    user = await UserManager.FindByIdAsync(userId).ConfigureAwait(false);
+                    if (user != null)
+                    {
+                        // record change activity
+                        using (_auditLogsBL = new AuditLogs(User.Identity.Name))
+                        {
+                            string newValue = user.LockoutEndDateUtc == null ? null : user.LockoutEndDateUtc.Value.ToString();
+                            var _ = _auditLogsBL.CreateAspNetUsersLockoutEndDateUtcModifiedEventAsync(oldValue, newValue, userId);
+                        }
+
+                        // send email notif to user
+                        var urlBuilder = new UriBuilder(Request.Url.AbsoluteUri) { Path = Url.Action("login", "account") };
+                        string loginUrl = urlBuilder.ToString();
+
+
+                        return Json(new { Status = "SUCCESS", Message = $"Account has been unlocked successfully." });
+                    }
+                }
+
+                string msg = "";
+                foreach (var err in result.Errors)
+                {
+                    msg += err + "\n";
+                }
+                return Json(new { Status = "ERROR", Message = msg });
             }
             catch (Exception ex)
             {

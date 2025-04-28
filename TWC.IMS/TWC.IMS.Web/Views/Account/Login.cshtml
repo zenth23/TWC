@@ -25,7 +25,7 @@
         padding: 2rem;
     }
 
-    .right-panel {
+       .right-panel {
         background-image: url('@Url.Content("~/Content/Images/login-image.jpg")');
         background-size: cover;
         background-position: center;
@@ -33,6 +33,7 @@
         border-bottom-right-radius: 20px;
         opacity: 0.5;
     }
+
 
     /* Form Container */
     .form-container {
@@ -122,45 +123,46 @@
     <div class="left-panel">
         <div class="form-container">
             <div class="login-logo">
-                <img src="~/Content/Images/logo/JIS_NAV.png" alt="Logo">
+                <img src="~/Content/Images/logo/Darlings.png" alt="Logo">
             </div>
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <div class="form-signin">
-                    @Html.Partial("_ValidationSummary")
-                    @if (!string.IsNullOrWhiteSpace(TempData["SUCCESS_MESSAGE"] as string))
-                    {
-                        <div class="alert alert-success">
-                            <span>@TempData["SUCCESS_MESSAGE"]</span>
-                        </div>
-                    }
-                    <div class="form-group">
-                        <i class="fas fa-user"></i>
-                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Username", autocomplete = "off" })
-                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        <i class="fas fa-key"></i>
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", autocomplete = "off" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group form-check">
-                        @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
-                        @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label" })
-                    </div>
-                    <div class="form-group text-left">
-                        <input type="submit" value="Log in" class="btn btn-primary" />
-                        @Html.ActionLink("Forgot Password?", "ForgotPassword", "Account")
-                    </div>
+        <div class="form-signin">
+            @Html.Partial("_ValidationSummary")
+            @if (!string.IsNullOrWhiteSpace(TempData["SUCCESS_MESSAGE"] as string))
+            {
+                <div class="alert alert-success">
+                    <span>@TempData["SUCCESS_MESSAGE"]</span>
                 </div>
             }
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Username", autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <i class="fas fa-key"></i>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group form-check">
+                @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
+                @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label" })
+            </div>
+            <div class="form-group text-left">
+                <input type="submit" value="Log in" class="btn btn-primary" />
+                @Html.ActionLink("Forgot Password?", "ForgotPassword", "Account")
+            </div>
             <div class="privacy-statement">
                 <a href="@Url.Action("privacystatement", "home")">
                     <span class="fas fa-user-shield"></span>
                     <b>Privacy Statement</b>
                 </a>
             </div>
+        </div>
+            }
+           
         </div>
     </div>
     <div class="right-panel"></div>

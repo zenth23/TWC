@@ -194,19 +194,19 @@
                         <a href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> <span>Home</span></a>
                     </li>
                 }
-                @if (context.HasPermission("Product_Inventory.CanView"))
+                @if (context.HasPermission("Inventory.CanView"))
                 {
                     <li>
                         <a href="@Url.Action("Index", "Product_Inventory")"><i class="fas fa-warehouse"></i> <span>Inventory</span></a>
                     </li>
                 }
-                @if (context.HasPermission("Inventory_Entries.CanView"))
+                @if (context.HasPermission("InventoryEntries.CanView"))
                 {
                     <li>
                         <a href="@Url.Action("Index", "Inventory_Entries")"><i class="fas fa-list"></i> <span>Inventory Entry</span></a>
                     </li>
                 }
-                @if (context.HasPermission("Products.CanView"))
+                @if (context.HasPermission("ProductMasters.CanView"))
                 {
                     <li>
                         <a href="@Url.Action("Index", "Products")"><i class="fas fa-gem"></i> <span>Products</span></a>

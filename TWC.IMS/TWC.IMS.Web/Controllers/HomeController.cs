@@ -235,7 +235,8 @@ namespace TWC.IMS.Web.Controllers
                             InvoiceNumber = header.InvoiceNumber,
                             ProductName = detail.Product_Master.product_name, // Assuming Product_Master.Name holds item name
                             Quantity = detail.Qty,
-                            Cost = detail.Cost
+                            Cost = detail.Cost,
+                            Total = detail.isGold  ? detail.Weight * detail.Cost : detail.Qty * detail.Cost
                         }))
                         .ToList();
 
@@ -418,7 +419,7 @@ namespace TWC.IMS.Web.Controllers
                         {
                             Day = g.Key.Day.ToString("yyyy-MM-dd"), // Format the day
                     Category = g.Key.Category,
-                            TotalSales = g.Sum(d => d.Cost),
+                            TotalSales = g.Sum(d => d.isGold? d.Weight * d.Cost : d.Qty * d.Cost),
                             TotalCount = g.Sum(d => d.Qty)
                         })
                         .OrderBy(d => d.Day) // Ensure the days are in order

@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Sales";
 }
-@model TWC.IMS.Web.Models.SalesOrderViewModel
 <style>
     .k-numerictextbox, .k-textarea {
         font-size: inherit !important;
@@ -13,24 +12,7 @@
         font-size: 0.85rem !important;
         padding-top: 2px;
     }
-    .checkbox-lg {
-        transform: scale(1.5);
-        width: 20px;
-        height: 20px;
-    }
-
-    .isGold-checkbox {
-        transform: scale(1.5); 
-        width: 20px;
-        height: 20px;
-        margin: 5px; 
-    }
-    .dropdown-lg {
-        width: 100% !important;
-        height:100& !important;
-    }
 </style>
-
 
 @Html.AntiForgeryToken()
 
@@ -45,250 +27,336 @@
     </div>
 </div>
 <hr />
-
-
-@* Quats Start *@
-
-<div class="card p-3 mb-3">
-    <h5 class="card-title">Sales Order</h5>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group row">
-                @Html.Label("Location", htmlAttributes: new { @class = "col-sm-3 so-label" })
-                <div class="col-sm-6">
-                    @(Html.Kendo().DropDownList()
-                                              .Name("main_location_id")
-                                              .Filter(FilterType.Contains)
-                                              .OptionLabel("Select Location.")
-                                              .DataTextField("location_name")
-                                              .DataValueField("Id")
-                                              .HtmlAttributes(new { required = "required" })
-                                              .DataSource(source =>
-                                              {
-                                                  source.Read(read =>
-                                                  {
-                                                      read.Action("GetLocationsForDdl", "Common");
-                                                  })
-                                                  .ServerFiltering(false);
-                                              })
-                                              .Enable(true)
-                                              .AutoBind(true)
-                    )
-                </div>
-            </div>
-            <div class="form-group row">
-                @Html.Label("SalesType", htmlAttributes: new { @class = "col-sm-3 so-label" })
-                <div class="col-sm-6">
-                    @(Html.Kendo().DropDownList()
-                                              .Name("main_SalesType_id")
-                                              .Filter(FilterType.Contains)
-                                              .OptionLabel("Select SalesType.")
-                                              .DataTextField("SalesType_name")
-                                              .DataValueField("Id")
-                                              .HtmlAttributes(new { required = "required" })
-                                              .DataSource(source =>
-                                              {
-                                                  source.Read(read =>
-                                                  {
-                                                      read.Action("GetSalesTypesForDdl", "Common");
-                                                  })
-                                                  .ServerFiltering(false);
-                                              })
-                                              .Enable(true)
-                                              .AutoBind(true)
-                    )
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group row">
-                @Html.Label("Invoice Number", htmlAttributes: new { @class = "col-sm-3 so-label" })
-                <div class="col-sm-6">
-                    @Html.TextBoxFor(model => model.InvoiceNumber, null, new { @class = "form-control" })
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="card p-3">
-    <h5 class="card-title">Sales Order Details</h5>
-    <table class="table table-bordered" id="salesOrderTable">
-        <thead>
-            <tr>
-                <th>Product Name</th>
-                <th>Quantity</th>
-                <th>Weight</th>
-                <th>Cost</th>
-                <th>IsGold</th>
-                <th>Amount</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    @(Html.Kendo().DropDownList()
-                          .Name("productName")
-                          .Filter(FilterType.Contains)
-                          .OptionLabel("Select Product.")
-                          .DataTextField("ProductName")
-                          .DataValueField("Id")
-                          .HtmlAttributes(new { required = "required", @class = "form-control dropdown-lg" })
-                          .DataSource(source =>
-                          {
-                              source.Read(read =>
-                              {
-                                  read.Action("GetProductsForDdl", "Common");
-                              })
-                              .ServerFiltering(false);
-                          })
-                          .Enable(true)
-                          .AutoBind(true)
-                    )
-                </td>
-                <td>@Html.TextBoxFor(model => model.quantity, null, new { @class = "form-control quantity-input" ,@oninput = "calculateAmount(this)" })</td>
-                <td>@Html.TextBoxFor(model => model.Weight, null, new { @class = "form-control weight-input", @disabled = "disabled", @oninput = "calculateAmount(this)" })</td>
-                <td>@Html.TextBoxFor(model => model.Cost, null, new { @class = "form-control cost-input", @oninput = "calculateAmount(this)" })</td>
-                <td>
-                    <input type="checkbox" class="form-check-input isGold-checkbox" onchange="toggleFields(this)">
-                </td>
-                <td><input type="text" class="form-control amount-input" readonly></td>
-                <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <button type="button" class="btn btn-success" id="addRow">Add</button>
-
-    <div class="row mt-3">
-        <div class="col-sm-6">
-            <label><strong>Total Amount:</strong></label>
-            <input type="text" id="totalAmount" class="form-control" readonly>
-        </div>
-    </div>
-
-</div>
-<script>
-
-    function calculateAmount(input) {
-                let row = input.closest("tr");
-                let isGold = row.querySelector(".isGold-checkbox").checked;
-                let quantity = parseFloat(row.querySelector(".quantity-input").value) || 0;
-                let weight = parseFloat(row.querySelector(".weight-input").value) || 0;
-                let cost = parseFloat(row.querySelector(".cost-input").value) || 0;
-                let amountField = row.querySelector(".amount-input");
-
-                if (isGold) {
-                    amountField.value = (weight * cost).toFixed(2);
-                } else {
-                    amountField.value = (quantity * cost).toFixed(2);
-                }
-                updateTotalAmount();
-                }
-
-                function updateTotalAmount() {
-                    let total = 0;
-                    document.querySelectorAll(".amount-input").forEach(input => {
-                        total += parseFloat(input.value) || 0;
-                    });
-                    document.getElementById("totalAmount").value = total.toFixed(2);
-                }
-
-                function toggleFields(checkbox) {
-                    let row = checkbox.closest("tr");
-                    let quantityField = row.querySelector(".quantity-input");
-                    let weightField = row.querySelector(".weight-input");
-
-                    if (checkbox.checked) {
-                            quantityField.disabled = true;
-                            weightField.disabled = false;
-                        } else {
-                            quantityField.disabled = false;
-                            weightField.disabled = true;
-                        }
-    }
-    $(document).ready(function () {
-
-        $("#salesOrderTable .k-dropdown").css("width", "100%");
-    });
-
-    $(document).on("click", "#addRow", function () {
-        var table = $("#salesOrderTable tbody");
-        var newRow = `<tr>
-            <td><input class="product-dropdown dropdown-lg" style="width: 100%;" /></td>
-            <td><input type="text" class="form-control quantity-input" name="quantity[]" oninput="calculateAmount(this)"></td>
-            <td><input type="text" class="form-control weight-input" name="weight[]" disabled oninput="calculateAmount(this)"></td>
-            <td><input type="text" class="form-control cost-input" name="cost[]" oninput="calculateAmount(this)"></td>
-            <td><input type="checkbox" class="form-check-input isGold-checkbox" onchange="toggleFields(this)"></td>
-            <td><input type="text" class="form-control amount-input" name="amount[]" readonly></td>
-            <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
-        </tr>`;
-        table.append(newRow);
-
-
-        $(".product-dropdown").kendoDropDownList({
-            optionLabel: "Select Product",
-            dataTextField: "ProductName",
-            dataValueField: "Id",
-            filter: "contains",
-            dataSource: {
-                transport: {
-                    read: {
-                        url: "/Common/GetProductsForDdl",
-                        dataType: "json"
-                    }
-                }
-            },
-            change: function (e) {
-                validateProductSelection($(e.sender.element));
-            }
-        });
-
-        $(".product-dropdown").parent().find(".k-dropdown").css("width", "100%");
-    });
-
-    function validateProductSelection(selectedDropdown) {
-        var selectedValue = selectedDropdown.val();
-        var duplicate = false;
-
-        $(".product-dropdown").each(function () {
-            if ($(this).val() === selectedValue && $(this)[0] !== selectedDropdown[0]) {
-                duplicate = true;
-                return false; 
-            }
-        });
-
-        if (duplicate) {
-            alert("This product has already been selected. Please choose a different product.");
-            selectedDropdown.data("kendoDropDownList").value("");
-        }
-    }
-
-
-    document.addEventListener("click", function (event) {
-            if (event.target.classList.contains("remove-row")) {
-            event.target.closest("tr").remove();
-                updateTotalAmount();
-            }
-        });
-</script>
-
-<div class="row mt-3">
+<div class="row">
     <div class="col-sm-6">
-        @(Html.Kendo().Button().Name("saveButton").Content("Save").HtmlAttributes(new { type = "submit", @class = "btn btn-primary" }))
-        @(Html.Kendo().Button().Name("cancelButton").Content("Cancel").HtmlAttributes(new { type = "button", @class = "btn btn-secondary" }))
+        <div class="form-group row">
+            @Html.Label("Location", htmlAttributes: new { @class = "col-sm-3 so-label" })
+            <div class="col-sm-6">
+                @(Html.Kendo().DropDownList()
+                                          .Name("main_location_id")
+                                          .Filter(FilterType.Contains)
+                                          .OptionLabel("Select Location.")
+                                          .DataTextField("location_name")
+                                          .DataValueField("Id")
+                                          .HtmlAttributes(new { required = "required" })
+                                          .DataSource(source =>
+                                          {
+                                              source.Read(read =>
+                                              {
+                                                  read.Action("GetLocationsForDdl", "Common");
+                                              })
+                                              .ServerFiltering(false);
+                                          })
+                                          .Enable(true)
+                                          .AutoBind(true)
+                )
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.Label("SalesType", htmlAttributes: new { @class = "col-sm-3 so-label" })
+            <div class="col-sm-6">
+                @(Html.Kendo().DropDownList()
+                                          .Name("main_SalesType_id")
+                                          .Filter(FilterType.Contains)
+                                          .OptionLabel("Select SalesType.")
+                                          .DataTextField("SalesType_name")
+                                          .DataValueField("Id")
+                                          .HtmlAttributes(new { required = "required" })
+                                          .DataSource(source =>
+                                          {
+                                              source.Read(read =>
+                                              {
+                                                  read.Action("GetSalesTypesForDdl", "Common");
+                                              })
+                                              .ServerFiltering(false);
+                                          })
+                                          .Enable(true)
+                                          .AutoBind(true)
+                )
+
+            </div>
+        </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-lg-12">
+
+        @(Html.Kendo().Grid<TWC.IMS.Web.Models.SalesOrderViewModel>()
+                            .Name("gridSalesOrders")
+                            .Columns(columns =>
+                            {
+                                columns.Command(command =>
+                                {
+                                    if (this.Context.HasPermission("SalesOrders.CanEdit"))
+                                    {
+                                        command.Edit()
+                                               .IconClass("fas fa-pen")
+                                               .Text(" ")
+                                               .HtmlAttributes(new { title = "Edit" });
+                                    }
+                                    if (this.Context.HasPermission("SalesOrders.CanDelete"))
+                                    {
+                                        command.Custom("Delete")
+                                               .IconClass("fas fa-trash")
+                                               .Text(" ")
+                                               .HtmlAttributes(new { title = "Delete" })
+                                               .Click("salesOrders.editor.events.onGridDeleteClick");
+                                    }
+                                }).Width(120).HtmlAttributes(new { @data_id = "#=Id#" }).Locked(true);
+                                columns.Bound(p => p.SalesTypeName)
+                                       .EditorTemplateName("DropDownListSalesTypes")
+                                       .Title("Entry Type")
+                                       .Width(200);
+                                columns.Bound(p => p.LocationName)
+                                       .EditorTemplateName("DropDownListLocations")
+                                       .Title("Location")
+                                       .Width(200);
+                                columns.Bound(p => p.ProductName)
+                                       .EditorTemplateName("ComboBoxProducts")
+                                       .Title("Product")
+                                       .Width(200);
+                                columns.Bound(p => p.InvoiceNumber)
+                                       .Title("Invoice Number")
+                                       .Width(200);
+                                columns.Bound(p => p.IsGold)
+                                       .EditorTemplateName("CheckBoxIsGold")
+                                       .Title("Gold")
+                                       .ClientTemplate("#= Weight === null ? '' : '<i class=\"fas fa-check text-success\"></i>' #")
+                                       .HtmlAttributes(new { @style = "text-align:center" })
+                                       .Width(100);
+                                columns.Bound(p => p.Weight)
+                                       .EditorTemplateName("NumericTextBoxWeight")
+                                       .Title("Weight (in grams)")
+                                       .Format("{0:N2}")
+                                       .HtmlAttributes(new { @class = "text-right" })
+                                       .Width(150);
+                                columns.Bound(p => p.quantity)
+                                       .EditorTemplateName("NumericTextBoxQuantity")
+                                       .Title("Quantity")
+                                       .HtmlAttributes(new { @class = "text-right" })
+                                       .Width(100);
+                                columns.Bound(p => p.Cost)
+                                       .EditorTemplateName("NumericTextBoxCost")
+                                       .Title("Cost per Gram")
+                                       .Format("{0:N2}")
+                                       .HtmlAttributes(new { @class = "text-right" })
+                                       .Width(150);
+                                columns.Bound(p => p.Amount)
+                                       .Title("Amount")
+                                       .Format("{0:N2}")
+                                       .HtmlAttributes(new { @class = "text-right" })
+                                       .Width(150);
+                                columns.Bound(p => p.Created)
+                                       .ClientTemplate("#= Created  ? kendo.toString(kendo.parseDate(Created), 'dd-MMM-yyyy') : '' #")
+                                       .Width(150);
+                                columns.Bound(p => p.CreatedBy).Width(150);
+                                columns.Bound(p => p.Modified)
+                                       .ClientTemplate("#= Modified ? kendo.toString(kendo.parseDate(Modified), 'dd-MMM-yyyy') : '' #")
+                                       .Width(150);
+                                columns.Bound(p => p.ModifiedBy)
+                                        .Width(150);
+                            })
+                            .ToolBar(toolbar =>
+                            {
+                                if (this.Context.HasPermission("SalesOrders.CanAdd"))
+                                {
+                                    toolbar.Create().IconClass("fas fa-plus").Text("New");
+                                    toolbar.Custom()
+                                            .IconClass("fas fa-file-excel")
+                                            .Text("Download Template")
+                                            .HtmlAttributes(new { @id = "downloadTemplateButton", href = "#" });
+                                    toolbar.Custom()
+                                            .IconClass("fas fa-upload")
+                                            .Text("Upload")
+                                            .HtmlAttributes(new { @id = "openUploadModalButton", href = "#" });
+                                }
+                            })
+                            .Editable(editable => editable.Mode(GridEditMode.InLine))
+                            .Pageable(p => p.Refresh(true))
+                            .Filterable()
+                            .Resizable(r => r.Columns(true))
+                            .Sortable()
+                            .Scrollable(s => s.Height(320))
+                            .Events(events =>
+                            {
+                                events.Edit("salesOrders.editor.events.onEdit");
+                            })
+                            .DataSource(dataSource => dataSource
+                                .Ajax()
+                                .PageSize(20)
+                                .Events(events =>
+                                {
+                                    events.Error("salesOrders.common.errorHandler")
+                                          .RequestEnd("salesOrders.common.onRequestEnd");
+                                })
+                                .Model(model =>
+                                {
+                                    model.Id(p => p.Id);
+                                    model.Field(p => p.product_id).DefaultValue(0);
+                                    model.Field(p => p.Amount).Editable(false);
+                                    model.Field(p => p.Created).Editable(false);
+                                    model.Field(p => p.CreatedBy).Editable(false);
+                                    model.Field(p => p.Modified).Editable(false);
+                                    model.Field(p => p.ModifiedBy).Editable(false);
+                                })
+                                .Create(update => update.Action("save", "salesorders"))
+                                .Read(read => read.Action("getlist", "salesorders"))
+                                .Update(update => update.Action("save", "salesorders"))
+                                .Destroy(update => update.Action("delete", "salesorders"))
+                            )
+        )
+    </div>
 
 
 
-@* Quats End *@
+
+
+    <div id="uploadExcelModal" class="modal fade center" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Upload Excel File</h4>
+                </div>
+                <div class="modal-body modal-validator">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group row">
+                                @Html.Label("Location", htmlAttributes: new { @class = "col-sm-3 so-label" })
+                                <div class="col-sm-6">
+                                    @(Html.Kendo().DropDownList()
+                                          .Name("excel_location_id")
+                                          .Filter(FilterType.Contains)
+                                          .OptionLabel("Select Location.")
+                                          .DataTextField("location_name")
+                                          .DataValueField("Id")
+                                          .HtmlAttributes(new { required = "required" })
+                                          .DataSource(source =>
+                                          {
+                                              source.Read(read =>
+                                              {
+                                                  read.Action("GetLocationsForDdl", "Common");
+                                              })
+                                              .ServerFiltering(false);
+                                          })
+                                          .Enable(true)
+                                          .AutoBind(true)
+                                    )
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.Label("SalesType", htmlAttributes: new { @class = "col-sm-3 so-label" })
+                                <div class="col-sm-6">
+                                    @(Html.Kendo().DropDownList()
+                                          .Name("excel_SalesType_id")
+                                          .Filter(FilterType.Contains)
+                                          .OptionLabel("Select SalesType.")
+                                          .DataTextField("SalesType_name")
+                                          .DataValueField("Id")
+                                          .HtmlAttributes(new { required = "required" })
+                                          .DataSource(source =>
+                                          {
+                                              source.Read(read =>
+                                              {
+                                                  read.Action("GetSalesTypesForDdl", "Common");
+                                              })
+                                              .ServerFiltering(false);
+                                          })
+                                          .Enable(true)
+                                          .AutoBind(true)
+                                    )
+
+                                </div>
+                            </div>
 
 
 
+                        </div>
 
+                        <div class="col-sm-6">
+                            @(Html.Kendo().Upload()
+                                  .Name("excelUpload")
+                                  .Validation(v => v.AllowedExtensions(new string[] { ".xlsx" }))
+                                  .Multiple(false)
+                                  .Async(a => a
+                                      .Save("loadexcelfile", "salesorders")
+                                      .AutoUpload(true)
+                                  )
+                                  .Events(x => x.Success("salesOrders.editor.events.onUploadComplete")
+                                                .Select("salesOrders.editor.events.onUploadSelected"))
+                            )
+
+                        </div>
+
+                    </div>
+                    <br />
+                    @(Html.Kendo()
+                                       .Grid<TWC.IMS.Web.Models.SalesOrderViewModel>()
+                                       .Name("gridExcelUpload")
+                                       .Columns(columns =>
+                                       {
+                                           columns.Bound(p => p.ValidationMessage)
+                                                  .Title("Validation Message")
+                                                  .HtmlAttributes(new { @class = "text-danger" })
+                                                  .Width(150);
+                                           columns.Bound(p => p.ProductName)
+                                                .Title("Product")
+                                                .Width(200);
+                                           columns.Bound(p => p.InvoiceNumber)
+                                                  .Title("Invoice Number")
+                                                  .Width(200);
+                                           columns.Bound(p => p.IsGold)
+                                                  .Title("Gold")
+                                                  .ClientTemplate("#= Weight === null ? '' : '<i class=\"fas fa-check text-success\"></i>' #")
+                                                  .HtmlAttributes(new { @style = "text-align:center" })
+                                                  .Width(100);
+                                           columns.Bound(p => p.Weight)
+                                                  .Title("Weight (in grams)")
+                                                  .Format("{0:N2}")
+                                                  .HtmlAttributes(new { @class = "text-right" })
+                                                  .Width(150);
+                                           columns.Bound(p => p.quantity)
+                                                  .Title("Quantity")
+                                                  .HtmlAttributes(new { @class = "text-right" })
+                                                  .Width(100);
+                                           columns.Bound(p => p.Cost)
+                                                  .Title("Cost")
+                                                  .Format("{0:N2}")
+                                                  .HtmlAttributes(new { @class = "text-right" })
+                                                  .Width(150);
+                                           columns.Bound(p => p.Amount)
+                                                 .Title("Amount")
+                                                 .Format("{0:N2}")
+                                                 .HtmlAttributes(new { @class = "text-right" })
+                                                 .Width(150);
+
+                                       })
+                                        .Filterable()
+                                        .Resizable(r => r.Columns(true))
+                                        .Sortable()
+                                        .Scrollable(s => s.Height(280))
+                                        .DataSource(dataSource => dataSource.Ajax().ServerOperation(false))
+                    )
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width:100%">
+                        <div class="col-sm-6 text-left">
+                            <button type="button" class="btn btn-primary btn-sm" onclick="salesOrders.editor.events.onSaveExcelContent()">Save</button>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <button type="button" class="btn btn-default btn-sm" onclick="salesOrders.editor.events.onUploadModalClose()">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
 
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")

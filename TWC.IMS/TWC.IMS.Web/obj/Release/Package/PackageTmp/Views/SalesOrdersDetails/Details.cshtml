@@ -1,9 +1,10 @@
-﻿
-
-@{
+﻿@{
     ViewBag.Title = "Sales";
 }
 @model TWC.IMS.Web.Models.SalesOrderViewModel
+
+@Html.HiddenFor(model => model.Id)
+
 <style>
     .k-numerictextbox, .k-textarea {
         font-size: inherit !important;
@@ -13,6 +14,7 @@
         font-size: 0.85rem !important;
         padding-top: 2px;
     }
+
     .checkbox-lg {
         transform: scale(1.5);
         width: 20px;
@@ -20,14 +22,15 @@
     }
 
     .isGold-checkbox {
-        transform: scale(1.5); 
+        transform: scale(1.5);
         width: 20px;
         height: 20px;
-        margin: 5px; 
+        margin: 5px;
     }
+
     .dropdown-lg {
         width: 100% !important;
-        height:100& !important;
+        height: 100% !important;
     }
 </style>
 
@@ -71,6 +74,7 @@
                                                   })
                                                   .ServerFiltering(false);
                                               })
+                                              .Value(Model.location_id.ToString())
                                               .Enable(true)
                                               .AutoBind(true)
                     )
@@ -94,6 +98,7 @@
                                                   })
                                                   .ServerFiltering(false);
                                               })
+                                              .Value(Model.SalesType_id.ToString())
                                               .Enable(true)
                                               .AutoBind(true)
                     )
@@ -127,34 +132,41 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    @(Html.Kendo().DropDownList()
-                .Name("ProductNumber_0") 
-                .Filter(FilterType.Contains)
-                .OptionLabel("Select Product.")
-                .DataTextField("product_name")
-                .DataValueField("Id")
-                .HtmlAttributes(new { required = "required", @class = "form-control product-dropdown dropdown-lg" })
-                .DataSource(source =>
+            @if (Model.SalesOrderDetails != null && Model.SalesOrderDetails.Any())
+            {
+                foreach (var item in Model.SalesOrderDetails)
                 {
-                    source.Read(read =>
-                    {
-                        read.Action("GetProductsForDdl", "Common");
-                    })
-                    .ServerFiltering(false);
-                })
-                .Enable(true)
-                .AutoBind(true)
-            )
-                </td>
-                <td><input type="text" class="form-control quantity-input" name="quantity[]" oninput="calculateAmount(this)"></td>
-                <td><input type="text" class="form-control weight-input" name="weight[]" disabled oninput="calculateAmount(this)"></td>
-                <td><input type="text" class="form-control cost-input" name="cost[]" oninput="calculateAmount(this)"></td>
-                <td><input type="checkbox" class="form-check-input isGold-checkbox" onchange="toggleFields(this)"></td>
-                <td><input type="text" class="form-control amount-input" name="amount[]" readonly></td>
-                <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
-            </tr>
+                    <tr>
+                        <td>
+                            @(Html.Kendo().DropDownList()
+                        .Name("ProductNumber_" + item.SalesOrderDetail_Product)
+                        .Filter(FilterType.Contains)
+                        .OptionLabel("Select Product.")
+                        .DataTextField("product_name")
+                        .DataValueField("Id")
+                        .HtmlAttributes(new { required = "required", @class = "form-control product-dropdown dropdown-lg", data_value = item.SalesOrderDetail_Product })
+                        .DataSource(source =>
+                        {
+                            source.Read(read =>
+                            {
+                                read.Action("GetProductsForDdl", "Common");
+                            })
+                            .ServerFiltering(false);
+                        })
+                        .Value(item.SalesOrderDetail_Product.ToString()) // ✅ Preload value
+                        .Enable(true)
+                        .AutoBind(true)
+                    )
+                        </td>
+                        <td><input type="text" class="form-control quantity-input" value="@item.Qty" name="quantity[]" oninput="calculateAmount(this)"></td>
+                        <td><input type="text" class="form-control weight-input" value="@item.Weight" name="weight[]" disabled oninput="calculateAmount(this)"></td>
+                        <td><input type="text" class="form-control cost-input" value="@item.Cost" name="cost[]" oninput="calculateAmount(this)"></td>
+                        <td><input type="checkbox" class="form-check-input isGold-checkbox" @(item.isGold ? "checked" : "") onchange="toggleFields(this)"></td>
+                        <td><input type="text" class="form-control amount-input" name="amount[]" value="@((item.isGold ? item.Cost * item.Weight : item.Cost * item.Qty))" readonly></td>
+                        <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
+                    </tr>
+                }
+            }
         </tbody>
 
     </table>
@@ -172,86 +184,60 @@
 <script>
 
     function calculateAmount(input) {
-                let row = input.closest("tr");
-                let isGold = row.querySelector(".isGold-checkbox").checked;
-                let quantity = parseFloat(row.querySelector(".quantity-input").value) || 0;
-                let weight = parseFloat(row.querySelector(".weight-input").value) || 0;
-                let cost = parseFloat(row.querySelector(".cost-input").value) || 0;
-                let amountField = row.querySelector(".amount-input");
+        let row = input.closest("tr");
+        let isGold = row.querySelector(".isGold-checkbox").checked;
+        let quantity = parseFloat(row.querySelector(".quantity-input").value) || 0;
+        let weight = parseFloat(row.querySelector(".weight-input").value) || 0;
+        let cost = parseFloat(row.querySelector(".cost-input").value) || 0;
+        let amountField = row.querySelector(".amount-input");
 
-                if (isGold) {
-                    amountField.value = (weight * cost).toFixed(2);
-                } else {
-                    amountField.value = (quantity * cost).toFixed(2);
-                }
-                updateTotalAmount();
-                }
+        if (isGold) {
+            amountField.value = (weight * cost).toFixed(2);
+        } else {
+            amountField.value = (quantity * cost).toFixed(2);
+        }
+        updateTotalAmount();
+    }
 
-                function updateTotalAmount() {
-                    let total = 0;
-                    document.querySelectorAll(".amount-input").forEach(input => {
-                        total += parseFloat(input.value) || 0;
-                    });
-                    document.getElementById("totalAmount").value = total.toFixed(2);
-                }
+    function updateTotalAmount() {
+        let total = 0;
+        document.querySelectorAll(".amount-input").forEach(input => {
+            total += parseFloat(input.value) || 0;
+        });
+        document.getElementById("totalAmount").value = total.toFixed(2);
+    }
 
-                function toggleFields(checkbox) {
-                    let row = checkbox.closest("tr");
-                    let quantityField = row.querySelector(".quantity-input");
-                    let weightField = row.querySelector(".weight-input");
+    function toggleFields(checkbox) {
+        let row = checkbox.closest("tr");
+        let quantityField = row.querySelector(".quantity-input");
+        let weightField = row.querySelector(".weight-input");
 
-                    if (checkbox.checked) {
-                            quantityField.disabled = true;
-                            weightField.disabled = false;
-                        } else {
-                            quantityField.disabled = false;
-                            weightField.disabled = true;
-                        }
+        if (checkbox.checked) {
+            quantityField.disabled = true;
+            weightField.disabled = false;
+        } else {
+            quantityField.disabled = false;
+            weightField.disabled = true;
+        }
     }
     $(document).ready(function () {
 
         $("#salesOrderTable .k-dropdown").css("width", "100%");
-    });
 
-    $(document).on("click", "#addRow", function () {
-        var table = $("#salesOrderTable tbody");
-        var rowCount = $("#salesOrderTable tbody tr").length; // Get row count for unique names
 
-        var newRow = $(`
-        <tr>
-            <td><input class="product-dropdown dropdown-lg" id="ProductNumber_${rowCount}" style="width: 100%;" /></td>
-            <td><input type="text" class="form-control quantity-input" name="quantity[]" oninput="calculateAmount(this)"></td>
-            <td><input type="text" class="form-control weight-input" name="weight[]" disabled oninput="calculateAmount(this)"></td>
-            <td><input type="text" class="form-control cost-input" name="cost[]" oninput="calculateAmount(this)"></td>
-            <td><input type="checkbox" class="form-check-input isGold-checkbox" onchange="toggleFields(this)"></td>
-            <td><input type="text" class="form-control amount-input" name="amount[]" readonly></td>
-            <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
-        </tr>
-    `);
+        $("#salesOrderTable tbody tr").each(function () {
+            let row = $(this);
+            let checkbox = row.find(".isGold-checkbox")[0]; 
 
-        table.append(newRow);
-
-        console.log("DEBUG: Row added. Checking for .product-dropdown...");
-        console.log("Row has .product-dropdown?", newRow.find(".product-dropdown").length > 0);
-
-        // ✅ Ensure Kendo DropDownList is initialized AFTER adding the row
-        newRow.find(".product-dropdown").kendoDropDownList({
-            optionLabel: "Select Product",
-            dataTextField: "ProductName", // Make sure this matches the JSON response
-            dataValueField: "Id",
-            filter: "contains",
-            dataSource: {
-                transport: {
-                    read: {
-                        url: "/Common/GetProductsForDdl",
-                        dataType: "json"
-                    }
-                }
+            if (checkbox) {
+                toggleFields(checkbox);
             }
-        });
+            calculateAmount(this.querySelector(".quantity-input"));
 
-        console.log("DEBUG: Kendo DropDownList initialized.");
+        });
+        updateTotalAmount(); // Update total amount
     });
+
 
 
     function validateProductSelection(selectedDropdown) {
@@ -261,7 +247,7 @@
         $(".product-dropdown").each(function () {
             if ($(this).val() === selectedValue && $(this)[0] !== selectedDropdown[0]) {
                 duplicate = true;
-                return false; 
+                return false;
             }
         });
 
@@ -273,11 +259,11 @@
 
 
     document.addEventListener("click", function (event) {
-            if (event.target.classList.contains("remove-row")) {
+        if (event.target.classList.contains("remove-row")) {
             event.target.closest("tr").remove();
-                updateTotalAmount();
-            }
-        });
+            updateTotalAmount();
+        }
+    });
 </script>
 
 <div class="row mt-3">
@@ -287,7 +273,11 @@
     .Content("Save")
     .HtmlAttributes(new { type = "button", @class = "btn btn-primary", onclick = "salesOrders.saveSalesOrder()" })
 )
-        @(Html.Kendo().Button().Name("cancelButton").Content("Cancel").HtmlAttributes(new { type = "button", @class = "btn btn-secondary" }))
+        @(Html.Kendo().Button()
+            .Name("cancelButton")
+            .Content("Cancel")
+            .HtmlAttributes(new { type = "button", @class = "btn btn-secondary", onclick = "window.location.href='/SalesOrdersDetails/Index';" })
+        )
     </div>
 </div>
 
@@ -302,7 +292,8 @@
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/Scripts/application/common-helper.js")
-    @Scripts.Render("~/Scripts/application/salesorders.js")
+    @Scripts.Render("~/Scripts/application/salesordersdetails.js")
+    @Scripts.Render("~/Scripts/kendo/kendo.all.min.js")
 
 }
 

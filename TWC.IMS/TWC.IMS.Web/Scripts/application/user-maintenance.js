@@ -100,36 +100,36 @@ function unlock(e) {
     let reqToken = $('input[name="__RequestVerificationToken"]').val();
 
     window.confirm('Confirm', "Click OK to unlock user '" + name + "'.")
-          .then(function () {
-              let url = window.rootUrl + 'maintenance/unlockuser';
-              $.ajax({
-                  url: url,
-                  data: { userId: userId, username: name, __RequestVerificationToken: reqToken },
-                  type: 'POST',
-                  dataType: 'json',
-                  beforeSend: function () { },
-                  success: function (response) {
-                      application.grid.refreshGrid($('#gridUsers'));
-                      let r = response;
-                      window.alert(r.Message, r.Status);
-                  },
-                  error: function (x, t, e) {
-                      console.log('error');
-                      console.log(e);
-                      if (x.responseText.indexOf('<!') == 0) {
-                          let newDoc = document.open("text/html", "replace");
-                          newDoc.write(x.responseText);
-                          newDoc.close();
-                      }
-                      else {
-                          let msg = 'ERROR ' + e.number + ': ' + e.name + '. ' + e.message;
-                          window.alert(msg, t);
-                      }
-                  }
-              });
-          }, function () {
+        .then(function () {
+            let url = window.rootUrl + 'usermaintenance/unlockuser';
+            $.ajax({
+                url: url,
+                data: { userId: userId, username: name, __RequestVerificationToken: reqToken },
+                type: 'POST',
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (response) {
+                    application.grid.refreshGrid($('#gridUsers'));
+                    let r = response;
+                    window.alert(r.Message, r.Status);
+                },
+                error: function (x, t, e) {
+                    console.log('error');
+                    console.log(e);
+                    if (x.responseText.indexOf('<!') == 0) {
+                        let newDoc = document.open("text/html", "replace");
+                        newDoc.write(x.responseText);
+                        newDoc.close();
+                    }
+                    else {
+                        let msg = 'ERROR ' + e.number + ': ' + e.name + '. ' + e.message;
+                        window.alert(msg, t);
+                    }
+                }
+            });
+        }, function () {
 
-          });
+        });
 }
 
 function editItemUser(e) {
@@ -242,8 +242,13 @@ function gridUsersOnDataBound(e) {
         let today = new Date();
 
         if (lockoutdate == '' || lockoutdate == null || lockoutdate == undefined || loDate < today) {
-            $(this).find(".k-grid-Unlock").addClass("k-state-disabled").prop("disabled", true);
-            $(this).find(".k-grid-Lock").removeClass("k-state-disabled").prop("disabled", false);
+            if (model.AccountModel.Status == 'Locked') {
+                $(this).find(".k-grid-Unlock").removeClass("k-state-disabled").prop("disabled", false);
+                $(this).find(".k-grid-Lock").addClass("k-state-disabled").prop("disabled", true);
+            } else {
+                $(this).find(".k-grid-Unlock").addClass("k-state-disabled").prop("disabled", true);
+                $(this).find(".k-grid-Lock").removeClass("k-state-disabled").prop("disabled", false);
+            }
         }
         else {
             $(this).find(".k-grid-Lock").addClass("k-state-disabled").prop("disabled", true);

@@ -162,6 +162,7 @@
                                                 <th>Product</th>
                                                 <th>Quantity</th>
                                                 <th>Cost</th>
+                                                <th>Total Cost</th>
                                             </tr>
                                         </thead>
                                         <tbody id="recent-transactions">
@@ -287,6 +288,7 @@
                                     <td>${tx.ProductName}</td>
                                     <td>${tx.Quantity}</td>
                                     <td>₱${formatMoney(tx.Cost.toFixed(2))}</td>
+                                    <td>₱${formatMoney(tx.Total.toFixed(2))}</td>
                                 </tr>`;
                             table.append(row);
                         });
@@ -588,7 +590,7 @@
                 fetchLowStockAlerts();
                 fetchSalesOrderVsInventoryData();
                 fetchSalesCount("category");
-                fetchTotalSales('today');
+                fetchTotalSales("today");
             }
 
             fetchDashboardData();
