@@ -277,3 +277,39 @@
     }
 
 }
+
+$(document).ready(function () {
+    // Stop all events from bubbling up from Kendo popup to Bootstrap modal
+    $(document).on('mousedown click focusin', '.k-animation-container, .k-list-container', function (e) {
+        e.stopImmediatePropagation();
+    });
+
+    // Prevent Enter key from bubbling up when used inside a Kendo dropdown input
+    $('#uploadExcelModal').on('keydown', function (e) {
+        const $target = $(e.target);
+        if ($target.closest('.k-animation-container, .k-dropdown, .k-combobox').length && e.key === "Enter") {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+        }
+    });
+
+    // Optional: prevent Bootstrap modal from closing via backdrop click
+    $('#uploadExcelModal').modal({
+        backdrop: 'static',
+        keyboard: false,
+        show: false
+    });
+
+    // Ensure the upload modal only opens when the button is clicked
+    var modalOpened = false;
+
+    // Handle click event to open the modal
+    $("body").on("click", "#openUploadModalButton", function () {
+        if (!modalOpened) {
+            $("#uploadExcelModal").modal("show");
+            modalOpened = true; // To prevent further opening if required
+        }
+    });
+});
+
+

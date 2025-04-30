@@ -68,3 +68,16 @@ C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common\obj\Debug\TWC.IMS.Common.csproj
 C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common\obj\Debug\TWC.IMS..8941643F.Up2Date
 C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common\obj\Debug\TWC.IMS.Common.dll
 C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common\obj\Debug\TWC.IMS.Common.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\bin\Debug\TWC.IMS.Common.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\bin\Debug\TWC.IMS.Common.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\bin\Debug\EntityFramework.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\bin\Debug\EntityFramework.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\obj\Debug\TWC.IMS.Common.csproj.AssemblyReference.cache
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\obj\Debug\TWC.IMS.Common.csproj.CoreCompileInputs.cache
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\obj\Debug\TWC.IMS..8941643F.Up2Date
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\obj\Debug\TWC.IMS.Common.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common\obj\Debug\TWC.IMS.Common.pdb
