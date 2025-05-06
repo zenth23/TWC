@@ -121,7 +121,7 @@
                                 columns.Bound(p => p.IsGold)
                                        .EditorTemplateName("CheckBoxIsGold")
                                        .Title("Gold")
-                                       .ClientTemplate("#= Weight === null ? '' : '<i class=\"fas fa-check text-success\"></i>' #")
+                                       .ClientTemplate("#= IsGold ? '<i class=\"fas fa-check text-success\"></i>' : '' #")
                                        .HtmlAttributes(new { @style = "text-align:center" })
                                        .Width(100);
                                 columns.Bound(p => p.Weight)
@@ -308,7 +308,7 @@
                                                   .Width(200);
                                            columns.Bound(p => p.IsGold)
                                                   .Title("Gold")
-                                                  .ClientTemplate("#= Weight === null ? '' : '<i class=\"fas fa-check text-success\"></i>' #")
+                                                  .ClientTemplate("#= IsGold ? '<i class=\"fas fa-check text-success\"></i>' : '' #")
                                                   .HtmlAttributes(new { @style = "text-align:center" })
                                                   .Width(100);
                                            columns.Bound(p => p.Weight)

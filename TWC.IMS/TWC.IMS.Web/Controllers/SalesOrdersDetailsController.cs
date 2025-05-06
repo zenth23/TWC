@@ -697,8 +697,8 @@ namespace TWC.IMS.Web.Controllers
 
                             valid = decimal.TryParse(worksheet.Cells[row, 4].Value?.ToString() ?? "", out weight);
                             itemObj.Weight = valid ? (decimal?)weight : null;
-                            var isGoldValue = (worksheet.Cells[row, 3].Value?.ToString() ?? "").Trim().ToLower();
-                            itemObj.IsGold = isGoldValue == "true";
+                            var isGoldValue = (worksheet.Cells[row, 3].Value?.ToString() ?? "").Trim().ToUpper();
+                            itemObj.IsGold = isGoldValue == "TRUE";
 
                             valid = int.TryParse(worksheet.Cells[row, 5].Value?.ToString() ?? "", out quantity);
                             itemObj.quantity = valid ? quantity : 0;
@@ -706,7 +706,8 @@ namespace TWC.IMS.Web.Controllers
                             valid = decimal.TryParse(worksheet.Cells[row, 6].Value?.ToString() ?? "", out cost);
                             itemObj.Cost = valid ? cost : 0;
 
-                            itemObj.Amount = itemObj.quantity * itemObj.Cost;
+                            itemObj.Amount = itemObj.IsGold ? (itemObj.Weight ?? 0) * itemObj.Cost
+                                    : itemObj.Cost * itemObj.quantity;
                             itemObj.ValidationMessage = itemObj.Amount == 0
                                                         || string.IsNullOrWhiteSpace(itemObj.ProductName)
                                                         || string.IsNullOrWhiteSpace(itemObj.InvoiceNumber)
@@ -734,6 +735,7 @@ namespace TWC.IMS.Web.Controllers
         public async Task<ActionResult> Upload(Models.ExcelUploadSalesOrderViewModel[] salesOrders)
         {
             var username = User.Identity.Name;
+
             try
             {
                 using (var productBL = new BL.Products(username))
@@ -741,43 +743,48 @@ namespace TWC.IMS.Web.Controllers
                 using (var piBL = new BL.Product_Inventory(username))
                 {
                     var products = await productBL.GetListAsync();
+
                     foreach (var item in salesOrders)
                     {
                         var productObj = products.FirstOrDefault(x => x.product_name == item.ProductName);
                         if (productObj != null)
                         {
-
-                            var obj = new TWC.IMS.Models.SalesOrderHeader();
-                            obj.InvoiceNumber = item.InvoiceNumber;
-                            obj.location_id = item.LocationId;
-                            obj.SalesType_id = item.SalesTypeId;
-                            obj.Amount = item.Cost * item.Quantity;
-                            obj.SalesOrderDetails = new List<TWC.IMS.Models.SalesOrderDetail>
-                        {
-                            new SalesOrderDetail
+                            // Create SalesOrderDetail first, with isGold assigned here
+                            var detail = new TWC.IMS.Models.SalesOrderDetail
                             {
                                 Cost = item.Cost,
                                 Qty = item.Quantity,
                                 SalesOrderDetail_Product = productObj.Id,
                                 Weight = item.Weight,
                                 Created = DateTime.Now,
-                                CreatedBy = username
-                            }
-                        };
+                                CreatedBy = username,
+                                isGold = item.IsGold // <-- assuming your item (view model) contains this boolean
+                            };
+
+                            var obj = new TWC.IMS.Models.SalesOrderHeader
+                            {
+                                InvoiceNumber = item.InvoiceNumber,
+                                location_id = item.LocationId,
+                                SalesType_id = item.SalesTypeId,
+                                Amount = detail.isGold
+                                    ? (item.Weight ?? 0) * item.Cost
+                                    : item.Cost * item.Quantity,
+                                SalesOrderDetails = new List<TWC.IMS.Models.SalesOrderDetail> { detail }
+                            };
+
                             var soId = await soBL.InsertAsync(obj).ConfigureAwait(false);
                             if (soId > 0)
                             {
                                 foreach (var detailObj in obj.SalesOrderDetails.Take(1))
                                 {
                                     var piId = 0;
-                                    var piObj = await piBL.GetAsync(detailObj.SalesOrderDetail_Product
-                                                                    , obj.location_id)
-                                                                    .ConfigureAwait(false);
+                                    var piObj = await piBL.GetAsync(detailObj.SalesOrderDetail_Product, obj.location_id)
+                                                          .ConfigureAwait(false);
+
                                     if (piObj != null)
                                     {
-                                        piObj.quantity = piObj.quantity - detailObj.Qty;
+                                        piObj.quantity -= detailObj.Qty;
                                         piId = await piBL.UpdateAsync(piObj).ConfigureAwait(false);
-
                                     }
                                     else
                                     {
@@ -785,12 +792,11 @@ namespace TWC.IMS.Web.Controllers
                                         {
                                             location_id = obj.location_id,
                                             product_id = detailObj.SalesOrderDetail_Product,
-                                            quantity = detailObj.Qty * -1
+                                            quantity = -detailObj.Qty
                                         };
 
                                         piId = await piBL.InsertAsync(piObj).ConfigureAwait(false);
                                     }
-
 
                                     if (piId > 0)
                                     {
@@ -805,14 +811,13 @@ namespace TWC.IMS.Web.Controllers
                             }
                         }
                     }
-
                 }
+
                 return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
                 var _ = this.LogErrorAsync(MessageType.ERROR, ex, username);
-
                 return Json(new { Success = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }

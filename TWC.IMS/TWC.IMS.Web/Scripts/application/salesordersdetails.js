@@ -217,7 +217,8 @@
                                 InvoiceNumber: item.InvoiceNumber,
                                 Weight: item.Weight,
                                 Quantity: item.quantity,
-                                Cost: item.Cost
+                                Cost: item.Cost,
+                                isGold: item.isGold
                             }
                         });
 

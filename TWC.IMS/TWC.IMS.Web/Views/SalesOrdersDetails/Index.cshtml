@@ -259,7 +259,7 @@
                                   .Validation(v => v.AllowedExtensions(new string[] { ".xlsx" }))
                                   .Multiple(false)
                                   .Async(a => a
-                                      .Save("loadexcelfile", "salesorders")
+                                      .Save("loadexcelfile", "salesordersdetails")
                                       .AutoUpload(true)
                                   )
                                   .Events(x => x.Success("salesOrders.editor.events.onUploadComplete")
@@ -287,7 +287,7 @@
                                                   .Width(200);
                                            columns.Bound(p => p.IsGold)
                                                   .Title("Gold")
-                                                  .ClientTemplate("#= Weight === null ? '' : '<i class=\"fas fa-check text-success\"></i>' #")
+                                                  .ClientTemplate("#= IsGold ? '<i class=\"fas fa-check text-success\"></i>' : '' #")
                                                   .HtmlAttributes(new { @style = "text-align:center" })
                                                   .Width(100);
                                            columns.Bound(p => p.Weight)

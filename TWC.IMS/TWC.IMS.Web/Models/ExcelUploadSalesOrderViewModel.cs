@@ -14,5 +14,6 @@ namespace TWC.IMS.Web.Models
         public decimal? Weight { get; set; }
         public int Quantity { get; set; }
         public decimal Cost { get; set; }
+        public bool IsGold { get; set; }
     }
 }

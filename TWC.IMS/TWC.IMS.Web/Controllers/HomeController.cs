@@ -7,6 +7,7 @@ using TWC.IMS.BL; // Ensure this namespace includes your business logic classes
 using TWC.IMS.Web.HelperClasses;
 using System.Web;
 using System.Globalization;
+using System.Web.UI.WebControls;
 
 namespace TWC.IMS.Web.Controllers
 {
@@ -418,7 +419,7 @@ namespace TWC.IMS.Web.Controllers
                         {
                             Day = g.Key.Day.ToString("yyyy-MM-dd"), // Format the day
                     Category = g.Key.Category,
-                            TotalSales = g.Sum(d => d.Cost),
+                            TotalSales = g.Sum(d => d.SalesOrderHeader.Amount), // change d.cost to d.salesorderheaderamount
                             TotalCount = g.Sum(d => d.Qty)
                         })
                         .OrderBy(d => d.Day) // Ensure the days are in order
@@ -608,7 +609,7 @@ namespace TWC.IMS.Web.Controllers
                     var totalSales = salesOrders
                         .SelectMany(s => s.SalesOrderDetails)
                         .Where(d => d.SalesOrderHeader.Created >= startDate && d.SalesOrderHeader.Created < endDate)
-                        .Sum(d => d.Cost); // Sum of sales cost
+                        .Sum(d => d.SalesOrderHeader.Amount); // Sum of sales cost - change to sum of amounts
 
                     return Json(new { success = true, totalSales = totalSales }, JsonRequestBehavior.AllowGet);
                 }
