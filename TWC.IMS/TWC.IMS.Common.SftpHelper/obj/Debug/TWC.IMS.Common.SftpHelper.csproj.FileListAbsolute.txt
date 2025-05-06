@@ -1,0 +1,111 @@
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csprojResolveAssemblyReference.cache
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csprojResolveAssemblyReference.cache
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.pdb
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csprojResolveAssemblyReference.cache
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.xml
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.xml
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.xml
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csprojResolveAssemblyReference.cache
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.dll
+D:\Projects\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csproj.AssemblyReference.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csproj.CoreCompileInputs.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS..6CA7A11B.Up2Date
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csproj.AssemblyReference.cache
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csproj.CoreCompileInputs.cache
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS..6CA7A11B.Up2Date
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.SftpHelper.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\TWC.IMS.Common.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Renci.SshNet.Async.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\EntityFramework.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csproj.AssemblyReference.cache
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.csproj.CoreCompileInputs.cache
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS..6CA7A11B.Up2Date
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Common.SftpHelper\obj\Debug\TWC.IMS.Common.SftpHelper.pdb

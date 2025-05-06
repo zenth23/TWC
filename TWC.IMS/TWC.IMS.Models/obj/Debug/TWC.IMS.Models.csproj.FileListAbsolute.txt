@@ -1,0 +1,194 @@
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csprojResolveAssemblyReference.cache
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csprojResolveAssemblyReference.cache
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll.config
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll.config
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.pdb
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.pdb
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csprojResolveAssemblyReference.cache
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.dll
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll.config
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csprojResolveAssemblyReference.cache
+D:\Projects\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.dll
+D:\Projects\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll.config
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csproj.AssemblyReference.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csproj.CoreCompileInputs.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS..7847427A.Up2Date
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll.config
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\EntityFramework.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.Helpers.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.Mvc.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.Razor.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.WebPages.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\EntityFramework.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.Helpers.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.Mvc.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.Razor.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.WebPages.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csproj.AssemblyReference.cache
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csproj.CoreCompileInputs.cache
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\obj\Debug\TWC.IMS..7847427A.Up2Date
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll.config
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Models.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\TWC.IMS.Common.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Helpers.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Mvc.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.Razor.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\bin\Debug\Newtonsoft.Json.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csproj.AssemblyReference.cache
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.csproj.CoreCompileInputs.cache
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS..7847427A.Up2Date
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Models\obj\Debug\TWC.IMS.Models.pdb

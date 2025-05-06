@@ -2,6 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
 /TWC.IMS/TWC.IMS.Web/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 /TWC.IMS/TWC.IMS.Web/obj/Debug/TWC.IMS.Web.csproj.AssemblyReference.cache
 /TWC.IMS/TWC.IMS.Web/obj/Debug/TWC.IMS.Web.csproj.CoreCompileInputs.cache
@@ -181,3 +182,6 @@
 /TWC.IMS/TWC.IMS.Web/bin/TWC.IMS.Models.pdb
 /TWC.IMS/TWC.IMS.Web/bin/TWC.IMS.Web.dll
 /TWC.IMS/TWC.IMS.Web/bin/TWC.IMS.Web.pdb
+=======
+/TWC.IMS/.vs/TWC.IMS
+>>>>>>> 7ec55efd61754c20cccb16b2cb3168fa9c8e75ff

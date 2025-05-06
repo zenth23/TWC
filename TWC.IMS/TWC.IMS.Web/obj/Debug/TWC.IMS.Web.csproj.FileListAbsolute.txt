@@ -1,0 +1,986 @@
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csprojResolveAssemblyReference.cache
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\obj\Debug\RdlCompile.cache
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\obj\Debug\RdlCompile.compiled
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\csc.exe
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\vbc.exe
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\AccessControlListReport.rdlc
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\RoleMasterdataReport.rdlc
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\SystemModulesMasterdataReport.rdlc
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserAccessMatrixReport.rdlc
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserMasterdataReport.rdlc
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll.config
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Base32.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Kendo.Mvc.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Owin.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\WebGrease.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.WebForms.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.pdb
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.xml
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.dll
+C:\temp\Zenth\Personal\Projects\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\csc.exe
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\vbc.exe
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\AccessControlListReport.rdlc
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\RoleMasterdataReport.rdlc
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\SystemModulesMasterdataReport.rdlc
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserAccessMatrixReport.rdlc
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserMasterdataReport.rdlc
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll.config
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Base32.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Kendo.Mvc.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Owin.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\WebGrease.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.pdb
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.xml
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csprojResolveAssemblyReference.cache
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\obj\Debug\RdlCompile.cache
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\obj\Debug\RdlCompile.compiled
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.dll
+C:\Files\Sideline\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.pdb
+C:\Users\zenth23\Downloads\TWC.IMS.2.4\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csprojResolveAssemblyReference.cache
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\csc.exe
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\vbc.exe
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Content\Images\No-Image.png
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\AccessControlListReport.rdlc
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\RoleMasterdataReport.rdlc
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\SystemModulesMasterdataReport.rdlc
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserAccessMatrixReport.rdlc
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserMasterdataReport.rdlc
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll.config
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Base32.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\EPPlus.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Kendo.Mvc.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.Common.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.WebForms.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Owin.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\WebGrease.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\EPPlus.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.pdb
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.xml
+D:\Projects\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csprojResolveAssemblyReference.cache
+D:\Projects\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.dll
+D:\Projects\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csproj.AssemblyReference.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csproj.CoreCompileInputs.cache
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\csc.exe
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\vbc.exe
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Content\Images\No-Image.png
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\AccessControlListReport.rdlc
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\RoleMasterdataReport.rdlc
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\SystemModulesMasterdataReport.rdlc
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserAccessMatrixReport.rdlc
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserMasterdataReport.rdlc
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll.config
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Base32.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\EPPlus.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Hangfire.Core.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Kendo.Mvc.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.WebApiCompatShim.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Options.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Primitives.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Net.Http.Headers.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.Common.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Owin.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Buffers.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Memory.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Net.Http.Formatting.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Numerics.Vectors.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Text.Encodings.Web.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Threading.Tasks.Extensions.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.ValueTuple.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Cors.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.Cors.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.Owin.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.WebHost.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\WebGrease.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.dll.config
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\EPPlus.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Hangfire.Core.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.WebApiCompatShim.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Diagnostics.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Options.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Primitives.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Net.Http.Headers.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Buffers.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Memory.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Net.Http.Formatting.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Numerics.Vectors.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Text.Encodings.Web.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Threading.Tasks.Extensions.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.ValueTuple.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.Cors.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.Owin.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.WebHost.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.pdb
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.xml
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\ca\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\de\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\es\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\fa\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\fr\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\nb\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\nl\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\pt\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\pt-BR\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\pt-PT\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\sv\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\tr-TR\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\zh\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\bin\zh-TW\Hangfire.Core.resources.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS..7AA53C48.Up2Date
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.dll
+C:\Others\TWC.IMS 4\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\csc.exe
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\vbc.exe
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Content\Images\No-Image.png
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Reports\StandardReports\AccessControlListReport.rdlc
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Reports\StandardReports\RoleMasterdataReport.rdlc
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Reports\StandardReports\SystemModulesMasterdataReport.rdlc
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Reports\StandardReports\UserAccessMatrixReport.rdlc
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Reports\StandardReports\UserMasterdataReport.rdlc
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Web.dll.config
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Web.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Web.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\AntiXssLibrary.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Antlr3.Runtime.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Base32.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\EntityFramework.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\EPPlus.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Hangfire.Core.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\HtmlSanitizationLibrary.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Kendo.Mvc.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.WebApiCompatShim.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Options.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Newtonsoft.Json.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\OtpSharp.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Owin.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Buffers.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Memory.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Numerics.Vectors.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Text.Encodings.Web.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.ValueTuple.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Cors.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Helpers.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Http.Cors.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Http.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Http.Owin.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Mvc.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Optimization.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Razor.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.WebPages.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.BL.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Common.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Models.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\WebGrease.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.DL.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Renci.SshNet.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Renci.SshNet.Async.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.BL.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Common.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Models.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.Models.dll.config
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\AntiXssLibrary.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\EPPlus.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Hangfire.Core.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\HtmlSanitizationLibrary.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.WebApiCompatShim.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Diagnostics.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Options.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Newtonsoft.Json.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\OtpSharp.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Buffers.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Memory.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Numerics.Vectors.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Text.Encodings.Web.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.ValueTuple.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Helpers.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Http.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Http.Cors.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Http.Owin.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Mvc.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Razor.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.WebPages.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\System.Web.Optimization.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Antlr3.Runtime.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\EntityFramework.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\TWC.IMS.DL.pdb
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Renci.SshNet.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\Renci.SshNet.Async.xml
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\ca\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\de\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\es\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\fa\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\fr\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\nb\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\nl\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\pt\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\pt-BR\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\pt-PT\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\sv\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\tr-TR\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\zh\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\bin\zh-TW\Hangfire.Core.resources.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csproj.AssemblyReference.cache
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csproj.CoreCompileInputs.cache
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\obj\Debug\TWC.IMS..7AA53C48.Up2Date
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.dll
+C:\Users\zenth23\Source\Repos\TWC\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Memory.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\csc.exe
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\vbc.exe
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Content\Images\No-Image.png
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\AccessControlListReport.rdlc
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\RoleMasterdataReport.rdlc
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\SystemModulesMasterdataReport.rdlc
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserAccessMatrixReport.rdlc
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Reports\StandardReports\UserMasterdataReport.rdlc
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll.config
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Web.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Base32.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\EPPlus.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Hangfire.Core.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Kendo.Mvc.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.WebApiCompatShim.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Options.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Owin.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Buffers.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Numerics.Vectors.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Text.Encodings.Web.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.ValueTuple.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Cors.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.Cors.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.Owin.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\WebGrease.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.BL.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.SftpHelper.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Common.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.Models.dll.config
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\AntiXssLibrary.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\EPPlus.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Hangfire.Core.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\HtmlSanitizationLibrary.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Mvc.WebApiCompatShim.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Diagnostics.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Options.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Newtonsoft.Json.Bson.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\OtpSharp.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Buffers.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Memory.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Numerics.Vectors.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Text.Encodings.Web.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.ValueTuple.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Helpers.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.Cors.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.Owin.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Mvc.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Razor.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\System.Web.Optimization.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Antlr3.Runtime.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\TWC.IMS.DL.pdb
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\Renci.SshNet.Async.xml
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\ca\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\de\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\es\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\fa\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\fr\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\nb\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\nl\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\pt\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\pt-BR\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\pt-PT\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\sv\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\tr-TR\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\zh\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\bin\zh-TW\Hangfire.Core.resources.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csproj.AssemblyReference.cache
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.csproj.CoreCompileInputs.cache
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS..7AA53C48.Up2Date
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.dll
+C:\Users\rortegoiv\Source\Repos\twc\TWC.IMS\TWC.IMS.Web\obj\Debug\TWC.IMS.Web.pdb

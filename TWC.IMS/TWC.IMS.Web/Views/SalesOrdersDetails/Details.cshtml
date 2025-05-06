@@ -191,21 +191,22 @@
         let cost = parseFloat(row.querySelector(".cost-input").value) || 0;
         let amountField = row.querySelector(".amount-input");
 
-        if (isGold) {
-            amountField.value = (weight * cost).toFixed(2);
-        } else {
-            amountField.value = (quantity * cost).toFixed(2);
-        }
+        let amount = isGold ? (weight * cost) : (quantity * cost);
+        amountField.value = amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         updateTotalAmount();
     }
 
     function updateTotalAmount() {
         let total = 0;
         document.querySelectorAll(".amount-input").forEach(input => {
-            total += parseFloat(input.value) || 0;
+            total += parseFloat(input.value.replace(/,/g, '')) || 0;
         });
-        document.getElementById("totalAmount").value = total.toFixed(2);
+        document.getElementById("totalAmount").value = total.toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
     }
+
 
     function toggleFields(checkbox) {
         let row = checkbox.closest("tr");
@@ -213,7 +214,7 @@
         let weightField = row.querySelector(".weight-input");
 
         if (checkbox.checked) {
-            quantityField.disabled = true;
+            quantityField.disabled = false;
             weightField.disabled = false;
         } else {
             quantityField.disabled = false;

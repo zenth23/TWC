@@ -601,12 +601,15 @@ namespace TWC.IMS.Web.Controllers
                 workSheet.Column(2).Width = 30;
                 workSheet.Column(3).Width = 30;
                 workSheet.Column(4).Width = 30;
+                workSheet.Column(5).Width = 30;
+                workSheet.Column(6).Width = 30;
 
                 workSheet.Cells[1, 1].Value = "Product";
                 workSheet.Cells[1, 2].Value = "Invoice Number";
-                workSheet.Cells[1, 3].Value = "Weight (in grams)";
-                workSheet.Cells[1, 4].Value = "Quantity";
-                workSheet.Cells[1, 5].Value = "Cost";
+                workSheet.Cells[1, 3].Value = "IsGold";
+                workSheet.Cells[1, 4].Value = "Weight (in grams)";
+                workSheet.Cells[1, 5].Value = "Quantity";
+                workSheet.Cells[1, 6].Value = "Cost";
 
                 var lookupSheet = package.Workbook.Worksheets.Add("Products_Lookup");
                 lookupSheet.Hidden = OfficeOpenXml.eWorkSheetHidden.Hidden;
@@ -626,6 +629,24 @@ namespace TWC.IMS.Web.Controllers
 
                 var range = start + ":" + end;
                 var rangeLookUp = ExcelRange.GetAddress(2, 1, ExcelPackage.MaxRows, 1);
+
+
+                var isGoldLookUpSheet = package.Workbook.Worksheets.Add("IsGold");
+                isGoldLookUpSheet.Hidden = eWorkSheetHidden.Hidden;
+
+                isGoldLookUpSheet.Cells[1, 1].Value = "TRUE";
+                isGoldLookUpSheet.Cells[2, 1].Value = "FALSE";
+                var IsGoldStart = isGoldLookUpSheet.Cells[1, 1].ToString();
+                var IsGoldEnd = isGoldLookUpSheet.Cells[2, 1].ToString();
+                IsGoldStart = "$" + IsGoldStart.Substring(0, 1) + "$" + IsGoldStart.Substring(1);
+                IsGoldEnd = "$" + IsGoldEnd.Substring(0, 1) + "$" + IsGoldEnd.Substring(1);
+
+                var IsGoldRange = IsGoldStart + ":" + IsGoldEnd;
+                var IsGoldRangeLookUp = ExcelRange.GetAddress(2, 3, ExcelPackage.MaxRows, 3);
+
+                var IsGoldListExcelDropDown = workSheet.DataValidations.AddListValidation(IsGoldRangeLookUp);
+                IsGoldListExcelDropDown.Formula.ExcelFormula = "IsGold!" + IsGoldRange.ToString();
+
 
                 var rangeListExcelDropDown = workSheet.DataValidations.AddListValidation(rangeLookUp);
                 rangeListExcelDropDown.Formula.ExcelFormula = "Products_Lookup!" + range.ToString();
@@ -674,14 +695,15 @@ namespace TWC.IMS.Web.Controllers
                             itemObj.ProductName = (worksheet.Cells[row, 1].Value?.ToString() ?? "").Trim();
                             itemObj.InvoiceNumber = (worksheet.Cells[row, 2].Value?.ToString() ?? "").Trim();
 
-                            valid = decimal.TryParse(worksheet.Cells[row, 3].Value?.ToString() ?? "", out weight);
+                            valid = decimal.TryParse(worksheet.Cells[row, 4].Value?.ToString() ?? "", out weight);
                             itemObj.Weight = valid ? (decimal?)weight : null;
-                            itemObj.IsGold = itemObj.IsGold;
+                            var isGoldValue = (worksheet.Cells[row, 3].Value?.ToString() ?? "").Trim().ToLower();
+                            itemObj.IsGold = isGoldValue == "true";
 
-                            valid = int.TryParse(worksheet.Cells[row, 4].Value?.ToString() ?? "", out quantity);
+                            valid = int.TryParse(worksheet.Cells[row, 5].Value?.ToString() ?? "", out quantity);
                             itemObj.quantity = valid ? quantity : 0;
 
-                            valid = decimal.TryParse(worksheet.Cells[row, 5].Value?.ToString() ?? "", out cost);
+                            valid = decimal.TryParse(worksheet.Cells[row, 6].Value?.ToString() ?? "", out cost);
                             itemObj.Cost = valid ? cost : 0;
 
                             itemObj.Amount = itemObj.quantity * itemObj.Cost;
