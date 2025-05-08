@@ -70,6 +70,11 @@ namespace TWC.IMS.Models
         public virtual DbSet<SalesOrderDetail> SalesOrderDetails { get; set; }
         public virtual DbSet<SalesOrderHeader> SalesOrderHeaders { get; set; }
         public DbSet<CatalogMaintenance> CatalogMaintenance { get; set; }
+        public DbSet<VideoMaintenance> VideoMaintenance { get; set; }
+        public DbSet<CarouselMaintenance> CarouselMaintenance { get; set; }
+        public DbSet<TestimonialMaintenance> TestimonialMaintenance { get; set; }
+        public DbSet<BannerMaintenance> BannerMaintenance { get; set; }
+        public DbSet<OtherMaintenance> OtherMaintenance { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -370,6 +375,9 @@ namespace TWC.IMS.Models
             modelBuilder.Entity<CatalogMaintenance>()
                 .Property(x => x.RowVersion)
                 .IsFixedLength();
+            modelBuilder.Entity<VideoMaintenance>()
+    .Property(x => x.RowVersion)
+    .IsFixedLength();
 
             modelBuilder.Entity<SalesOrderHeader>()
                 .HasMany(e => e.SalesOrderDetails)

@@ -2,10 +2,11 @@
     string containerClass = (string)ViewData["ContainerClass"] ?? "container";
 }
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     @Html.Partial("_Head")
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     @Html.Partial("_Spinner")
@@ -14,29 +15,22 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-       <!-- <div class="toggle_btn">
-            @* <span class="fas fa-bars"></span>*@
-
-            <img src="~/Content/Images/logo/smc_80x120.png" class="sidebar-logo">
-        </div>-->
         @Html.Partial("_CustomSidenav_New")
     }
+
     <div class="body-content" style="margin-left: 5% !important; margin-right: 5% !important;">
         @RenderBody()
+
         @if (Request.IsAuthenticated)
         {
             @Html.Partial("_SessionExpiredWarningModal")
         }
     </div>
+
+    <!-- Scripts must be placed here to ensure correct loading order -->
     @Html.Partial("_ScriptsSection")
+
+    <!-- Page-specific scripts -->
     @RenderSection("scripts", required: false)
 </body>
 </html>
-@*<script>
-    $('.toggle_btn').click(function () {
-        $(this).toggleClass("click");
-        $('.sidebar').toggleClass("show");
-        $('.navbar').toggleClass("resize");
-        $('.body-content').toggleClass("resize");
-    });
-</script>*@

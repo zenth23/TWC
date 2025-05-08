@@ -61,6 +61,7 @@
     <Compile Include="CatalogMaintenance.cs" />
     <Compile Include="HelperClasses\KendoPaginationExtension.cs" />
     <Compile Include="Categories.cs" />
+    <Compile Include="OtherMaintenance.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="SalesOrders.cs" />
     <Compile Include="Product_Master_Images.cs" />
@@ -89,6 +90,10 @@
     <Compile Include="SupportTool.cs" />
     <Compile Include="SystemConfigs.cs" />
     <Compile Include="UserActivityLogs.cs" />
+    <Compile Include="CarouselMaintenance.cs" />
+    <Compile Include="TestimonialMaintenance.cs" />
+    <Compile Include="BannerMaintenance.cs" />
+    <Compile Include="VideoMaintenance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

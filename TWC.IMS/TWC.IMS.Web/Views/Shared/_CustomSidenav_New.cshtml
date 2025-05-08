@@ -249,6 +249,20 @@
                 @if (context.HasPermission("SystemAdministration.CanView") || context.HasPermission("Users.CanView") || context.HasPermission("Roles.CanView"))
                 {
                     <li>
+                        <a href="#catalogmasterData-submenu" data-toggle="collapse" aria-expanded="false"><i class="fa fa-address-card"></i> <span>Catalog Master Data</span></a>
+                        <ul class="collapse list-unstyled submenu" id="catalogmasterData-submenu" data-parent="#myGroup">
+
+                            <li><a href="@Url.Action("Index", "BannerMaintenance")">Banner Maintenance</a></li>
+                            <li><a href="@Url.Action("Index", "CarouselMaintenance")">Carousel Maintenance</a></li>
+                            <li><a href="@Url.Action("Index", "OtherMaintenance")">Other Maintenance</a></li>
+                            <li><a href="@Url.Action("Index", "TestimonialMaintenance")">Testimonial Maintenance</a></li>
+                            <li><a href="@Url.Action("Index", "VideoMaintenance")">Video Maintenance</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <li>
                         <a href="#administration-submenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-cogs"></i> <span>Administration</span></a>
                         <ul class="collapse list-unstyled submenu" id="administration-submenu" data-parent="#myGroup">
                             <li><a href="@Url.Action("Index", "UserMaintenance")">User Maintenance</a></li>

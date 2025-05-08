@@ -392,6 +392,7 @@
     <Compile Include="Controllers\ErrorLogsController.cs" />
     <Compile Include="Controllers\FileUploadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OtherMaintenanceController.cs" />
     <Compile Include="Controllers\ProductTypeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
@@ -409,6 +410,10 @@
     <Compile Include="Controllers\SystemConfigController.cs" />
     <Compile Include="Controllers\UserActivityLogsController.cs" />
     <Compile Include="Controllers\UserMaintenanceController.cs" />
+    <Compile Include="Controllers\CarouselMaintenanceController.cs" />
+    <Compile Include="Controllers\TestimonialMaintenanceController.cs" />
+    <Compile Include="Controllers\BannerMaintenanceController.cs" />
+    <Compile Include="Controllers\VideoMaintenanceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1622,6 +1627,11 @@
     <Content Include="Views\CatalogMaintenance\Index.cshtml" />
     <Content Include="Views\CatalogMaintenance\Details.cshtml" />
     <Content Include="Views\CatalogMaintenance\Create.cshtml" />
+    <Content Include="Views\VideoMaintenance\Index.cshtml" />
+    <Content Include="Views\CarouselMaintenance\Index.cshtml" />
+    <Content Include="Views\TestimonialMaintenance\Index.cshtml" />
+    <Content Include="Views\BannerMaintenance\Index.cshtml" />
+    <Content Include="Views\OtherMaintenance\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -63,6 +63,7 @@
     <Compile Include="CatalogMaintenance.cs" />
     <Compile Include="DemoSources.cs" />
     <Compile Include="Categories.cs" />
+    <Compile Include="OtherMaintenance.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="SalesOrder.cs" />
     <Compile Include="Locations.cs" />
@@ -92,6 +93,10 @@
     <Compile Include="SupportTool.cs" />
     <Compile Include="SystemConfigs.cs" />
     <Compile Include="UserActivityLogs.cs" />
+    <Compile Include="CarouselMaintenance.cs" />
+    <Compile Include="TestimonialMaintenance.cs" />
+    <Compile Include="BannerMaintenance.cs" />
+    <Compile Include="VideoMaintenance.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TWC.IMS.Common\TWC.IMS.Common.csproj">

@@ -1,9 +1,17 @@
+<!-- jQuery (must be loaded first) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<!-- DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<!-- App-wide JS variables -->
 <script type="text/javascript">
     window.rootUrl = '@Url.Content("~/")';
     var _sessionTimeout = @Session.Timeout;
 </script>
 
+<!-- Your existing bundles -->
 @Scripts.Render("~/Scripts/application/main.layout.js?v=" + DateTime.Now.Ticks)
 @Scripts.Render("~/bundles/jsplumb")
 @Scripts.RenderFormat("<script type='text/javascript' src='{0}' nocache='" + DateTime.Now.Ticks + "'></script>", "~/bundles/application")
