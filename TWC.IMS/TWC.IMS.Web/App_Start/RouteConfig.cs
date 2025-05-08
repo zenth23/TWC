@@ -37,10 +37,15 @@ namespace TWC.IMS.Web
                 defaults: new { controller = "home", action = "index", key = UrlParameter.Optional }
             );
 
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "account", action = "login", id = UrlParameter.Optional }
+            //);
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "account", action = "login", id = UrlParameter.Optional }
+                defaults: new { controller = "catalog", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

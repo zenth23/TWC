@@ -4,6 +4,7 @@ namespace TWC.IMS.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Reflection.Emit;
 
     public partial class Entities : DbContext
     {
@@ -68,6 +69,8 @@ namespace TWC.IMS.Models
         
         public virtual DbSet<SalesOrderDetail> SalesOrderDetails { get; set; }
         public virtual DbSet<SalesOrderHeader> SalesOrderHeaders { get; set; }
+        public DbSet<CatalogMaintenance> CatalogMaintenance { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -179,8 +182,6 @@ namespace TWC.IMS.Models
                 .HasMany(e => e.ModuleAccesses)
                 .WithRequired(e => e.Access)
                 .HasForeignKey(e => e.ModuleAccess_Access);
-
-          
 
             modelBuilder.Entity<AspNetRole>()
                 .HasMany(e => e.RoleDetails)
@@ -364,6 +365,10 @@ namespace TWC.IMS.Models
 
             modelBuilder.Entity<SalesOrderHeader>()
                 .Property(e => e.RowVersion)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CatalogMaintenance>()
+                .Property(x => x.RowVersion)
                 .IsFixedLength();
 
             modelBuilder.Entity<SalesOrderHeader>()

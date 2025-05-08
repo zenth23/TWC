@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Accesses.cs" />
     <Compile Include="AccountManagers.cs" />
+    <Compile Include="CatalogMaintenance.cs" />
     <Compile Include="DemoSources.cs" />
     <Compile Include="Categories.cs" />
     <Compile Include="ProductType.cs" />

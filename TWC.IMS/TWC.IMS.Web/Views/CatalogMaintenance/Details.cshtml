@@ -1,0 +1,58 @@
+﻿@model TWC.IMS.Models.CatalogMaintenance
+
+@{
+    ViewBag.Title = "Catalog Details";
+}
+
+<h2>Catalog Maintenance Details</h2>
+
+<div class="form-group">
+    <label for="FileName">File Name</label>
+    <p>@Model.FileName</p>
+</div>
+
+<div class="form-group">
+    <label for="FileType">File Type</label>
+    <p>@Model.FileType</p>
+</div>
+
+<div class="form-group">
+    <label for="Description">Description</label>
+    <p>@Model.Description</p>
+</div>
+
+<div class="form-group">
+    <label for="CreatedBy">Created By</label>
+    <p>@Model.CreatedBy</p>
+</div>
+
+<div class="form-group">
+    <label for="Created">Created</label>
+    <p>@Model.Created</p>
+</div>
+
+<div class="form-group">
+    <label for="ModifiedBy">Modified By</label>
+    <p>@Model.ModifiedBy</p>
+</div>
+
+<div class="form-group">
+    <label for="Modified">Modified</label>
+    <p>@Model.Modified</p>
+</div>
+
+<div class="form-group">
+    <label for="UniqueKey">Unique Key</label>
+    <p>@Model.UniqueKey</p>
+</div>
+
+<div class="form-group">
+    <label for="RowVersion">Row Version</label>
+    <p>@Model.RowVersion</p>
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

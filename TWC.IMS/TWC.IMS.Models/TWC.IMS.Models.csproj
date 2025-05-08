@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asset_Movement.cs" />
+    <Compile Include="CatalogMaintenance.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="ChartModels\AdminDashboardChartModels.cs" />
     <Compile Include="ChartModels\MainDashboardChartModels.cs" />

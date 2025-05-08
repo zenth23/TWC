@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accesses.cs" />
+    <Compile Include="CatalogMaintenance.cs" />
     <Compile Include="HelperClasses\KendoPaginationExtension.cs" />
     <Compile Include="Categories.cs" />
     <Compile Include="ProductType.cs" />

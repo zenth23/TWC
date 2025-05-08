@@ -1,0 +1,251 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Jewelry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/Content/catalog/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Content/catalog/style.css" asp-append-version="true" />
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="~/index.html" id="logo" title="Jewelry">jewelry</a>
+            <div class="right-links">
+                <ul>
+                    <li class="active">
+                        <a href="#" onclick="navigate('home')">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="navigate('contact')">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="navigate('about')">About Us</a>
+                    </li>
+                    @*<li>
+                        <a href="@Url.Action("Login", "Account")">Login</a>
+                    </li>*@
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <div class="container">
+            <div class="trigger"></div>
+            <ul>
+                <li><a href="#" onclick="navigate('sets')">sets</a></li>
+                <li><a href="#" onclick="navigate('earrings')">earrings</a></li>
+                <li><a href="#" onclick="navigate('rings')">rings</a></li>
+                <li><a href="#" onclick="navigate('pendants')">pendants</a></li>
+                <li>
+                    <div class="theme-toggle-container">
+                        <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" />
+                        <label for="theme-toggle" class="toggle-switch"></label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="loader" id="loader">Loading...</div>
+
+    @* Zoom Overlay *@
+    <div id="zoom-overlay" class="zoom-overlay">
+        <div class="zoom-content">
+            <div class="zoom-layout">
+                <button class="zoom-close" id="close-zoom">×</button>
+                <img id="zoomed-image" src="" alt="" />
+                <div class="zoom-details">
+                    <h3 id="zoomed-name"></h3>
+                    <div id="zoomed-price" class="price"></div>
+                    <div id="zoomed-availability"></div>
+                    <div id="zoomed-extra-info"></div>
+                </div>
+            </div>
+        </div>
+        <div class="zoom-thumbnails-wrapper">
+            <div class="zoom-thumbnails" id="zoom-thumbnails"></div>
+            <div class="zoom-see-more">
+                <a id="zoom-see-more" href="#"></a>
+            </div>
+        </div>
+    </div>
+
+    @* Sections *@
+    <div id="home" class="section active">
+        @* Carousel Section *@
+        <div class="custom-carousel">
+            <div class="carousel-slides">
+                <div class="carousel-slide active"><img src="~/images/carousel/c1.png" alt="Slide 1" /></div>
+                <div class="carousel-slide"><img src="~/images/carousel/c2.png" alt="Slide 2" /></div>
+                <div class="carousel-slide"><img src="~/images/carousel/c3.png" alt="Slide 3" /></div>
+                <div class="carousel-slide"><img src="~/images/carousel/c4.png" alt="Slide 4" /></div>
+            </div>
+            <button class="carousel-btn prev">❮</button>
+            <button class="carousel-btn next">❯</button>
+            <div class="carousel-dots"></div>
+        </div>
+
+        <div class="other-page-container">
+            <div class="container">
+                <div id="other-sections"></div>
+            </div>
+        </div>
+
+        @* Elegant Video Section *@
+        <div class="elegant-video-container container my-5">
+            <div class="row align-items-center g-4">
+                <div class="col-md-6 text-center">
+                    <div class="elegant-video-wrapper">
+                        <video class="portrait-video" playsinline muted loop autoplay>
+                            <source src="~/videos/d1.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="elegant-heading">Handcrafted Elegance</h2>
+                    <p class="elegant-description">Each piece is made with care and precision...</p>
+                    <ul class="elegant-features">
+                        <li>✔️ Unique Designs</li>
+                        <li>✔️ Ethical Materials</li>
+                        <li>✔️ Limited Collections</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @* Jumbotron and Product Section *@
+        <header id="header">
+            <div class="jumbotron jumbotron-parallax2"></div>
+        </header>
+
+        <div class="product-page-container">
+            <div class="container">
+                <div class="product-page-title">Our Products</div>
+                <div id="product-sections"></div>
+            </div>
+        </div>
+
+        @* Hero Banner *@
+        <header class="hero-banner">
+            <video class="hero-background" autoplay muted playsinline loop>
+                <source src="~/images/banners/Banners.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1 class="hero-title">Darlings Fine Jewel</h1>
+                <p class="hero-subtext">Where Every Piece Tells a Story</p>
+                <p class="hero-text">Nestled in the heart of Recto...</p>
+
+                <h2 class="hero-section-title">Our Story</h2>
+                <p class="hero-text">Darlings Fine Jewel was born out of a passion...</p>
+            </div>
+        </header>
+
+        <div id="video-sections"></div>
+    </div>
+
+    @* About Section *@
+    <div id="about" class="section">
+        <h1>About</h1>
+        <section class="about-section">
+            <div class="about-card">
+                <h2>Welcome to Darlings Fine Jewel – Where Every Piece Tells a Story</h2>
+                <p>...</p>
+            </div>
+        </section>
+    </div>
+
+    @* Contact Section *@
+    <div id="contact" class="section">
+        <h1>Contact Us</h1>
+        <section class="connect-section">
+            <div class="container connect-container">
+                <div class="col media">
+                    <h3>Social Media</h3>
+                    <ul class="social">
+                        <li>
+                            <a href="https://www.facebook.com/share/1DQfkgKq3H/?mibextid=wwXIfr" target="_blank">
+                                <img src="~/images/fb.png" alt="Facebook" class="social-icon" /> Darlings FineJewels By Candys
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/share/1DfjUWQEW8/?mibextid=wwXIfr" target="_blank">
+                                <img src="~/images/fb.png" alt="Facebook" class="social-icon" /> Candy’s JewelryStore Main
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/darlings_fin3jewels?igsh=MThtd2lucjkyODBjeQ==" target="_blank">
+                                <img src="~/images/ig.png" alt="Instagram" class="social-icon" /> darlings_fin3jewels
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tiktok.com/darlingsfinejewels?_t=ZS-8ueCrzGn2GI&_r=1" target="_blank">
+                                <img src="~/images/tiktok.png" alt="TikTok" class="social-icon" /> Darlings FineJewels By Candys
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col contact">
+                    <h3>Contact Us</h3>
+                    <p><strong>Darlings FineJewels By Candys</strong><br />Candy's Jewelry Store<br />Manila, Philippines</p>
+                    <p>
+                        📧 <a href="mailto:mfrebuyas@yahoo.com">mfrebuyas@yahoo.com</a><br />
+                        📞 0917 856 2385
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    @* Other Product Sections (New Arrivals, Sets, etc.) will follow similar structure... *@
+
+    @* Footer *@
+    <footer id="footer">
+        <div class="container">
+            <div class="cols">
+                <div class="col media">
+                    <h3>Social media</h3>
+                    <ul class="social">
+                        <li><a href="..."><img src="~/images/fb.png" alt="Facebook" class="social-icon" /> Darlings FineJewels By Candys</a></li>
+                        <li><a href="..."><img src="~/images/fb.png" alt="Facebook" class="social-icon" /> Candy’s JewelryStore Main</a></li>
+                        <li><a href="..."><img src="~/images/ig.png" alt="Instagram" class="social-icon" /> darlings_fin3jewels</a></li>
+                        <li><a href="..."><img src="~/images/tiktok.png" alt="TikTok" class="social-icon" /> Darlings FineJewels By Candys</a></li>
+                    </ul>
+                </div>
+                <div class="col contact">
+                    <h3>Contact us</h3>
+                    <p>Darlings FineJewels By Candys<br />Candy's Jewelry Store<br />Manila, Philippines</p>
+                    <p><a href="#">mfrebuyas@yahoo.com</a></p>
+                    <p>0917 856 2385</p>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <img src="~/images/visa.png" alt="Visa" />
+                <img src="~/images/mastercard.png" alt="MasterCard" />
+            </div>
+            <p class="copy">Copyright 2025 Candy's Jewelry. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://m.me/darlingsfinejewels" target="_blank" class="messenger-float">
+        <img src="~/images/fb-messenger.png" alt="Messenger" />
+    </a>
+
+    @* JS Scripts *@
+    <script src="~/Scripts/Catalog/jquery-1.11.1.min.js" asp-append-version="true"></script>
+    <script src="~/Scripts/Catalog/plugins.js" asp-append-version="true"></script>
+
+    <script src="~/Scripts/Catalog/data.js" asp-append-version="true"></script>
+    <script src="~/Scripts/Catalog/main.js" asp-append-version="true"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js" asp-append-version="true"></script>
+</body>
+</html>
