@@ -1,4 +1,68 @@
-function mobileCheck(){
+// ✨ Load catalog data dynamically instead of using data.js
+// ✅ Initialize empty data to avoid ReferenceErrors if accessed early
+window.data = {
+	videos: {},
+	carousel: [],
+	products: {},
+	other: {}
+};
+
+// ✨ Load catalog data dynamically instead of using data.js
+async function loadCatalogData() {
+	try {
+		const [videoRes, carouselRes, productRes] = await Promise.all([
+			fetch('/Catalog/GetVideos'),
+			fetch('/Catalog/GetCarousels'),
+			fetch('/Catalog/GetProducts')
+		]);
+
+		const videos = await videoRes.json();
+		const carousel = await carouselRes.json();
+		const products = await productRes.json();
+
+		window.data = {
+			videos,
+			carousel,
+			products: groupProductsByCategory(products), // Group before use
+			other: {}
+		};
+
+		// Re-render all dynamic content
+		renderVideoCategories();
+		renderProductCategories();
+		renderOtherCategories(); // Optional
+	} catch (error) {
+		console.error('❌ Failed to fetch catalog data:', error);
+		const fallback = document.getElementById("product-sections");
+		if (fallback) {
+			fallback.innerHTML = `<p class="text-danger text-center">Unable to load catalog. Please try again later.</p>`;
+		}
+	}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+	loadCatalogData();
+});
+
+// ✅ Helper to group products by category
+function groupProductsByCategory(products) {
+	const grouped = {};
+	products.forEach(p => {
+		const category = (p.category || "Uncategorized").toLowerCase();
+		if (!grouped[category]) grouped[category] = [];
+		grouped[category].push(p);
+	});
+	return grouped;
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	loadCatalogData();
+});
+
+
+
+function mobileCheck() {
 	var winWidth=$(window).width();
 	if (winWidth<=768) {
 		$("#sidebar").after($("#body .pagination:first"))
@@ -467,7 +531,7 @@ if (seeMoreLink) {
 	}
 };
 
-renderProductCategories();
+/*renderProductCategories();*/
 
 document.getElementById('close-zoom').addEventListener('click', () => {
     document.getElementById('zoom-overlay').classList.remove('active');
