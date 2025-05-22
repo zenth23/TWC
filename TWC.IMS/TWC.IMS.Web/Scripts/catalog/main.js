@@ -4,7 +4,7 @@ window.data = {
 	videos: {},
 	carousel: [],
 	products: {},
-	other: {}
+	others: {}
 };
 
 // ✨ Load catalog data dynamically instead of using data.js
@@ -681,7 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const renderOtherCategories = () => {
 	const productSectionsContainer = document.getElementById("other-sections");
 
-	for (const category in data.other) {
+	for (const category in data.others) {
 		const categoryData = data.other[category];
 		const lastFiveProducts = categoryData.slice(-5);
 

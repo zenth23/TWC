@@ -383,6 +383,7 @@
     <Compile Include="Controllers\AdminDashboardChartsController.cs" />
     <Compile Include="Controllers\AuditLogsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CatalogController - Copy.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\CatalogMaintenanceController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
@@ -925,6 +926,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\catalog\data.js" />
     <Content Include="Scripts\catalog\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\catalog\main - Copy.js" />
     <Content Include="Scripts\catalog\main.js" />
     <Content Include="Scripts\catalog\plugins.js" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
@@ -1632,6 +1634,8 @@
     <Content Include="Views\TestimonialMaintenance\Index.cshtml" />
     <Content Include="Views\BannerMaintenance\Index.cshtml" />
     <Content Include="Views\OtherMaintenance\Index.cshtml" />
+    <Content Include="Views\VideoMaintenance\Index - Copy.cshtml" />
+    <Content Include="Views\CarouselMaintenance\Index - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

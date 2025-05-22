@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using TWC.IMS.BL;
 using TWC.IMS.Models;
@@ -28,47 +30,66 @@ namespace TWC.IMS.Web.Controllers
             }
         }
 
-        // POST: CarouselMaintenance/Create
+        // POST: VideoMaintenance/UploadAndCreate
         [HttpPost]
-        public async Task<JsonResult> Create(CarouselMaintenance model)
+        public async Task<ActionResult> UploadAndCreate(CarouselMaintenance model, HttpPostedFileBase carouselFile)
         {
-            if (!ModelState.IsValid)
-                return Json(new { success = false, message = "Invalid data." });
+            if (carouselFile == null || string.IsNullOrWhiteSpace(model.Category))
+                return new HttpStatusCodeResult(400, "Invalid data");
 
             try
             {
+                string fileName = Path.GetFileName(carouselFile.FileName);
+                string savePath = Path.Combine(Server.MapPath("~//Upload/Carousel"), fileName);
+                carouselFile.SaveAs(savePath);
+
+                model.Name = fileName;
+                model.FilePath = savePath;//"/" + fileName;
+                model.CreatedBy = _username;
+                model.Created = DateTime.Now;
+
                 using (var bl = new CarouselMaintenanceBL(_username))
                 {
-                    model.Created = DateTime.Now;
-                    model.CreatedBy = _username;
                     await bl.AddAsync(model).ConfigureAwait(false);
-                    return Json(new { success = true });
                 }
+
+                return new HttpStatusCodeResult(200);
             }
             catch (Exception ex)
             {
-                return Json(new { success = false, message = ex.Message });
+                return new HttpStatusCodeResult(500, ex.Message);
             }
         }
 
-        // POST: CarouselMaintenance/Update
+        // POST: VideoMaintenance/UploadAndUpdate
         [HttpPost]
-        public async Task<JsonResult> Update(CarouselMaintenance model)
+        public async Task<ActionResult> UploadAndUpdate(CarouselMaintenance model, HttpPostedFileBase carouselFile)
         {
-            if (!ModelState.IsValid || model.Id == 0)
-                return Json(new { success = false, message = "Invalid data." });
+            if (model.Id <= 0 || string.IsNullOrWhiteSpace(model.Category))
+                return new HttpStatusCodeResult(400, "Invalid data");
 
             try
             {
+                if (carouselFile != null)
+                {
+                    string fileName = Path.GetFileName(carouselFile.FileName);
+                    string savePath = Path.Combine(Server.MapPath("~/Upload/Carousel"), fileName);
+                    carouselFile.SaveAs(savePath);
+
+                    model.Name = fileName;
+                    model.FilePath = savePath;//"/" + fileName;
+                }
+
                 using (var bl = new CarouselMaintenanceBL(_username))
                 {
                     await bl.UpdateAsync(model).ConfigureAwait(false);
-                    return Json(new { success = true });
                 }
+
+                return new HttpStatusCodeResult(200);
             }
             catch (Exception ex)
             {
-                return Json(new { success = false, message = ex.Message });
+                return new HttpStatusCodeResult(500, ex.Message);
             }
         }
 

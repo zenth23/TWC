@@ -26,6 +26,7 @@ namespace TWC.IMS.Web.Controllers
             videoBL = new VideoMaintenanceBL(username);
             carouselBL = new CarouselMaintenanceBL(username);
             productBL = new Products(username);
+            productimgBL = new BL.Product_Master_Image(username);
         }
 
         [AllowAnonymous]
@@ -71,7 +72,7 @@ namespace TWC.IMS.Web.Controllers
         public async Task<JsonResult> GetProducts()
         {
             var products = await productBL.GetListAsync();
-            var productImages = await productimgBL.GetListAsync(); // You should implement this if not already
+            var productImages = await productimgBL.GetListAsync(); 
 
             // Join products with their images
             var catalogProducts = products
