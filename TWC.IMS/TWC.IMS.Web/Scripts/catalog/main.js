@@ -28,6 +28,7 @@ async function loadCatalogData() {
 		};
 
 		// Re-render all dynamic content
+		renderCarousel();
 		renderVideoCategories();
 		renderProductCategories();
 		renderOtherCategories(); // Optional
@@ -39,6 +40,40 @@ async function loadCatalogData() {
 		}
 	}
 }
+
+function renderCarousel() {
+	const slidesContainer = document.getElementById('carousel-slides');
+	const dotsContainer = document.getElementById('carousel-dots');
+
+	if (!slidesContainer || !dotsContainer) return;
+
+	slidesContainer.innerHTML = '';
+	dotsContainer.innerHTML = '';
+
+	const carouselImages = window.data.carousel; // This is fetched via `/Catalog/GetCarousels`
+
+	carouselImages.forEach((item, index) => {
+		const slide = document.createElement('div');
+		slide.className = 'carousel-slide' + (index === 0 ? ' active' : '');
+
+		const img = document.createElement('img');
+		img.src = item.file_location;
+		img.alt = item.name || `Slide ${index + 1}`;
+		slide.appendChild(img);
+
+		slidesContainer.appendChild(slide);
+
+		const dot = document.createElement('button');
+		dot.addEventListener('click', () => goToSlide(index));
+		dotsContainer.appendChild(dot);
+	});
+
+	// Refresh reference to slides and dots
+	slides = document.querySelectorAll('.carousel-slide');
+	dots = document.querySelectorAll('.carousel-dots button');
+	showSlide(0); // Reset to first
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	loadCatalogData();
