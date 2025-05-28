@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using TWC.IMS.BL;
 using TWC.IMS.Models;
@@ -28,15 +30,21 @@ namespace TWC.IMS.Web.Controllers
             }
         }
 
-        // POST: VideoMaintenance/Create (AJAX support)
+        // POST: VideoMaintenance/UploadAndCreate
         [HttpPost]
-        public async Task<ActionResult> Create(VideoMaintenance model)
+        public async Task<ActionResult> UploadAndCreate(VideoMaintenance model, HttpPostedFileBase videoFile)
         {
-            if (string.IsNullOrWhiteSpace(model.Name) || string.IsNullOrWhiteSpace(model.FilePath))
+            if (videoFile == null || string.IsNullOrWhiteSpace(model.Category))
                 return new HttpStatusCodeResult(400, "Invalid data");
 
             try
             {
+                string fileName = Path.GetFileName(videoFile.FileName);
+                string savePath = Path.Combine(Server.MapPath("~//Upload/Videos"), fileName);
+                videoFile.SaveAs(savePath);
+
+                model.Name = fileName;
+                model.FilePath = savePath;//"/" + fileName;
                 model.CreatedBy = _username;
                 model.Created = DateTime.Now;
 
@@ -53,15 +61,25 @@ namespace TWC.IMS.Web.Controllers
             }
         }
 
-        // POST: VideoMaintenance/Update (AJAX support)
+        // POST: VideoMaintenance/UploadAndUpdate
         [HttpPost]
-        public async Task<ActionResult> Update(VideoMaintenance model)
+        public async Task<ActionResult> UploadAndUpdate(VideoMaintenance model, HttpPostedFileBase videoFile)
         {
-            if (model.Id <= 0 || string.IsNullOrWhiteSpace(model.Name))
+            if (model.Id <= 0 || string.IsNullOrWhiteSpace(model.Category))
                 return new HttpStatusCodeResult(400, "Invalid data");
 
             try
             {
+                if (videoFile != null)
+                {
+                    string fileName = Path.GetFileName(videoFile.FileName);
+                    string savePath = Path.Combine(Server.MapPath("~/Upload/Videos"), fileName);
+                    videoFile.SaveAs(savePath);
+
+                    model.Name = fileName;
+                    model.FilePath = savePath;//"/" + fileName;
+                }
+
                 using (var bl = new VideoMaintenanceBL(_username))
                 {
                     await bl.UpdateAsync(model).ConfigureAwait(false);
@@ -75,7 +93,7 @@ namespace TWC.IMS.Web.Controllers
             }
         }
 
-        // POST: VideoMaintenance/Delete (AJAX support)
+        // POST: VideoMaintenance/Delete
         [HttpPost]
         public async Task<ActionResult> Delete(int id)
         {
@@ -97,36 +115,10 @@ namespace TWC.IMS.Web.Controllers
             }
         }
 
-        // (Optional) GET: Create (legacy form-based view)
+        // (Optional) GET: Create (form-based view, unused in index scenario)
         public ActionResult Create()
         {
             return View();
         }
-
-        // (Optional) POST: Create (form submission)
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Create(VideoMaintenance model)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return View(model);
-
-        //    try
-        //    {
-        //        model.CreatedBy = _username;
-        //        model.Created = DateTime.Now;
-
-        //        using (var bl = new VideoMaintenanceBL(_username))
-        //        {
-        //            await bl.AddAsync(model).ConfigureAwait(false);
-        //            return RedirectToAction("Index");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ModelState.AddModelError("", ex.Message);
-        //        return View(model);
-        //    }
-        //}
     }
 }

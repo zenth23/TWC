@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using TWC.IMS.BL;
 using TWC.IMS.Models;
@@ -34,63 +36,69 @@ namespace TWC.IMS.Web.Controllers
             }
         }
 
-        // POST: OtherMaintenances/Update
+        // POST: VideoMaintenance/UploadAndCreate
         [HttpPost]
-        public async Task<ActionResult> Update(OtherMaintenance model)
+        public async Task<ActionResult> UploadAndCreate(OtherMaintenance model, HttpPostedFileBase othersFile)
         {
-            if (!ModelState.IsValid)
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid data.");
+            if (othersFile == null || string.IsNullOrWhiteSpace(model.Category))
+                return new HttpStatusCodeResult(400, "Invalid data");
 
-            using (var bl = new OtherMaintenanceBL(_username))
+            try
             {
-                var existing = await bl.GetAsync(model.Id);
-                if (existing == null)
-                    return HttpNotFound("Item not found.");
+                string fileName = Path.GetFileName(othersFile.FileName);
+                string savePath = Path.Combine(Server.MapPath("~/Upload/Others"), fileName);
+                othersFile.SaveAs(savePath);
 
-                // Update editable fields
-                existing.Name = model.Name;
-                existing.Category = model.Category;
-                existing.FilePath = model.FilePath;
-                existing.ProductMasterId = model.ProductMasterId;
-
-                // Metadata
-                existing.Modified = DateTime.UtcNow;
-                existing.ModifiedBy = _username;
-
-                await bl.UpdateAsync(existing);
-                return new HttpStatusCodeResult(HttpStatusCode.OK);
-            }
-        }
-
-        // POST: OtherMaintenances/Create
-        [HttpPost]
-        public async Task<ActionResult> Create(OtherMaintenance model)
-        {
-            if (!ModelState.IsValid)
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid data.");
-
-            using (var bl = new OtherMaintenanceBL(_username))
-            {
-                model.Created = DateTime.UtcNow;
+                model.Name = fileName;
+                model.FilePath = savePath;//"/" + fileName;
                 model.CreatedBy = _username;
-                model.UniqueKey = Guid.NewGuid();
+                model.Created = DateTime.Now;
 
-                // ✅ Ensure ProductMasterId is assigned
-                var newItem = new OtherMaintenance
+                using (var bl = new OtherMaintenanceBL(_username))
                 {
-                    Name = model.Name,
-                    Category = model.Category,
-                    FilePath = model.FilePath,
-                    ProductMasterId = model.ProductMasterId,
-                    Created = model.Created,
-                    CreatedBy = model.CreatedBy,
-                    UniqueKey = model.UniqueKey
-                };
+                    await bl.AddAsync(model).ConfigureAwait(false);
+                }
 
-                await bl.AddAsync(newItem);
-                return new HttpStatusCodeResult(HttpStatusCode.Created);
+                return new HttpStatusCodeResult(200);
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(500, ex.Message);
             }
         }
+
+        // POST: VideoMaintenance/UploadAndUpdate
+        [HttpPost]
+        public async Task<ActionResult> UploadAndUpdate(OtherMaintenance model, HttpPostedFileBase othersFile)
+        {
+            if (model.Id <= 0 || string.IsNullOrWhiteSpace(model.Category))
+                return new HttpStatusCodeResult(400, "Invalid data");
+
+            try
+            {
+                if (othersFile != null)
+                {
+                    string fileName = Path.GetFileName(othersFile.FileName);
+                    string savePath = Path.Combine(Server.MapPath("~/Upload/Others"), fileName);
+                    othersFile.SaveAs(savePath);
+
+                    model.Name = fileName;
+                    model.FilePath = savePath;//"/" + fileName;
+                }
+
+                using (var bl = new OtherMaintenanceBL(_username))
+                {
+                    await bl.UpdateAsync(model).ConfigureAwait(false);
+                }
+
+                return new HttpStatusCodeResult(200);
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(500, ex.Message);
+            }
+        }
+
 
 
         // POST: OtherMaintenances/Delete

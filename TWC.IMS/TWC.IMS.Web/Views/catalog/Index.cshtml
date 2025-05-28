@@ -80,15 +80,10 @@
     <div id="home" class="section active">
         @* Carousel Section *@
         <div class="custom-carousel">
-            <div class="carousel-slides">
-                <div class="carousel-slide active"><img src="~/images/carousel/c1.png" alt="Slide 1" /></div>
-                <div class="carousel-slide"><img src="~/images/carousel/c2.png" alt="Slide 2" /></div>
-                <div class="carousel-slide"><img src="~/images/carousel/c3.png" alt="Slide 3" /></div>
-                <div class="carousel-slide"><img src="~/images/carousel/c4.png" alt="Slide 4" /></div>
-            </div>
+            <div class="carousel-slides" id="carousel-slides"></div>
             <button class="carousel-btn prev">❮</button>
             <button class="carousel-btn next">❯</button>
-            <div class="carousel-dots"></div>
+            <div class="carousel-dots" id="carousel-dots"></div>
         </div>
 
         <div class="other-page-container">
@@ -244,7 +239,7 @@
     <script src="~/Scripts/Catalog/jquery-1.11.1.min.js" asp-append-version="true"></script>
     <script src="~/Scripts/Catalog/plugins.js" asp-append-version="true"></script>
 
-    <script src="~/Scripts/Catalog/data.js" asp-append-version="true"></script>
+    @*<script src="~/Scripts/Catalog/data.js" asp-append-version="true"></script>*@
     <script src="~/Scripts/Catalog/main.js" asp-append-version="true"></script>
     <script src="~/Scripts/bootstrap.bundle.min.js" asp-append-version="true"></script>
 </body>

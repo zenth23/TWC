@@ -66,6 +66,10 @@ namespace TWC.IMS.Models
         [Timestamp]
         public byte[] RowVersion { get; set; }
 
+        public bool Catalog { get; set; }
+
+        public string Description { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ProductType Product_Type { get; set; }
         public virtual ICollection<Product_Inventory> Product_Inventory { get; set; }

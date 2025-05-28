@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TWC.IMS.Models;
@@ -82,15 +83,30 @@ namespace TWC.IMS.DL
             {
                 using (var db = new Entities())
                 {
-                    db.Entry(item).State = EntityState.Modified;
-                    await db.SaveChangesAsync().ConfigureAwait(false);
+                    var existing = await db.OtherMaintenance.FindAsync(item.Id).ConfigureAwait(false);
+                    if (existing != null)
+                    {
+                        existing.Name = item.Name;
+                        existing.Category = item.Category;
+                        existing.FilePath = item.FilePath;
+                        existing.ProductMasterId = item.ProductMasterId;
+                        existing.Modified = DateTime.UtcNow;
+                        existing.ModifiedBy = _username;
+
+                        await db.SaveChangesAsync().ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        throw new KeyNotFoundException("VideoMaintenance item not found.");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error updating data in the database.", ex);
+                Debug.WriteLine(ex.Message);
+                throw;
             }
-        }
+            }
 
         // Delete an OtherMaintenance item by ID
         public async Task DeleteAsync(int id)

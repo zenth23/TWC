@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using TWC.IMS.BL;
 using TWC.IMS.Models;
@@ -34,23 +36,29 @@ namespace TWC.IMS.Web.Controllers
             return View();
         }
 
-        // POST: BannerMaintenance/Create (AJAX endpoint)
         [HttpPost]
-        public async Task<ActionResult> Create(BannerMaintenance model)
+        public async Task<ActionResult> UploadAndCreate(BannerMaintenance model, HttpPostedFileBase bannerFile)
         {
-            if (string.IsNullOrWhiteSpace(model.Category) || string.IsNullOrWhiteSpace(model.Name))
-                return new HttpStatusCodeResult(400, "Missing required fields");
+            if (bannerFile == null || string.IsNullOrWhiteSpace(model.Category))
+                return new HttpStatusCodeResult(400, "Invalid data");
 
             try
             {
-                model.Created = DateTime.Now;
+                string fileName = Path.GetFileName(bannerFile.FileName);
+                string savePath = Path.Combine(Server.MapPath("~/Upload/Banner"), fileName);
+                bannerFile.SaveAs(savePath);
+
+                model.Name = fileName;
+                model.FilePath = savePath;//"/" + fileName;
                 model.CreatedBy = _username;
+                model.Created = DateTime.Now;
 
                 using (var bl = new BannerMaintenanceBL(_username))
                 {
                     await bl.AddAsync(model).ConfigureAwait(false);
-                    return new HttpStatusCodeResult(200);
                 }
+
+                return new HttpStatusCodeResult(200);
             }
             catch (Exception ex)
             {
@@ -58,20 +66,31 @@ namespace TWC.IMS.Web.Controllers
             }
         }
 
-        // POST: BannerMaintenance/Update
+        // POST: VideoMaintenance/UploadAndUpdate
         [HttpPost]
-        public async Task<ActionResult> Update(BannerMaintenance model)
+        public async Task<ActionResult> UploadAndUpdate(BannerMaintenance model, HttpPostedFileBase bannerFile)
         {
-            if (model.Id <= 0)
-                return new HttpStatusCodeResult(400, "Invalid ID");
+            if (model.Id <= 0 || string.IsNullOrWhiteSpace(model.Category))
+                return new HttpStatusCodeResult(400, "Invalid data");
 
             try
             {
+                if (bannerFile != null)
+                {
+                    string fileName = Path.GetFileName(bannerFile.FileName);
+                    string savePath = Path.Combine(Server.MapPath("~/Upload/Banner"), fileName);
+                    bannerFile.SaveAs(savePath);
+
+                    model.Name = fileName;
+                    model.FilePath = savePath;//"/" + fileName;
+                }
+
                 using (var bl = new BannerMaintenanceBL(_username))
                 {
                     await bl.UpdateAsync(model).ConfigureAwait(false);
-                    return new HttpStatusCodeResult(200);
                 }
+
+                return new HttpStatusCodeResult(200);
             }
             catch (Exception ex)
             {

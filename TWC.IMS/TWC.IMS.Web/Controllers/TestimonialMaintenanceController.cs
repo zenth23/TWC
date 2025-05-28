@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using TWC.IMS.BL;
 using TWC.IMS.Models;
@@ -29,15 +31,21 @@ namespace TWC.IMS.Web.Controllers
             }
         }
 
-        // POST: TestimonialMaintenance/Create
+        // POST: VideoMaintenance/UploadAndCreate
         [HttpPost]
-        public async Task<ActionResult> Create(TestimonialMaintenance model)
+        public async Task<ActionResult> UploadAndCreate(TestimonialMaintenance model, HttpPostedFileBase testimonialFile)
         {
-            if (!ModelState.IsValid)
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid data");
+            if (testimonialFile == null || string.IsNullOrWhiteSpace(model.Category))
+                return new HttpStatusCodeResult(400, "Invalid data");
 
             try
             {
+                string fileName = Path.GetFileName(testimonialFile.FileName);
+                string savePath = Path.Combine(Server.MapPath("~/Upload/Testimonials"), fileName);
+                testimonialFile.SaveAs(savePath);
+
+                model.Name = fileName;
+                model.FilePath = savePath;//"/" + fileName;
                 model.CreatedBy = _username;
                 model.Created = DateTime.Now;
 
@@ -46,35 +54,46 @@ namespace TWC.IMS.Web.Controllers
                     await bl.AddAsync(model).ConfigureAwait(false);
                 }
 
-                return new HttpStatusCodeResult(HttpStatusCode.OK);
+                return new HttpStatusCodeResult(200);
             }
             catch (Exception ex)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+                return new HttpStatusCodeResult(500, ex.Message);
             }
         }
 
-        // POST: TestimonialMaintenance/Update
+        // POST: VideoMaintenance/UploadAndUpdate
         [HttpPost]
-        public async Task<ActionResult> Update(TestimonialMaintenance model)
+        public async Task<ActionResult> UploadAndUpdate(TestimonialMaintenance model, HttpPostedFileBase testimonialFile)
         {
-            if (model.Id <= 0 || !ModelState.IsValid)
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid data");
+            if (model.Id <= 0 || string.IsNullOrWhiteSpace(model.Category))
+                return new HttpStatusCodeResult(400, "Invalid data");
 
             try
             {
+                if (testimonialFile != null)
+                {
+                    string fileName = Path.GetFileName(testimonialFile.FileName);
+                    string savePath = Path.Combine(Server.MapPath("~/Upload/Testimonials"), fileName);
+                    testimonialFile.SaveAs(savePath);
+
+                    model.Name = fileName;
+                    model.FilePath = savePath;//"/" + fileName;
+                }
+
                 using (var bl = new TestimonialMaintenanceBL(_username))
                 {
                     await bl.UpdateAsync(model).ConfigureAwait(false);
                 }
 
-                return new HttpStatusCodeResult(HttpStatusCode.OK);
+                return new HttpStatusCodeResult(200);
             }
             catch (Exception ex)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+                return new HttpStatusCodeResult(500, ex.Message);
             }
         }
+
 
         // POST: TestimonialMaintenance/Delete
         [HttpPost]
