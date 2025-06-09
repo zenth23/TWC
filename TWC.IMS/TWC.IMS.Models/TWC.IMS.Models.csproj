@@ -85,12 +85,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asset_Movement.cs" />
+    <Compile Include="BannerMaintenance.cs" />
+    <Compile Include="CarouselMaintenance.cs" />
+    <Compile Include="CatalogMaintenance.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="ChartModels\AdminDashboardChartModels.cs" />
     <Compile Include="ChartModels\MainDashboardChartModels.cs" />
     <Compile Include="DemoSource.cs" />
     <Compile Include="DemoSourceDetail.cs" />
     <Compile Include="Inventory_Entry.cs" />
+    <Compile Include="OtherMaintenance.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Movement_Type.cs" />
@@ -139,6 +143,8 @@
     <Compile Include="SalesOrderHeader.cs" />
     <Compile Include="StatusSet.cs" />
     <Compile Include="SalesType.cs" />
+    <Compile Include="SystemNotification.cs" />
+    <Compile Include="TestimonialMaintenance.cs" />
     <Compile Include="UserDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleDetail.cs" />
@@ -146,6 +152,7 @@
     <Compile Include="SupportTool.cs" />
     <Compile Include="SystemConfig.cs" />
     <Compile Include="UserActivityLog.cs" />
+    <Compile Include="VideoMaintenance.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />

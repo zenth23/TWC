@@ -4,6 +4,7 @@ namespace TWC.IMS.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Reflection.Emit;
 
     public partial class Entities : DbContext
     {
@@ -36,7 +37,7 @@ namespace TWC.IMS.Models
 
 
         public virtual DbSet<Access> Accesses { get; set; }
-      
+
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
@@ -57,17 +58,24 @@ namespace TWC.IMS.Models
         public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<UserActivityLog> UserActivityLogs { get; set; }
         public virtual DbSet<UserDetail> UserDetails { get; set; }
-     
+
         public virtual DbSet<Request> Requests { get; set; } // REQUEST FOR REMOVAL
-    
+
         //public virtual DbSet<SystemNotification> SystemNotifications { get; set; }
         public virtual DbSet<SmsOtpResponse> SmsOtpResponses { get; set; }
         public virtual DbSet<SignalRConnection> SignalRConnections { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product_Master_Image> Product_Master_Images { get; set; }
-        
+
         public virtual DbSet<SalesOrderDetail> SalesOrderDetails { get; set; }
         public virtual DbSet<SalesOrderHeader> SalesOrderHeaders { get; set; }
+        public DbSet<CatalogMaintenance> CatalogMaintenance { get; set; }
+        public DbSet<VideoMaintenance> VideoMaintenance { get; set; }
+        public DbSet<CarouselMaintenance> CarouselMaintenance { get; set; }
+        public DbSet<TestimonialMaintenance> TestimonialMaintenance { get; set; }
+        public DbSet<BannerMaintenance> BannerMaintenance { get; set; }
+        public DbSet<OtherMaintenance> OtherMaintenance { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -93,7 +101,7 @@ namespace TWC.IMS.Models
                 .HasMany(e => e.Product_Inventory)
                 .WithOptional(e => e.Location)
                 .HasForeignKey(e => e.location_id);
-            
+
 
             modelBuilder.Entity<Movement_Type>()
                 .Property(e => e.RowVersion)
@@ -148,7 +156,7 @@ namespace TWC.IMS.Models
                 .WithOptional(e => e.Product_Master)
                 .HasForeignKey(e => e.product_id);
 
-           
+
 
             modelBuilder.Entity<Shop>()
                 .Property(e => e.RowVersion)
@@ -165,7 +173,7 @@ namespace TWC.IMS.Models
                 .Property(e => e.RowVersion)
                 .IsFixedLength();
 
-         
+
 
 
 
@@ -179,8 +187,6 @@ namespace TWC.IMS.Models
                 .HasMany(e => e.ModuleAccesses)
                 .WithRequired(e => e.Access)
                 .HasForeignKey(e => e.ModuleAccess_Access);
-
-          
 
             modelBuilder.Entity<AspNetRole>()
                 .HasMany(e => e.RoleDetails)
@@ -256,7 +262,7 @@ namespace TWC.IMS.Models
                 .Property(e => e.RowVersion)
                 .IsFixedLength();
 
-       
+
 
             modelBuilder.Entity<RoleDetail>()
                 .Property(e => e.RowVersion)
@@ -287,7 +293,7 @@ namespace TWC.IMS.Models
                 .Property(e => e.RowVersion)
                 .IsFixedLength();
 
-           
+
 
             // REQUEST FOR REMOVAL
             modelBuilder.Entity<StatusSet>()
@@ -296,7 +302,7 @@ namespace TWC.IMS.Models
               .HasForeignKey(e => e.Request_Status)
               .WillCascadeOnDelete(false);
 
-        
+
             //modelBuilder.Entity<UserDetail>()
             // .HasMany(e => e.SystemNotifications)
             // .WithRequired(e => e.UserDetail)
@@ -309,18 +315,18 @@ namespace TWC.IMS.Models
             .HasForeignKey(e => e.Request_Proponent)
             .WillCascadeOnDelete(false);
 
-          
+
             modelBuilder.Entity<SmsOtpResponse>()
                 .Property(e => e.RowVersion)
                 .IsFixedLength();
 
-         
+
 
             modelBuilder.Entity<ReportCache>()
                 .Property(e => e.RowVersion)
                 .IsFixedLength();
 
-        
+
             modelBuilder.Entity<Location>()
             .HasMany(e => e.InventoryEntries)
             .WithRequired(e => e.Location)
@@ -365,6 +371,13 @@ namespace TWC.IMS.Models
             modelBuilder.Entity<SalesOrderHeader>()
                 .Property(e => e.RowVersion)
                 .IsFixedLength();
+
+            modelBuilder.Entity<CatalogMaintenance>()
+                .Property(x => x.RowVersion)
+                .IsFixedLength();
+            modelBuilder.Entity<VideoMaintenance>()
+    .Property(x => x.RowVersion)
+    .IsFixedLength();
 
             modelBuilder.Entity<SalesOrderHeader>()
                 .HasMany(e => e.SalesOrderDetails)

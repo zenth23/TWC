@@ -419,12 +419,11 @@ namespace TWC.IMS.Web.Controllers
                         .Select(g => new
                         {
                             Day = g.Key.Day.ToString("yyyy-MM-dd"), // Format the day
-                    Category = g.Key.Category,
-<<<<<<< HEAD
+                            Category = g.Key.Category,
+
                             TotalSales = g.Sum(d => d.isGold? d.Weight * d.Cost : d.Qty * d.Cost),
-=======
-                            TotalSales = g.Sum(d => d.SalesOrderHeader.Amount), // change d.cost to d.salesorderheaderamount
->>>>>>> e4b5d206760a26781479d03f33bd16ff555bacd0
+
+                          //  TotalSales = g.Sum(d => d.SalesOrderHeader.Amount), // change d.cost to d.salesorderheaderamount
                             TotalCount = g.Sum(d => d.Qty)
                         })
                         .OrderBy(d => d.Day) // Ensure the days are in order
