@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\rortegoiv\\source\\repos\\twc\\",
+  "WorkspaceRootPath": "C:\\Users\\zenth23\\source\\repos\\TWC\\",
   "Documents": [],
   "DocumentGroupContainers": [
     {
@@ -13,11 +13,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             }
           ]
         }
