@@ -427,9 +427,6 @@ namespace TWC.IMS.Web.Controllers
 =======
                     Category = g.Key.Category,
                             TotalSales = g.Sum(d => d.Cost),
-<<<<<<< HEAD
->>>>>>> parent of 2d84c16 (Dashboard compute correction and Sales order upload function bug fix)
-=======
 >>>>>>> parent of 2d84c16 (Dashboard compute correction and Sales order upload function bug fix)
                             TotalCount = g.Sum(d => d.Qty)
                         })
